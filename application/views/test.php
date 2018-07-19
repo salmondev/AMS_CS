@@ -435,6 +435,12 @@ desired effect
 <!-- SweetAlert2 -->
 <script src="<?php echo base_url('dist/sweetalert2.all.min.js');?>"></script>
 
+<!-- Export  -->
+<script src="<?php echo base_url('assets/js/jszip.min.js');?>"></script>
+<script src="<?php echo base_url('assets/js/pdfmake.min.js');?>"></script>
+<script src="<?php echo base_url('assets/js/vfs_fonts.js');?>"></script>
+
+
 
 <!-- DataTables -->
 <script src="<?php echo base_url('bower_components/datatables.net/js/jquery.dataTables.min.js');?>"></script>
@@ -454,6 +460,8 @@ $('#datepicker').datepicker({
   $(function () {
     $('#example1').DataTable()
     $('#example2').DataTable({
+      
+        
       'paging'      : true,
       'lengthChange': true,
       'searching'   : true,
@@ -461,16 +469,9 @@ $('#datepicker').datepicker({
       'info'        : true,
       'autoWidth'   : true
     })
-  })
-  //export
-  $(document).ready(function() {
-    $('#example2').DataTable( {
-        dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
-    } );
-} );
+  });
+
+ 
   /** add active class and stay opened when selected */
 var url = window.location;
 
