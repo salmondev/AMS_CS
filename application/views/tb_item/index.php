@@ -40,8 +40,8 @@
               <!-- <h3 class="box-title">Tb Item Listing</h3> -->
               <div class="box-title">
                     <a href="<?php echo site_url('tb_item/add'); ?>" class="btn btn-success ">ADD ITEM</a> 
-                    
-                    <p id="xportxlsx" class="xport btn btn-warning"><input type="submit" value="EXPORT" onclick="doit('xlsx');"></p>
+                    </br></br>
+                    <p id="xportxlsx" class="xport"><input type="submit" value="EXPORT" class="btn btn-warning" onclick="doit('xlsx');"></p>
 
 
                 </div>
@@ -55,7 +55,7 @@
                   <th>Name</th>
                   <th>Detail</th>
                   <th>Date</th>
-                  <th>Actions</th>
+                  <!--<th>Actions</th>-->
                 </tr>
                 </thead>
 
@@ -66,18 +66,12 @@
 						<td><?php echo $t['name']; ?></td>
 						<td><?php echo $t['detail']; ?></td>
 						<td><?php echo $t['odate']; ?></td>
-						<td>
-                            <a href="<?php echo site_url('tb_item/edit/'.$t['id']); ?>" class="btn btn-info btn-sm"><span class="fa fa-pencil"></span> Edit</a> 
-                            <a onclick="sweet();" href="<?php echo site_url('tb_item/remove/'.$t['id']); ?>" class="btn btn-danger btn-sm"><span class="fa fa-trash"></span> Delete</a>
-                            <!--<button class="btn btn-sm btn-danger" id="delete-btn" ><span class="fa fa-trash"></span> Delete</button>
-                            < $deleted_uri =  base_url('tb_item/remove/'.$t['id']); ?>-->
- 
-                        </td>
+						
                     </tr>
                     <?php } ?>
 <!-- ************************************************************************ -->
 
-                <tfoot>
+                <!--<tfoot>
                 <tr>
                 <th>ID</th>
                   <th>Name</th>
@@ -85,7 +79,7 @@
                   <th>Date</th>
                   <th>Actions</th>
                 </tr>
-                </tfoot>
+                </tfoot>-->
               </table>
             </div>
             <!-- /.box-body -->
