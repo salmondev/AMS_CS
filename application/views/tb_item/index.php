@@ -14,6 +14,23 @@
 <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.bootstrap.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.print.js"></script>
+<script src="<?php echo base_url('src/excelexportjs.js');?>"></script>
+
+<script type="text/javascript" src="//unpkg.com/xlsx/dist/shim.min.js"></script>
+<script type="text/javascript" src="//unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
+<script type="text/javascript" src="//unpkg.com/blob.js@1.0.1/Blob.js"></script>
+<script type="text/javascript" src="//unpkg.com/file-saver@1.3.3/FileSaver.js"></script>
+
+
+<style>
+.exportExcel{
+  padding: 5px;
+  border: 1px solid grey;
+  margin: 5px;
+  cursor: pointer;
+}
+</style>
 </head>
 
 <div class="row">
@@ -22,7 +39,11 @@
             <div class="box-header">
               <!-- <h3 class="box-title">Tb Item Listing</h3> -->
               <div class="box-title">
-                    <a href="<?php echo site_url('tb_item/add'); ?>" class="btn btn-success btn-lg">ADD ITEM</a> 
+                    <a href="<?php echo site_url('tb_item/add'); ?>" class="btn btn-success ">ADD ITEM</a> 
+                    
+                    <p id="xportxlsx" class="xport btn btn-warning"><input type="submit" value="EXPORT" onclick="doit('xlsx');"></p>
+
+
                 </div>
             </div>
             <!-- /.box-header -->
@@ -74,7 +95,95 @@
     </div>
 </div>
 
+<script type="text/javascript">
+
+function doit(type, fn, dl) {
+    var elt = document.getElementById('example2');
+    var wb = XLSX.utils.table_to_book(elt, {sheet:"Sheet JS"});
+    return dl ?
+        XLSX.write(wb, {bookType:type, bookSST:true, type: 'base64'}) :
+        XLSX.writeFile(wb, fn || ('table_item.' + (type || 'xlsx')));
+}
+
+
+function tableau(pid, iid, fmt, ofile) {
+    if(typeof Downloadify !== 'undefined') Downloadify.create(pid,{
+            swf: 'downloadify.swf',
+            downloadImage: 'download.png',
+            width: 100,
+            height: 30,
+            filename: ofile, data: function() { return doit(fmt, ofile, true); },
+            transparent: false,
+            append: false,
+            dataType: 'base64',
+            onComplete: function(){ alert('Your File Has Been Saved!'); },
+            onCancel: function(){ alert('You have cancelled the saving of this file.'); },
+            onError: function(){ alert('You must put something in the File Contents or there will be nothing to save!'); }
+    });
+}
+tableau('xlsxbtn',  'xportxlsx',  'xlsx',  'table_item.xlsx');
+
+</script>
+
 <script>
+var $btnDLtoExcel = $('#DLtoExcel-2');
+    $btnDLtoExcel.on('click', function () {
+        $("#example2").excelexportjs({
+            containerid: "tableData",
+            datatype: 'table'
+        });
+
+    });
+
+
+
+
+$(document).ready(function() {
+  var table = $('#example2').DataTable({
+    dom: 'Bfrtip',
+    buttons: [
+    {
+      extend: 'excel',
+      text: 'Export excel',
+      className: 'exportExcel',
+      filename: 'Export excel',
+      exportOptions: {
+        modifier: {
+          page: 'all'
+        }
+      }
+    }, 
+    {
+      extend: 'copy',
+      text: '<u>C</u>opie presse papier',
+      className: 'exportExcel',
+      key: {
+        key: 'c',
+        altKey: true
+      }
+    }, 
+    {
+      text: 'Alert Js',
+      className: 'exportExcel',
+      action: function(e, dt, node, config) {
+        alert('Activated!');
+        // console.log(table);
+
+        // new $.fn.dataTable.Buttons(table, {
+        //   buttons: [{
+        //     text: 'gfdsgfsd',
+        //     action: function(e, dt, node, config) {
+        //       alert('ok!');
+        //     }
+        //   }]
+        // });
+      }
+    }]
+  });
+
+});
+//***************************************************************** 
+/*
 $(document).ready(function() {
     $('#example2').DataTable({
         dom: "Bfrtip",
@@ -88,7 +197,7 @@ $(document).ready(function() {
           {extent: "print", text: "<span class='glyphicon glyphicon-print'></span> Print"},          
           {extent: "excelHtml5", text: "<span class='glyphicon glyphicon-th-list'></span> Excel HTML5 Export"},
           {extent: "pdfHtml5", text: "<span class='glyphicon glyphicon-save'></span> PDF HTML5 Export", title: "Filename"}
-          */],
+          *//*],
           'paging': true,
         'lengthChange': true,
         'searching': true,

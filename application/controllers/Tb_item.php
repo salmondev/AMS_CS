@@ -23,6 +23,17 @@ class Tb_item extends CI_Controller{
     }
 
     /*
+     * Export tb_item to Excel
+     */
+     function excel()
+     {           
+             //$data['_view'] = 'tb_item/excel';
+             //$this->load->view('test',$data);
+             $this->load->view('tb_item/excel');
+         
+     }
+
+    /*
      * Adding a new tb_item
      */
     function add()
