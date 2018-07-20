@@ -1,3 +1,21 @@
+<head>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel="stylesheet"/>
+<link href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css" rel="stylesheet"/>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.18/pdfmake.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.bootstrap.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.print.js"></script>
+</head>
+
 <div class="row">
     <div class="col-md-12">
     <div class="box">
@@ -56,6 +74,33 @@
     </div>
 </div>
 
+<script>
+$(document).ready(function() {
+    $('#example2').DataTable({
+        dom: "Bfrtip",
+        buttons: [
+            {
+        extend: 'collection',
+        text: 'Export',
+        buttons: [
+          'copy',
+          'excel',
+          'csv',
+          'pdf',
+          'print'
+        ]
+      }
+      ],
+          'paging': true,
+        'lengthChange': true,
+        'searching': true,
+        'ordering': true,
+        'info': true,
+        'autoWidth': true,
+        'exports' : true
+    });
+} );
+</script>
 
 <script>
             document.getElementById("delete-btn").addEventListener("click", function (event)

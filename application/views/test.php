@@ -39,13 +39,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <!-- Export -->
+    <!-- Export 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/bs/jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,b-1.0.3,b-html5-1.0.3,b-print-1.0.3/datatables.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/buttons.dataTables.min.css');?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/jquery.dataTables.min.css');?>">
     
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css">
+*****************************************-->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel="stylesheet"/>
+<link href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css" rel="stylesheet"/>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.18/pdfmake.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.bootstrap.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.print.js"></script>
     
     <!-- Google Font -->
     <link rel="stylesheet"
@@ -430,7 +445,7 @@ user experience. -->
 <script src="<?php echo base_url('bower_components/datatables.net/js/jquery.dataTables.min.js');?>"></script>
 <script src="<?php echo base_url('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js');?>"></script>
 
-<script>
+<script type="text/javascript" charset="utf-8">
 //Date picker
 $(function() {
     $("#datepicker").datepicker({
@@ -440,12 +455,25 @@ $(function() {
 $('#datepicker').datepicker({
     autoclose: false
 })
+
+///Export DataTable
+/*
 $(document).ready(function() {
     
     $('#example2').DataTable({
-      dom: 'Bfrtip',
+      dom: 'lfrtipB'/*'Bfrtip'*/,
+        /*buttons: [
+          {
+        extend: 'collection',
+        text: 'Export',
         buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
+          'copy',
+          'excel',
+          'csv',
+          'pdf',
+          'print'
+        ]
+      }
         ],
         'paging': true,
         'lengthChange': true,
@@ -454,7 +482,7 @@ $(document).ready(function() {
         'info': true,
         'autoWidth': true,
         'exports' : true
-    })
+    });
 });
 
   
