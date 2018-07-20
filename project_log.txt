@@ -1,1 +1,10 @@
 <16-jul-18__11:43> +add log-in system admin
+
+<20-jul-18__10:18> *plan feature 
+                    : track item with lasted position on google map
+                    : export file from DataTable > Excel | CSV | PDF | Print
+                    : CRUD
+                    : Dashboard show summary detail of system
+                    : Database sync website <> app
+                    : Log system show on admin
+                   
