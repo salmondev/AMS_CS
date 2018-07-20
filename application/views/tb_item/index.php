@@ -79,18 +79,17 @@ $(document).ready(function() {
     $('#example2').DataTable({
         dom: "Bfrtip",
         buttons: [
-            {
-        extend: 'collection',
-        text: 'Export',
-        buttons: [
-          'copy',
-          'excel',
           'csv',
-          'pdf',
-          'print'
-        ]
-      }
-      ],
+            "copy",
+          "excel",
+          "csv",
+          "pdf",
+          "print",
+/*
+          {extent: "print", text: "<span class='glyphicon glyphicon-print'></span> Print"},          
+          {extent: "excelHtml5", text: "<span class='glyphicon glyphicon-th-list'></span> Excel HTML5 Export"},
+          {extent: "pdfHtml5", text: "<span class='glyphicon glyphicon-save'></span> PDF HTML5 Export", title: "Filename"}
+          */],
           'paging': true,
         'lengthChange': true,
         'searching': true,
