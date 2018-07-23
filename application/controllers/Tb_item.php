@@ -51,8 +51,10 @@ class Tb_item extends CI_Controller{
      */
     function edit($id)
     {   
+        $odate=date("Y-m-d H:i:s");
         // check if the tb_item exists before trying to edit it
         $data['tb_item'] = $this->Tb_item_model->get_tb_item($id);
+        
         
         if(isset($data['tb_item']['id']))
         {
@@ -60,7 +62,7 @@ class Tb_item extends CI_Controller{
             {   
                 $params = array(
 					'name' => $this->input->post('name'),
-					'date' => $this->input->post('date'),
+					'odate' => $odate,
 					'detail' => $this->input->post('detail'),
                 );
 
