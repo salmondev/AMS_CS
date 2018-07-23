@@ -1,10 +1,22 @@
+<head>
+
+<script type="text/javascript" src="https://unpkg.com/xlsx/dist/shim.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
+<script type="text/javascript" src="https://unpkg.com/blob.js@1.0.1/Blob.js"></script>
+<script type="text/javascript" src="https://unpkg.com/file-saver@1.3.3/FileSaver.js"></script>
+</head>
+
 <div class="row">
     <div class="col-md-12">
     <div class="box">
             <div class="box-header">
               <!-- <h3 class="box-title">Tb Item Listing</h3> -->
               <div class="box-title">
-                    <a href="<?php echo site_url('tb_item/add'); ?>" class="btn btn-success btn-lg">ADD ITEM</a> 
+                    <a href="<?php echo site_url('tb_item/add'); ?>" class="btn btn-success btn-lg">ADD ITEM</a>
+                    </br></br> 
+                    <p id="xportxlsx" class="xport"><input type="submit" value="EXPORT" class="btn btn-warning" onclick="doit('xlsx');"></p>
+
                 </div>
             </div>
             <!-- /.box-header -->
@@ -15,8 +27,8 @@
                   <th>ID</th>
                   <th>Name</th>
                   <th>Detail</th>
-                  <th>Date</th>
-                  <th>Actions</th>
+                  <th>Updated</th>
+                  <th>Options</th>
                 </tr>
                 </thead>
 
@@ -56,6 +68,35 @@
     </div>
 </div>
 
+<script type="text/javascript">
+
+function doit(type, fn, dl) {
+    var elt = document.getElementById('example2');
+    var wb = XLSX.utils.table_to_book(elt, {sheet:"Sheet JS"});
+    return dl ?
+        XLSX.write(wb, {bookType:type, bookSST:true, type: 'base64'}) :
+        XLSX.writeFile(wb, fn || ('table_item.' + (type || 'xlsx')));
+}
+
+
+function tableau(pid, iid, fmt, ofile) {
+    if(typeof Downloadify !== 'undefined') Downloadify.create(pid,{
+            swf: 'downloadify.swf',
+            downloadImage: 'download.png',
+            width: 100,
+            height: 30,
+            filename: ofile, data: function() { return doit(fmt, ofile, true); },
+            transparent: false,
+            append: false,
+            dataType: 'base64',
+            onComplete: function(){ alert('Your File Has Been Saved!'); },
+            onCancel: function(){ alert('You have cancelled the saving of this file.'); },
+            onError: function(){ alert('You must put something in the File Contents or there will be nothing to save!'); }
+    });
+}
+tableau('xlsxbtn',  'xportxlsx',  'xlsx',  'table_item.xlsx');
+
+</script>
 
 <script>
             document.getElementById("delete-btn").addEventListener("click", function (event)
