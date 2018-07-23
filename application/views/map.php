@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script>
 function myMap() {
 var mapOptions = {
-    center: new google.maps.LatLng(51.5, -0.12),
+    center: new google.maps.LatLng(13.819074, 100.514871),
     zoom: 10,
     mapTypeId: google.maps.MapTypeId.HYBRID
 }
