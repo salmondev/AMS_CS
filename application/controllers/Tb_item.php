@@ -58,9 +58,10 @@ class Tb_item extends CI_Controller{
         {
             if(isset($_POST) && count($_POST) > 0)     
             {   
+                $odate=date("Y-m-d H:i:s");
                 $params = array(
 					'name' => $this->input->post('name'),
-					'date' => $this->input->post('date'),
+					'odate' => $odate,
 					'detail' => $this->input->post('detail'),
                 );
 
