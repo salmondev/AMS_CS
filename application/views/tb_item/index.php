@@ -16,11 +16,11 @@
 <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.print.js"></script>
 <script src="<?php echo base_url('src/excelexportjs.js');?>"></script>
 
-<script type="text/javascript" src="//unpkg.com/xlsx/dist/shim.min.js"></script>
-<script type="text/javascript" src="//unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/xlsx/dist/shim.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
 
-<script type="text/javascript" src="//unpkg.com/blob.js@1.0.1/Blob.js"></script>
-<script type="text/javascript" src="//unpkg.com/file-saver@1.3.3/FileSaver.js"></script>
+<script type="text/javascript" src="https://unpkg.com/blob.js@1.0.1/Blob.js"></script>
+<script type="text/javascript" src="https://unpkg.com/file-saver@1.3.3/FileSaver.js"></script>
 
 
 <style>
@@ -54,8 +54,8 @@
                   <th>ID</th>
                   <th>Name</th>
                   <th>Detail</th>
-                  <th>Date</th>
-                  <!--<th>Actions</th>-->
+                  <th>Updated</th>
+                  <th>Options</th>
                 </tr>
                 </thead>
 

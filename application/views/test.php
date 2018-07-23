@@ -453,7 +453,7 @@ $(function() {
     });
 });
 $('#datepicker').datepicker({
-    autoclose: false
+    autoclose: true
 })
 
 ///Export DataTable
