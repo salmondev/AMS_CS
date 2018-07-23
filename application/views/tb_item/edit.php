@@ -25,8 +25,6 @@
                   <input type="text" name="odate" value="<?php echo ($this->input->post('odate') ? $this->input->post('odate') : $tb_item['odate']); ?>" class="form-control pull-right" id="datepicker">
                 </div>
 					</div>
-
-
 					<div class="col-md-6">
 						<label for="detail" class="control-label">Detail</label>
 						<div class="form-group">
