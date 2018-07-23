@@ -421,7 +421,7 @@ $(function() {
     });
 });
 $('#datepicker').datepicker({
-    autoclose: false
+    autoclose: true
 })
 $(function() {
     $('#example1').DataTable()

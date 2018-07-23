@@ -42,8 +42,7 @@
 						<td>
                             <a href="<?php echo site_url('tb_item/edit/'.$t['id']); ?>" class="btn btn-info btn-sm"><span class="fa fa-pencil"></span> Edit</a> 
                             <a onclick="sweet();" href="<?php echo site_url('tb_item/remove/'.$t['id']); ?>" class="btn btn-danger btn-sm"><span class="fa fa-trash"></span> Delete</a>
-                            <!--<button class="btn btn-sm btn-danger" id="delete-btn" ><span class="fa fa-trash"></span> Delete</button>
-                            < $deleted_uri =  base_url('tb_item/remove/'.$t['id']); ?>-->
+                            
  
                         </td>
                     </tr>
