@@ -1,3 +1,11 @@
+<head>
+<link rel="stylesheet" href="<?php echo base_url('src/css/tableexport.min.css');?>">
+<script src="<?php base_url('src/js/jquery-3.3.1.min.js');?>"></script>
+<script src="<?php base_url('src/js/FileSaver.js');?>"></script>
+<script src="<?php base_url('src/js/tableexport.js');?>"></script>
+<script src="<?php base_url('src/js/xlsx.core.min.js');?>"></script>
+</head>
+<body>
 <div class="row">
     <div class="col-md-12">
     <div class="box">
@@ -30,23 +38,12 @@
 						<td>
                             <a href="<?php echo site_url('tb_item/edit/'.$t['id']); ?>" class="btn btn-info btn-sm"><span class="fa fa-pencil"></span> Edit</a> 
                             <a onclick="sweet();" href="<?php echo site_url('tb_item/remove/'.$t['id']); ?>" class="btn btn-danger btn-sm"><span class="fa fa-trash"></span> Delete</a>
-                            <!--<button class="btn btn-sm btn-danger" id="delete-btn" ><span class="fa fa-trash"></span> Delete</button>
-                            < $deleted_uri =  base_url('tb_item/remove/'.$t['id']); ?>-->
- 
+                            
                         </td>
                     </tr>
                     <?php } ?>
 <!-- ************************************************************************ -->
 
-                <tfoot>
-                <tr>
-                <th>ID</th>
-                  <th>Name</th>
-                  <th>Detail</th>
-                  <th>Date</th>
-                  <th>Actions</th>
-                </tr>
-                </tfoot>
               </table>
             </div>
             <!-- /.box-body -->
@@ -56,36 +53,14 @@
     </div>
 </div>
 
+<script src="<?php base_url('src/js/jquery-3.3.1.min.js');?>"></script>
+<script src="<?php base_url('src/js/FileSaver.js');?>"></script>
+<script src="<?php base_url('src/js/tableexport.js');?>"></script>
+<script src="<?php base_url('src/js/xlsx.core.min.js');?>"></script>
+
+
+</body>
 
 <script>
-            document.getElementById("delete-btn").addEventListener("click", function (event)
-            {
-                swal({
-                    title: "Are you sure?",
-                    text: "You will not be able to recover this imaginary file!",
-                    icon: "warning",
-                    buttons: {
-                        cancel: {
-                            visible: true,
-                            text: "No, cancel plx!",
-                            closeModal: false,
-                        },
-                        confirm: {
-                            text: "Yes, delete it!",
-                            className: "doit",
-                            closeModal: false,
-                        },
-                    },
-                })
-                    //attach to the promise returned by swal()
-                    .then((willDelete) => {
-                        if (willDelete) {
-                            swal("Deleted!", "Your imaginary file has been deleted.", "success")
-                                    //another promise and another promise fulfilled response
-                                    <?php echo site_url('tb_item/remove/'.$t['id']); ?>
-                        } else {
-                            swal("Cancelled", "Your imaginary file is safe :)", "error");
-                        }
-                    });
-            });
-        </script>
+$('example2').tableExport();
+</script>
