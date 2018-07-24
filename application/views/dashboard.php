@@ -34,11 +34,11 @@
 
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+            <span class="info-box-icon bg-green"><i class="icon ion-ios-refresh"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Sales</span>
-              <span class="info-box-number">760</span>
+              <span class="info-box-text">Development</span>
+              <span class="info-box-number">50%</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -50,8 +50,8 @@
             <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">New Members</span>
-              <span class="info-box-number">2,000</span>
+              <span class="info-box-text">ADMIN</span>
+              <span class="info-box-number">60%</span>
             </div>
             <!-- /.info-box-content -->
           </div>

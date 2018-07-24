@@ -331,14 +331,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="tab-content">
     <!-- Home tab content -->
     <div class="tab-pane active" id="control-sidebar-home-tab">
-      <h3 class="control-sidebar-heading">Recent Activity</h3>
+      <h3 class="control-sidebar-heading">TODO Taskwork</h3>
       <ul class="control-sidebar-menu">
         <li>
-          <a href="javascript:;">
-            <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+          <a href="<?php echo site_url('tb_item/index/index') ?>">
+            <i class="menu-icon fa fa-gear bg-red"></i>
             <div class="menu-info">
-              <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-              <p>Will be 23 on April 24th</p>
+              <h4 class="control-sidebar-subheading">Export Function</h4>
+              <p>under construction</p>
+            </div>
+            </a>
+            <a href="<?php echo site_url('map/index/map');?>">
+            <i class="menu-icon fa fa-gear bg-blue"></i>
+            <div class="menu-info">
+              <h4 class="control-sidebar-subheading">Google Map Function</h4>
+              <p>under construction</p>
             </div>
           </a>
         </li>
@@ -349,13 +356,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <li>
           <a href="javascript:;">
             <h4 class="control-sidebar-subheading">
-            Custom Template Design
+            Export Function
             <span class="pull-right-container">
-              <span class="label label-danger pull-right">70%</span>
+              <span class="label label-danger pull-right">50%</span>
             </span>
             </h4>
             <div class="progress progress-xxs">
-              <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+              <div class="progress-bar progress-bar-danger" style="width: 50%"></div>
+            </div>
+            </br>
+            <h4 class="control-sidebar-subheading">
+            Google Map Function
+            <span class="pull-right-container">
+              <span class="label label-primary pull-right">80%</span>
+            </span>
+            </h4>
+            <div class="progress progress-xxs">
+              <div class="progress-bar progress-bar-primary" style="width: 80%"></div>
             </div>
           </a>
         </li>
@@ -369,14 +386,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Settings tab content -->
     <div class="tab-pane" id="control-sidebar-settings-tab">
       <form method="post">
-        <h3 class="control-sidebar-heading">General Settings</h3>
+        <h3 class="control-sidebar-heading">Development Infomation</h3>
         <div class="form-group">
           <label class="control-sidebar-subheading">
-            Report panel usage
+            Development ADMIN System
             <input type="checkbox" class="pull-right" checked>
           </label>
           <p>
-            Some information about this general settings option
+            DEV : Panurut Chinakul
           </p>
         </div>
         <!-- /.form-group -->
