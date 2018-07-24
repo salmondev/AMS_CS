@@ -41,7 +41,7 @@ application/config/config.php
 
 ## Developer
 
-Panurut Chinakul – [@armypnr](https://twitter.com/armypnr) – panurut.ch@gmail.com
+Panurut Chinakul – [@pnrarmy](https://twitter.com/pnrarmy) – panurut.ch@gmail.com
 
 Distributed under the MIT license. See ``LICENSE`` for more information.
 
