@@ -31,7 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background: #B3B3D9;">
 <div class="login-box">
   <div class="login-logo">
     <a href="home"><b>ADMIN</b>CS</a>
@@ -40,13 +40,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="login-box-body">
     <p class="login-box-msg">LOG IN</p>
 
-    <form action="test" method="post">
+<?php echo validation_errors(); ?>
+    <form action="<?php echo base_url('index.php/test'); ?>" method="post">
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Username">
+        <input type="text" class="form-control" placeholder="Username" name="username">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password">
+        <input type="password" class="form-control" placeholder="Password" name="password">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
