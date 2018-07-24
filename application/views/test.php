@@ -466,66 +466,7 @@ $('ul.treeview-menu a').filter(function() {
 function sweet() {
     swal("Deleted!", "Your imaginary file has been deleted.", "success")
 }
-/*
-// Sweet Alert 2< echo site_url('tb_item/remove/'.$t['id']); ?>
-function sweet() {
-    //event.preventDefault(); // prevent form submit
-    //var form = event.target.form; // storing the form
-    swal({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-        if (result.value) {
-            swal(
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
-            )
-        }
-    })
-}*/
-/*
-/// Ajax sweetalert2
-function SwalDelete(id) {
-    swal({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!',
-        showLoaderOnConfirm: true,
-        preConfirm: function() {
-            return new Promise(function(resolve) {
-                $.ajax({
-                        url: 'delete.php',
-                        type: 'POST',
-                        data: 'delete=' + id,
-                        dataType: 'json'
-                    })
-                    .done(function(response) {
-                        swal('Deleted!', response.message, response.status);
-                        readProducts();
-                    })
-                    .fail(function() {
-                        swal('Oops...', 'Something went wrong with ajax !', 'error');
-                    });
-            });
-        },
-        allowOutsideClick: false
-    });
-}
-$(document).on('click', '#delete_product', function(e) {
-    var id = $(this).data('id');
-    SwalDelete(id);
-    e.preventDefault();
-});*/
+
 
 function goBack() {
     window.history.back();

@@ -191,7 +191,7 @@ $(function() {
     });
 
     // Search by tags from the tables for any tag clicked.
-    $('body').on('click','table.dataTable tbody .tags-labels .label-tag',function(){
+    $('body').on('click', 'table.dataTable tbody .tags-labels .label-tag', function() {
         $(this).parents('table').DataTable().search($(this).find('.tag').text()).draw();
         $('div.dataTables_filter input').focus();
     });
@@ -337,9 +337,9 @@ $(function() {
     // Don't allow the task modal to close if lightbox is visible in for the task attachments
     // Used when user hit the ESC button
     $('body').on('hide.bs.modal', '.task-modal-single', function() {
-       if($('#lightbox').is(':visible') == true){
+        if ($('#lightbox').is(':visible') == true) {
             return false;
-       }
+        }
     });
 
     // On focus out on the taks modal single update the tags in case changes are found
@@ -550,12 +550,12 @@ $(function() {
 
     // Add additional server params $_POST
     var LeadsServerParams = {
-        "custom_view": "[name='custom_view']",
-        "assigned": "[name='view_assigned']",
-        "status": "[name='view_status']",
-        "source": "[name='view_source']",
-    }
-    // Init the table
+            "custom_view": "[name='custom_view']",
+            "assigned": "[name='view_assigned']",
+            "status": "[name='view_status']",
+            "source": "[name='view_source']",
+        }
+        // Init the table
     var headers_leads = $('.table-leads').find('th');
     var not_sortable_leads = (headers_leads.length - 1);
     initDataTable('.table-leads', admin_url + 'leads?table_leads=true', [not_sortable_leads, 0], [not_sortable_leads, 0], LeadsServerParams, [10, 'DESC']);
@@ -1913,9 +1913,9 @@ function init_rel_tasks_table(rel_id, rel_type, selector) {
     });
     not_sortable_tasks = ($('body').find(selector).find('th').length - 1);
     console.log(not_sortable_tasks)
-    initDataTable(selector, admin_url + 'tasks/init_relation_tasks/' + rel_id + '/' + rel_type, [0,7], [0,7], TasksServerParams, [0, 'DESC']);
+    initDataTable(selector, admin_url + 'tasks/init_relation_tasks/' + rel_id + '/' + rel_type, [0, 7], [0, 7], TasksServerParams, [0, 'DESC']);
 }
-
+// Export function
 function get_dt_export_buttons(table) {
 
     var table_buttons_options = [{
@@ -2299,8 +2299,8 @@ function init_tags_inputs() {
         availableTags: availableTags,
         allowSpaces: true,
         animate: false,
-        placeholderText:tag_string,
-        showAutocompleteOnFocus:true,
+        placeholderText: tag_string,
+        showAutocompleteOnFocus: true,
         caseSensitive: false,
         afterTagAdded: function(event, ui) {
             var tagIndexAvailable = availableTags.indexOf($.trim($(ui.tag).find('.tagit-label').text()));
@@ -3821,7 +3821,7 @@ function init_table_tickets(manual) {
     _table_api = initDataTable('.tickets-table', _tickets_table_url, _tns, _tns, TicketServerParams, [tickets_date_created_index, 'DESC']);
 
     if (_table_api && $('body').hasClass('home')) {
-        _table_api.column(tickets_not_sortable).visible(false, false).column(3).visible(false, false).column(tickets_date_created_index).visible(false,false).column(4).visible(false, false).columns.adjust();
+        _table_api.column(tickets_not_sortable).visible(false, false).column(3).visible(false, false).column(tickets_date_created_index).visible(false, false).column(4).visible(false, false).columns.adjust();
     }
 }
 
