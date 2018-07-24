@@ -423,10 +423,16 @@ user experience. -->
 <!-- SweetAlert2 -->
 <script src="<?php echo base_url('dist/sweetalert2.all.min.js');?>"></script>
 <!-- Export  -->
-<script src="<?php echo base_url('assets/js/jszip.min.js');?>"></script>
-<script src="<?php echo base_url('assets/js/pdfmake.min.js');?>"></script>
-<script src="<?php echo base_url('assets/js/vfs_fonts.js');?>"></script>
-<!-- DataTables -->
+
+<script src="<?php echo base_url('src/export/js/jquery.dataTables.min.js');?>"></script>
+<script src="<?php echo base_url('src/export/js/dataTables.buttons.min.js');?>"></script>
+<script src="<?php echo base_url('src/export/js/buttons.flash.min.js');?>"></script>
+<script src="<?php echo base_url('src/export/js/jszip.min.js');?>"></script>
+<script src="<?php echo base_url('src/export/js/vfs_fonts.js');?>"></script>
+<script src="<?php echo base_url('src/export/js/buttons.html5.min.js');?>"></script>
+<script src="<?php echo base_url('src/export/js/buttons.print.min.js');?>"></script>
+<script src="<?php echo base_url('src/export/js/pdfmake.min.js');?>"></script>
+<!-- DataTable -->
 <script src="<?php echo base_url('bower_components/datatables.net/js/jquery.dataTables.min.js');?>"></script>
 <script src="<?php echo base_url('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js');?>"></script>
 
@@ -440,9 +446,14 @@ $(function() {
 $('#datepicker').datepicker({
     autoclose: true
 })
-$(function() {
-    $('#example1').DataTable()
+
+
+$(document).ready(function() {
     $('#example2').DataTable({
+      dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
         'paging': true,
         'lengthChange': true,
         'searching': true,
