@@ -15,7 +15,7 @@
               <div class="box-title">
                     <a href="<?php echo site_url('tb_item/add'); ?>" class="btn btn-success btn-lg">ADD ITEM</a>
                     </br></br> 
-                    <p id="xportxlsx" class="xport"><input type="submit" value="EXPORT" class="btn btn-warning" onclick="doit('xlsx');"></p>
+                    <p id="xportxlsx" class="xport"><input type="submit" value="EXPORT" class="btn btn-primary" onclick="doit('xlsx');"></p>
 
                 </div>
             </div>
@@ -74,7 +74,7 @@ function doit(type, fn, dl) {
     var wb = XLSX.utils.table_to_book(elt, {sheet:"Sheet JS"});
     return dl ?
         XLSX.write(wb, {bookType:type, bookSST:true, type: 'base64'}) :
-        XLSX.writeFile(wb, fn || ('table_item.' + (type || 'xlsx')));
+        XLSX.writeFile(wb, fn || ('Database_Item.' + (type || 'xlsx')));
 }
 
 
