@@ -47,17 +47,7 @@
                         </td>
                     </tr>
                     <?php } ?>
-<!-- ************************************************************************ -->
 
-                <!--<tfoot>
-                <tr>
-                <th>ID</th>
-                  <th>Name</th>
-                  <th>Detail</th>
-                  <th>Date</th>
-                  <th>Actions</th>
-                </tr>
-                </tfoot>-->
               </table>
             </div>
             <!-- /.box-body -->
