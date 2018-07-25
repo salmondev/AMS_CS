@@ -274,7 +274,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </a>
         <ul class="treeview-menu">
           <li><a href="<?php echo site_url('map/index/map');?>"><i class="fa fa-map-marker"></i>Map</a></li>
-          <li><a href="#"><i class="fa fa-rocket"></i>Tracking</a></li>
+          <li><a href="<?php echo site_url('maptest/index/maptest');?>"><i class="fa fa-rocket"></i>Tracking</a></li>
         </ul>
       </li>
     </ul>
