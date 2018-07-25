@@ -277,6 +277,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <li><a href="#"><i class="fa fa-rocket"></i>Tracking</a></li>
         </ul>
       </li>
+      <li class="header">DATABASE</li>
+      <li class="treeview class="active menu-open"">
+        <a href="#"><i class="fa fa-database"></i> <span>DATA</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="<?php echo site_url('building_table/index/index');?>"><i class="fa fa-map-marker"></i>Map</a></li>
+        </li>
+        </ul>
     </ul>
     <!-- /.sidebar-menu -->
   </section>

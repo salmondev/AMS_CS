@@ -19,7 +19,7 @@ class Building_table extends CI_Controller{
         $data['building_table'] = $this->Building_table_model->get_all_building_table();
         
         $data['_view'] = 'building_table/index';
-        $this->load->view('layouts/main',$data);
+        $this->load->view('test',$data);
     }
 
     /*
@@ -41,7 +41,7 @@ class Building_table extends CI_Controller{
         else
         {            
             $data['_view'] = 'building_table/add';
-            $this->load->view('layouts/main',$data);
+            $this->load->view('test',$data);
         }
     }  
 
@@ -69,7 +69,7 @@ class Building_table extends CI_Controller{
             else
             {
                 $data['_view'] = 'building_table/edit';
-                $this->load->view('layouts/main',$data);
+                $this->load->view('test',$data);
             }
         }
         else
