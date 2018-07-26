@@ -30,7 +30,7 @@
 						<th>HISTORY ITEM UID</th>
 						<th>HISTORY STATUS NAME</th>
 						<th>HISTORY BUILDING NAME</th>
-						<th>Actions</th>
+						<th>Options</th>
                     </tr>
 					</thead>
                     <?php foreach($history_table as $h){ ?>

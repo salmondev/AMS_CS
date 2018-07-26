@@ -16,7 +16,7 @@
 						<th>ROOM RID</th>
 						<th>ROOM NUMBER</th>
 						<th>FLOOR RID</th>
-						<th>Actions</th>
+						<th>Options</th>
                     </tr>
                     </thead>
                     <?php foreach($room_table as $r){ ?>

@@ -17,7 +17,7 @@
 						<th>BUILDING LAT</th>
 						<th>BUILDING LONG</th>
 						<th>BUILDING NAME</th>
-						<th>Actions</th>
+						<th>Options</th>
                     </tr>
                     </thead>
                     <?php foreach($building_table as $b){ ?>

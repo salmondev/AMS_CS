@@ -17,7 +17,7 @@
 						<th>MAP IMG</th>
 						<th>MAP STATUS</th>
 						<th>MAP NAME</th>
-						<th>Actions</th>
+						<th>Options</th>
                     </tr>
                     </thead>
                     <?php foreach($map_table as $m){ ?>

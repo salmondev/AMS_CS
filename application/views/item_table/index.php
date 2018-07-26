@@ -3,7 +3,7 @@
         <div class="box">
             <div class="box-header">
             <div class="box-title">
-                    <a href="<?php echo site_url('tb_item/add'); ?>" class="btn btn-success btn-lg">ADD ITEM</a>
+                    <a href="<?php echo site_url('item_table/add'); ?>" class="btn btn-success btn-lg">ADD ITEM</a>
                     </br></br> 
                     <p id="xportxlsx" class="xport"><input type="submit" value="EXPORT" class="btn btn-primary" onclick="doit('xlsx');"></p>
 
@@ -16,7 +16,7 @@
 						<th>ITEM UID</th>
 						<th>ITEM SERIAL</th>
 						<th>ITEM NAME</th>
-						<th>Actions</th>
+						<th>Options</th>
                     </tr>
                     </thead>
                     <?php foreach($item_table as $i){ ?>

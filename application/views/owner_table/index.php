@@ -16,7 +16,7 @@
 						<th>OWNER UID</th>
 						<th>OWNER FNAME</th>
 						<th>OWNER LNAME</th>
-						<th>Actions</th>
+						<th>Options</th>
                     </tr>
                     </thead>
                     <?php foreach($owner_table as $o){ ?>

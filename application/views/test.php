@@ -38,6 +38,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script type="text/javascript" src="https://unpkg.com/xlsx/dist/shim.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
+<script type="text/javascript" src="https://unpkg.com/blob.js@1.0.1/Blob.js"></script>
+<script type="text/javascript" src="https://unpkg.com/file-saver@1.3.3/FileSaver.js"></script>
+
     <style>
     .swal2-modal {
     
@@ -577,5 +583,21 @@ document.getElementById("delete-btn").addEventListener("click", function(event) 
         });
 });
 </script>
+
+<script type="text/javascript">
+
+function doit(type, fn, dl) {
+    var elt = document.getElementById('example2');
+    var wb = XLSX.utils.table_to_book(elt, {sheet:"Sheet JS"});
+    return dl ?
+        XLSX.write(wb, {bookType:type, bookSST:true, type: 'base64'}) :
+        XLSX.writeFile(wb, fn || ('Database_Item.' + (type || 'xlsx')));
+}
+
+
+
+
+</script>
+
 </body>
 </html>

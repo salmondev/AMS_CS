@@ -15,7 +15,7 @@
                     <tr>
 						<th>STATUS RID</th>
 						<th>STATUS NAME</th>
-						<th>Actions</th>
+						<th>Options</th>
                     </tr>
                     </thead>
                     <?php foreach($status_table as $s){ ?>

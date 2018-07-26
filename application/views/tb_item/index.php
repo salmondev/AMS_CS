@@ -55,7 +55,7 @@
                   <th>Name</th>
                   <th>Detail</th>
                   <th>Date</th>
-                  <th>Actions</th>
+                  <th>Options</th>
                 </tr>
                 </tfoot>-->
               </table>

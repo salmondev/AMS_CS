@@ -16,7 +16,7 @@
 						<th>FLOOR RID</th>
 						<th>FLOOR NUMBER</th>
 						<th>BUILDING RID</th>
-						<th>Actions</th>
+						<th>Options</th>
                     </tr>
                     </thead>
                     <?php foreach($floor_table as $f){ ?>
