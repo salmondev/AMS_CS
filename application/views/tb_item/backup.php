@@ -14,7 +14,7 @@
 						<th>Name</th>
 						<th>Date</th>
 						<th>Detail</th>
-						<th>Actions</th>
+						<th>Options</th>
                     </tr>
                     <?php foreach($tb_item as $t){ ?>
                     <tr>

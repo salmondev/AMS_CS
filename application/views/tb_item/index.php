@@ -9,52 +9,44 @@
 
 <div class="row">
     <div class="col-md-12">
-    <div class="box">
+        <div class="box">
             <div class="box-header">
-              <!-- <h3 class="box-title">Tb Item Listing</h3> -->
-              <div class="box-title">
-                    <a href="<?php echo site_url('tb_item/add'); ?>" class="btn btn-success btn-lg">ADD ITEM</a>
+            <div class="box-title">
+                    <a href="<?php echo site_url('item_table/add'); ?>" class="btn btn-success btn-lg">ADD ITEM</a>
                     </br></br> 
                     <p id="xportxlsx" class="xport"><input type="submit" value="EXPORT" class="btn btn-primary" onclick="doit('xlsx');"></p>
 
                 </div>
             </div>
-            <!-- /.box-header -->
             <div class="box-body">
-              <table id="example2" class="table table-bordered table-striped">
+                <table id="example2" class="table table-striped">
                 <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Name</th>
-                  <th>Detail</th>
-                  <th>Updated</th>
-                  <th>Options</th>
-                </tr>
-                </thead>
-
-                
-                <?php foreach($tb_item as $t){ ?>
                     <tr>
-						<td><?php echo $t['id']; ?></td>
-						<td><?php echo $t['name']; ?></td>
-						<td><?php echo $t['detail']; ?></td>
-						<td><?php echo $t['odate']; ?></td>
-						<td>
-                            <a href="<?php echo site_url('tb_item/edit/'.$t['id']); ?>" class="btn btn-info btn-sm"><span class="fa fa-pencil"></span> Edit</a> 
-                            <a onclick="sweet();" href="<?php echo site_url('tb_item/remove/'.$t['id']); ?>" class="btn btn-danger btn-sm"><span class="fa fa-trash"></span> Delete</a>
-                            
- 
-                        </td>
+						<th>ITEM UID</th>
+						<th>ITEM SERIAL</th>
+						<th>ITEM NAME</th>
+						<th>Options</th>
+                    </tr>
+                    </thead>
+                    <?php foreach($item_table as $i){ ?>
+                    <tr>
+						<td><?php echo $i['ITEM_UID']; ?></td>
+						<td><?php echo $i['ITEM_SERIAL']; ?></td>
+						<td><?php echo $i['ITEM_NAME']; ?></td>
+						
                     </tr>
                     <?php } ?>
+<<<<<<< HEAD
               </table>
+=======
+                </table>
+                                
+>>>>>>> 632eb0d930cb5a03e0676fe8a1ed4b01fd1e18f8
             </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-        
+        </div>
     </div>
 </div>
+
 
 <script type="text/javascript">
 

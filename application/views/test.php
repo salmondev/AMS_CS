@@ -10,7 +10,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>iTemtracker</title>
+    <title>EasyQR</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('bower_components/bootstrap/dist/css/bootstrap.min.css');?>">
@@ -38,6 +38,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script type="text/javascript" src="https://unpkg.com/xlsx/dist/shim.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
+<script type="text/javascript" src="https://unpkg.com/blob.js@1.0.1/Blob.js"></script>
+<script type="text/javascript" src="https://unpkg.com/file-saver@1.3.3/FileSaver.js"></script>
+
     <style>
     .swal2-modal {
     
@@ -72,7 +78,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Main Header -->
         <header class="main-header">
           <!-- Logo -->
-          <a href="home" class="logo">
+          <a href="<?php echo site_url('test/index/test');?>" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b></b>CS</span>
             <!-- logo for regular state and mobile devices -->
@@ -265,7 +271,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <li class="header">SYSTEM</li>
         <!-- Optionally, you can add icons to the links -->
         <li ><a href="<?php echo site_url('dashboard/index/dashboard') ?>"><i class="fa fa-gears"></i> <span>Dashboard</span></a></li>
-        <li ><a href="<?php echo site_url('tb_item/index/index') ?>"><i class="fa fa-database"></i> <span>Database</span></a></li>
+        <li ><a href="<?php echo site_url('item_table/index2/demo') ?>"><i class="fa fa-database"></i> <span>ITEM LIST</span></a></li>
         <li class="treeview class="active menu-open"">
           <a href="#"><i class="fa fa-globe"></i> <span>Tracking System</span>
           <span class="pull-right-container">
@@ -277,6 +283,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <li><a href="#"><i class="fa fa-rocket"></i>Tracking</a></li>
         </ul>
       </li>
+      <li class="header">DATABASE</li>
+      <li class="treeview class="active menu-open"">
+        <a href="#"><i class="fa fa-database"></i> <span>DATABASE</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="<?php echo site_url('building_table/index/index');?>"><i class="fa fa-institution"></i>Building</a></li>
+          <li><a href="<?php echo site_url('floor_table/index/index');?>"><i class="fa fa-server"></i>Floor</a></li>
+          <li><a href="<?php echo site_url('item_table/index/index');?>"><i class="fa fa-cubes"></i>Item</a></li>
+          <li><a href="<?php echo site_url('owner_table/index/index');?>"><i class="fa fa-address-card"></i>Owner</a></li>
+          <li><a href="<?php echo site_url('room_table/index/index');?>"><i class="fa fa-wrench"></i>Room</a></li>
+          <li><a href="<?php echo site_url('status_table/index/index');?>"><i class="fa fa-toggle-on"></i>Status</a></li>
+          <li><a href="<?php echo site_url('history_table/index/index');?>"><i class="fa fa-history"></i>History</a></li>
+        
+        </li>
+        </ul>
     </ul>
     <!-- /.sidebar-menu -->
   </section>
@@ -287,7 +311,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-    ItemTracker
+    EasyQR
     <small>Smartphone Application</small>
     </h1>
     <ol class="breadcrumb">
@@ -500,5 +524,21 @@ document.getElementById("delete-btn").addEventListener("click", function(event) 
         });
 });
 </script>
+
+<script type="text/javascript">
+
+function doit(type, fn, dl) {
+    var elt = document.getElementById('example2');
+    var wb = XLSX.utils.table_to_book(elt, {sheet:"Sheet JS"});
+    return dl ?
+        XLSX.write(wb, {bookType:type, bookSST:true, type: 'base64'}) :
+        XLSX.writeFile(wb, fn || ('Database_Item.' + (type || 'xlsx')));
+}
+
+
+
+
+</script>
+
 </body>
 </html>
