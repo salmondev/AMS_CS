@@ -51,7 +51,7 @@ class Item_table extends CI_Controller{
     function edit($ITEM_UID)
     {   
         // check if the item_table exists before trying to edit it
-        $data['item_table'] = $this->Item_table_model->get_item_table($);
+        $data['item_table'] = $this->Item_table_model->get_item_table($ITEM_UID);
         
         if(isset($data['item_table']['']))
         {
@@ -63,7 +63,7 @@ class Item_table extends CI_Controller{
 					'ITEM_NAME' => $this->input->post('ITEM_NAME'),
                 );
 
-                $this->Item_table_model->update_item_table($,$params);            
+                $this->Item_table_model->update_item_table($ITEM_UID,$params);            
                 redirect('item_table/index');
             }
             else
@@ -79,14 +79,14 @@ class Item_table extends CI_Controller{
     /*
      * Deleting item_table
      */
-    function remove($)
+    function remove($ITEM_UID)
     {
-        $item_table = $this->Item_table_model->get_item_table($);
+        $item_table = $this->Item_table_model->get_item_table($ITEM_UID);
 
         // check if the item_table exists before trying to delete it
         if(isset($item_table['']))
         {
-            $this->Item_table_model->delete_item_table($);
+            $this->Item_table_model->delete_item_table($ITEM_UID);
             redirect('item_table/index');
         }
         else
