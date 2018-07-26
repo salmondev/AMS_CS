@@ -19,7 +19,7 @@ class Item_table extends CI_Controller{
         $data['item_table'] = $this->Item_table_model->get_all_item_table();
         
         $data['_view'] = 'item_table/index';
-        $this->load->view('layouts/main',$data);
+        $this->load->view('test',$data);
     }
 
     /*
@@ -41,14 +41,14 @@ class Item_table extends CI_Controller{
         else
         {            
             $data['_view'] = 'item_table/add';
-            $this->load->view('layouts/main',$data);
+            $this->load->view('test',$data);
         }
     }  
 
     /*
      * Editing a item_table
      */
-    function edit($)
+    function edit($ITEM_UID)
     {   
         // check if the item_table exists before trying to edit it
         $data['item_table'] = $this->Item_table_model->get_item_table($);
@@ -69,7 +69,7 @@ class Item_table extends CI_Controller{
             else
             {
                 $data['_view'] = 'item_table/edit';
-                $this->load->view('layouts/main',$data);
+                $this->load->view('test',$data);
             }
         }
         else

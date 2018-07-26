@@ -285,7 +285,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="<?php echo site_url('building_table/index/index');?>"><i class="fa fa-map-marker"></i>Map</a></li>
+          <li><a href="<?php echo site_url('building_table/index/index');?>"><i class="fa fa-database"></i>Building</a></li>
+          <li><a href="<?php echo site_url('floor_table/index/index');?>"><i class="fa fa-database"></i>Floor</a></li>
+          <li><a href="<?php echo site_url('item_table/index/index');?>"><i class="fa fa-database"></i>Item</a></li>
+          <li><a href="<?php echo site_url('owner_table/index/index');?>"><i class="fa fa-database"></i>Owner</a></li>
+          <li><a href="<?php echo site_url('room_table/index/index');?>"><i class="fa fa-database"></i>Room</a></li>
+          <li><a href="<?php echo site_url('status_table/index/index');?>"><i class="fa fa-database"></i>Status</a></li>
+          <li><a href="<?php echo site_url('history_table/index/index');?>"><i class="fa fa-database"></i>History</a></li>
+        
         </li>
         </ul>
     </ul>

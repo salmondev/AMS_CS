@@ -2,13 +2,16 @@
     <div class="col-md-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Building Table Listing</h3>
-            	<div class="box-tools">
-                    <a href="<?php echo site_url('building_table/add'); ?>" class="btn btn-success btn-sm">Add</a> 
+            <div class="box-title">
+                    <a href="<?php echo site_url('building_table/add'); ?>" class="btn btn-success btn-lg">ADD ITEM</a>
+                    </br></br> 
+                    <p id="xportxlsx" class="xport"><input type="submit" value="EXPORT" class="btn btn-primary" onclick="doit('xlsx');"></p>
+
                 </div>
             </div>
             <div class="box-body">
                 <table id="example2" class="table table-striped">
+                <thead>
                     <tr>
 						<th>BUILDING RID</th>
 						<th>BUILDING LAT</th>
@@ -16,6 +19,7 @@
 						<th>BUILDING NAME</th>
 						<th>Actions</th>
                     </tr>
+                    </thead>
                     <?php foreach($building_table as $b){ ?>
                     <tr>
 						<td><?php echo $b['BUILDING_RID']; ?></td>

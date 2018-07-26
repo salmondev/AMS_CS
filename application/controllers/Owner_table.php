@@ -19,7 +19,7 @@ class Owner_table extends CI_Controller{
         $data['owner_table'] = $this->Owner_table_model->get_all_owner_table();
         
         $data['_view'] = 'owner_table/index';
-        $this->load->view('layouts/main',$data);
+        $this->load->view('test',$data);
     }
 
     /*
@@ -41,7 +41,7 @@ class Owner_table extends CI_Controller{
         else
         {            
             $data['_view'] = 'owner_table/add';
-            $this->load->view('layouts/main',$data);
+            $this->load->view('test',$data);
         }
     }  
 
@@ -69,7 +69,7 @@ class Owner_table extends CI_Controller{
             else
             {
                 $data['_view'] = 'owner_table/edit';
-                $this->load->view('layouts/main',$data);
+                $this->load->view('test',$data);
             }
         }
         else

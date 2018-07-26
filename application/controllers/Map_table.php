@@ -19,7 +19,7 @@ class Map_table extends CI_Controller{
         $data['map_table'] = $this->Map_table_model->get_all_map_table();
         
         $data['_view'] = 'map_table/index';
-        $this->load->view('layouts/main',$data);
+        $this->load->view('test',$data);
     }
 
     /*
@@ -41,7 +41,7 @@ class Map_table extends CI_Controller{
         else
         {            
             $data['_view'] = 'map_table/add';
-            $this->load->view('layouts/main',$data);
+            $this->load->view('test',$data);
         }
     }  
 
@@ -69,7 +69,7 @@ class Map_table extends CI_Controller{
             else
             {
                 $data['_view'] = 'map_table/edit';
-                $this->load->view('layouts/main',$data);
+                $this->load->view('test',$data);
             }
         }
         else

@@ -19,7 +19,7 @@ class Room_table extends CI_Controller{
         $data['room_table'] = $this->Room_table_model->get_all_room_table();
         
         $data['_view'] = 'room_table/index';
-        $this->load->view('layouts/main',$data);
+        $this->load->view('test',$data);
     }
 
     /*
@@ -40,7 +40,7 @@ class Room_table extends CI_Controller{
         else
         {            
             $data['_view'] = 'room_table/add';
-            $this->load->view('layouts/main',$data);
+            $this->load->view('test',$data);
         }
     }  
 
@@ -67,7 +67,7 @@ class Room_table extends CI_Controller{
             else
             {
                 $data['_view'] = 'room_table/edit';
-                $this->load->view('layouts/main',$data);
+                $this->load->view('test',$data);
             }
         }
         else

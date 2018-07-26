@@ -19,7 +19,7 @@ class Floor_table extends CI_Controller{
         $data['floor_table'] = $this->Floor_table_model->get_all_floor_table();
         
         $data['_view'] = 'floor_table/index';
-        $this->load->view('layouts/main',$data);
+        $this->load->view('test',$data);
     }
 
     /*
@@ -40,7 +40,7 @@ class Floor_table extends CI_Controller{
         else
         {            
             $data['_view'] = 'floor_table/add';
-            $this->load->view('layouts/main',$data);
+            $this->load->view('test',$data);
         }
     }  
 
@@ -67,7 +67,7 @@ class Floor_table extends CI_Controller{
             else
             {
                 $data['_view'] = 'floor_table/edit';
-                $this->load->view('layouts/main',$data);
+                $this->load->view('test',$data);
             }
         }
         else

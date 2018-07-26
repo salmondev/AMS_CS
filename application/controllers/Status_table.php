@@ -19,7 +19,7 @@ class Status_table extends CI_Controller{
         $data['status_table'] = $this->Status_table_model->get_all_status_table();
         
         $data['_view'] = 'status_table/index';
-        $this->load->view('layouts/main',$data);
+        $this->load->view('test',$data);
     }
 
     /*
@@ -39,7 +39,7 @@ class Status_table extends CI_Controller{
         else
         {            
             $data['_view'] = 'status_table/add';
-            $this->load->view('layouts/main',$data);
+            $this->load->view('test',$data);
         }
     }  
 
@@ -65,7 +65,7 @@ class Status_table extends CI_Controller{
             else
             {
                 $data['_view'] = 'status_table/edit';
-                $this->load->view('layouts/main',$data);
+                $this->load->view('test',$data);
             }
         }
         else

@@ -19,7 +19,7 @@ class History_table extends CI_Controller{
         $data['history_table'] = $this->History_table_model->get_all_history_table();
         
         $data['_view'] = 'history_table/index';
-        $this->load->view('layouts/main',$data);
+        $this->load->view('test',$data);
     }
 
     /*
@@ -54,7 +54,7 @@ class History_table extends CI_Controller{
         else
         {            
             $data['_view'] = 'history_table/add';
-            $this->load->view('layouts/main',$data);
+            $this->load->view('test',$data);
         }
     }  
 
@@ -95,7 +95,7 @@ class History_table extends CI_Controller{
             else
             {
                 $data['_view'] = 'history_table/edit';
-                $this->load->view('layouts/main',$data);
+                $this->load->view('test',$data);
             }
         }
         else
