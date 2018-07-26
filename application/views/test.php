@@ -291,13 +291,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="<?php echo site_url('building_table/index/index');?>"><i class="fa fa-institution"></i>Building</a></li>
-          <li><a href="<?php echo site_url('floor_table/index/index');?>"><i class="fa fa-server"></i>Floor</a></li>
-          <li><a href="<?php echo site_url('item_table/index/index');?>"><i class="fa fa-cubes"></i>Item</a></li>
-          <li><a href="<?php echo site_url('owner_table/index/index');?>"><i class="fa fa-address-card"></i>Owner</a></li>
-          <li><a href="<?php echo site_url('room_table/index/index');?>"><i class="fa fa-wrench"></i>Room</a></li>
-          <li><a href="<?php echo site_url('status_table/index/index');?>"><i class="fa fa-toggle-on"></i>Status</a></li>
-          <li><a href="<?php echo site_url('history_table/index/index');?>"><i class="fa fa-history"></i>History</a></li>
+          <li><a href="<?php echo site_url('building_table/index/index');?>"><i class="fa fa-institution"></i><span>Building</span></a></li>
+          <li><a href="<?php echo site_url('floor_table/index/index');?>"><i class="fa fa-server"></i>        <span>Floor   </span></a></li>
+          <li><a href="<?php echo site_url('item_table/index/index');?>"><i class="fa fa-cubes"></i>          <span>Item    </span></a></li>
+          <li><a href="<?php echo site_url('owner_table/index/index');?>"><i class="fa fa-address-card"></i>  <span>Owner   </span></a></li>
+          <li><a href="<?php echo site_url('room_table/index/index');?>"><i class="fa fa-wrench"></i>         <span>Room    </span></a></li>
+          <li><a href="<?php echo site_url('status_table/index/index');?>"><i class="fa fa-toggle-on"></i>    <span>Status  </span></a></li>
+          <li><a href="<?php echo site_url('history_table/index/index');?>"><i class="fa fa-history"></i>     <span>History </span></a></li>
         
         </li>
         </ul>
