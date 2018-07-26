@@ -22,6 +22,14 @@ class Item_table extends CI_Controller{
         $this->load->view('test',$data);
     }
 
+    function index2()
+    {
+        $data['item_table'] = $this->Item_table_model->get_all_item_table();
+        
+        $data['_view'] = 'item_table/demo';
+        $this->load->view('test',$data);
+    }
+
     /*
      * Adding a new item_table
      */

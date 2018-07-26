@@ -271,7 +271,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <li class="header">SYSTEM</li>
         <!-- Optionally, you can add icons to the links -->
         <li ><a href="<?php echo site_url('dashboard/index/dashboard') ?>"><i class="fa fa-gears"></i> <span>Dashboard</span></a></li>
-        <li ><a href="<?php echo site_url('tb_item/index/index') ?>"><i class="fa fa-database"></i> <span>Database</span></a></li>
+        <li ><a href="<?php echo site_url('item_table/index2/demo') ?>"><i class="fa fa-database"></i> <span>Database</span></a></li>
         <li class="treeview class="active menu-open"">
           <a href="#"><i class="fa fa-globe"></i> <span>Tracking System</span>
           <span class="pull-right-container">
