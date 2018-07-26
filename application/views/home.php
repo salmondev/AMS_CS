@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!doctype html>
 <html lang="en">
   <head>
-    <title>ItemTracker</title>
+    <title>EasyQR</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div style="margin: 2%;">
     <div id="block_container">
     <!--<div id="bloc1"><i class="fas fa-code" style="font-size: 4em;"></i></div> -->
-    <div id="bloc2"><h1 class="display-4 text-primary"> ItemTracker <h1> </div>  
+    <div id="bloc2"><h1 class="display-4 text-primary"> EasyQR <h1> </div>  
 </div>
 <br>
 <!--<div style="margin-top: 2%;">
@@ -57,8 +57,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   
 <!-- left Bordered -->
   <blockquote class="blockquote-v1 blockquote-v1--left">
-  <p>Itemtracker can track item you want. App can locate position geolocation with QR Code scan by Smartphone application.</p>
-  <footer class="blockquote-footer">ItemTracker</footer>
+  <p>EasyQR can track item you want. App can locate position geolocation with QR Code scan by Smartphone application.</p>
+  <footer class="blockquote-footer">EasyQR</footer>
   </blockquote>
 <!-- End left Bordered -->
 

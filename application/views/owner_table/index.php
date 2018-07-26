@@ -3,7 +3,7 @@
         <div class="box">
             <div class="box-header">
             <div class="box-title">
-                    <a href="<?php echo site_url('tb_item/add'); ?>" class="btn btn-success btn-lg">ADD ITEM</a>
+                    <a href="<?php echo site_url('owner_table/add'); ?>" class="btn btn-success btn-lg">ADD OWNER</a>
                     </br></br> 
                     <p id="xportxlsx" class="xport"><input type="submit" value="EXPORT" class="btn btn-primary" onclick="doit('xlsx');"></p>
 
