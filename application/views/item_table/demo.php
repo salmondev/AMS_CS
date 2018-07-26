@@ -12,9 +12,8 @@
         <div class="box">
             <div class="box-header">
             <div class="box-title">
-                    <a href="<?php echo site_url('item_table/add'); ?>" class="btn btn-success btn-lg">ADD ITEM</a>
-                    </br></br> 
-                    <p id="xportxlsx" class="xport"><input type="submit" value="EXPORT" class="btn btn-primary" onclick="doit('xlsx');"></p>
+                     
+                    <p id="xportxlsx" class="xport"><input type="submit" value="EXPORT EXCEL" class="btn btn-primary btn-lg" onclick="doit('xlsx');"></p>
 
                 </div>
             </div>
