@@ -2,13 +2,16 @@
     <div class="col-md-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">History Table Listing</h3>
-            	<div class="box-tools">
-                    <a href="<?php echo site_url('history_table/add'); ?>" class="btn btn-success btn-sm">Add</a> 
+			<div class="box-title">
+                    <a href="<?php echo site_url('tb_item/add'); ?>" class="btn btn-success btn-lg">ADD ITEM</a>
+                    </br></br> 
+                    <p id="xportxlsx" class="xport"><input type="submit" value="EXPORT" class="btn btn-primary" onclick="doit('xlsx');"></p>
+
                 </div>
             </div>
             <div class="box-body">
-                <table class="table table-striped">
+                <table id="example2" class="table table-striped">
+				<thead>
                     <tr>
 						<th>HISTORY RID</th>
 						<th>HISTORY OWNER UID</th>
@@ -29,6 +32,7 @@
 						<th>HISTORY BUILDING NAME</th>
 						<th>Actions</th>
                     </tr>
+					</thead>
                     <?php foreach($history_table as $h){ ?>
                     <tr>
 						<td><?php echo $h['HISTORY_RID']; ?></td>

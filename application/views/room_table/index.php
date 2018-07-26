@@ -2,19 +2,23 @@
     <div class="col-md-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Room Table Listing</h3>
-            	<div class="box-tools">
-                    <a href="<?php echo site_url('room_table/add'); ?>" class="btn btn-success btn-sm">Add</a> 
+            <div class="box-title">
+                    <a href="<?php echo site_url('tb_item/add'); ?>" class="btn btn-success btn-lg">ADD ITEM</a>
+                    </br></br> 
+                    <p id="xportxlsx" class="xport"><input type="submit" value="EXPORT" class="btn btn-primary" onclick="doit('xlsx');"></p>
+
                 </div>
             </div>
             <div class="box-body">
-                <table class="table table-striped">
+                <table id="example2" class="table table-striped">
+                <thead>
                     <tr>
 						<th>ROOM RID</th>
 						<th>ROOM NUMBER</th>
 						<th>FLOOR RID</th>
 						<th>Actions</th>
                     </tr>
+                    </thead>
                     <?php foreach($room_table as $r){ ?>
                     <tr>
 						<td><?php echo $r['ROOM_RID']; ?></td>

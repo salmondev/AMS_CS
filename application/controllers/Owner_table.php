@@ -48,10 +48,10 @@ class Owner_table extends CI_Controller{
     /*
      * Editing a owner_table
      */
-    function edit($)
+    function edit($OWNER_UID)
     {   
         // check if the owner_table exists before trying to edit it
-        $data['owner_table'] = $this->Owner_table_model->get_owner_table($);
+        $data['owner_table'] = $this->Owner_table_model->get_owner_table($OWNER_UID);
         
         if(isset($data['owner_table']['']))
         {
@@ -63,7 +63,7 @@ class Owner_table extends CI_Controller{
 					'OWNER_LNAME' => $this->input->post('OWNER_LNAME'),
                 );
 
-                $this->Owner_table_model->update_owner_table($,$params);            
+                $this->Owner_table_model->update_owner_table($OWNER_UID,$params);            
                 redirect('owner_table/index');
             }
             else
@@ -79,14 +79,14 @@ class Owner_table extends CI_Controller{
     /*
      * Deleting owner_table
      */
-    function remove($)
+    function remove($OWNER_UID)
     {
-        $owner_table = $this->Owner_table_model->get_owner_table($);
+        $owner_table = $this->Owner_table_model->get_owner_table($OWNER_UID);
 
         // check if the owner_table exists before trying to delete it
         if(isset($owner_table['']))
         {
-            $this->Owner_table_model->delete_owner_table($);
+            $this->Owner_table_model->delete_owner_table($OWNER_UID);
             redirect('owner_table/index');
         }
         else

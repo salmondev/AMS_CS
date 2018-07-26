@@ -14,9 +14,9 @@ class Owner_table_model extends CI_Model
     /*
      * Get owner_table by 
      */
-    function get_owner_table($)
+    function get_owner_table($OWNER_UID)
     {
-        return $this->db->get_where('owner_table',array(''=>$))->row_array();
+        return $this->db->get_where('owner_table',array(''=>$OWNER_UID))->row_array();
     }
         
     /*
@@ -40,17 +40,17 @@ class Owner_table_model extends CI_Model
     /*
      * function to update owner_table
      */
-    function update_owner_table($,$params)
+    function update_owner_table($OWNER_UID,$params)
     {
-        $this->db->where('',$);
+        $this->db->where('',$OWNER_UID);
         return $this->db->update('owner_table',$params);
     }
     
     /*
      * function to delete owner_table
      */
-    function delete_owner_table($)
+    function delete_owner_table($OWNER_UID)
     {
-        return $this->db->delete('owner_table',array(''=>$));
+        return $this->db->delete('owner_table',array(''=>$OWNER_UID));
     }
 }
