@@ -12,9 +12,7 @@
         <div class="box">
             <div class="box-header">
             <div class="box-title">
-                     
                     <p id="xportxlsx" class="xport"><input type="submit" value="EXPORT EXCEL" class="btn btn-primary btn-lg" onclick="doit('xlsx');"></p>
-
                 </div>
             </div>
             <div class="box-body">
