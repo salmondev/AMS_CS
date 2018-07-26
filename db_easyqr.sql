@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 25, 2018 at 11:50 AM
+-- Generation Time: Jul 26, 2018 at 04:14 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -35,6 +35,14 @@ CREATE TABLE `building_table` (
   `BUILDING_LONG` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `building_table`
+--
+
+INSERT INTO `building_table` (`BUILDING_RID`, `BUILDING_NAME`, `BUILDING_LAT`, `BUILDING_LONG`) VALUES
+(1, 'ท.101\r\n', 13.8113, 100.505),
+(2, 'ท.102\r\n', 13.8119, 100.505);
+
 -- --------------------------------------------------------
 
 --
@@ -46,6 +54,17 @@ CREATE TABLE `floor_table` (
   `FLOOR_NUMBER` int(11) NOT NULL,
   `BUILDING_RID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `floor_table`
+--
+
+INSERT INTO `floor_table` (`FLOOR_RID`, `FLOOR_NUMBER`, `BUILDING_RID`) VALUES
+(1, 12, 1),
+(2, 14, 1),
+(3, 1, 2),
+(4, 2, 2),
+(5, 3, 2);
 
 -- --------------------------------------------------------
 
@@ -84,6 +103,17 @@ CREATE TABLE `item_table` (
   `ITEM_SERIAL` text NOT NULL,
   `ITEM_NAME` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `item_table`
+--
+
+INSERT INTO `item_table` (`ITEM_UID`, `ITEM_SERIAL`, `ITEM_NAME`) VALUES
+('1234567812345678-0000\r\n', 'FQKY104\r\n', 'PC TYPE A\r\n'),
+('4122548563125484-0000\r\n', 'ABCJ201\r\n', 'PC TYPE B\r\n'),
+('2216546541648649-0000\r\n', 'GGWS201\r\n', 'PC TYPE C\r\n'),
+('7418896358874123-0000\r\n', 'QOSD201\r\n', 'PC TYPE B\r\n'),
+('9336579494651648-0000\r\n', 'HJTR201\r\n', 'PC TYPE B\r\n');
 
 -- --------------------------------------------------------
 
@@ -144,6 +174,17 @@ CREATE TABLE `room_table` (
   `FLOOR_RID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `room_table`
+--
+
+INSERT INTO `room_table` (`ROOM_RID`, `ROOM_NUMBER`, `FLOOR_RID`) VALUES
+(1, 1401, 2),
+(2, 1402, 2),
+(3, 1403, 2),
+(4, 1201, 1),
+(5, 1202, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -154,6 +195,17 @@ CREATE TABLE `status_table` (
   `STATUS_RID` int(11) NOT NULL,
   `STATUS_NAME` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `status_table`
+--
+
+INSERT INTO `status_table` (`STATUS_RID`, `STATUS_NAME`) VALUES
+(1, 'ปกติ\r\n'),
+(2, 'ชำรุด\r\n'),
+(3, 'เสีย\r\n'),
+(4, 'ซ่อม\r\n'),
+(5, 'สูญหาย\r\n');
 
 --
 -- Indexes for dumped tables
@@ -207,7 +259,7 @@ ALTER TABLE `status_table`
 -- AUTO_INCREMENT for table `floor_table`
 --
 ALTER TABLE `floor_table`
-  MODIFY `FLOOR_RID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `FLOOR_RID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `history_table`
@@ -225,13 +277,13 @@ ALTER TABLE `map_table`
 -- AUTO_INCREMENT for table `room_table`
 --
 ALTER TABLE `room_table`
-  MODIFY `ROOM_RID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ROOM_RID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `status_table`
 --
 ALTER TABLE `status_table`
-  MODIFY `STATUS_RID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `STATUS_RID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
