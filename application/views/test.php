@@ -99,7 +99,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Menu toggle button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-bell-o"></i>
-                  <span class="label label-warning">10</span>
+                  <span class="label label-danger">10</span>
                 </a>
                 <ul class="dropdown-menu">
                   <li class="header">You have 10 notifications</li>
@@ -242,7 +242,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </a>
         <ul class="treeview-menu">
           <li><a href="<?php echo site_url('map/index/map');?>"><i class="fa fa-map-marker"></i>Map</a></li>
-          <li><a href="#"><i class="fa fa-rocket"></i>Tracking</a></li>
+          <li><a href="<?php echo site_url('maptest/index/maptest');?>"><i class="fa fa-rocket"></i>Tracking</a></li>
         </ul>
       </li>
       <li class="header">DATABASE</li>
