@@ -80,9 +80,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Logo -->
           <a href="<?php echo site_url('test/index/test');?>" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b></b>CS</span>
+            <span class="logo-mini"><b></b>QR</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>ADMIN</b>CS</span>
+            <span class="logo-lg"><b>AD</b>MIN</span>
           </a>
           <!-- Header Navbar -->
           <nav class="navbar navbar-static-top" role="navigation">
