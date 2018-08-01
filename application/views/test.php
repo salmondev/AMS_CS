@@ -1,11 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
+
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
 <html>
   <head>
     <meta charset="utf-8">
@@ -53,26 +50,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     </head>
-    <!--
-    BODY TAG OPTIONS:
-    =================
-    Apply one or more of the following classes to get the
-    desired effect
-    |---------------------------------------------------------|
-    | SKINS         | skin-blue                               |
-    |               | skin-black                              |
-    |               | skin-purple                             |
-    |               | skin-yellow                             |
-    |               | skin-red                                |
-    |               | skin-green                              |
-    |---------------------------------------------------------|
-    |LAYOUT OPTIONS | fixed                                   |
-    |               | layout-boxed                            |
-    |               | layout-top-nav                          |
-    |               | sidebar-collapse                        |
-    |               | sidebar-mini                            |
-    |---------------------------------------------------------|
-    -->
+    
     <body class="hold-transition skin-purple sidebar-mini">
       <div class="wrapper">
         <!-- Main Header -->
@@ -99,16 +77,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Menu toggle button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-bell-o"></i>
-                  <span class="label label-danger">10</span>
+                  <span class="label label-danger">1</span>
                 </a>
                 <ul class="dropdown-menu">
-                  <li class="header">You have 10 notifications</li>
+                  <li class="header">You have 1 notifications</li>
                   <li>
                     <!-- Inner Menu: contains the notifications -->
                     <ul class="menu">
                       <li><!-- start notification -->
                       <a href="#">
-                        <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                        <i class="fa fa-users text-aqua"></i> Demo Implement Today!
                       </a>
                     </li>
                     <!-- end notification -->
@@ -233,7 +211,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <li class="header">SYSTEM</li>
         <!-- Optionally, you can add icons to the links -->
         <li ><a href="<?php echo site_url('dashboard/index/dashboard') ?>"><i class="fa fa-gears"></i> <span>Dashboard</span></a></li>
-        <li ><a href="<?php echo site_url('item_table/index2/demo') ?>"><i class="fa fa-database"></i> <span>ITEM LIST</span></a></li>
+        <li ><a href="<?php echo site_url('item_table/index2/demo') ?>"><i class="fa fa-code-fork"></i> <span>ITEM LIST</span></a></li>
         <li class="treeview class="active menu-open"">
           <a href="#"><i class="fa fa-globe"></i> <span>Tracking System</span>
           <span class="pull-right-container">
@@ -255,7 +233,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <ul class="treeview-menu">
           <li><a href="<?php echo site_url('building_table/index/index');?>"><i class="fa fa-institution"></i>Building</a></li>
           <li><a href="<?php echo site_url('floor_table/index/index');?>"><i class="fa fa-server"></i>Floor</a></li>
-          <li><a href="<?php echo site_url('item_table/index/index');?>"><i class="fa fa-cubes"></i>Item</a></li>
+          <li><a href="<?php echo site_url('item_table/index/index');?>"><i class="fa fa-cubes"></i> Item</a></li>
           <li><a href="<?php echo site_url('owner_table/index/index');?>"><i class="fa fa-address-card"></i>Owner</a></li>
           <li><a href="<?php echo site_url('room_table/index/index');?>"><i class="fa fa-wrench"></i>Room</a></li>
           <li><a href="<?php echo site_url('status_table/index/index');?>"><i class="fa fa-toggle-on"></i>Status</a></li>
@@ -452,66 +430,6 @@ $('ul.treeview-menu a').filter(function() {
 function sweet() {
     swal("Deleted!", "Your imaginary file has been deleted.", "success")
 }
-/*
-// Sweet Alert 2< echo site_url('tb_item/remove/'.$t['id']); ?>
-function sweet() {
-    //event.preventDefault(); // prevent form submit
-    //var form = event.target.form; // storing the form
-    swal({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-        if (result.value) {
-            swal(
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
-            )
-        }
-    })
-}*/
-/*
-/// Ajax sweetalert2
-function SwalDelete(id) {
-    swal({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!',
-        showLoaderOnConfirm: true,
-        preConfirm: function() {
-            return new Promise(function(resolve) {
-                $.ajax({
-                        url: 'delete.php',
-                        type: 'POST',
-                        data: 'delete=' + id,
-                        dataType: 'json'
-                    })
-                    .done(function(response) {
-                        swal('Deleted!', response.message, response.status);
-                        readProducts();
-                    })
-                    .fail(function() {
-                        swal('Oops...', 'Something went wrong with ajax !', 'error');
-                    });
-            });
-        },
-        allowOutsideClick: false
-    });
-}
-$(document).on('click', '#delete_product', function(e) {
-    var id = $(this).data('id');
-    SwalDelete(id);
-    e.preventDefault();
-});*/
 
 function goBack() {
     window.history.back();
