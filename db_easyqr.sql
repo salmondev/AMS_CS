@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 26, 2018 at 04:14 AM
+-- Generation Time: Aug 01, 2018 at 05:28 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -99,7 +99,8 @@ CREATE TABLE `history_table` (
 --
 
 CREATE TABLE `item_table` (
-  `ITEM_UID` text NOT NULL,
+  `ITEM_ID` int(11) NOT NULL,
+  `ITEM_UID` varchar(50) NOT NULL,
   `ITEM_SERIAL` text NOT NULL,
   `ITEM_NAME` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -108,12 +109,14 @@ CREATE TABLE `item_table` (
 -- Dumping data for table `item_table`
 --
 
-INSERT INTO `item_table` (`ITEM_UID`, `ITEM_SERIAL`, `ITEM_NAME`) VALUES
-('1234567812345678-0000\r\n', 'FQKY104\r\n', 'PC TYPE A\r\n'),
-('4122548563125484-0000\r\n', 'ABCJ201\r\n', 'PC TYPE B\r\n'),
-('2216546541648649-0000\r\n', 'GGWS201\r\n', 'PC TYPE C\r\n'),
-('7418896358874123-0000\r\n', 'QOSD201\r\n', 'PC TYPE B\r\n'),
-('9336579494651648-0000\r\n', 'HJTR201\r\n', 'PC TYPE B\r\n');
+INSERT INTO `item_table` (`ITEM_ID`, `ITEM_UID`, `ITEM_SERIAL`, `ITEM_NAME`) VALUES
+(1, '1234567812345678-0000', 'FQKY104\r\n', 'PC TYPE A\r\n'),
+(2, '13254125478-0000', '5S2V3X4', 'SERVER A'),
+(3, '2216546541648649-0000', 'GGWS201\r\n', 'PC TYPE C\r\n'),
+(4, '4122548563125484-0000', 'ABCJ201\r\n', 'PC TYPE B\r\n'),
+(5, '7418896358874123-0000', 'QOSD201\r\n', 'PC TYPE B\r\n'),
+(6, '9336579494651648-0000', 'HJTR201\r\n', 'PC TYPE B\r\n'),
+(7, '0001', 'ADD001', 'test add');
 
 -- --------------------------------------------------------
 
@@ -146,7 +149,7 @@ INSERT INTO `map_table` (`MAP_RID`, `MAP_IMG`, `MAP_NAME`, `MAP_STATUS`) VALUES
 --
 
 CREATE TABLE `owner_table` (
-  `OWNER_UID` varchar(100) NOT NULL,
+  `OWNER_UID` int(100) NOT NULL,
   `OWNER_FNAME` varchar(100) NOT NULL,
   `OWNER_LNAME` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -156,11 +159,11 @@ CREATE TABLE `owner_table` (
 --
 
 INSERT INTO `owner_table` (`OWNER_UID`, `OWNER_FNAME`, `OWNER_LNAME`) VALUES
-('00456312\r\n', 'Rittinan\r\n', 'Chanpen\r\n'),
-('00752163\r\n', 'Ittison\r\n', 'Ngamwong\r\n'),
-('00932451\r\n', 'Peeranut\r\n', 'Deejung\r\n'),
-('00154262\r\n', 'Sukrit\r\n', 'Ampon\r\n'),
-('00531452\r\n', 'Pairat\r\n', 'Paisan\r\n');
+(154262, 'Sukrit\r\n', 'Ampon\r\n'),
+(456312, 'Rittinan\r\n', 'Chanpen\r\n'),
+(531452, 'Pairat\r\n', 'Paisan\r\n'),
+(752163, 'Ittison\r\n', 'Ngamwong\r\n'),
+(932451, 'Peeranut\r\n', 'Deejung\r\n');
 
 -- --------------------------------------------------------
 
@@ -233,10 +236,24 @@ ALTER TABLE `history_table`
   ADD KEY `MAP_RID` (`MAP_RID`);
 
 --
+-- Indexes for table `item_table`
+--
+ALTER TABLE `item_table`
+  ADD PRIMARY KEY (`ITEM_ID`),
+  ADD UNIQUE KEY `ITEM_UID` (`ITEM_UID`),
+  ADD KEY `ITEM_ID` (`ITEM_ID`) USING BTREE;
+
+--
 -- Indexes for table `map_table`
 --
 ALTER TABLE `map_table`
   ADD PRIMARY KEY (`MAP_RID`);
+
+--
+-- Indexes for table `owner_table`
+--
+ALTER TABLE `owner_table`
+  ADD PRIMARY KEY (`OWNER_UID`);
 
 --
 -- Indexes for table `room_table`
@@ -266,6 +283,12 @@ ALTER TABLE `floor_table`
 --
 ALTER TABLE `history_table`
   MODIFY `HISTORY_RID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `item_table`
+--
+ALTER TABLE `item_table`
+  MODIFY `ITEM_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `map_table`
