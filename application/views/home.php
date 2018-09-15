@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!doctype html>
 <html lang="en">
   <head>
-    <title>EasyQR</title>
+    <title>AMS</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div style="margin: 2%;">
     <div id="block_container">
     <!--<div id="bloc1"><i class="fas fa-code" style="font-size: 4em;"></i></div> -->
-    <div id="bloc2"><h1 class="display-4 text-primary"> EasyQR <h1> </div>  
+    <div id="bloc2"><h1 class="display-4 text-primary"> Asset Management System with NFC <h1> </div>  
 </div>
 <br>
 <!--<div style="margin-top: 2%;">
@@ -57,13 +57,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   
 <!-- left Bordered -->
   <blockquote class="blockquote-v1 blockquote-v1--left">
-  <p>EasyQR can track item you want. App can locate position geolocation with QR Code scan by Smartphone application.</p>
-  <footer class="blockquote-footer">EasyQR</footer>
+  <p>AMS can track asset you want. App can show detail asset with NFC scan by Smartphone application.</p>
+  <footer class="blockquote-footer">AMS</footer>
   </blockquote>
 <!-- End left Bordered -->
 
 <br>
-<a class="btn btn-outline-info btn-lg btn-block" target="_blank" href="http://qrtracker.org/" role="button">QR CODE</a>
+<a class="btn btn-outline-info btn-lg btn-block" target="_blank" href="https://en.wikipedia.org/wiki/Near-field_communication" role="button">NFC</a>
 </div>
 <br>
 <!-- Block -->
