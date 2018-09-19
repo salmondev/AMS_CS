@@ -87,6 +87,7 @@ class Item_table extends CI_Controller{
     /*
      * Deleting item_table
      */
+	
     function remove($ITEM_UID)
     {
         $item_table = $this->Item_table_model->get_item_table($ITEM_UID);

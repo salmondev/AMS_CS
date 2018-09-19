@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   
 <!-- left Bordered -->
   <blockquote class="blockquote-v1 blockquote-v1--left">
-  <p>AMS can track asset you want. App can show detail asset with NFC scan by Smartphone application.</p>
+  <p>AMS can track the asset. App can show detail asset with NFC scan by Smartphone application.</p>
   <footer class="blockquote-footer">AMS</footer>
   </blockquote>
 <!-- End left Bordered -->

@@ -272,6 +272,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Optionally, you can add icons to the links -->
         <li ><a href="<?php echo site_url('dashboard/index/dashboard') ?>"><i class="fa fa-gears"></i> <span>Dashboard</span></a></li>
         <li ><a href="<?php echo site_url('item_table/index2/demo') ?>"><i class="fa fa-database"></i> <span>ITEM LIST</span></a></li>
+				<li ><a href="<?php echo site_url('save/index/savedata') ?>"><i class="fa fa-database"></i> <span>SAVE DATA</span></a></li>
         <li class="treeview class="active menu-open"">
           <a href="#"><i class="fa fa-globe"></i> <span>Tracking System</span>
           <span class="pull-right-container">
@@ -311,8 +312,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-    EasyQR
-    <small>Smartphone Application</small>
+    AMS
+    <small>Asset Management System</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
