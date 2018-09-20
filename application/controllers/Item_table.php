@@ -38,9 +38,9 @@ class Item_table extends CI_Controller{
         if(isset($_POST) && count($_POST) > 0)     
         {   
             $params = array(
-				'ITEM_UID' => $this->input->post('ITEM_UID'),
-				'ITEM_SERIAL' => $this->input->post('ITEM_SERIAL'),
-				'ITEM_NAME' => $this->input->post('ITEM_NAME'),
+				'item_uid' => $this->input->post('item_uid'),
+				'item_serial' => $this->input->post('item_serial'),
+				'item_name' => $this->input->post('item_name'),
             );
             
             $item_table_id = $this->Item_table_model->add_item_table($params);
@@ -56,22 +56,22 @@ class Item_table extends CI_Controller{
     /*
      * Editing a item_table
      */
-    function edit($ITEM_UID)
+    function edit($item_uid)
     {   
         // check if the item_table exists before trying to edit it
-        $data['item_table'] = $this->Item_table_model->get_item_table($ITEM_UID);
+        $data['item_table'] = $this->Item_table_model->get_item_table($item_uid);
         
         if(isset($data['item_table']['']))
         {
             if(isset($_POST) && count($_POST) > 0)     
             {   
                 $params = array(
-					'ITEM_UID' => $this->input->post('ITEM_UID'),
-					'ITEM_SERIAL' => $this->input->post('ITEM_SERIAL'),
-					'ITEM_NAME' => $this->input->post('ITEM_NAME'),
+					'item_uid' => $this->input->post('item_uid'),
+					'item_serial' => $this->input->post('item_serial'),
+					'item_name' => $this->input->post('item_name'),
                 );
 
-                $this->Item_table_model->update_item_table($ITEM_UID,$params);            
+                $this->Item_table_model->update_item_table($item_uid,$params);            
                 redirect('item_table/index');
             }
             else
@@ -88,14 +88,14 @@ class Item_table extends CI_Controller{
      * Deleting item_table
      */
 	
-    function remove($ITEM_UID)
+    function remove($item_uid)
     {
-        $item_table = $this->Item_table_model->get_item_table($ITEM_UID);
+        $item_table = $this->Item_table_model->get_item_table($item_uid);
 
         // check if the item_table exists before trying to delete it
         if(isset($item_table['']))
         {
-            $this->Item_table_model->delete_item_table($ITEM_UID);
+            $this->Item_table_model->delete_item_table($item_uid);
             redirect('item_table/index');
         }
         else

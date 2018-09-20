@@ -14,12 +14,12 @@ if ($conn->connect_error) {
 
 
 /*
-$ID=$_POST['ITEM_UID'];
-$Serial = $_POST['ITEM_SERIAL'];
-$Name = $_POST['ITEM_NAME'];
+$ID=$_POST['item_uid'];
+$Serial = $_POST['item_serial'];
+$Name = $_POST['item_name'];
 
 
-$sql = "INSERT INTO item_table (ITEM_UID,ITEM_SERIAL,ITEM_NAME)
+$sql = "INSERT INTO item_table (item_uid,item_serial,item_name)
 VALUES ('{$ID}','{$Serial}','{$Name}')";
 
 if ($conn->query($sql) === TRUE) {

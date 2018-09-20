@@ -74,7 +74,7 @@ INSERT INTO `floor_table` (`FLOOR_RID`, `FLOOR_NUMBER`, `BUILDING_RID`) VALUES
 
 CREATE TABLE `history_table` (
   `HISTORY_RID` int(11) NOT NULL,
-  `HISTORY_ITEM_UID` text NOT NULL,
+  `HISTORY_item_uid` text NOT NULL,
   `HISTORY_OWNER_UID` int(11) NOT NULL,
   `HISTORY_STATUS_NAME` text NOT NULL,
   `HISTORY_BUILDING_NAME` text NOT NULL,
@@ -99,16 +99,16 @@ CREATE TABLE `history_table` (
 --
 
 CREATE TABLE `item_table` (
-  `ITEM_UID` text NOT NULL,
-  `ITEM_SERIAL` text NOT NULL,
-  `ITEM_NAME` text NOT NULL
+  `item_uid` text NOT NULL,
+  `item_serial` text NOT NULL,
+  `item_name` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `item_table`
 --
 
-INSERT INTO `item_table` (`ITEM_UID`, `ITEM_SERIAL`, `ITEM_NAME`) VALUES
+INSERT INTO `item_table` (`item_uid`, `item_serial`, `item_name`) VALUES
 ('1234567812345678-0000\r\n', 'FQKY104\r\n', 'PC TYPE A\r\n'),
 ('4122548563125484-0000\r\n', 'ABCJ201\r\n', 'PC TYPE B\r\n'),
 ('2216546541648649-0000\r\n', 'GGWS201\r\n', 'PC TYPE C\r\n'),

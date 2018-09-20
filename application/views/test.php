@@ -10,7 +10,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>EasyQR</title>
+    <title>AMS</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('bower_components/bootstrap/dist/css/bootstrap.min.css');?>">
@@ -82,13 +82,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b></b>CS</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>ADMIN</b>CS</span>
+            <span class="logo-lg"><b>ADMIN</b></span>
           </a>
           <!-- Header Navbar -->
           <nav class="navbar navbar-static-top" role="navigation">
             <!-- Sidebar toggle button-->
             <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-              <span class="sr-only">Toggle navigation</span>
+              <span class="sr-only"></span>
             </a>
             <!-- Navbar Right Menu -->
             <div class="navbar-custom-menu">
@@ -98,10 +98,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- Menu toggle button -->
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <i class="fa fa-envelope-o"></i>
-                    <span class="label label-success">4</span>
+                    <span class="label label-success"></span>
                   </a>
                   <ul class="dropdown-menu">
-                    <li class="header">You have 4 messages</li>
+                    <li class="header"></li>
                     <li>
                       <!-- inner menu: contains the messages -->
                       <ul class="menu">
@@ -113,18 +113,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           </div>
                           <!-- Message title and timestamp -->
                           <h4>
-                          Support Team
-                          <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                          
+                          <small><i class="fa fa-clock-o"></i> </small>
                           </h4>
                           <!-- The message -->
-                          <p>Why not buy a new awesome theme?</p>
+                          <p></p>
                         </a>
                       </li>
                       <!-- end message -->
                     </ul>
                     <!-- /.menu -->
                   </li>
-                  <li class="footer"><a href="#">See All Messages</a></li>
+                  <li class="footer"><a href="#"></a></li>
                 </ul>
               </li>
               <!-- /.messages-menu -->
@@ -133,22 +133,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Menu toggle button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-bell-o"></i>
-                  <span class="label label-warning">10</span>
+                  <span class="label label-warning"></span>
                 </a>
                 <ul class="dropdown-menu">
-                  <li class="header">You have 10 notifications</li>
+                  <li class="header"></li>
                   <li>
                     <!-- Inner Menu: contains the notifications -->
                     <ul class="menu">
                       <li><!-- start notification -->
                       <a href="#">
-                        <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                        <i class="fa fa-users text-aqua"></i>
                       </a>
                     </li>
                     <!-- end notification -->
                   </ul>
                 </li>
-                <li class="footer"><a href="#">View all</a></li>
+                <li class="footer"><a href="#"></a></li>
               </ul>
             </li>
             <!-- Tasks Menu -->
@@ -156,10 +156,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- Menu Toggle Button -->
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-flag-o"></i>
-                <span class="label label-danger">9</span>
+                <span class="label label-danger"></span>
               </a>
               <ul class="dropdown-menu">
-                <li class="header">You have 9 tasks</li>
+                <li class="header"></li>
                 <li>
                   <!-- Inner menu: contains the tasks -->
                   <ul class="menu">
@@ -167,15 +167,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <a href="#">
                       <!-- Task title and progress text -->
                       <h3>
-                      Design some buttons
-                      <small class="pull-right">20%</small>
+                      <small class="pull-right"></small>
                       </h3>
                       <!-- The progress bar -->
                       <div class="progress xs">
                         <!-- Change the css width attribute to simulate progress -->
                         <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
                           aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">20% Complete</span>
+                          <span class="sr-only"></span>
                         </div>
                       </div>
                     </a>
@@ -193,14 +192,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="<?php echo base_url('dist/img/kojima.jpg');?>" class="user-image" alt="User Image">
+              <img src="<?php echo base_url('dist/img/admin.png');?>" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
               <span class="hidden-xs">ADMIN</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="<?php echo base_url('dist/img/kojima.jpg');?>" class="img-circle" alt="User Image">
+                <img src="<?php echo base_url('dist/img/admin.png');?>" class="img-circle" alt="User Image">
                 <p>
                   ADMIN
                   <small>Computer Science</small>
@@ -210,13 +209,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <li class="user-body">
                 <div class="row">
                   <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
+                    <a href="#"></a>
                   </div>
                   <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
+                    <a href="#"></a>
                   </div>
                   <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
+                    <a href="#"></a>
                   </div>
                 </div>
                 <!-- /.row -->
@@ -247,7 +246,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="<?php echo base_url('dist/img/kojima.jpg');?>" class="img-circle" alt="User Image">
+          <img src="<?php echo base_url('dist/img/admin.png');?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>ADMIN</p>
@@ -272,7 +271,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Optionally, you can add icons to the links -->
         <li ><a href="<?php echo site_url('dashboard/index/dashboard') ?>"><i class="fa fa-gears"></i> <span>Dashboard</span></a></li>
         <li ><a href="<?php echo site_url('item_table/index2/demo') ?>"><i class="fa fa-database"></i> <span>ITEM LIST</span></a></li>
-				<li ><a href="<?php echo site_url('save/index/savedata') ?>"><i class="fa fa-database"></i> <span>SAVE DATA</span></a></li>
         <li class="treeview class="active menu-open"">
           <a href="#"><i class="fa fa-globe"></i> <span>Tracking System</span>
           <span class="pull-right-container">

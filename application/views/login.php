@@ -34,7 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="home"><b>ADMIN</b>CS</a>
+    <a href="home"><b>ADMIN</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -52,9 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <div class="row">
         <div class="col-xs-8">
           <div class="checkbox icheck">
-            <label>
-              <input type="checkbox"> Remember Me
-            </label>
+            
           </div>
         </div>
         <!-- /.col -->
@@ -75,9 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- /.social-auth-links -->
 
 
-    <a href="#">I forgot my password</a><br>
-    <a href="register.html" class="text-center">Register a new membership</a>
-
+    
   </div>
   <!-- /.login-box-body -->
 </div>

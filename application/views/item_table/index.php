@@ -21,12 +21,12 @@
                     </thead>
                     <?php foreach($item_table as $i){ ?>
                     <tr>
-						<td><?php echo $i['ITEM_UID']; ?></td>
-						<td><?php echo $i['ITEM_SERIAL']; ?></td>
-						<td><?php echo $i['ITEM_NAME']; ?></td>
+						<td><?php echo $i['item_uid']; ?></td>
+						<td><?php echo $i['item_serial']; ?></td>
+						<td><?php echo $i['name']; ?></td>
 						<td>
-                            <a href="<?php echo site_url('item_table/edit/'.$i['ITEM_UID']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
-                            <a href="<?php echo site_url('item_table/remove/'.$i['ITEM_UID']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>
+                            <a href="<?php echo site_url('item_table/edit/'.$i['item_uid']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
+                            <a href="<?php echo site_url('item_table/remove/'.$i['item_uid']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>
                         </td>
                     </tr>
                     <?php } ?>

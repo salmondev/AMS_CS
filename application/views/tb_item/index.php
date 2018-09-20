@@ -30,9 +30,9 @@
                     </thead>
                     <?php foreach($item_table as $i){ ?>
                     <tr>
-						<td><?php echo $i['ITEM_UID']; ?></td>
-						<td><?php echo $i['ITEM_SERIAL']; ?></td>
-						<td><?php echo $i['ITEM_NAME']; ?></td>
+						<td><?php echo $i['item_uid']; ?></td>
+						<td><?php echo $i['item_serial']; ?></td>
+						<td><?php echo $i['item_name']; ?></td>
 						
                     </tr>
                     <?php } ?>

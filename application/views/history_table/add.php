@@ -86,9 +86,9 @@
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="HISTORY_ITEM_UID" class="control-label">HISTORY ITEM UID</label>
+						<label for="HISTORY_item_uid" class="control-label">HISTORY ITEM UID</label>
 						<div class="form-group">
-							<textarea name="HISTORY_ITEM_UID" class="form-control" id="HISTORY_ITEM_UID"><?php echo $this->input->post('HISTORY_ITEM_UID'); ?></textarea>
+							<textarea name="HISTORY_item_uid" class="form-control" id="HISTORY_item_uid"><?php echo $this->input->post('HISTORY_item_uid'); ?></textarea>
 						</div>
 					</div>
 					<div class="col-md-6">

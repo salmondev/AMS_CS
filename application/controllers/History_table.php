@@ -43,7 +43,7 @@ class History_table extends CI_Controller{
 				'HISTORY_POS_X' => $this->input->post('HISTORY_POS_X'),
 				'HISTORY_POS_Y' => $this->input->post('HISTORY_POS_Y'),
 				'MAP_RID' => $this->input->post('MAP_RID'),
-				'HISTORY_ITEM_UID' => $this->input->post('HISTORY_ITEM_UID'),
+				'HISTORY_item_uid' => $this->input->post('HISTORY_item_uid'),
 				'HISTORY_STATUS_NAME' => $this->input->post('HISTORY_STATUS_NAME'),
 				'HISTORY_BUILDING_NAME' => $this->input->post('HISTORY_BUILDING_NAME'),
             );
@@ -84,7 +84,7 @@ class History_table extends CI_Controller{
 					'HISTORY_POS_X' => $this->input->post('HISTORY_POS_X'),
 					'HISTORY_POS_Y' => $this->input->post('HISTORY_POS_Y'),
 					'MAP_RID' => $this->input->post('MAP_RID'),
-					'HISTORY_ITEM_UID' => $this->input->post('HISTORY_ITEM_UID'),
+					'HISTORY_item_uid' => $this->input->post('HISTORY_item_uid'),
 					'HISTORY_STATUS_NAME' => $this->input->post('HISTORY_STATUS_NAME'),
 					'HISTORY_BUILDING_NAME' => $this->input->post('HISTORY_BUILDING_NAME'),
                 );

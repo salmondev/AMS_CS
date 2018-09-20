@@ -8,21 +8,21 @@
           	<div class="box-body">
           		<div class="row clearfix">
 					<div class="col-md-6">
-						<label for="ITEM_UID" class="control-label">ITEM UID</label>
+						<label for="item_uid" class="control-label">ITEM UID</label>
 						<div class="form-group">
-							<textarea name="ITEM_UID" class="form-control" id="ITEM_UID"><?php echo $this->input->post('ITEM_UID'); ?></textarea>
+							<textarea name="item_uid" class="form-control" id="item_uid"><?php echo $this->input->post('item_uid'); ?></textarea>
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="ITEM_SERIAL" class="control-label">ITEM SERIAL</label>
+						<label for="item_serial" class="control-label">ITEM SERIAL</label>
 						<div class="form-group">
-							<textarea name="ITEM_SERIAL" class="form-control" id="ITEM_SERIAL"><?php echo $this->input->post('ITEM_SERIAL'); ?></textarea>
+							<textarea name="item_serial" class="form-control" id="item_serial"><?php echo $this->input->post('item_serial'); ?></textarea>
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="ITEM_NAME" class="control-label">ITEM NAME</label>
+						<label for="item_name" class="control-label">ITEM NAME</label>
 						<div class="form-group">
-							<textarea name="ITEM_NAME" class="form-control" id="ITEM_NAME"><?php echo $this->input->post('ITEM_NAME'); ?></textarea>
+							<textarea name="item_name" class="form-control" id="item_name"><?php echo $this->input->post('item_name'); ?></textarea>
 						</div>
 					</div>
 				</div>

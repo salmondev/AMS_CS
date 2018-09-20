@@ -14,9 +14,9 @@ class Item_table_model extends CI_Model
     /*
      * Get item_table by 
      */
-    function get_item_table($ITEM_UID)
+    function get_item_table($item_uid)
     {
-        return $this->db->get_where('item_table',array(''=>$ITEM_UID))->row_array();
+        return $this->db->get_where('item_table',array(''=>$item_uid))->row_array();
     }
         
     /*
@@ -40,17 +40,17 @@ class Item_table_model extends CI_Model
     /*
      * function to update item_table
      */
-    function update_item_table($ITEM_UID,$params)
+    function update_item_table($item_uid,$params)
     {
-        $this->db->where('',$ITEM_UID);
+        $this->db->where('',$item_uid);
         return $this->db->update('item_table',$params);
     }
     
     /*
      * function to delete item_table
      */
-    function delete_item_table($ITEM_UID)
+    function delete_item_table($item_uid)
     {
-        return $this->db->delete('item_table',array(''=>$ITEM_UID));
+        return $this->db->delete('item_table',array(''=>$item_uid));
     }
 }

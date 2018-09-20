@@ -49,7 +49,7 @@
 						<td><?php echo $h['HISTORY_POS_X']; ?></td>
 						<td><?php echo $h['HISTORY_POS_Y']; ?></td>
 						<td><?php echo $h['MAP_RID']; ?></td>
-						<td><?php echo $h['HISTORY_ITEM_UID']; ?></td>
+						<td><?php echo $h['HISTORY_item_uid']; ?></td>
 						<td><?php echo $h['HISTORY_STATUS_NAME']; ?></td>
 						<td><?php echo $h['HISTORY_BUILDING_NAME']; ?></td>
 						<td>
