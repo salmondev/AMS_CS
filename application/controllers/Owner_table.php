@@ -30,9 +30,9 @@ class Owner_table extends CI_Controller{
         if(isset($_POST) && count($_POST) > 0)     
         {   
             $params = array(
-				'OWNER_UID' => $this->input->post('OWNER_UID'),
-				'OWNER_FNAME' => $this->input->post('OWNER_FNAME'),
-				'OWNER_LNAME' => $this->input->post('OWNER_LNAME'),
+				'owner_uid' => $this->input->post('owner_uid'),
+				'owner_fname' => $this->input->post('owner_fname'),
+				'owner_lname' => $this->input->post('owner_lname'),
             );
             
             $owner_table_id = $this->Owner_table_model->add_owner_table($params);
@@ -48,22 +48,22 @@ class Owner_table extends CI_Controller{
     /*
      * Editing a owner_table
      */
-    function edit($OWNER_UID)
+    function edit($owner_uid)
     {   
         // check if the owner_table exists before trying to edit it
-        $data['owner_table'] = $this->Owner_table_model->get_owner_table($OWNER_UID);
+        $data['owner_table'] = $this->Owner_table_model->get_owner_table($owner_uid);
         
         if(isset($data['owner_table']['']))
         {
             if(isset($_POST) && count($_POST) > 0)     
             {   
                 $params = array(
-					'OWNER_UID' => $this->input->post('OWNER_UID'),
-					'OWNER_FNAME' => $this->input->post('OWNER_FNAME'),
-					'OWNER_LNAME' => $this->input->post('OWNER_LNAME'),
+					'owner_uid' => $this->input->post('owner_uid'),
+					'owner_fname' => $this->input->post('owner_fname'),
+					'owner_lname' => $this->input->post('owner_lname'),
                 );
 
-                $this->Owner_table_model->update_owner_table($OWNER_UID,$params);            
+                $this->Owner_table_model->update_owner_table($owner_uid,$params);            
                 redirect('owner_table/index');
             }
             else
@@ -79,14 +79,14 @@ class Owner_table extends CI_Controller{
     /*
      * Deleting owner_table
      */
-    function remove($OWNER_UID)
+    function remove($owner_uid)
     {
-        $owner_table = $this->Owner_table_model->get_owner_table($OWNER_UID);
+        $owner_table = $this->Owner_table_model->get_owner_table($owner_uid);
 
         // check if the owner_table exists before trying to delete it
         if(isset($owner_table['']))
         {
-            $this->Owner_table_model->delete_owner_table($OWNER_UID);
+            $this->Owner_table_model->delete_owner_table($owner_uid);
             redirect('owner_table/index');
         }
         else

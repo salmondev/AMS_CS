@@ -21,12 +21,12 @@
                     </thead>
                     <?php foreach($owner_table as $o){ ?>
                     <tr>
-						<td><?php echo $o['OWNER_UID']; ?></td>
-						<td><?php echo $o['OWNER_FNAME']; ?></td>
-						<td><?php echo $o['OWNER_LNAME']; ?></td>
+						<td><?php echo $o['owner_uid']; ?></td>
+						<td><?php echo $o['owner_fname']; ?></td>
+						<td><?php echo $o['owner_lname']; ?></td>
 						<td>
-                            <a href="<?php echo site_url('owner_table/edit/'.$o['OWNER_UID']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
-                            <a href="<?php echo site_url('owner_table/remove/'.$o['OWNER_UID']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>
+                            <a href="<?php echo site_url('owner_table/edit/'.$o['owner_uid']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
+                            <a href="<?php echo site_url('owner_table/remove/'.$o['owner_uid']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>
                         </td>
                     </tr>
                     <?php } ?>

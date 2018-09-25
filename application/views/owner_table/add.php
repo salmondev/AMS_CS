@@ -8,21 +8,21 @@
           	<div class="box-body">
           		<div class="row clearfix">
 					<div class="col-md-6">
-						<label for="OWNER_UID" class="control-label">OWNER UID</label>
+						<label for="owner_uid" class="control-label">OWNER UID</label>
 						<div class="form-group">
-							<input type="text" name="OWNER_UID" value="<?php echo $this->input->post('OWNER_UID'); ?>" class="form-control" id="OWNER_UID" />
+							<input type="text" name="owner_uid" value="<?php echo $this->input->post('owner_uid'); ?>" class="form-control" id="owner_uid" />
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="OWNER_FNAME" class="control-label">OWNER FNAME</label>
+						<label for="owner_fname" class="control-label">OWNER FNAME</label>
 						<div class="form-group">
-							<input type="text" name="OWNER_FNAME" value="<?php echo $this->input->post('OWNER_FNAME'); ?>" class="form-control" id="OWNER_FNAME" />
+							<input type="text" name="owner_fname" value="<?php echo $this->input->post('owner_fname'); ?>" class="form-control" id="owner_fname" />
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="OWNER_LNAME" class="control-label">OWNER LNAME</label>
+						<label for="owner_lname" class="control-label">OWNER LNAME</label>
 						<div class="form-group">
-							<input type="text" name="OWNER_LNAME" value="<?php echo $this->input->post('OWNER_LNAME'); ?>" class="form-control" id="OWNER_LNAME" />
+							<input type="text" name="owner_lname" value="<?php echo $this->input->post('owner_lname'); ?>" class="form-control" id="owner_lname" />
 						</div>
 					</div>
 				</div>
