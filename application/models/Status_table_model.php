@@ -12,11 +12,11 @@ class Status_table_model extends CI_Model
     }
     
     /*
-     * Get status_table by STATUS_RID
+     * Get status_table by status_rid
      */
-    function get_status_table($STATUS_RID)
+    function get_status_table($status_rid)
     {
-        return $this->db->get_where('status_table',array('STATUS_RID'=>$STATUS_RID))->row_array();
+        return $this->db->get_where('STATUS_TABLE',array('status_rid'=>$status_rid))->row_array();
     }
         
     /*
@@ -24,8 +24,8 @@ class Status_table_model extends CI_Model
      */
     function get_all_status_table()
     {
-        $this->db->order_by('STATUS_RID', 'desc');
-        return $this->db->get('status_table')->result_array();
+        $this->db->order_by('status_rid', 'desc');
+        return $this->db->get('STATUS_TABLE')->result_array();
     }
         
     /*
@@ -33,24 +33,24 @@ class Status_table_model extends CI_Model
      */
     function add_status_table($params)
     {
-        $this->db->insert('status_table',$params);
+        $this->db->insert('STATUS_TABLE',$params);
         return $this->db->insert_id();
     }
     
     /*
      * function to update status_table
      */
-    function update_status_table($STATUS_RID,$params)
+    function update_status_table($status_rid,$params)
     {
-        $this->db->where('STATUS_RID',$STATUS_RID);
-        return $this->db->update('status_table',$params);
+        $this->db->where('status_rid',$status_rid);
+        return $this->db->update('STATUS_TABLE',$params);
     }
     
     /*
      * function to delete status_table
      */
-    function delete_status_table($STATUS_RID)
+    function delete_status_table($status_rid)
     {
-        return $this->db->delete('status_table',array('STATUS_RID'=>$STATUS_RID));
+        return $this->db->delete('STATUS_TABLE',array('status_rid'=>$status_rid));
     }
 }

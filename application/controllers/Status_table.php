@@ -30,7 +30,7 @@ class Status_table extends CI_Controller{
         if(isset($_POST) && count($_POST) > 0)     
         {   
             $params = array(
-				'STATUS_NAME' => $this->input->post('STATUS_NAME'),
+				'status_name' => $this->input->post('status_name'),
             );
             
             $status_table_id = $this->Status_table_model->add_status_table($params);
@@ -46,20 +46,20 @@ class Status_table extends CI_Controller{
     /*
      * Editing a status_table
      */
-    function edit($STATUS_RID)
+    function edit($status_rid)
     {   
         // check if the status_table exists before trying to edit it
-        $data['status_table'] = $this->Status_table_model->get_status_table($STATUS_RID);
+        $data['status_table'] = $this->Status_table_model->get_status_table($status_rid);
         
-        if(isset($data['status_table']['STATUS_RID']))
+        if(isset($data['status_table']['status_rid']))
         {
             if(isset($_POST) && count($_POST) > 0)     
             {   
                 $params = array(
-					'STATUS_NAME' => $this->input->post('STATUS_NAME'),
+					'status_name' => $this->input->post('status_name'),
                 );
 
-                $this->Status_table_model->update_status_table($STATUS_RID,$params);            
+                $this->Status_table_model->update_status_table($status_rid,$params);            
                 redirect('status_table/index');
             }
             else
@@ -75,14 +75,14 @@ class Status_table extends CI_Controller{
     /*
      * Deleting status_table
      */
-    function remove($STATUS_RID)
+    function remove($status_rid)
     {
-        $status_table = $this->Status_table_model->get_status_table($STATUS_RID);
+        $status_table = $this->Status_table_model->get_status_table($status_rid);
 
         // check if the status_table exists before trying to delete it
-        if(isset($status_table['STATUS_RID']))
+        if(isset($status_table['status_rid']))
         {
-            $this->Status_table_model->delete_status_table($STATUS_RID);
+            $this->Status_table_model->delete_status_table($status_rid);
             redirect('status_table/index');
         }
         else

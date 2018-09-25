@@ -8,9 +8,9 @@
 			<div class="box-body">
 				<div class="row clearfix">
 					<div class="col-md-6">
-						<label for="HISTORY_OWNER_UID" class="control-label">HISTORY OWNER UID</label>
+						<label for="HISTORY_owner_uid" class="control-label">HISTORY OWNER UID</label>
 						<div class="form-group">
-							<input type="text" name="HISTORY_OWNER_UID" value="<?php echo ($this->input->post('HISTORY_OWNER_UID') ? $this->input->post('HISTORY_OWNER_UID') : $history_table['HISTORY_OWNER_UID']); ?>" class="form-control" id="HISTORY_OWNER_UID" />
+							<input type="text" name="HISTORY_owner_uid" value="<?php echo ($this->input->post('HISTORY_owner_uid') ? $this->input->post('HISTORY_owner_uid') : $history_table['HISTORY_owner_uid']); ?>" class="form-control" id="HISTORY_owner_uid" />
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -92,9 +92,9 @@
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="HISTORY_STATUS_NAME" class="control-label">HISTORY STATUS NAME</label>
+						<label for="HISTORY_status_name" class="control-label">HISTORY STATUS NAME</label>
 						<div class="form-group">
-							<textarea name="HISTORY_STATUS_NAME" class="form-control" id="HISTORY_STATUS_NAME"><?php echo ($this->input->post('HISTORY_STATUS_NAME') ? $this->input->post('HISTORY_STATUS_NAME') : $history_table['HISTORY_STATUS_NAME']); ?></textarea>
+							<textarea name="HISTORY_status_name" class="form-control" id="HISTORY_status_name"><?php echo ($this->input->post('HISTORY_status_name') ? $this->input->post('HISTORY_status_name') : $history_table['HISTORY_status_name']); ?></textarea>
 						</div>
 					</div>
 					<div class="col-md-6">

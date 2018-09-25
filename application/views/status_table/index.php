@@ -20,11 +20,11 @@
                     </thead>
                     <?php foreach($status_table as $s){ ?>
                     <tr>
-						<td><?php echo $s['STATUS_RID']; ?></td>
-						<td><?php echo $s['STATUS_NAME']; ?></td>
+						<td><?php echo $s['status_rid']; ?></td>
+						<td><?php echo $s['status_name']; ?></td>
 						<td>
-                            <a href="<?php echo site_url('status_table/edit/'.$s['STATUS_RID']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
-                            <a href="<?php echo site_url('status_table/remove/'.$s['STATUS_RID']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>
+                            <a href="<?php echo site_url('status_table/edit/'.$s['status_rid']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
+                            <a href="<?php echo site_url('status_table/remove/'.$s['status_rid']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>
                         </td>
                     </tr>
                     <?php } ?>

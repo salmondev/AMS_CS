@@ -36,7 +36,7 @@
                     <?php foreach($history_table as $h){ ?>
                     <tr>
 						<td><?php echo $h['HISTORY_RID']; ?></td>
-						<td><?php echo $h['HISTORY_OWNER_UID']; ?></td>
+						<td><?php echo $h['HISTORY_owner_uid']; ?></td>
 						<td><?php echo $h['HISTORY_BUILDING_LAT']; ?></td>
 						<td><?php echo $h['HISTORY_BUILDING_LONG']; ?></td>
 						<td><?php echo $h['HISTORY_FLOOR']; ?></td>
@@ -50,7 +50,7 @@
 						<td><?php echo $h['HISTORY_POS_Y']; ?></td>
 						<td><?php echo $h['MAP_RID']; ?></td>
 						<td><?php echo $h['HISTORY_item_uid']; ?></td>
-						<td><?php echo $h['HISTORY_STATUS_NAME']; ?></td>
+						<td><?php echo $h['HISTORY_status_name']; ?></td>
 						<td><?php echo $h['HISTORY_BUILDING_NAME']; ?></td>
 						<td>
                             <a href="<?php echo site_url('history_table/edit/'.$h['HISTORY_RID']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 

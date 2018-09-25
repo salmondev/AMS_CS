@@ -30,7 +30,7 @@ class History_table extends CI_Controller{
         if(isset($_POST) && count($_POST) > 0)     
         {   
             $params = array(
-				'HISTORY_OWNER_UID' => $this->input->post('HISTORY_OWNER_UID'),
+				'HISTORY_owner_uid' => $this->input->post('HISTORY_owner_uid'),
 				'HISTORY_BUILDING_LAT' => $this->input->post('HISTORY_BUILDING_LAT'),
 				'HISTORY_BUILDING_LONG' => $this->input->post('HISTORY_BUILDING_LONG'),
 				'HISTORY_FLOOR' => $this->input->post('HISTORY_FLOOR'),
@@ -44,7 +44,7 @@ class History_table extends CI_Controller{
 				'HISTORY_POS_Y' => $this->input->post('HISTORY_POS_Y'),
 				'MAP_RID' => $this->input->post('MAP_RID'),
 				'HISTORY_item_uid' => $this->input->post('HISTORY_item_uid'),
-				'HISTORY_STATUS_NAME' => $this->input->post('HISTORY_STATUS_NAME'),
+				'HISTORY_status_name' => $this->input->post('HISTORY_status_name'),
 				'HISTORY_BUILDING_NAME' => $this->input->post('HISTORY_BUILDING_NAME'),
             );
             
@@ -71,7 +71,7 @@ class History_table extends CI_Controller{
             if(isset($_POST) && count($_POST) > 0)     
             {   
                 $params = array(
-					'HISTORY_OWNER_UID' => $this->input->post('HISTORY_OWNER_UID'),
+					'HISTORY_owner_uid' => $this->input->post('HISTORY_owner_uid'),
 					'HISTORY_BUILDING_LAT' => $this->input->post('HISTORY_BUILDING_LAT'),
 					'HISTORY_BUILDING_LONG' => $this->input->post('HISTORY_BUILDING_LONG'),
 					'HISTORY_FLOOR' => $this->input->post('HISTORY_FLOOR'),
@@ -85,7 +85,7 @@ class History_table extends CI_Controller{
 					'HISTORY_POS_Y' => $this->input->post('HISTORY_POS_Y'),
 					'MAP_RID' => $this->input->post('MAP_RID'),
 					'HISTORY_item_uid' => $this->input->post('HISTORY_item_uid'),
-					'HISTORY_STATUS_NAME' => $this->input->post('HISTORY_STATUS_NAME'),
+					'HISTORY_status_name' => $this->input->post('HISTORY_status_name'),
 					'HISTORY_BUILDING_NAME' => $this->input->post('HISTORY_BUILDING_NAME'),
                 );
 

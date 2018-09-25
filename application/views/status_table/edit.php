@@ -4,13 +4,13 @@
             <div class="box-header with-border">
               	<h3 class="box-title">Status Table Edit</h3>
             </div>
-			<?php echo form_open('status_table/edit/'.$status_table['STATUS_RID']); ?>
+			<?php echo form_open('status_table/edit/'.$status_table['status_rid']); ?>
 			<div class="box-body">
 				<div class="row clearfix">
 					<div class="col-md-6">
-						<label for="STATUS_NAME" class="control-label">STATUS NAME</label>
+						<label for="status_name" class="control-label">STATUS NAME</label>
 						<div class="form-group">
-							<textarea name="STATUS_NAME" class="form-control" id="STATUS_NAME"><?php echo ($this->input->post('STATUS_NAME') ? $this->input->post('STATUS_NAME') : $status_table['STATUS_NAME']); ?></textarea>
+							<textarea name="status_name" class="form-control" id="status_name"><?php echo ($this->input->post('status_name') ? $this->input->post('status_name') : $status_table['status_name']); ?></textarea>
 						</div>
 					</div>
 				</div>
