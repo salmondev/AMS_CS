@@ -22,6 +22,7 @@
 						<th>ITEM UID</th>
 						<th>ITEM SERIAL</th>
 						<th>ITEM NAME</th>
+						<th>ITEM AVAILABLE</th>
                     </tr>
                 </thead>
                     <?php foreach($item_table as $i){ ?>
@@ -29,6 +30,7 @@
 						<td><?php echo $i['item_uid']; ?></td>
 						<td><?php echo $i['item_serial']; ?></td>
 						<td><?php echo $i['item_name']; ?></td>
+						<td><?php echo $i['item_available']; ?></td>
                     </tr>
                     <?php } ?>
                 </table>        
