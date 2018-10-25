@@ -22,13 +22,13 @@
                     </thead>
                     <?php foreach($building_table as $b){ ?>
                     <tr>
-						<td><?php echo $b['BUILDING_RID']; ?></td>
-						<td><?php echo $b['BUILDING_LAT']; ?></td>
-						<td><?php echo $b['BUILDING_LONG']; ?></td>
-						<td><?php echo $b['BUILDING_NAME']; ?></td>
+						<td><?php echo $b['building_rid']; ?></td>
+						<td><?php echo $b['building_lat']; ?></td>
+						<td><?php echo $b['building_long']; ?></td>
+						<td><?php echo $b['building_name']; ?></td>
 						<td>
-                            <a href="<?php echo site_url('building_table/edit/'.$b['BUILDING_RID']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
-                            <a href="<?php echo site_url('building_table/remove/'.$b['BUILDING_RID']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>
+                            <a href="<?php echo site_url('building_table/edit/'.$b['building_rid']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
+                            <a href="<?php echo site_url('building_table/remove/'.$b['building_rid']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>
                         </td>
                     </tr>
                     <?php } ?>

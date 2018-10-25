@@ -14,9 +14,9 @@ class Building_table_model extends CI_Model
     /*
      * Get building_table by BUILDING_RID
      */
-    function get_building_table($BUILDING_RID)
+    function get_building_table($building_rid)
     {
-        return $this->db->get_where('building_table',array('BUILDING_RID'=>$BUILDING_RID))->row_array();
+        return $this->db->get_where('BUILDING_TABLE',array('building_rid'=>$building_rid))->row_array();
     }
         
     /*
@@ -24,8 +24,8 @@ class Building_table_model extends CI_Model
      */
     function get_all_building_table()
     {
-        $this->db->order_by('BUILDING_RID', 'desc');
-        return $this->db->get('building_table')->result_array();
+        $this->db->order_by('building_rid', 'desc');
+        return $this->db->get('BUILDING_TABLE')->result_array();
     }
         
     /*
@@ -33,24 +33,24 @@ class Building_table_model extends CI_Model
      */
     function add_building_table($params)
     {
-        $this->db->insert('building_table',$params);
+        $this->db->insert('BUILDING_TABLE',$params);
         return $this->db->insert_id();
     }
     
     /*
      * function to update building_table
      */
-    function update_building_table($BUILDING_RID,$params)
+    function update_building_table($building_rid,$params)
     {
-        $this->db->where('BUILDING_RID',$BUILDING_RID);
-        return $this->db->update('building_table',$params);
+        $this->db->where('building_rid',$building_rid);
+        return $this->db->update('BUILDING_TABLE',$params);
     }
     
     /*
      * function to delete building_table
      */
-    function delete_building_table($BUILDING_RID)
+    function delete_building_table($building_rid)
     {
-        return $this->db->delete('building_table',array('BUILDING_RID'=>$BUILDING_RID));
+        return $this->db->delete('BUILDING_TABLE',array('building_rid'=>$building_rid));
     }
 }

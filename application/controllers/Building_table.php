@@ -30,9 +30,9 @@ class Building_table extends CI_Controller{
         if(isset($_POST) && count($_POST) > 0)     
         {   
             $params = array(
-				'BUILDING_LAT' => $this->input->post('BUILDING_LAT'),
-				'BUILDING_LONG' => $this->input->post('BUILDING_LONG'),
-				'BUILDING_NAME' => $this->input->post('BUILDING_NAME'),
+				'building_lat' => $this->input->post('building_lat'),
+				'building_long' => $this->input->post('building_long'),
+				'building_name' => $this->input->post('building_name'),
             );
             
             $building_table_id = $this->Building_table_model->add_building_table($params);
@@ -48,22 +48,22 @@ class Building_table extends CI_Controller{
     /*
      * Editing a building_table
      */
-    function edit($BUILDING_RID)
+    function edit($building_rid)
     {   
         // check if the building_table exists before trying to edit it
-        $data['building_table'] = $this->Building_table_model->get_building_table($BUILDING_RID);
+        $data['building_table'] = $this->Building_table_model->get_building_table($building_rid);
         
-        if(isset($data['building_table']['BUILDING_RID']))
+        if(isset($data['building_table']['building_rid']))
         {
             if(isset($_POST) && count($_POST) > 0)     
             {   
                 $params = array(
-					'BUILDING_LAT' => $this->input->post('BUILDING_LAT'),
-					'BUILDING_LONG' => $this->input->post('BUILDING_LONG'),
-					'BUILDING_NAME' => $this->input->post('BUILDING_NAME'),
+					'building_lat' => $this->input->post('building_lat'),
+					'building_long' => $this->input->post('building_long'),
+					'building_name' => $this->input->post('building_name'),
                 );
 
-                $this->Building_table_model->update_building_table($BUILDING_RID,$params);            
+                $this->Building_table_model->update_building_table($building_rid,$params);            
                 redirect('building_table/index');
             }
             else
@@ -79,14 +79,14 @@ class Building_table extends CI_Controller{
     /*
      * Deleting building_table
      */
-    function remove($BUILDING_RID)
+    function remove($building_rid)
     {
-        $building_table = $this->Building_table_model->get_building_table($BUILDING_RID);
+        $building_table = $this->Building_table_model->get_building_table($building_rid);
 
         // check if the building_table exists before trying to delete it
-        if(isset($building_table['BUILDING_RID']))
+        if(isset($building_table['building_rid']))
         {
-            $this->Building_table_model->delete_building_table($BUILDING_RID);
+            $this->Building_table_model->delete_building_table($building_rid);
             redirect('building_table/index');
         }
         else

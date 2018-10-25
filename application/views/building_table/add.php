@@ -8,21 +8,21 @@
           	<div class="box-body">
           		<div class="row clearfix">
 					<div class="col-md-6">
-						<label for="BUILDING_LAT" class="control-label">BUILDING LAT</label>
+						<label for="building_lat" class="control-label">BUILDING LAT</label>
 						<div class="form-group">
-							<input type="text" name="BUILDING_LAT" value="<?php echo $this->input->post('BUILDING_LAT'); ?>" class="form-control" id="BUILDING_LAT" />
+							<input type="text" name="building_lat" value="<?php echo $this->input->post('building_lat'); ?>" class="form-control" id="building_lat" />
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="BUILDING_LONG" class="control-label">BUILDING LONG</label>
+						<label for="building_long" class="control-label">BUILDING LONG</label>
 						<div class="form-group">
-							<input type="text" name="BUILDING_LONG" value="<?php echo $this->input->post('BUILDING_LONG'); ?>" class="form-control" id="BUILDING_LONG" />
+							<input type="text" name="building_long" value="<?php echo $this->input->post('building_long'); ?>" class="form-control" id="building_long" />
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="BUILDING_NAME" class="control-label">BUILDING NAME</label>
+						<label for="building_name" class="control-label">BUILDING NAME</label>
 						<div class="form-group">
-							<textarea name="BUILDING_NAME" class="form-control" id="BUILDING_NAME"><?php echo $this->input->post('BUILDING_NAME'); ?></textarea>
+							<textarea name="building_name" class="form-control" id="building_name"><?php echo $this->input->post('building_name'); ?></textarea>
 						</div>
 					</div>
 				</div>
