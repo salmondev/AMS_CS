@@ -35,26 +35,26 @@
 					</thead>
                     <?php foreach($history_table as $h){ ?>
                     <tr>
-						<td><?php echo $h['HISTORY_RID']; ?></td>
-						<td><?php echo $h['HISTORY_owner_uid']; ?></td>
-						<td><?php echo $h['HISTORY_BUILDING_LAT']; ?></td>
-						<td><?php echo $h['HISTORY_BUILDING_LONG']; ?></td>
-						<td><?php echo $h['HISTORY_FLOOR']; ?></td>
-						<td><?php echo $h['HISTORY_ROOM']; ?></td>
-						<td><?php echo $h['HISTORY_HOUR']; ?></td>
-						<td><?php echo $h['HISTORY_MINUTE']; ?></td>
-						<td><?php echo $h['HISTORY_DAY']; ?></td>
-						<td><?php echo $h['HISTORY_MONTH']; ?></td>
-						<td><?php echo $h['HISTORY_YEAR']; ?></td>
-						<td><?php echo $h['HISTORY_POS_X']; ?></td>
-						<td><?php echo $h['HISTORY_POS_Y']; ?></td>
-						<td><?php echo $h['MAP_RID']; ?></td>
-						<td><?php echo $h['HISTORY_item_uid']; ?></td>
-						<td><?php echo $h['HISTORY_status_name']; ?></td>
-						<td><?php echo $h['HISTORY_BUILDING_NAME']; ?></td>
+						<td><?php echo $h['history_rid']; ?></td>
+						<td><?php echo $h['history_owner_uid']; ?></td>
+						<td><?php echo $h['history_building_lat']; ?></td>
+						<td><?php echo $h['history_building_long']; ?></td>
+						<td><?php echo $h['history_floor']; ?></td>
+						<td><?php echo $h['history_room']; ?></td>
+						<td><?php echo $h['history_hour']; ?></td>
+						<td><?php echo $h['history_minute']; ?></td>
+						<td><?php echo $h['history_day']; ?></td>
+						<td><?php echo $h['history_month']; ?></td>
+						<td><?php echo $h['history_year']; ?></td>
+						<td><?php echo $h['history_pos_x']; ?></td>
+						<td><?php echo $h['history_pos_y']; ?></td>
+						<td><?php echo $h['map_rid']; ?></td>
+						<td><?php echo $h['history_item_uid']; ?></td>
+						<td><?php echo $h['history_status_name']; ?></td>
+						<td><?php echo $h['history_building_name']; ?></td>
 						<td>
-                            <a href="<?php echo site_url('history_table/edit/'.$h['HISTORY_RID']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
-                            <a href="<?php echo site_url('history_table/remove/'.$h['HISTORY_RID']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>
+                            <a href="<?php echo site_url('history_table/edit/'.$h['history_rid']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
+                            <a href="<?php echo site_url('history_table/remove/'.$h['history_rid']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>
                         </td>
                     </tr>
                     <?php } ?>

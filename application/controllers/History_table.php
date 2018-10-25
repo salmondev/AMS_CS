@@ -30,22 +30,22 @@ class History_table extends CI_Controller{
         if(isset($_POST) && count($_POST) > 0)     
         {   
             $params = array(
-				'HISTORY_owner_uid' => $this->input->post('HISTORY_owner_uid'),
-				'HISTORY_BUILDING_LAT' => $this->input->post('HISTORY_BUILDING_LAT'),
-				'HISTORY_BUILDING_LONG' => $this->input->post('HISTORY_BUILDING_LONG'),
-				'HISTORY_FLOOR' => $this->input->post('HISTORY_FLOOR'),
-				'HISTORY_ROOM' => $this->input->post('HISTORY_ROOM'),
-				'HISTORY_HOUR' => $this->input->post('HISTORY_HOUR'),
-				'HISTORY_MINUTE' => $this->input->post('HISTORY_MINUTE'),
-				'HISTORY_DAY' => $this->input->post('HISTORY_DAY'),
-				'HISTORY_MONTH' => $this->input->post('HISTORY_MONTH'),
-				'HISTORY_YEAR' => $this->input->post('HISTORY_YEAR'),
-				'HISTORY_POS_X' => $this->input->post('HISTORY_POS_X'),
-				'HISTORY_POS_Y' => $this->input->post('HISTORY_POS_Y'),
-				'MAP_RID' => $this->input->post('MAP_RID'),
-				'HISTORY_item_uid' => $this->input->post('HISTORY_item_uid'),
-				'HISTORY_status_name' => $this->input->post('HISTORY_status_name'),
-				'HISTORY_BUILDING_NAME' => $this->input->post('HISTORY_BUILDING_NAME'),
+				'history_owner_uid' => $this->input->post('history_owner_uid'),
+				'history_building_lat' => $this->input->post('history_building_lat'),
+				'history_building_long' => $this->input->post('history_building_long'),
+				'history_floor' => $this->input->post('history_floor'),
+				'history_room' => $this->input->post('history_room'),
+				'history_hour' => $this->input->post('history_hour'),
+				'history_minute' => $this->input->post('history_minute'),
+				'history_day' => $this->input->post('history_day'),
+				'history_month' => $this->input->post('history_month'),
+				'history_year' => $this->input->post('history_year'),
+				'history_pos_x' => $this->input->post('history_pos_x'),
+				'history_pos_y' => $this->input->post('history_pos_y'),
+				'map_rid' => $this->input->post('map_rid'),
+				'history_item_uid' => $this->input->post('history_item_uid'),
+				'history_status_name' => $this->input->post('history_status_name'),
+				'history_building_name' => $this->input->post('history_building_name'),
             );
             
             $history_table_id = $this->History_table_model->add_history_table($params);
@@ -61,32 +61,32 @@ class History_table extends CI_Controller{
     /*
      * Editing a history_table
      */
-    function edit($HISTORY_RID)
+    function edit($history_rid)
     {   
         // check if the history_table exists before trying to edit it
-        $data['history_table'] = $this->History_table_model->get_history_table($HISTORY_RID);
+        $data['history_table'] = $this->History_table_model->get_history_table($history_rid);
         
-        if(isset($data['history_table']['HISTORY_RID']))
+        if(isset($data['history_table']['history_rid']))
         {
             if(isset($_POST) && count($_POST) > 0)     
             {   
                 $params = array(
-					'HISTORY_owner_uid' => $this->input->post('HISTORY_owner_uid'),
-					'HISTORY_BUILDING_LAT' => $this->input->post('HISTORY_BUILDING_LAT'),
-					'HISTORY_BUILDING_LONG' => $this->input->post('HISTORY_BUILDING_LONG'),
-					'HISTORY_FLOOR' => $this->input->post('HISTORY_FLOOR'),
-					'HISTORY_ROOM' => $this->input->post('HISTORY_ROOM'),
-					'HISTORY_HOUR' => $this->input->post('HISTORY_HOUR'),
-					'HISTORY_MINUTE' => $this->input->post('HISTORY_MINUTE'),
-					'HISTORY_DAY' => $this->input->post('HISTORY_DAY'),
-					'HISTORY_MONTH' => $this->input->post('HISTORY_MONTH'),
-					'HISTORY_YEAR' => $this->input->post('HISTORY_YEAR'),
-					'HISTORY_POS_X' => $this->input->post('HISTORY_POS_X'),
-					'HISTORY_POS_Y' => $this->input->post('HISTORY_POS_Y'),
-					'MAP_RID' => $this->input->post('MAP_RID'),
-					'HISTORY_item_uid' => $this->input->post('HISTORY_item_uid'),
-					'HISTORY_status_name' => $this->input->post('HISTORY_status_name'),
-					'HISTORY_BUILDING_NAME' => $this->input->post('HISTORY_BUILDING_NAME'),
+					'history_owner_uid' => $this->input->post('history_owner_uid'),
+				'history_building_lat' => $this->input->post('history_building_lat'),
+				'history_building_long' => $this->input->post('history_building_long'),
+				'history_floor' => $this->input->post('history_floor'),
+				'history_room' => $this->input->post('history_room'),
+				'history_hour' => $this->input->post('history_hour'),
+				'history_minute' => $this->input->post('history_minute'),
+				'history_day' => $this->input->post('history_day'),
+				'history_month' => $this->input->post('history_month'),
+				'history_year' => $this->input->post('history_year'),
+				'history_pos_x' => $this->input->post('history_pos_x'),
+				'history_pos_y' => $this->input->post('history_pos_y'),
+				'map_rid' => $this->input->post('map_rid'),
+				'history_item_uid' => $this->input->post('history_item_uid'),
+				'history_status_name' => $this->input->post('history_status_name'),
+				'history_building_name' => $this->input->post('history_building_name'),
                 );
 
                 $this->History_table_model->update_history_table($HISTORY_RID,$params);            
@@ -105,14 +105,14 @@ class History_table extends CI_Controller{
     /*
      * Deleting history_table
      */
-    function remove($HISTORY_RID)
+    function remove($history_rid)
     {
-        $history_table = $this->History_table_model->get_history_table($HISTORY_RID);
+        $history_table = $this->History_table_model->get_history_table($history_rid);
 
         // check if the history_table exists before trying to delete it
-        if(isset($history_table['HISTORY_RID']))
+        if(isset($history_table['history_rid']))
         {
-            $this->History_table_model->delete_history_table($HISTORY_RID);
+            $this->History_table_model->delete_history_table($history_rid);
             redirect('history_table/index');
         }
         else

@@ -14,9 +14,9 @@ class History_table_model extends CI_Model
     /*
      * Get history_table by HISTORY_RID
      */
-    function get_history_table($HISTORY_RID)
+    function get_history_table($history_rid)
     {
-        return $this->db->get_where('history_table',array('HISTORY_RID'=>$HISTORY_RID))->row_array();
+        return $this->db->get_where('HISTORY_TABLE',array('history_rid'=>$history_rid))->row_array();
     }
         
     /*
@@ -24,8 +24,8 @@ class History_table_model extends CI_Model
      */
     function get_all_history_table()
     {
-        $this->db->order_by('HISTORY_RID', 'desc');
-        return $this->db->get('history_table')->result_array();
+        $this->db->order_by('history_rid', 'desc');
+        return $this->db->get('HISTORY_TABLE')->result_array();
     }
         
     /*
@@ -33,24 +33,24 @@ class History_table_model extends CI_Model
      */
     function add_history_table($params)
     {
-        $this->db->insert('history_table',$params);
+        $this->db->insert('HISTORY_TABLE',$params);
         return $this->db->insert_id();
     }
     
     /*
      * function to update history_table
      */
-    function update_history_table($HISTORY_RID,$params)
+    function update_history_table($history_rid,$params)
     {
-        $this->db->where('HISTORY_RID',$HISTORY_RID);
-        return $this->db->update('history_table',$params);
+        $this->db->where('history_rid',$history_rid);
+        return $this->db->update('HISTORY_TABLE',$params);
     }
     
     /*
      * function to delete history_table
      */
-    function delete_history_table($HISTORY_RID)
+    function delete_history_table($history_rid)
     {
-        return $this->db->delete('history_table',array('HISTORY_RID'=>$HISTORY_RID));
+        return $this->db->delete('HISTORY_TABLE',array('history_rid'=>$history_rid));
     }
 }
