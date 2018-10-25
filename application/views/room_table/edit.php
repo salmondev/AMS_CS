@@ -4,19 +4,19 @@
             <div class="box-header with-border">
               	<h3 class="box-title">Room Table Edit</h3>
             </div>
-			<?php echo form_open('room_table/edit/'.$room_table['ROOM_RID']); ?>
+			<?php echo form_open('room_table/edit/'.$room_table['room_rid']); ?>
 			<div class="box-body">
 				<div class="row clearfix">
 					<div class="col-md-6">
-						<label for="ROOM_NUMBER" class="control-label">ROOM NUMBER</label>
+						<label for="room_number" class="control-label">ROOM NUMBER</label>
 						<div class="form-group">
-							<input type="text" name="ROOM_NUMBER" value="<?php echo ($this->input->post('ROOM_NUMBER') ? $this->input->post('ROOM_NUMBER') : $room_table['ROOM_NUMBER']); ?>" class="form-control" id="ROOM_NUMBER" />
+							<input type="text" name="room_number" value="<?php echo ($this->input->post('room_number') ? $this->input->post('room_number') : $room_table['room_number']); ?>" class="form-control" id="room_number" />
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="FLOOR_RID" class="control-label">FLOOR RID</label>
+						<label for="floor_rid" class="control-label">FLOOR RID</label>
 						<div class="form-group">
-							<input type="text" name="FLOOR_RID" value="<?php echo ($this->input->post('FLOOR_RID') ? $this->input->post('FLOOR_RID') : $room_table['FLOOR_RID']); ?>" class="form-control" id="FLOOR_RID" />
+							<input type="text" name="floor_rid" value="<?php echo ($this->input->post('floor_rid') ? $this->input->post('floor_rid') : $room_table['floor_rid']); ?>" class="form-control" id="floor_rid" />
 						</div>
 					</div>
 				</div>

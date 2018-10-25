@@ -30,8 +30,8 @@ class Room_table extends CI_Controller{
         if(isset($_POST) && count($_POST) > 0)     
         {   
             $params = array(
-				'ROOM_NUMBER' => $this->input->post('ROOM_NUMBER'),
-				'FLOOR_RID' => $this->input->post('FLOOR_RID'),
+				'room_number' => $this->input->post('room_number'),
+				'floor_rid' => $this->input->post('floor_rid'),
             );
             
             $room_table_id = $this->Room_table_model->add_room_table($params);
@@ -47,21 +47,21 @@ class Room_table extends CI_Controller{
     /*
      * Editing a room_table
      */
-    function edit($ROOM_RID)
+    function edit($room_rid)
     {   
         // check if the room_table exists before trying to edit it
-        $data['room_table'] = $this->Room_table_model->get_room_table($ROOM_RID);
+        $data['room_table'] = $this->Room_table_model->get_room_table($room_rid);
         
-        if(isset($data['room_table']['ROOM_RID']))
+        if(isset($data['room_table']['room_rid']))
         {
             if(isset($_POST) && count($_POST) > 0)     
             {   
                 $params = array(
-					'ROOM_NUMBER' => $this->input->post('ROOM_NUMBER'),
-					'FLOOR_RID' => $this->input->post('FLOOR_RID'),
+					'room_number' => $this->input->post('room_number'),
+					'floor_rid' => $this->input->post('floor_rid'),
                 );
 
-                $this->Room_table_model->update_room_table($ROOM_RID,$params);            
+                $this->Room_table_model->update_room_table($room_rid,$params);            
                 redirect('room_table/index');
             }
             else
@@ -77,14 +77,14 @@ class Room_table extends CI_Controller{
     /*
      * Deleting room_table
      */
-    function remove($ROOM_RID)
+    function remove($room_rid)
     {
-        $room_table = $this->Room_table_model->get_room_table($ROOM_RID);
+        $room_table = $this->Room_table_model->get_room_table($ROroom_ridOM_RID);
 
         // check if the room_table exists before trying to delete it
-        if(isset($room_table['ROOM_RID']))
+        if(isset($room_table['room_rid']))
         {
-            $this->Room_table_model->delete_room_table($ROOM_RID);
+            $this->Room_table_model->delete_room_table($room_rid);
             redirect('room_table/index');
         }
         else

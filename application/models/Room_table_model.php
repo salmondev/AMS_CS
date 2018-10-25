@@ -14,9 +14,9 @@ class Room_table_model extends CI_Model
     /*
      * Get room_table by ROOM_RID
      */
-    function get_room_table($ROOM_RID)
+    function get_room_table($room_rid)
     {
-        return $this->db->get_where('room_table',array('ROOM_RID'=>$ROOM_RID))->row_array();
+        return $this->db->get_where('ROOM_TABLE-',array('room_rid'=>$room_rid))->row_array();
     }
         
     /*
@@ -24,8 +24,8 @@ class Room_table_model extends CI_Model
      */
     function get_all_room_table()
     {
-        $this->db->order_by('ROOM_RID', 'desc');
-        return $this->db->get('room_table')->result_array();
+        $this->db->order_by('room_rid', 'desc');
+        return $this->db->get('ROOM_TABLE')->result_array();
     }
         
     /*
@@ -33,24 +33,24 @@ class Room_table_model extends CI_Model
      */
     function add_room_table($params)
     {
-        $this->db->insert('room_table',$params);
+        $this->db->insert('ROOM_TABLE',$params);
         return $this->db->insert_id();
     }
     
     /*
      * function to update room_table
      */
-    function update_room_table($ROOM_RID,$params)
+    function update_room_table($room_rid,$params)
     {
-        $this->db->where('ROOM_RID',$ROOM_RID);
+        $this->db->where('room_rid',$room_rid);
         return $this->db->update('room_table',$params);
     }
     
     /*
      * function to delete room_table
      */
-    function delete_room_table($ROOM_RID)
+    function delete_room_table($room_rid)
     {
-        return $this->db->delete('room_table',array('ROOM_RID'=>$ROOM_RID));
+        return $this->db->delete('ROOM_TABLE',array('room_rid'=>$room_rid));
     }
 }

@@ -8,15 +8,15 @@
           	<div class="box-body">
           		<div class="row clearfix">
 					<div class="col-md-6">
-						<label for="ROOM_NUMBER" class="control-label">ROOM NUMBER</label>
+						<label for="room_number" class="control-label">ROOM NUMBER</label>
 						<div class="form-group">
-							<input type="text" name="ROOM_NUMBER" value="<?php echo $this->input->post('ROOM_NUMBER'); ?>" class="form-control" id="ROOM_NUMBER" />
+							<input type="text" name="room_number" value="<?php echo $this->input->post('room_number'); ?>" class="form-control" id="room_number" />
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="FLOOR_RID" class="control-label">FLOOR RID</label>
+						<label for="floor_rid" class="control-label">FLOOR RID</label>
 						<div class="form-group">
-							<input type="text" name="FLOOR_RID" value="<?php echo $this->input->post('FLOOR_RID'); ?>" class="form-control" id="FLOOR_RID" />
+							<input type="text" name="floor_rid" value="<?php echo $this->input->post('floor_rid'); ?>" class="form-control" id="floor_rid" />
 						</div>
 					</div>
 				</div>

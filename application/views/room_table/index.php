@@ -21,12 +21,12 @@
                     </thead>
                     <?php foreach($room_table as $r){ ?>
                     <tr>
-						<td><?php echo $r['ROOM_RID']; ?></td>
-						<td><?php echo $r['ROOM_NUMBER']; ?></td>
-						<td><?php echo $r['FLOOR_RID']; ?></td>
+						<td><?php echo $r['room_rid']; ?></td>
+						<td><?php echo $r['room_number']; ?></td>
+						<td><?php echo $r['floor_rid']; ?></td>
 						<td>
-                            <a href="<?php echo site_url('room_table/edit/'.$r['ROOM_RID']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
-                            <a href="<?php echo site_url('room_table/remove/'.$r['ROOM_RID']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>
+                            <a href="<?php echo site_url('room_table/edit/'.$r['room_rid']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
+                            <a href="<?php echo site_url('room_table/remove/'.$r['room_rid']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>
                         </td>
                     </tr>
                     <?php } ?>
