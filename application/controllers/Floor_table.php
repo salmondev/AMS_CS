@@ -30,8 +30,8 @@ class Floor_table extends CI_Controller{
         if(isset($_POST) && count($_POST) > 0)     
         {   
             $params = array(
-				'FLOOR_NUMBER' => $this->input->post('FLOOR_NUMBER'),
-				'BUILDING_RID' => $this->input->post('BUILDING_RID'),
+				'floor_number' => $this->input->post('floor_number'),
+				'building_rid' => $this->input->post('building_rid'),
             );
             
             $floor_table_id = $this->Floor_table_model->add_floor_table($params);
@@ -47,21 +47,21 @@ class Floor_table extends CI_Controller{
     /*
      * Editing a floor_table
      */
-    function edit($FLOOR_RID)
+    function edit($floor_rid)
     {   
         // check if the floor_table exists before trying to edit it
-        $data['floor_table'] = $this->Floor_table_model->get_floor_table($FLOOR_RID);
+        $data['floor_table'] = $this->Floor_table_model->get_floor_table($floor_rid);
         
-        if(isset($data['floor_table']['FLOOR_RID']))
+        if(isset($data['floor_table']['floor_rid']))
         {
             if(isset($_POST) && count($_POST) > 0)     
             {   
                 $params = array(
-					'FLOOR_NUMBER' => $this->input->post('FLOOR_NUMBER'),
-					'BUILDING_RID' => $this->input->post('BUILDING_RID'),
+					'floor_number' => $this->input->post('floor_number'),
+					'building_rid' => $this->input->post('building_rid'),
                 );
 
-                $this->Floor_table_model->update_floor_table($FLOOR_RID,$params);            
+                $this->Floor_table_model->update_floor_table($floor_rid,$params);            
                 redirect('floor_table/index');
             }
             else
@@ -77,14 +77,14 @@ class Floor_table extends CI_Controller{
     /*
      * Deleting floor_table
      */
-    function remove($FLOOR_RID)
+    function remove($floor_rid)
     {
-        $floor_table = $this->Floor_table_model->get_floor_table($FLOOR_RID);
+        $floor_table = $this->Floor_table_model->get_floor_table($floor_rid);
 
         // check if the floor_table exists before trying to delete it
-        if(isset($floor_table['FLOOR_RID']))
+        if(isset($floor_table['floor_rid']))
         {
-            $this->Floor_table_model->delete_floor_table($FLOOR_RID);
+            $this->Floor_table_model->delete_floor_table($floor_rid);
             redirect('floor_table/index');
         }
         else

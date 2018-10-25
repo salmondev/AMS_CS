@@ -14,9 +14,9 @@ class Floor_table_model extends CI_Model
     /*
      * Get floor_table by FLOOR_RID
      */
-    function get_floor_table($FLOOR_RID)
+    function get_floor_table($floor_rid)
     {
-        return $this->db->get_where('floor_table',array('FLOOR_RID'=>$FLOOR_RID))->row_array();
+        return $this->db->get_where('FLOOR_TABLE',array('floor_rid'=>$floor_rid))->row_array();
     }
         
     /*
@@ -24,8 +24,8 @@ class Floor_table_model extends CI_Model
      */
     function get_all_floor_table()
     {
-        $this->db->order_by('FLOOR_RID', 'desc');
-        return $this->db->get('floor_table')->result_array();
+        $this->db->order_by('floor_rid', 'desc');
+        return $this->db->get('FLOOR_TABLE')->result_array();
     }
         
     /*
@@ -33,24 +33,24 @@ class Floor_table_model extends CI_Model
      */
     function add_floor_table($params)
     {
-        $this->db->insert('floor_table',$params);
+        $this->db->insert('FLOOR_TABLE',$params);
         return $this->db->insert_id();
     }
     
     /*
      * function to update floor_table
      */
-    function update_floor_table($FLOOR_RID,$params)
+    function update_floor_table($floor_rid,$params)
     {
-        $this->db->where('FLOOR_RID',$FLOOR_RID);
-        return $this->db->update('floor_table',$params);
+        $this->db->where('floor_rid',$floor_rid);
+        return $this->db->update('FLOOR_TABLE',$params);
     }
     
     /*
      * function to delete floor_table
      */
-    function delete_floor_table($FLOOR_RID)
+    function delete_floor_table($floor_rid)
     {
-        return $this->db->delete('floor_table',array('FLOOR_RID'=>$FLOOR_RID));
+        return $this->db->delete('FLOOR_TABLE',array('floor_rid'=>$floor_rid));
     }
 }

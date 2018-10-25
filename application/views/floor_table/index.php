@@ -21,12 +21,12 @@
                     </thead>
                     <?php foreach($floor_table as $f){ ?>
                     <tr>
-						<td><?php echo $f['FLOOR_RID']; ?></td>
-						<td><?php echo $f['FLOOR_NUMBER']; ?></td>
-						<td><?php echo $f['BUILDING_RID']; ?></td>
+						<td><?php echo $f['floor_rid']; ?></td>
+						<td><?php echo $f['floor_number']; ?></td>
+						<td><?php echo $f['building_rid']; ?></td>
 						<td>
-                            <a href="<?php echo site_url('floor_table/edit/'.$f['FLOOR_RID']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
-                            <a href="<?php echo site_url('floor_table/remove/'.$f['FLOOR_RID']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>
+                            <a href="<?php echo site_url('floor_table/edit/'.$f['floor_rid']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
+                            <a href="<?php echo site_url('floor_table/remove/'.$f['floor_rid']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>
                         </td>
                     </tr>
                     <?php } ?>
