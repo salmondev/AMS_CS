@@ -8,21 +8,21 @@
           	<div class="box-body">
           		<div class="row clearfix">
 					<div class="col-md-6">
-						<label for="MAP_IMG" class="control-label">MAP IMG</label>
+						<label for="map_img" class="control-label">MAP IMG</label>
 						<div class="form-group">
-							<input type="text" name="MAP_IMG" value="<?php echo $this->input->post('MAP_IMG'); ?>" class="form-control" id="MAP_IMG" />
+							<input type="text" name="map_img" value="<?php echo $this->input->post('map_img'); ?>" class="form-control" id="map_img" />
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="MAP_STATUS" class="control-label">MAP STATUS</label>
+						<label for="map_status" class="control-label">MAP STATUS</label>
 						<div class="form-group">
-							<input type="text" name="MAP_STATUS" value="<?php echo $this->input->post('MAP_STATUS'); ?>" class="form-control" id="MAP_STATUS" />
+							<input type="text" name="map_status" value="<?php echo $this->input->post('map_status'); ?>" class="form-control" id="map_status" />
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="MAP_NAME" class="control-label">MAP NAME</label>
+						<label for="map_name" class="control-label">MAP NAME</label>
 						<div class="form-group">
-							<textarea name="MAP_NAME" class="form-control" id="MAP_NAME"><?php echo $this->input->post('MAP_NAME'); ?></textarea>
+							<textarea name="map_name" class="form-control" id="map_name"><?php echo $this->input->post('map_name'); ?></textarea>
 						</div>
 					</div>
 				</div>

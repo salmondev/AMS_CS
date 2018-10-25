@@ -14,9 +14,9 @@ class Map_table_model extends CI_Model
     /*
      * Get map_table by MAP_RID
      */
-    function get_map_table($MAP_RID)
+    function get_map_table($map_rid)
     {
-        return $this->db->get_where('map_table',array('MAP_RID'=>$MAP_RID))->row_array();
+        return $this->db->get_where('MAP_TABLE',array('map_rid'=>$map_rid))->row_array();
     }
         
     /*
@@ -24,8 +24,8 @@ class Map_table_model extends CI_Model
      */
     function get_all_map_table()
     {
-        $this->db->order_by('MAP_RID', 'desc');
-        return $this->db->get('map_table')->result_array();
+        $this->db->order_by('map_rid', 'desc');
+        return $this->db->get('MAP_TABLE')->result_array();
     }
         
     /*
@@ -33,24 +33,24 @@ class Map_table_model extends CI_Model
      */
     function add_map_table($params)
     {
-        $this->db->insert('map_table',$params);
+        $this->db->insert('MAP_TABLE',$params);
         return $this->db->insert_id();
     }
     
     /*
      * function to update map_table
      */
-    function update_map_table($MAP_RID,$params)
+    function update_map_table($map_rid,$params)
     {
-        $this->db->where('MAP_RID',$MAP_RID);
-        return $this->db->update('map_table',$params);
+        $this->db->where('map_rid',$map_rid);
+        return $this->db->update('MAP_TABLE',$params);
     }
     
     /*
      * function to delete map_table
      */
-    function delete_map_table($MAP_RID)
+    function delete_map_table($map_rid)
     {
-        return $this->db->delete('map_table',array('MAP_RID'=>$MAP_RID));
+        return $this->db->delete('MAP_TABLE',array('map_rid'=>$map_rid));
     }
 }

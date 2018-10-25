@@ -297,6 +297,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <li><a href="<?php echo site_url('room_table/index/index');?>"><i class="fa fa-wrench"></i>         <span>Room    </span></a></li>
           <li><a href="<?php echo site_url('status_table/index/index');?>"><i class="fa fa-toggle-on"></i>    <span>Status  </span></a></li>
           <li><a href="<?php echo site_url('history_table/index/index');?>"><i class="fa fa-history"></i>     <span>History </span></a></li>
+					<li><a href="<?php echo site_url('map_table/index/index');?>"><i class="fa fa-map"></i>         <span>Map     </span></a></li>
         
         </li>
         </ul>

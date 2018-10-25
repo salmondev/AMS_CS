@@ -30,9 +30,9 @@ class Map_table extends CI_Controller{
         if(isset($_POST) && count($_POST) > 0)     
         {   
             $params = array(
-				'MAP_IMG' => $this->input->post('MAP_IMG'),
-				'MAP_STATUS' => $this->input->post('MAP_STATUS'),
-				'MAP_NAME' => $this->input->post('MAP_NAME'),
+				'map_img' => $this->input->post('map_img'),
+				'map_status' => $this->input->post('map_status'),
+				'map_name' => $this->input->post('map_name'),
             );
             
             $map_table_id = $this->Map_table_model->add_map_table($params);
@@ -48,22 +48,22 @@ class Map_table extends CI_Controller{
     /*
      * Editing a map_table
      */
-    function edit($MAP_RID)
+    function edit($map_rid)
     {   
         // check if the map_table exists before trying to edit it
-        $data['map_table'] = $this->Map_table_model->get_map_table($MAP_RID);
+        $data['map_table'] = $this->Map_table_model->get_map_table($map_rid);
         
-        if(isset($data['map_table']['MAP_RID']))
+        if(isset($data['map_table']['map_rid']))
         {
             if(isset($_POST) && count($_POST) > 0)     
             {   
                 $params = array(
-					'MAP_IMG' => $this->input->post('MAP_IMG'),
-					'MAP_STATUS' => $this->input->post('MAP_STATUS'),
-					'MAP_NAME' => $this->input->post('MAP_NAME'),
+					'map_img' => $this->input->post('map_img'),
+					'map_status' => $this->input->post('map_status'),
+					'map_name' => $this->input->post('map_name'),
                 );
 
-                $this->Map_table_model->update_map_table($MAP_RID,$params);            
+                $this->Map_table_model->update_map_table($map_rid,$params);            
                 redirect('map_table/index');
             }
             else
@@ -79,14 +79,14 @@ class Map_table extends CI_Controller{
     /*
      * Deleting map_table
      */
-    function remove($MAP_RID)
+    function remove($map_rid)
     {
-        $map_table = $this->Map_table_model->get_map_table($MAP_RID);
+        $map_table = $this->Map_table_model->get_map_table($map_rid);
 
         // check if the map_table exists before trying to delete it
-        if(isset($map_table['MAP_RID']))
+        if(isset($map_table['map_rid']))
         {
-            $this->Map_table_model->delete_map_table($MAP_RID);
+            $this->Map_table_model->delete_map_table($map_rid);
             redirect('map_table/index');
         }
         else

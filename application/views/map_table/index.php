@@ -22,13 +22,13 @@
                     </thead>
                     <?php foreach($map_table as $m){ ?>
                     <tr>
-						<td><?php echo $m['MAP_RID']; ?></td>
-						<td><?php echo $m['MAP_IMG']; ?></td>
-						<td><?php echo $m['MAP_STATUS']; ?></td>
-						<td><?php echo $m['MAP_NAME']; ?></td>
+						<td><?php echo $m['map_rid']; ?></td>
+						<td><?php echo $m['map_img']; ?></td>
+						<td><?php echo $m['map_status']; ?></td>
+						<td><?php echo $m['map_name']; ?></td>
 						<td>
-                            <a href="<?php echo site_url('map_table/edit/'.$m['MAP_RID']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
-                            <a href="<?php echo site_url('map_table/remove/'.$m['MAP_RID']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>
+                            <a href="<?php echo site_url('map_table/edit/'.$m['map_rid']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
+                            <a href="<?php echo site_url('map_table/remove/'.$m['map_rid']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>
                         </td>
                     </tr>
                     <?php } ?>
