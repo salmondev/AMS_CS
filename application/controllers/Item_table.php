@@ -61,7 +61,7 @@ class Item_table extends CI_Controller{
         // check if the item_table exists before trying to edit it
         $data['item_table'] = $this->Item_table_model->get_item_table($item_uid);
         
-        if(isset($data['item_table']['']))
+        if(isset($data['item_table']['item_uid']))
         {
             if(isset($_POST) && count($_POST) > 0)     
             {   
@@ -93,7 +93,7 @@ class Item_table extends CI_Controller{
         $item_table = $this->Item_table_model->get_item_table($item_uid);
 
         // check if the item_table exists before trying to delete it
-        if(isset($item_table['']))
+        if(isset($item_table['item_uid']))
         {
             $this->Item_table_model->delete_item_table($item_uid);
             redirect('item_table/index');

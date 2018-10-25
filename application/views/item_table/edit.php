@@ -4,7 +4,7 @@
             <div class="box-header with-border">
               	<h3 class="box-title">Item Table Edit</h3>
             </div>
-			<?php echo form_open('item_table/edit/'.$item_table['']); ?>
+			<?php echo form_open('item_table/edit/'.$item_table['item_uid']); ?>
 			<div class="box-body">
 				<div class="row clearfix">
 					<div class="col-md-6">
