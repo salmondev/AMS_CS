@@ -39,6 +39,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 {
     display:inline;
 }
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: white;
+   color: white;
+   text-align: center;
+}
 </style>
   </head>
 
@@ -57,26 +66,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   
 <!-- left Bordered -->
   <blockquote class="blockquote-v1 blockquote-v1--left">
-  <p>AMS can track the asset. App can show detail asset with NFC scan by Smartphone application.</p>
+  <p>AMS Smartphone Application.</p>
   <footer class="blockquote-footer">AMS</footer>
   </blockquote>
 <!-- End left Bordered -->
-
+<!--
 <br>
 <a class="btn btn-outline-info btn-lg btn-block" target="_blank" href="https://en.wikipedia.org/wiki/Near-field_communication" role="button">NFC</a>
 </div>
-<br>
+<br>-->
 <!-- Block -->
 <div class="demo-btn-space mb-7" style="margin: 2%;">
             <h3 class="h6 mb-3"></h3>
             <div class="row">
               <div class="col-lg-6 mb-2 mb-lg-0">
-                <button type="button" class="btn btn-block btn-lg btn-dark">SYSTEM</button>
+							<a href="<?php echo base_url('index.php/login');?>"class="btn btn-block btn-lg btn-outline-primary">LOG IN</a>
+                <!--<button type="button" class="btn btn-block btn-lg btn-dark">SYSTEM</button>-->
               </div>
-
+<!--
               <div class="col-lg-6">
                 <a href="<?php echo base_url('index.php/login');?>"class="btn btn-block btn-lg btn-outline-primary">LOG IN</a>
-              </div>
+              </div>-->
             </div>
           </div>
           <!-- End Block -->
@@ -88,8 +98,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <!-- ************************************************************************ -->
 <br>
+<div class="footer">
 <h4 class="bg-primary text-light" align="center">Copyright © 2018 CS KMUTNB</h4>
-
+</div>
     <!-- JAVASCRIPTS (Load javascripts at bottom, this will reduce page load time) -->
     <!-- Global Vendor -->
     <script src="<?php echo base_url('assets/vendors/jquery.min.js');?>"></script>

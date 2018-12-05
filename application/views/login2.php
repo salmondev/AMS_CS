@@ -55,7 +55,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			box-shadow: 0 0 8px #D0D0D0;
 		}
 		</style>
-		
 	</head>
 	<body>
 		<div id="container">
@@ -71,10 +70,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					echo "<br />";
 				}
 				?>
-				Username <br />
+				user = admin <br />
 				<input type="text" name="emp_username" >
 				<br />
-				Password  <br />
+				pass = admin  <br />
 				<input type="password" name="emp_password" >
 				<br />
 				<button type="submit"> Login </button>

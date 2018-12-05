@@ -1,3 +1,6 @@
+<?php if (!isset($_SESSION['user'])) {
+    redirect('login');
+} ?>
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
@@ -201,7 +204,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <li class="user-header">
                 <img src="<?php echo base_url('dist/img/admin.png');?>" class="img-circle" alt="User Image">
                 <p>
-                  ADMIN
+                  ADMIN</br>
+						
+									<?php echo $name; ?>
+									
                   <small>Computer Science</small>
                 </p>
               </li>
@@ -226,7 +232,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="<?php echo base_url('index.php/home') ?>" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="<?php echo site_url('login/logout') ?>" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
