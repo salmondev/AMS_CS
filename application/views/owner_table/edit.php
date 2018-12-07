@@ -4,7 +4,7 @@
             <div class="box-header with-border">
               	<h3 class="box-title">Owner Table Edit</h3>
             </div>
-			<?php echo form_open('owner_table/edit/'.$owner_table['']); ?>
+			<?php echo form_open('owner_table/edit/'.$owner_table['owner_uid']); ?>
 			<div class="box-body">
 				<div class="row clearfix">
 					<div class="col-md-6">

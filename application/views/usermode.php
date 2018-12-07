@@ -204,10 +204,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <li class="user-header">
                 <img src="<?php echo base_url('dist/img/admin.png');?>" class="img-circle" alt="User Image">
                 <p>
-                  ADMIN</br>
-						
-									<?php echo $name; ?>
-									
+                  ADMIN
+									</br>
+						      User : <b><?php  $session_data = $this->session->userdata('user');print_r($session_data); ?></b>
+                   </br>
                   <small>Computer Science</small>
                 </p>
               </li>
@@ -236,7 +236,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
               </li>
             </ul>
-						
           </li>
           <!-- Control Sidebar Toggle Button -->
           <li>
@@ -258,7 +257,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="pull-left info">
           <p>ADMIN</p>
           <!-- Status -->
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <i class="fa fa-circle text-success"></i> <?php  $session_data = $this->session->userdata('user');print_r($session_data); ?>
         </div>
       </div>
       <!-- search form (Optional) -->

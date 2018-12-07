@@ -16,7 +16,7 @@ class Owner_table_model extends CI_Model
      */
     function get_owner_table($owner_uid)
     {
-        return $this->db->get_where('OWNER_TABLE',array(''=>$owner_uid))->row_array();
+        return $this->db->get_where('OWNER_TABLE',array('owner_uid'=>$owner_uid))->row_array();
     }
         
     /*
@@ -24,7 +24,7 @@ class Owner_table_model extends CI_Model
      */
     function get_all_owner_table()
     {
-        $this->db->order_by('', 'desc');
+        $this->db->order_by('owner_uid', 'desc');
         return $this->db->get('OWNER_TABLE')->result_array();
     }
         
@@ -42,7 +42,7 @@ class Owner_table_model extends CI_Model
      */
     function update_owner_table($owner_uid,$params)
     {
-        $this->db->where('',$owner_uid);
+        $this->db->where('owner_uid',$owner_uid);
         return $this->db->update('OWNER_TABLE',$params);
     }
     
@@ -51,6 +51,6 @@ class Owner_table_model extends CI_Model
      */
     function delete_owner_table($owner_uid)
     {
-        return $this->db->delete('OWNER_TABLE',array(''=>$owner_uid));
+        return $this->db->delete('OWNER_TABLE',array('owner_uid'=>$owner_uid));
     }
 }
