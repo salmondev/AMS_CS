@@ -206,7 +206,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <p>
                   ADMIN</br>
 						
-									<?php echo $name; ?>
+									User : <b><?php $username = $this->session->userdata('user'); 	print_r($username);?></b>
 									
                   <small>Computer Science</small>
                 </p>
