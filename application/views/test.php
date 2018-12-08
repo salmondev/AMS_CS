@@ -197,7 +197,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- The user image in the navbar-->
               <img src="<?php echo base_url('dist/img/admin.png');?>" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">ADMIN</span>
+              <span class="hidden-xs">User : <b><?php $username = $this->session->userdata('user'); 	print_r($username);?></b></span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -232,7 +232,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="<?php echo site_url('login/logout') ?>" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="<?php echo site_url('login/logout') ?>" class="btn btn-default btn-flat">Log out</a>
                 </div>
               </li>
             </ul>
@@ -240,7 +240,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
           <!-- Control Sidebar Toggle Button -->
           <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+					<a href="<?php echo site_url('login/logout') ?>" class="btn btn-danger">Log out</a>
           </li>
         </ul>
       </div>
@@ -258,7 +258,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="pull-left info">
           <p>ADMIN</p>
           <!-- Status -->
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <i class="fa fa-circle text-success"></i> <?php $username = $this->session->userdata('user'); 	print_r($username);?>
         </div>
       </div>
       <!-- search form (Optional) -->
@@ -356,7 +356,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Create the tabs -->
   <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
     <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-    <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+    <li><a href="<?php echo site_url('login/logout') ?>" class="btn btn-default btn-flat">Log out</a></li>
   </ul>
   <!-- Tab panes -->
   <div class="tab-content">
