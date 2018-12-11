@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admin | Log in</title>
+  <title>Log In</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -34,22 +34,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="home"><b>ADMIN</b></a>
+    <a href="home"><b>LOG IN</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">LOG IN</p>
+    <p class="login-box-msg">เข้าสู่ระบบ</p>
 
     <form name="login" action="<?php echo site_url('login/check');?>" method="post">
-		<?php
-				@$act=$_GET['act'];
-				if($act=='F'){
-					echo "<font color='red'>";
-					echo 'Login False';
-					echo "</font>";
-					echo "<br />";
-				}
-				?>
+	
 			<div class="form-group has-feedback">
         <input type="text" name="emp_username" id="owner_fname" class="form-control" placeholder="Username">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -59,15 +51,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
-        <div class="col-xs-8">
-          <div class="checkbox icheck">
-            
-          </div>
-        </div>
+        
         <!-- /.col -->
-        <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Log In</button>
+				<div class="col-xs-4">
+				<button type="submit" class="btn btn-primary btn-block ">Log In</button>
+				
+				</div>
+				<div class="col-xs-4">
         </div>
+        <div class="col-xs-4">
+				<a href="<?php echo site_url('home') ?>"> <p class="btn btn-danger">HOME</p></a>
+        </div>
+				
         <!-- /.col -->
       </div>
     </form>

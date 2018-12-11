@@ -99,97 +99,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Messages: style can be found in dropdown.less-->
                 <li class="dropdown messages-menu">
                   <!-- Menu toggle button -->
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-envelope-o"></i>
-                    <span class="label label-success"></span>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li class="header"></li>
-                    <li>
-                      <!-- inner menu: contains the messages -->
-                      <ul class="menu">
-                        <li><!-- start message -->
-                        <a href="#">
-                          <div class="pull-left">
-                            <!-- User Image -->
-                            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                          </div>
-                          <!-- Message title and timestamp -->
-                          <h4>
-                          
-                          <small><i class="fa fa-clock-o"></i> </small>
-                          </h4>
-                          <!-- The message -->
-                          <p></p>
-                        </a>
-                      </li>
-                      <!-- end message -->
-                    </ul>
-                    <!-- /.menu -->
-                  </li>
-                  <li class="footer"><a href="#"></a></li>
-                </ul>
-              </li>
-              <!-- /.messages-menu -->
-              <!-- Notifications Menu -->
-              <li class="dropdown notifications-menu">
-                <!-- Menu toggle button -->
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="fa fa-bell-o"></i>
-                  <span class="label label-warning"></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li class="header"></li>
-                  <li>
-                    <!-- Inner Menu: contains the notifications -->
-                    <ul class="menu">
-                      <li><!-- start notification -->
-                      <a href="#">
-                        <i class="fa fa-users text-aqua"></i>
-                      </a>
-                    </li>
-                    <!-- end notification -->
-                  </ul>
-                </li>
-                <li class="footer"><a href="#"></a></li>
-              </ul>
-            </li>
-            <!-- Tasks Menu -->
-            <li class="dropdown tasks-menu">
-              <!-- Menu Toggle Button -->
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-flag-o"></i>
-                <span class="label label-danger"></span>
-              </a>
-              <ul class="dropdown-menu">
-                <li class="header"></li>
-                <li>
-                  <!-- Inner menu: contains the tasks -->
-                  <ul class="menu">
-                    <li><!-- Task item -->
-                    <a href="#">
-                      <!-- Task title and progress text -->
-                      <h3>
-                      <small class="pull-right"></small>
-                      </h3>
-                      <!-- The progress bar -->
-                      <div class="progress xs">
-                        <!-- Change the css width attribute to simulate progress -->
-                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
-                          aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only"></span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
-                </ul>
-              </li>
-              <li class="footer">
-                <a href="#">View all tasks</a>
-              </li>
-            </ul>
-          </li>
+                  
+              
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
@@ -208,39 +119,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
 						
 									User : <b><?php $username = $this->session->userdata('user'); 	print_r($username);?></b>
 									
-                  <small>Computer Science</small>
                 </p>
               </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#"></a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#"></a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#"></a>
-                  </div>
-                </div>
-                <!-- /.row -->
+              
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                <div class="col-sm-12">
+                  <a href="#" class="btn btn-primary btn-block">Profile</a>
                 </div>
-                <div class="pull-right">
-                  <a href="<?php echo site_url('login/logout') ?>" class="btn btn-default btn-flat">Log out</a>
-                </div>
+                
               </li>
             </ul>
 						
           </li>
           <!-- Control Sidebar Toggle Button -->
           <li>
-					<a href="<?php echo site_url('login/logout') ?>" class="btn btn-danger">Log out</a>
+					<a href="<?php echo site_url('login/logout') ?>" class="btn btn-danger brn-flat">Log out</a>
           </li>
         </ul>
       </div>
@@ -261,22 +156,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <i class="fa fa-circle text-success"></i> <?php $username = $this->session->userdata('user'); 	print_r($username);?>
         </div>
       </div>
-      <!-- search form (Optional) -->
-      <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-          <span class="input-group-btn">
-            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-            </button>
-          </span>
-        </div>
-      </form>
-      <!-- /.search form -->
+      
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">SYSTEM</li>
         <!-- Optionally, you can add icons to the links -->
-        <li ><a href="<?php echo site_url('dashboard/index/dashboard') ?>"><i class="fa fa-gears"></i> <span>Dashboard</span></a></li>
+        <li ><a href="<?php echo site_url('item_table/index3/sync') ?>"><i class="fa fa-gears"></i> <span>SYNC</span></a></li>
         <li ><a href="<?php echo site_url('item_table/index2/demo') ?>"><i class="fa fa-database"></i> <span>ITEM LIST</span></a></li>
         <li class="treeview class="active menu-open"">
           <a href="#"><i class="fa fa-globe"></i> <span>Tracking System</span>
@@ -322,8 +207,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <small>Asset Management System</small>
     </h1>
     <ol class="breadcrumb">
+		<!--
       <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
-      <li class="active">Home</li>
+      <li class="active">Home</li>-->
     </ol>
   </section>
   <!-- Main content -->
@@ -356,7 +242,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Create the tabs -->
   <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
     <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-    <li><a href="<?php echo site_url('login/logout') ?>" class="btn btn-default btn-flat">Log out</a></li>
+    <li><a href="<?php echo site_url('login/logout') ?>" class="btn btn-danger btn-flat">Log out</a></li>
   </ul>
   <!-- Tab panes -->
   <div class="tab-content">
