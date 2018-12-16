@@ -135,7 +135,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
           <!-- Control Sidebar Toggle Button -->
           <li>
-					<a href="<?php echo site_url('login/logout') ?>" class="btn btn-danger brn-flat">Log out</a>
+					<a href="<?php echo site_url('login/logout') ?>" class="btn btn-danger">Log out</a>
           </li>
         </ul>
       </div>
@@ -163,7 +163,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Optionally, you can add icons to the links -->
         <li ><a href="<?php echo site_url('item_table/index3/sync') ?>"><i class="fa fa-gears"></i> <span>SYNC</span></a></li>
         <li ><a href="<?php echo site_url('item_table/index2/demo') ?>"><i class="fa fa-database"></i> <span>ITEM LIST</span></a></li>
-        <li class="treeview class="active menu-open"">
+        <!--<li class="treeview class="active menu-open"">
           <a href="#"><i class="fa fa-globe"></i> <span>Tracking System</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
@@ -173,7 +173,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <li><a href="<?php echo site_url('map/index/map');?>"><i class="fa fa-map-marker"></i>Map</a></li>
           <li><a href="#"><i class="fa fa-rocket"></i>Tracking</a></li>
         </ul>
-      </li>
+      </li>-->
       <li class="header">DATABASE</li>
       <li class="treeview class="active menu-open"">
         <a href="#"><i class="fa fa-database"></i> <span>DATABASE</span>
@@ -231,11 +231,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- Main Footer -->
 <footer class="main-footer">
   <!-- To the right -->
-  <div class="pull-right hidden-xs">
+  <!--<div class="pull-right hidden-xs">
     Project CS
-  </div>
+  </div>-->
   <!-- Default to the left -->
-  <strong>Copyright &copy; 2018 <a href="http://www.cs.kmutnb.ac.th/" target="_blank">CS KMUTNB</a>.</strong> All rights reserved.
+  <!--<strong>Copyright &copy; 2018 <a href="http://www.cs.kmutnb.ac.th/" target="_blank">CS KMUTNB</a>.</strong> All rights reserved.-->
 </footer>
 <!-- Control Sidebar -->
 <aside class="control-sidebar control-sidebar-dark">

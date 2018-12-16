@@ -83,9 +83,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Logo -->
           <a href="<?php echo site_url('test/index/test');?>" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b></b>CS</span>
+            <span class="logo-mini"><b></b>AMS</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>ADMIN</b></span>
+            <span class="logo-lg"><b>USER</b></span>
           </a>
           <!-- Header Navbar -->
           <nav class="navbar navbar-static-top" role="navigation">
@@ -99,97 +99,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Messages: style can be found in dropdown.less-->
                 <li class="dropdown messages-menu">
                   <!-- Menu toggle button -->
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-envelope-o"></i>
-                    <span class="label label-success"></span>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li class="header"></li>
-                    <li>
-                      <!-- inner menu: contains the messages -->
-                      <ul class="menu">
-                        <li><!-- start message -->
-                        <a href="#">
-                          <div class="pull-left">
-                            <!-- User Image -->
-                            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                          </div>
-                          <!-- Message title and timestamp -->
-                          <h4>
-                          
-                          <small><i class="fa fa-clock-o"></i> </small>
-                          </h4>
-                          <!-- The message -->
-                          <p></p>
-                        </a>
-                      </li>
-                      <!-- end message -->
-                    </ul>
-                    <!-- /.menu -->
-                  </li>
-                  <li class="footer"><a href="#"></a></li>
-                </ul>
-              </li>
-              <!-- /.messages-menu -->
-              <!-- Notifications Menu -->
-              <li class="dropdown notifications-menu">
-                <!-- Menu toggle button -->
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="fa fa-bell-o"></i>
-                  <span class="label label-warning"></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li class="header"></li>
-                  <li>
-                    <!-- Inner Menu: contains the notifications -->
-                    <ul class="menu">
-                      <li><!-- start notification -->
-                      <a href="#">
-                        <i class="fa fa-users text-aqua"></i>
-                      </a>
-                    </li>
-                    <!-- end notification -->
-                  </ul>
-                </li>
-                <li class="footer"><a href="#"></a></li>
-              </ul>
-            </li>
-            <!-- Tasks Menu -->
-            <li class="dropdown tasks-menu">
-              <!-- Menu Toggle Button -->
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-flag-o"></i>
-                <span class="label label-danger"></span>
-              </a>
-              <ul class="dropdown-menu">
-                <li class="header"></li>
-                <li>
-                  <!-- Inner menu: contains the tasks -->
-                  <ul class="menu">
-                    <li><!-- Task item -->
-                    <a href="#">
-                      <!-- Task title and progress text -->
-                      <h3>
-                      <small class="pull-right"></small>
-                      </h3>
-                      <!-- The progress bar -->
-                      <div class="progress xs">
-                        <!-- Change the css width attribute to simulate progress -->
-                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
-                          aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only"></span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
-                </ul>
-              </li>
-              <li class="footer">
-                <a href="#">View all tasks</a>
-              </li>
-            </ul>
-          </li>
+                  
+              
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
@@ -197,49 +108,34 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- The user image in the navbar-->
               <img src="<?php echo base_url('dist/img/admin.png');?>" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">ADMIN</span>
+              <span class="hidden-xs">User : <b><?php $username = $this->session->userdata('user'); 	print_r($username);?></b></span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
                 <img src="<?php echo base_url('dist/img/admin.png');?>" class="img-circle" alt="User Image">
                 <p>
-                  ADMIN
-									</br>
-						      User : <b><?php  $session_data = $this->session->userdata('user');print_r($session_data); ?></b>
-                   </br>
-                  <small>Computer Science</small>
+                  ADMIN</br>
+						
+									User : <b><?php $username = $this->session->userdata('user'); 	print_r($username);?></b>
+									
                 </p>
               </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#"></a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#"></a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#"></a>
-                  </div>
-                </div>
-                <!-- /.row -->
+              
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                <div class="col-sm-12">
+                  <a href="#" class="btn btn-primary btn-block">Profile</a>
                 </div>
-                <div class="pull-right">
-                  <a href="<?php echo site_url('login/logout') ?>" class="btn btn-default btn-flat">Sign out</a>
-                </div>
+                
               </li>
             </ul>
+						
           </li>
           <!-- Control Sidebar Toggle Button -->
           <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+					<a href="<?php echo site_url('login/logout') ?>" class="btn btn-danger">Log out</a>
           </li>
         </ul>
       </div>
@@ -255,29 +151,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <img src="<?php echo base_url('dist/img/admin.png');?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>ADMIN</p>
+          <p>User</p>
           <!-- Status -->
-          <i class="fa fa-circle text-success"></i> <?php  $session_data = $this->session->userdata('user');print_r($session_data); ?>
+          <i class="fa fa-circle text-success"></i> <?php $username = $this->session->userdata('user'); 	print_r($username);?>
         </div>
       </div>
-      <!-- search form (Optional) -->
-      <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-          <span class="input-group-btn">
-            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-            </button>
-          </span>
-        </div>
-      </form>
-      <!-- /.search form -->
+      
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">SYSTEM</li>
         <!-- Optionally, you can add icons to the links -->
-        <li ><a href="<?php echo site_url('dashboard/index/dashboard') ?>"><i class="fa fa-gears"></i> <span>Dashboard</span></a></li>
-        <li ><a href="<?php echo site_url('item_table/index2/demo') ?>"><i class="fa fa-database"></i> <span>ITEM LIST</span></a></li>
-        <li class="treeview class="active menu-open"">
+        <li ><a href="<?php echo site_url('item_table/index3/sync') ?>"><i class="fa fa-gears"></i> <span>SYNC</span></a></li>
+        <li ><a href="<?php echo site_url('item_table/index2/demo') ?>"><i class="fa fa-database"></i> <span>SEARCH</span></a></li>
+        <!--<li class="treeview class="active menu-open"">
           <a href="#"><i class="fa fa-globe"></i> <span>Tracking System</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
@@ -287,26 +173,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <li><a href="<?php echo site_url('map/index/map');?>"><i class="fa fa-map-marker"></i>Map</a></li>
           <li><a href="#"><i class="fa fa-rocket"></i>Tracking</a></li>
         </ul>
-      </li>
-      <li class="header">DATABASE</li>
-      <li class="treeview class="active menu-open"">
-        <a href="#"><i class="fa fa-database"></i> <span>DATABASE</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="<?php echo site_url('building_table/index/index');?>"><i class="fa fa-institution"></i><span>Building</span></a></li>
-          <li><a href="<?php echo site_url('floor_table/index/index');?>"><i class="fa fa-server"></i>        <span>Floor   </span></a></li>
-          <li><a href="<?php echo site_url('item_table/index/index');?>"><i class="fa fa-cubes"></i>          <span>Item    </span></a></li>
-          <li><a href="<?php echo site_url('owner_table/index/index');?>"><i class="fa fa-address-card"></i>  <span>Owner   </span></a></li>
-          <li><a href="<?php echo site_url('room_table/index/index');?>"><i class="fa fa-wrench"></i>         <span>Room    </span></a></li>
-          <li><a href="<?php echo site_url('status_table/index/index');?>"><i class="fa fa-toggle-on"></i>    <span>Status  </span></a></li>
-          <li><a href="<?php echo site_url('history_table/index/index');?>"><i class="fa fa-history"></i>     <span>History </span></a></li>
-					<li><a href="<?php echo site_url('map_table/index/index');?>"><i class="fa fa-map"></i>         <span>Map     </span></a></li>
-        
-        </li>
-        </ul>
+      </li>-->
+      
     </ul>
     <!-- /.sidebar-menu -->
   </section>
@@ -321,8 +189,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <small>Asset Management System</small>
     </h1>
     <ol class="breadcrumb">
+		<!--
       <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
-      <li class="active">Home</li>
+      <li class="active">Home</li>-->
     </ol>
   </section>
   <!-- Main content -->
@@ -344,18 +213,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- Main Footer -->
 <footer class="main-footer">
   <!-- To the right -->
-  <div class="pull-right hidden-xs">
+  <!--<div class="pull-right hidden-xs">
     Project CS
-  </div>
+  </div>-->
   <!-- Default to the left -->
-  <strong>Copyright &copy; 2018 <a href="http://www.cs.kmutnb.ac.th/" target="_blank">CS KMUTNB</a>.</strong> All rights reserved.
+  <!--<strong>Copyright &copy; 2018 <a href="http://www.cs.kmutnb.ac.th/" target="_blank">CS KMUTNB</a>.</strong> All rights reserved.-->
 </footer>
 <!-- Control Sidebar -->
 <aside class="control-sidebar control-sidebar-dark">
   <!-- Create the tabs -->
   <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
     <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-    <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+    <li><a href="<?php echo site_url('login/logout') ?>" class="btn btn-danger btn-flat">Log out</a></li>
   </ul>
   <!-- Tab panes -->
   <div class="tab-content">

@@ -29,7 +29,7 @@ public function check()
 
 	  $emp_password1 = md5($emp_password);
 
-	$sql="SELECT * FROM `OWNER_TABLE` where owner_fname='$emp_username' and owner_uid='$emp_password1'";
+	$sql="SELECT * FROM `OWNER_TABLE` where owner_fname='$emp_username' and md5(owner_uid)='$emp_password1'";
 	$query = $this->db->query($sql);
 	if ($query->num_rows() > 0)
 	{
@@ -42,14 +42,10 @@ public function check()
 	}
 	else
 	{
-		/*echo "<script>
+		echo "<script>
 			  alert('Access Denied');
+			  window.location.href='http://amsapp.net/index.php/login';
 			  </script>";
-			  */
-			  $message = "Username and/or Password incorrect.\\nTry again.";
-			  echo "<script type='text/javascript'>alert('$message');</script>";
-		//redirect('?act=F','refresh');
-		redirect('login');
 	}
 
 }

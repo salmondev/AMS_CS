@@ -38,7 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">เข้าสู่ระบบ</p>
+    <p class="login-box-msg">เข้าสู่ระบบจัดการพัสดุ/ครุภัณฑ์</p>
 
     <form name="login" action="<?php echo site_url('login/check');?>" method="post">
 	
