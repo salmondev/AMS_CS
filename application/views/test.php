@@ -118,6 +118,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   ADMIN</br>
 						
 									User : <b><?php $username = $this->session->userdata('user'); 	print_r($username);?></b>
+									LV : <b><?php $lv = $this->session->userdata('lv'); 	print_r($lv);?></b>
 									
                 </p>
               </li>
