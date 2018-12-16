@@ -54,13 +54,19 @@ public function home()
 	$emp_username=$this->input->post('emp_username');
 
 	$status=$this->session->userdata('logged_in');
+	$lv=$this->session->userdata('lv');
 	if ($status<>'OK')
 	{
 		redirect('login');
 	}
 	else {
+		
 		$data['name'] = "$emp_username";
-		$this->load->view('test',$data);
+		if($lv=='ADMIN'){
+	        $this->load->view('test',$data);
+		}else{
+			$this->load->view('usermode',$data);
+		}
 	}
 }
 
