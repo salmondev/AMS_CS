@@ -1,3 +1,34 @@
+<?php  
+$connect = mysqli_connect("localhost", "amsappne_nfcdb", "AMSnfcapp1", "amsappne_nfc");
+if(isset($_POST["submit"]))
+{
+ if($_FILES['file']['name'])
+ {
+  $filename = explode(".", $_FILES['file']['name']);
+  if($filename[1] == 'csv')
+  {
+   $handle = fopen($_FILES['file']['tmp_name'], "r");
+   fgetcsv($handle);
+   while($data = fgetcsv($handle))
+   {
+                $item1 = mysqli_real_escape_string($connect, $data[0]);  
+				$item2 = mysqli_real_escape_string($connect, $data[1]);
+				$item3 = mysqli_real_escape_string($connect, $data[2]);
+				$item4 = mysqli_real_escape_string($connect, $data[3]);
+                $query = "INSERT into ITEM_TABLE (item_uid,item_serial,item_name,item_password) values('$item1','$item2','$item3','$item4')";
+                mysqli_query($connect, $query);
+   }
+   fclose($handle);
+   echo "<script>
+   alert('Import Done');
+   window.location.href='http://amsapp.net/index.php/item_table/index3/sync';
+			  
+   </script>";
+  }
+ }
+}
+?>  
+
 <head>
 
 <script type="text/javascript" src="https://unpkg.com/xlsx/dist/shim.min.js"></script>
@@ -12,7 +43,16 @@
         <div class="box">
             <div class="box-header">
             <div class="box-title">
-                    <p id="xportxlsx" class="xport"><input type="submit" value="EXPORT EXCEL" class="btn btn-primary btn-lg" onclick="doit('xlsx');"></p>
+			<form method="post" enctype="multipart/form-data">
+   
+    
+    <input type="file" name="file" />
+    <br />
+    <input type="submit" name="submit" value="IMPORT CSV" class="btn btn-info btn-lg" />
+   
+  </form>
+  
+                    <br/><p id="xportxlsx" class="xport"><input type="submit" value="EXPORT EXCEL" class="btn btn-primary btn-lg" onclick="doit('xlsx');"></p>
                 </div>
             </div>
             <div class="box-body">
@@ -22,7 +62,6 @@
 						<th>ITEM UID</th>
 						<th>ITEM SERIAL</th>
 						<th>ITEM NAME</th>
-						<th>ITEM AVAILABLE</th>
                     </tr>
                 </thead>
                     <?php foreach($item_table as $i){ ?>
@@ -30,7 +69,6 @@
 						<td><?php echo $i['item_uid']; ?></td>
 						<td><?php echo $i['item_serial']; ?></td>
 						<td><?php echo $i['item_name']; ?></td>
-						<td><?php echo $i['item_available']; ?></td>
                     </tr>
                     <?php } ?>
                 </table>        

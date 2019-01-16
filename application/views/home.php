@@ -55,7 +55,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div style="margin: 2%;">
     <div id="block_container">
     <!--<div id="bloc1"><i class="fas fa-code" style="font-size: 4em;"></i></div> -->
-    <div id="bloc2"><h1 class="display-4 text-primary"> Asset Management System with NFC <h1> </div>  
+    <div id="bloc2"><h1 class="display-4 text-primary"> Asset Management System <h1> </div>  
 </div>
 <br>
 <!--<div style="margin-top: 2%;">
