@@ -76,6 +76,9 @@ if(isset($_POST["submit"]))
 						<td><?php echo $i['item_uid']; ?></td>
 						<td><?php echo $i['item_serial']; ?></td>
 						<td><?php echo $i['item_name']; ?></td>
+						<td>
+                            <a href="<?php echo site_url('ciqrcode/generate/'.$i['item_uid']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span>Generate QR Code</a> 
+                        </td>
                     </tr>
                     <?php } ?>
                 </table>
