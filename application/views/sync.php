@@ -1,5 +1,7 @@
 <?php  
 $connect = mysqli_connect("localhost", "amsappne_nfcdb", "AMSnfcapp1", "amsappne_nfc");
+
+
 if(isset($_POST["submit"]))
 {
  if($_FILES['file']['name'])
@@ -10,17 +12,25 @@ if(isset($_POST["submit"]))
    $handle = fopen($_FILES['file']['tmp_name'], "r");
    while($data = fgetcsv($handle))
    {
-                $item1 = mysqli_real_escape_string($connect, $data[0]);  
+	
+			   
+				$item1 = mysqli_real_escape_string($connect, $data[0]);
 				$item2 = mysqli_real_escape_string($connect, $data[1]);
 				$item3 = mysqli_real_escape_string($connect, $data[2]);
 				$item4 = mysqli_real_escape_string($connect, $data[3]);
-                $query = "INSERT into ITEM_TABLE (item_uid,item_serial,item_name,item_password) values('$item1','$item2','$item3','$item4')";
-                mysqli_query($connect, $query);
+				$item5 = mysqli_real_escape_string($connect, $data[4]);
+				$item6 = mysqli_real_escape_string($connect, $data[5]);
+				
+                $query = "INSERT into ASSET (ASSETID,REFERID,ASSETNAME,RECEIVEDATE,SPEC,UNITNAME) values('$item1','$item2','$item3','$item4','$item5','$item6')";
+				//$query = "INSERT into ASSET (ASSETID,REFERID,ASSETNAME,RECEIVEDATE,SPEC,UNITNAME) values ('$save')";
+				
+				mysqli_query($connect, $query);
+				
    }
    fclose($handle);
    echo "<script>
    alert('Import Done');
-   window.location.href='http://amsapp.net/index.php/item_table/index3/sync';
+   window.location.href='http://amsapp.net/index.php/asset/index3/sync';
 			  
    </script>";
   }
@@ -29,6 +39,8 @@ if(isset($_POST["submit"]))
 ?>
 
 <head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<script type="text/javascript" src="https://unpkg.com/xlsx/dist/shim.min.js"></script>
 	<script type="text/javascript" src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
@@ -97,9 +109,9 @@ background: rgba(0, 0, 0, 0.5);
                     <input name="btnSubmit" type="submit" id="btnSubmit" value="IMPORT" class="btn btn-primary btn-lg">
             </form>
 -->
-					
 
-					<form method="post" enctype="multipart/form-data">
+
+					<form method="post" enctype="multipart/form-data" accept-charset="utf-8">
 
 
 						<input type="file" name="file" />
@@ -115,21 +127,33 @@ background: rgba(0, 0, 0, 0.5);
 				<table id="example2" class="table table-striped">
 					<thead>
 						<tr>
-							<th>ITEM UID</th>
-							<th>ITEM SERIAL</th>
-							<th>ITEM NAME</th>
+							<th>ASSETID</th>
+							<th>REFERID</th>
+							<th>ASSETNAME</th>
+							<th>RECEIVEDATE</th>
+							<th>SPEC</th>
+							<th>UNITNAME</th>
 						</tr>
 					</thead>
-					<?php foreach($item_table as $i){ ?>
+					<?php foreach($asset as $A){ ?>
 					<tr>
 						<td>
-							<?php echo $i['item_uid']; ?>
+							<?php echo $A['ASSETID']; ?>
 						</td>
 						<td>
-							<?php echo $i['item_serial']; ?>
+							<?php echo $A['REFERID']; ?>
 						</td>
 						<td>
-							<?php echo $i['item_name']; ?>
+							<?php echo $A['ASSETNAME']; ?>
+						</td>
+						<td>
+							<?php echo $A['RECEIVEDATE']; ?>
+						</td>
+						<td>
+							<?php echo $A['SPEC']; ?>
+						</td>
+						<td>
+							<?php echo $A['UNITNAME']; ?>
 						</td>
 						<td>
 							<!--<a href="<?php echo site_url('ciqrcode/generate/'.$i['item_uid']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span>Generate
@@ -175,9 +199,6 @@ background: rgba(0, 0, 0, 0.5);
 
 
 <script>
-	
-
-
 	///////////////////////////////////////////////////////////////////
 
 

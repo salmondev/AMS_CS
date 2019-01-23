@@ -25,7 +25,7 @@ class Item_table_model extends CI_Model
     function get_all_item_table()
     {
         $this->db->order_by('item_uid', 'desc');
-        return $this->db->get('ITEM_TABLE')->result_array();
+        return $this->db->get('ASSET')->result_array();
     }
         
     /*

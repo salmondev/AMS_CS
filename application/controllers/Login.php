@@ -19,10 +19,10 @@ public function check()
 
 	  $emp_password1 = md5($emp_password);
 
-	$sql="SELECT * FROM `OWNER_TABLE` where owner_fname='$emp_username' and md5(owner_uid)='$emp_password1'";
+	$sql="SELECT * FROM `USER` where USER_USERNAME='$emp_username' and md5(USER_PASSWORD)='$emp_password1'";
 	$query = $this->db->query($sql);
 	
-	$query1 = $this->db->query('SELECT * FROM OWNER_TABLE WHERE auth="ADMIN"');
+	$query1 = $this->db->query('SELECT * FROM USER WHERE AUTH="ADMIN"');
     $res = $query->result();  // this returns an object of all results
     $row = $res[0];           // get the first row
     
@@ -34,7 +34,7 @@ public function check()
 		$newdata = array(
 			'user' => $emp_username,
 			'logged_in' => 'OK',
-			'lv' => $row->auth
+			'lv' => $row->AUTH
 		);
 		$this->session->set_userdata($newdata);
 		redirect('login/home');
