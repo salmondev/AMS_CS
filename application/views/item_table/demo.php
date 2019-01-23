@@ -1,3 +1,6 @@
+<?php if (!isset($_SESSION['user'])) {
+    redirect('login');
+} ?>
 <?php  
 $connect = mysqli_connect("localhost", "amsappne_nfcdb", "AMSnfcapp1", "amsappne_nfc");
 if(isset($_POST["submit"]))

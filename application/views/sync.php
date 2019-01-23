@@ -1,3 +1,7 @@
+<?php if (!isset($_SESSION['user'])) {
+    redirect('login');
+} ?>
+
 <?php  
 $connect = mysqli_connect("localhost", "amsappne_nfcdb", "AMSnfcapp1", "amsappne_nfc");
 mysqli_set_charset($connect,'utf8');
@@ -109,7 +113,7 @@ background: rgba(0, 0, 0, 0.5);
                     <input name="file" type="file" ></br>
                     <input name="btnSubmit" type="submit" id="btnSubmit" value="IMPORT" class="btn btn-primary btn-lg">
             </form>
--->
+
 
 
 					<form method="post" enctype="multipart/form-data" accept-charset="utf-8">
@@ -119,7 +123,11 @@ background: rgba(0, 0, 0, 0.5);
 						<br />
 						<input type="submit" name="submit" value="Import" class="btn btn-info" />
 
-					</form>
+					</form> -->
+
+					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
+								IMPORT CSV
+							</button>
 
 					<!--<p id="syncx" class="syncdata"><input type="submit" value="IMPORT" class="btn btn-primary btn-lg" </p>-->
 				</div>
@@ -193,6 +201,40 @@ background: rgba(0, 0, 0, 0.5);
 			<div class="modal-footer">
 				<button type="button" class="btn btn-primary" id="btnPrint">Print</button>
 			</div>
+
+		</div>
+	</div>
+</div>
+
+<!-- ///////////////////////////////////////////////////////////////////// -->
+
+<!-- The Modal -->
+<div class="modal" id="myModal1">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<!-- Modal Header -->
+			<div class="modal-header">
+				<h4 class="modal-title">Import CSV</h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+
+			<!-- Modal body -->
+			<div class="modal-body">
+			<form method="post" enctype="multipart/form-data" accept-charset="utf-8">
+
+
+<input type="file" name="file" />
+<br />
+<input type="submit" name="submit" value="Import" class="btn btn-info" />
+
+</form>
+			</div>
+
+			<!-- Modal footer 
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" id="btnPrint">Print</button>
+			</div>-->
 
 		</div>
 	</div>
