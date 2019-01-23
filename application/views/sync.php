@@ -148,6 +148,7 @@ background: rgba(0, 0, 0, 0.5);
 					<tr>
 						<td>
 							<?php echo $A['ASSETID']; ?>
+							<input type="hidden" name="assetid" id="textQrcode" value="<?php echo $A['ASSETID']; ?>" />
 						</td>
 						<td>
 							<?php echo $A['REFERID']; ?>
@@ -166,7 +167,9 @@ background: rgba(0, 0, 0, 0.5);
 						</td>
 						<td>
 							<!--<a href="<?php echo site_url('ciqrcode/generate/'.$i['item_uid']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span>Generate
-								QR Code</a> -->
+								QR Code</a> 
+							<input type="hidden" name="assetid" id="textQrcode" value="<?php echo $A['ASSETID']; ?>" />-->
+								
 
 							<!-- Button to Open the Modal -->
 							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="createQRcode()">
@@ -198,8 +201,10 @@ background: rgba(0, 0, 0, 0.5);
 			</div>
 
 			<!-- Modal footer -->
-			<div class="modal-footer">
-				<button type="button" class="btn btn-primary" id="btnPrint">Print</button>
+			<div class="modal-footer justify-content-between">
+				<div class="col-md-4 text-left"><button type="button" class="btn btn-primary move-left" id="btnPrint">Print</button></div>
+				<div class="col-md-4"></div>
+				<div class="col-md-4"><button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button></div>
 			</div>
 
 		</div>
@@ -242,6 +247,8 @@ background: rgba(0, 0, 0, 0.5);
 
 
 <script>
+
+
 	///////////////////////////////////////////////////////////////////
 
 

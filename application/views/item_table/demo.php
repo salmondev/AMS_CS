@@ -50,17 +50,13 @@ if(isset($_POST["submit"]))
 		<div class="box">
 			<div class="box-header">
 				<div class="box-title">
-					<form method="post" enctype="multipart/form-data">
+					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
+						IMPORT CSV
+					</button>
 
-
-						<input type="file" name="file" />
-						<br />
-						<input type="submit" name="submit" value="IMPORT CSV" class="btn btn-info btn-lg" />
-
-					</form>
-
-					<br />
-					<p id="xportxlsx" class="xport"><input type="submit" value="EXPORT EXCEL" class="btn btn-primary btn-lg" onclick="doit('xlsx');"></p>
+					</br>
+					</br>
+					<p id="xportxlsx" class="xport"><input type="submit" value="EXPORT EXCEL" class="btn btn-info btn-lg" onclick="doit('xlsx');"></p>
 				</div>
 			</div>
 			<div class="box-body">
