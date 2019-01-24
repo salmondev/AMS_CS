@@ -1,0 +1,5 @@
+export PS1="\[\033[38;5;196m\]\u\[$(tput sgr0)\]\[\033[38;5;207m\]@\[$(tput sgr0)\]\[\033[38;5;99m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;178m\]\t\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;171m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;23m\]\W\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+
+
+
+http://bashrcgenerator.com/
