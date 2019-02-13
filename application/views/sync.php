@@ -27,7 +27,7 @@ if(isset($_POST["submit"]))
 				$item6 = mysqli_real_escape_string($connect, $data[5]);
 				
                 $query = "INSERT into ASSET (ASSETID,REFERID,ASSETNAME,RECEIVEDATE,SPEC,UNITNAME) values('$item1','$item2','$item3','$item4','$item5','$item6')";
-				//$query = "INSERT into ASSET (ASSETID,REFERID,ASSETNAME,RECEIVEDATE,SPEC,UNITNAME) values ('$save')";
+				
 				
 				mysqli_query($connect, $query);
 				
@@ -126,8 +126,8 @@ background: rgba(0, 0, 0, 0.5);
 					</form> -->
 
 					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
-								IMPORT CSV
-							</button>
+						IMPORT CSV
+					</button>
 
 					<!--<p id="syncx" class="syncdata"><input type="submit" value="IMPORT" class="btn btn-primary btn-lg" </p>-->
 				</div>
@@ -148,7 +148,9 @@ background: rgba(0, 0, 0, 0.5);
 					<tr>
 						<td>
 							<?php echo $A['ASSETID']; ?>
-							<input type="hidden" name="assetid" id="textQrcode" value="<?php echo $A['ASSETID']; ?>" />
+
+							<!--<input type="hidden" name="assetid" id="textQrcode" value="<?php echo $A['ASSETID']; ?>" />-->
+
 						</td>
 						<td>
 							<?php echo $A['REFERID']; ?>
@@ -169,9 +171,11 @@ background: rgba(0, 0, 0, 0.5);
 							<!--<a href="<?php echo site_url('ciqrcode/generate/'.$i['item_uid']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span>Generate
 								QR Code</a> 
 							<input type="hidden" name="assetid" id="textQrcode" value="<?php echo $A['ASSETID']; ?>" />-->
-								
+
 
 							<!-- Button to Open the Modal -->
+							
+							<input type="hidden" name="assetid" id="textQrcode" value="<?php echo $A['ASSETID']; ?>" />
 							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="createQRcode()">
 								Generate QR Code
 							</button>
@@ -226,14 +230,14 @@ background: rgba(0, 0, 0, 0.5);
 
 			<!-- Modal body -->
 			<div class="modal-body">
-			<form method="post" enctype="multipart/form-data" accept-charset="utf-8">
+				<form method="post" enctype="multipart/form-data" accept-charset="utf-8">
 
 
-<input type="file" name="file" />
-<br />
-<input type="submit" name="submit" value="Import" class="btn btn-info" />
+					<input type="file" name="file" />
+					<br />
+					<input type="submit" name="submit" value="Import" class="btn btn-info" />
 
-</form>
+				</form>
 			</div>
 
 			<!-- Modal footer 
@@ -247,8 +251,6 @@ background: rgba(0, 0, 0, 0.5);
 
 
 <script>
-
-
 	///////////////////////////////////////////////////////////////////
 
 
