@@ -14,22 +14,48 @@ if(isset($_POST["submit"]))
   $filename = explode(".", $_FILES['file']['name']);
   if($filename[1] == 'csv')
   {
-   $handle = fopen($_FILES['file']['tmp_name'], "r");
+	 $handle = fopen($_FILES['file']['tmp_name'], "r");
+	 
+	 //Finding the position of fieldnames from Row 1
+$fieldnames = fgetcsv($handle);
+$assetidindex = array_search("ASSETID", $fieldnames);
+$referidindex = array_search("REFERID", $fieldnames);
+$assetnameindex = array_search("ASSETNAME", $fieldnames);
+$receivedateindex = array_search("RECEIVEDATE", $fieldnames);
+$specindex = array_search("SPEC", $fieldnames);
+$unitnameindex = array_search("UNITNAME", $fieldnames);
+
    while($data = fgetcsv($handle))
    {
-	
-			   
+		    
+		$count = count($data);
+		$wantedColumns = array($assetidindex,$referidindex,$assetnameindex,$receivedateindex,$specindex,$unitnameindex);
+		for ($i=0; $i < $count ; $i++) { 
+			if (in_array($i,$wantedColumns))
+			{
+				//echo $content[$i]."\t";
+			
+			   /*
 				$item1 = mysqli_real_escape_string($connect, $data[0]);
 				$item2 = mysqli_real_escape_string($connect, $data[1]);
 				$item3 = mysqli_real_escape_string($connect, $data[2]);
 				$item4 = mysqli_real_escape_string($connect, $data[3]);
 				$item5 = mysqli_real_escape_string($connect, $data[4]);
-				$item6 = mysqli_real_escape_string($connect, $data[5]);
+				$item6 = mysqli_real_escape_string($connect, $data[5]);*/
+
+				$item1 = mysqli_real_escape_string($connect, $data[$assetidindex]);
+				$item2 = mysqli_real_escape_string($connect, $data[$referidindex]);
+				$item3 = mysqli_real_escape_string($connect, $data[$assetnameindex]);
+				$item4 = mysqli_real_escape_string($connect, $data[$receivedateindex]);
+				$item5 = mysqli_real_escape_string($connect, $data[$specindex]);
+				$item6 = mysqli_real_escape_string($connect, $data[$unitnameindex]);
 				
                 $query = "INSERT into ASSET (ASSETID,REFERID,ASSETNAME,RECEIVEDATE,SPEC,UNITNAME) values('$item1','$item2','$item3','$item4','$item5','$item6')";
 				
 				
 				mysqli_query($connect, $query);
+			}
+		}
 				
    }
    fclose($handle);
@@ -174,7 +200,7 @@ background: rgba(0, 0, 0, 0.5);
 
 
 							<!-- Button to Open the Modal -->
-							
+
 							<input type="hidden" name="assetid" id="textQrcode" value="<?php echo $A['ASSETID']; ?>" />
 							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="createQRcode()">
 								Generate QR Code
