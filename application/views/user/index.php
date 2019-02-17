@@ -27,7 +27,7 @@
 						<td><?php echo $U['AUTH']; ?></td>
 						<td>
                             <a href="<?php echo site_url('user/edit/'.$U['USER_ID']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
-                            <a href="<?php echo site_url('user/remove/'.$U['USER_ID']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>
+                            <a href="<?php echo site_url('user/remove/'.$U['USER_ID']); ?>" class="btn btn-danger btn-xs" onclick="return confirm('Confirm to delete record?')" ><span class="fa fa-trash"></span> Delete</a>
                         </td>
                     </tr>
                     <?php } ?>
@@ -37,3 +37,5 @@
         </div>
     </div>
 </div>
+
+
