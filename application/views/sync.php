@@ -49,11 +49,17 @@ $unitnameindex = array_search("UNITNAME", $fieldnames);
 				$item4 = mysqli_real_escape_string($connect, $data[$receivedateindex]);
 				$item5 = mysqli_real_escape_string($connect, $data[$specindex]);
 				$item6 = mysqli_real_escape_string($connect, $data[$unitnameindex]);
+
+				$myDate =  date("y/m/d",strtotime(str_replace('/','-',$item4)));
 				
-                $query = "INSERT into ASSET (ASSETID,REFERID,ASSETNAME,RECEIVEDATE,SPEC,UNITNAME) values('$item1','$item2','$item3','$item4','$item5','$item6')";
+                $query = "INSERT into ASSET (ASSETID,REFERID,ASSETNAME,RECEIVEDATE,SPEC,UNITNAME) values('$item1','$item2','$item3','$myDate','$item5','$item6')";
+								
+								$query2 = "UPDATE into ASSET (ASSETID,REFERID,ASSETNAME,RECEIVEDATE,SPEC,UNITNAME) values('$item1','$item2','$item3','$item4','$item5','$item6')";
 				
 				
 				mysqli_query($connect, $query);
+
+				mysqli_query($connect, $query2);
 			}
 		}
 				
@@ -202,7 +208,7 @@ background: rgba(0, 0, 0, 0.5);
 							<!-- Button to Open the Modal -->
 
 							<input type="hidden" name="assetid" id="textQrcode" value="<?php echo $A['ASSETID']; ?>" />
-							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="createQRcode()">
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="createQRcode();">
 								Generate QR Code
 							</button>
 						</td>
