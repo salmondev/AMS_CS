@@ -208,9 +208,13 @@ background: rgba(0, 0, 0, 0.5);
 							<!-- Button to Open the Modal -->
 
 							<input type="hidden" name="assetid" id="textQrcode" value="<?php echo $A['ASSETID']; ?>" />
+
 							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="createQRcode();">
 								Generate QR Code
 							</button>
+
+
+
 						</td>
 					</tr>
 					<?php } ?>
