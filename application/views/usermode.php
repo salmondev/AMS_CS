@@ -162,8 +162,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">SYSTEM</li>
         <!-- Optionally, you can add icons to the links -->
-        <li ><a href="<?php echo site_url('item_table/index3/sync') ?>"><i class="fa fa-gears"></i> <span>SYNC</span></a></li>
-        <li ><a href="<?php echo site_url('item_table/index2/demo') ?>"><i class="fa fa-database"></i> <span>SEARCH</span></a></li>
+        <li ><a href="<?php echo site_url('search/index/search') ?>"><i class="fa fa-search"></i> <span>SEARCH</span></a></li>
         <!--<li class="treeview class="active menu-open"">
           <a href="#"><i class="fa fa-globe"></i> <span>Tracking System</span>
           <span class="pull-right-container">
