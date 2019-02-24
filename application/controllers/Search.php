@@ -20,5 +20,16 @@ class Search extends CI_Controller{
 	function index2()
     {
         $this->load->view('filter');
+	}
+	
+	function index3()
+    {
+        $data['_view'] = 'search1';
+        $this->load->view('usermode',$data);
+	}
+	
+	function index4()
+    {
+        $this->load->view('fetch');
     }
 }
