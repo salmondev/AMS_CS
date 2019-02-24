@@ -14,7 +14,7 @@
                   <th>Name</th>
                   <th>Date</th>
                   <th>Detail</th>
-                  <th>Actions</th>
+                  <th>Options</th>
                 </tr>
                 </thead>
 
@@ -39,7 +39,7 @@
                   <th>Name</th>
                   <th>Date</th>
                   <th>Detail</th>
-                  <th>Actions</th>
+                  <th>Options</th>
                 </tr>
                 </tfoot>
               </table>

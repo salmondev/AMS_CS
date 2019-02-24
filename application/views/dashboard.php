@@ -1,62 +1,46 @@
-<!-- Main content -->
-<section class="content">
-      <!-- Info boxes -->
-      <div class="row">
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-aqua"><i class="fa fa-tags"></i></span>
+<!DOCTYPE html>
+<html>
 
-            <div class="info-box-content">
-              <span class="info-box-text">Total Tracked item</span>
-              <span class="info-box-number">50<small></small></span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-red"><i class="ion ion-ios-gear-outline"></i></span>
+<head>
+	<style>
+		a:link {
+			color: #ffffff
+		}
 
-            <div class="info-box-content">
-              <span class="info-box-text">Percentage</span>
-              <span class="info-box-number">75%</span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
+	</style>
+</head>
 
-        <!-- fix for small devices only -->
-        <div class="clearfix visible-sm-block"></div>
+<body>
+	<div class="row">
+		<div class="col-lg-3 col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<div class="row">
+						<a href="<?php echo site_url('search/index/search1') ?>">
+							<div class="col-xs-3"><i class="fa fa-search fa-5x"></i></div>
+							<div class="col-xs-9 text-right">
+								<div>ค้นหาพัสดุ/ครุภัณฑ์</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<div class="row">
+						<a href="<?php echo site_url('asset/index2/demo') ?>">
+							<div class="col-xs-3"><i class="fa fa-tasks fa-5x"></i></div>
+							<div class="col-xs-9 text-right">
+								<div>รายการพัสดุ/ครุภัณฑ์</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
 
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">Sales</span>
-              <span class="info-box-number">760</span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">New Members</span>
-              <span class="info-box-number">2,000</span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
+</html>

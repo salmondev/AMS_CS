@@ -1,3 +1,6 @@
+<?php if (!isset($_SESSION['user'])) {
+    redirect('login');
+} ?>
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
@@ -10,7 +13,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>iTemtracker</title>
+    <title>AMS</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('bower_components/bootstrap/dist/css/bootstrap.min.css');?>">
@@ -38,6 +41,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script type="text/javascript" src="https://unpkg.com/xlsx/dist/shim.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
+<script type="text/javascript" src="https://unpkg.com/blob.js@1.0.1/Blob.js"></script>
+<script type="text/javascript" src="https://unpkg.com/file-saver@1.3.3/FileSaver.js"></script>
+
     <style>
     .swal2-modal {
     
@@ -72,17 +81,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Main Header -->
         <header class="main-header">
           <!-- Logo -->
-          <a href="home" class="logo">
+          <a href="<?php echo site_url('dashboard/index/dashboard');?>" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b></b>CS</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>ADMIN</b>CS</span>
+            <span class="logo-lg"><b>ADMIN</b></span>
           </a>
           <!-- Header Navbar -->
           <nav class="navbar navbar-static-top" role="navigation">
             <!-- Sidebar toggle button-->
             <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-              <span class="sr-only">Toggle navigation</span>
+              <span class="sr-only"></span>
             </a>
             <!-- Navbar Right Menu -->
             <div class="navbar-custom-menu">
@@ -90,145 +99,44 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Messages: style can be found in dropdown.less-->
                 <li class="dropdown messages-menu">
                   <!-- Menu toggle button -->
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-envelope-o"></i>
-                    <span class="label label-success">4</span>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li class="header">You have 4 messages</li>
-                    <li>
-                      <!-- inner menu: contains the messages -->
-                      <ul class="menu">
-                        <li><!-- start message -->
-                        <a href="#">
-                          <div class="pull-left">
-                            <!-- User Image -->
-                            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                          </div>
-                          <!-- Message title and timestamp -->
-                          <h4>
-                          Support Team
-                          <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                          </h4>
-                          <!-- The message -->
-                          <p>Why not buy a new awesome theme?</p>
-                        </a>
-                      </li>
-                      <!-- end message -->
-                    </ul>
-                    <!-- /.menu -->
-                  </li>
-                  <li class="footer"><a href="#">See All Messages</a></li>
-                </ul>
-              </li>
-              <!-- /.messages-menu -->
-              <!-- Notifications Menu -->
-              <li class="dropdown notifications-menu">
-                <!-- Menu toggle button -->
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="fa fa-bell-o"></i>
-                  <span class="label label-warning">10</span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li class="header">You have 10 notifications</li>
-                  <li>
-                    <!-- Inner Menu: contains the notifications -->
-                    <ul class="menu">
-                      <li><!-- start notification -->
-                      <a href="#">
-                        <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                      </a>
-                    </li>
-                    <!-- end notification -->
-                  </ul>
-                </li>
-                <li class="footer"><a href="#">View all</a></li>
-              </ul>
-            </li>
-            <!-- Tasks Menu -->
-            <li class="dropdown tasks-menu">
-              <!-- Menu Toggle Button -->
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-flag-o"></i>
-                <span class="label label-danger">9</span>
-              </a>
-              <ul class="dropdown-menu">
-                <li class="header">You have 9 tasks</li>
-                <li>
-                  <!-- Inner menu: contains the tasks -->
-                  <ul class="menu">
-                    <li><!-- Task item -->
-                    <a href="#">
-                      <!-- Task title and progress text -->
-                      <h3>
-                      Design some buttons
-                      <small class="pull-right">20%</small>
-                      </h3>
-                      <!-- The progress bar -->
-                      <div class="progress xs">
-                        <!-- Change the css width attribute to simulate progress -->
-                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
-                          aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">20% Complete</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
-                </ul>
-              </li>
-              <li class="footer">
-                <a href="#">View all tasks</a>
-              </li>
-            </ul>
-          </li>
+                  
+              
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="<?php echo base_url('dist/img/kojima.jpg');?>" class="user-image" alt="User Image">
+              <img src="<?php echo base_url('dist/img/admin.png');?>" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">ADMIN</span>
+              <span class="hidden-xs">User : <b><?php $username = $this->session->userdata('user'); 	print_r($username);?></b></span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="<?php echo base_url('dist/img/kojima.jpg');?>" class="img-circle" alt="User Image">
+                <img src="<?php echo base_url('dist/img/admin.png');?>" class="img-circle" alt="User Image">
                 <p>
-                  ADMIN
-                  <small>Computer Science</small>
+                  SESSION</br>
+						
+									User : <b><?php $username = $this->session->userdata('user'); 	print_r($username);?></b>
+									LV : <b><?php $lv = $this->session->userdata('lv'); 	print_r($lv);?></b>
+									
                 </p>
               </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
+              
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                <div class="col-sm-12">
+                  <a href="#" class="btn btn-primary btn-block">Profile</a>
                 </div>
-                <div class="pull-right">
-                  <a href="<?php echo base_url('index.php/home') ?>" class="btn btn-default btn-flat">Sign out</a>
-                </div>
+                
               </li>
             </ul>
+						
           </li>
           <!-- Control Sidebar Toggle Button -->
           <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+					<a href="<?php echo site_url('login/logout') ?>" class="btn btn-danger">Log out</a>
           </li>
         </ul>
       </div>
@@ -241,32 +149,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="<?php echo base_url('dist/img/kojima.jpg');?>" class="img-circle" alt="User Image">
+          <img src="<?php echo base_url('dist/img/admin.png');?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>ADMIN</p>
+          <p>SYSTEM</p>
           <!-- Status -->
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <i class="fa fa-circle text-success"></i> <?php $username = $this->session->userdata('user'); 	print_r($username);?>
         </div>
       </div>
-      <!-- search form (Optional) -->
-      <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-          <span class="input-group-btn">
-            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-            </button>
-          </span>
-        </div>
-      </form>
-      <!-- /.search form -->
+      
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">SYSTEM</li>
         <!-- Optionally, you can add icons to the links -->
-        <li ><a href="<?php echo site_url('dashboard/index/dashboard') ?>"><i class="fa fa-gears"></i> <span>Dashboard</span></a></li>
-        <li ><a href="<?php echo site_url('tb_item/index/index') ?>"><i class="fa fa-database"></i> <span>Database</span></a></li>
-        <li class="treeview class="active menu-open"">
+				<li ><a href="<?php echo site_url('qr/index') ?>"><i class="fa fa-gear"></i> <span>QR TEST</span></a></li>
+        <li ><a href="<?php echo site_url('asset/index3/sync') ?>"><i class="fa fa-gear"></i> <span>TESTER PAGE</span></a></li>
+        <li ><a href="<?php echo site_url('asset/index2/demo') ?>"><i class="fa fa-database"></i> <span>ITEM LIST</span></a></li>
+				<li ><a href="<?php echo site_url('search/index/search1') ?>"><i class="fa fa-search"></i> <span>SEARCH</span></a></li>
+        <!--<li class="treeview class="active menu-open"">
           <a href="#"><i class="fa fa-globe"></i> <span>Tracking System</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
@@ -276,7 +176,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <li><a href="<?php echo site_url('map/index/map');?>"><i class="fa fa-map-marker"></i>Map</a></li>
           <li><a href="#"><i class="fa fa-rocket"></i>Tracking</a></li>
         </ul>
-      </li>
+      </li>-->
+      <li class="header">DATABASE</li>
+      <li class="treeview class="active menu-open"">
+        <a href="#"><i class="fa fa-database"></i> <span>DATABASE</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="<?php echo site_url('building/index/index');?>"><i class="fa fa-institution"></i><span>Building</span></a></li>
+          <li><a href="<?php echo site_url('floor/index/index');?>"><i class="fa fa-server"></i>        <span>Floor   </span></a></li>
+          <li><a href="<?php echo site_url('asset/index/index');?>"><i class="fa fa-cubes"></i>          <span>Asset    </span></a></li>
+          <li><a href="<?php echo site_url('refer/index/index');?>"><i class="fa fa-address-card"></i>  <span>Refer   </span></a></li>
+					<li><a href="<?php echo site_url('user/index/index');?>"><i class="fa fa-address-card"></i>  <span>User   </span></a></li>
+          <li><a href="<?php echo site_url('room/index/index');?>"><i class="fa fa-wrench"></i>         <span>Room    </span></a></li>
+          <li><a href="<?php echo site_url('status/index/index');?>"><i class="fa fa-toggle-on"></i>    <span>Status  </span></a></li>
+          <li><a href="<?php echo site_url('history/index/index');?>"><i class="fa fa-history"></i>     <span>History </span></a></li>
+					<li><a href="<?php echo site_url('department/index/index');?>"><i class="fa fa-map"></i>         <span>Department     </span></a></li>
+        
+        </li>
+        </ul>
     </ul>
     <!-- /.sidebar-menu -->
   </section>
@@ -287,12 +207,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-    ItemTracker
-    <small>Smartphone Application</small>
+    AMS
+    <small>Asset Management System</small>
     </h1>
     <ol class="breadcrumb">
+		<!--
       <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
-      <li class="active">Home</li>
+      <li class="active">Home</li>-->
+			
+  <li><a href="<?php echo site_url('dashboard/index/dashboard');?>"><?php echo "dashboard";?></a></li>
+  <li class="active"><?php echo "tools";?></li>
+
     </ol>
   </section>
   <!-- Main content -->
@@ -301,7 +226,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!--------------------------
     | Your Page Content Here |
     -------------------------->
-    
+
     <?php
     if(isset($_view) && $_view)
     $this->load->view($_view);
@@ -314,31 +239,38 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- Main Footer -->
 <footer class="main-footer">
   <!-- To the right -->
-  <div class="pull-right hidden-xs">
+  <!--<div class="pull-right hidden-xs">
     Project CS
-  </div>
+  </div>-->
   <!-- Default to the left -->
-  <strong>Copyright &copy; 2018 <a href="http://www.cs.kmutnb.ac.th/" target="_blank">CS KMUTNB</a>.</strong> All rights reserved.
+  <!--<strong>Copyright &copy; 2018 <a href="http://www.cs.kmutnb.ac.th/" target="_blank">CS KMUTNB</a>.</strong> All rights reserved.-->
 </footer>
 <!-- Control Sidebar -->
 <aside class="control-sidebar control-sidebar-dark">
   <!-- Create the tabs -->
   <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
     <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-    <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+    <li><a href="<?php echo site_url('login/logout') ?>" class="btn btn-danger btn-flat">Log out</a></li>
   </ul>
   <!-- Tab panes -->
   <div class="tab-content">
     <!-- Home tab content -->
     <div class="tab-pane active" id="control-sidebar-home-tab">
-      <h3 class="control-sidebar-heading">Recent Activity</h3>
+      <h3 class="control-sidebar-heading">TODO Taskwork</h3>
       <ul class="control-sidebar-menu">
         <li>
-          <a href="javascript:;">
-            <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+          <a href="<?php echo site_url('tb_item/index/index') ?>">
+            <i class="menu-icon fa fa-gear bg-red"></i>
             <div class="menu-info">
-              <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-              <p>Will be 23 on April 24th</p>
+              <h4 class="control-sidebar-subheading">Export Function</h4>
+              <p>under construction</p>
+            </div>
+            </a>
+            <a href="<?php echo site_url('map/index/map');?>">
+            <i class="menu-icon fa fa-gear bg-blue"></i>
+            <div class="menu-info">
+              <h4 class="control-sidebar-subheading">Google Map Function</h4>
+              <p>under construction</p>
             </div>
           </a>
         </li>
@@ -349,13 +281,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <li>
           <a href="javascript:;">
             <h4 class="control-sidebar-subheading">
-            Custom Template Design
+            Export Function
             <span class="pull-right-container">
-              <span class="label label-danger pull-right">70%</span>
+              <span class="label label-danger pull-right">50%</span>
             </span>
             </h4>
             <div class="progress progress-xxs">
-              <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+              <div class="progress-bar progress-bar-danger" style="width: 50%"></div>
+            </div>
+            </br>
+            <h4 class="control-sidebar-subheading">
+            Google Map Function
+            <span class="pull-right-container">
+              <span class="label label-primary pull-right">80%</span>
+            </span>
+            </h4>
+            <div class="progress progress-xxs">
+              <div class="progress-bar progress-bar-primary" style="width: 80%"></div>
             </div>
           </a>
         </li>
@@ -369,14 +311,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Settings tab content -->
     <div class="tab-pane" id="control-sidebar-settings-tab">
       <form method="post">
-        <h3 class="control-sidebar-heading">General Settings</h3>
+        <h3 class="control-sidebar-heading">Development Infomation</h3>
         <div class="form-group">
           <label class="control-sidebar-subheading">
-            Report panel usage
+            Development ADMIN System
             <input type="checkbox" class="pull-right" checked>
           </label>
           <p>
-            Some information about this general settings option
+            DEV : Panurut Chinakul
           </p>
         </div>
         <!-- /.form-group -->
@@ -421,13 +363,11 @@ $(function() {
     });
 });
 $('#datepicker').datepicker({
-    autoclose: false
+    autoclose: true
 })
 $(function() {
     $('#example1').DataTable()
     $('#example2').DataTable({
-
-
         'paging': true,
         'lengthChange': true,
         'searching': true,
@@ -451,66 +391,7 @@ $('ul.treeview-menu a').filter(function() {
 function sweet() {
     swal("Deleted!", "Your imaginary file has been deleted.", "success")
 }
-/*
-// Sweet Alert 2< echo site_url('tb_item/remove/'.$t['id']); ?>
-function sweet() {
-    //event.preventDefault(); // prevent form submit
-    //var form = event.target.form; // storing the form
-    swal({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-        if (result.value) {
-            swal(
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
-            )
-        }
-    })
-}*/
-/*
-/// Ajax sweetalert2
-function SwalDelete(id) {
-    swal({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!',
-        showLoaderOnConfirm: true,
-        preConfirm: function() {
-            return new Promise(function(resolve) {
-                $.ajax({
-                        url: 'delete.php',
-                        type: 'POST',
-                        data: 'delete=' + id,
-                        dataType: 'json'
-                    })
-                    .done(function(response) {
-                        swal('Deleted!', response.message, response.status);
-                        readProducts();
-                    })
-                    .fail(function() {
-                        swal('Oops...', 'Something went wrong with ajax !', 'error');
-                    });
-            });
-        },
-        allowOutsideClick: false
-    });
-}
-$(document).on('click', '#delete_product', function(e) {
-    var id = $(this).data('id');
-    SwalDelete(id);
-    e.preventDefault();
-});*/
+
 
 function goBack() {
     window.history.back();
@@ -544,5 +425,21 @@ document.getElementById("delete-btn").addEventListener("click", function(event) 
         });
 });
 </script>
+
+<script type="text/javascript">
+
+function doit(type, fn, dl) {
+    var elt = document.getElementById('example2');
+    var wb = XLSX.utils.table_to_book(elt, {sheet:"Sheet JS"});
+    return dl ?
+        XLSX.write(wb, {bookType:type, bookSST:true, type: 'base64'}) :
+        XLSX.writeFile(wb, fn || ('Database_Item.' + (type || 'xlsx')));
+}
+
+
+
+
+</script>
+
 </body>
 </html>

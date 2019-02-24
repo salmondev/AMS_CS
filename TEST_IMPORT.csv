@@ -1,0 +1,4 @@
+ASSETID,REFERID,ASSETNAME,unwantcolumnA,RECEIVEDATE,SPEC,unwantcolumnB,unwantcolumnC,UNITNAME,unwantcolumnD
+1,19573514,ASSETID_name_ทดสอบ,unwantcolumnA1,ASSETID_date,ASSETID_spec,unwantcolumnB1,unwantcolumnC1,ASSETID_unit,unwantcolumnD1
+2,19573514,ASSETID_ทดสอบ1_name1,unwantcolumnA2,ASSETID_TEST_date1,ASSETID_TEST_spec1,unwantcolumnB2,unwantcolumnC2,ASSETID_TEST_unit1,unwantcolumnD2
+3,19573514,ASSETID_ทดสอบ2_name2,unwantcolumnA3,ASSETID_TEST_date2,ASSETID_TEST_spec2,unwantcolumnB3,unwantcolumnC3,ASSETID_TEST_unit2,unwantcolumnD3

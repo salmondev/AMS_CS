@@ -21,11 +21,10 @@
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="text" name="date" value="<?php echo ($this->input->post('date') ? $this->input->post('date') : $tb_item['date']); ?>" class="form-control pull-right" id="datepicker">
+				  <?php $odate=date("Y-m-d H:i:s");?>
+                  <input type="text" name="odate" value="<?php echo ($this->input->post('odate') ? $this->input->post('odate') : $tb_item['odate']); ?>" class="form-control pull-right" id="datepicker">
                 </div>
 					</div>
-
-
 					<div class="col-md-6">
 						<label for="detail" class="control-label">Detail</label>
 						<div class="form-group">
