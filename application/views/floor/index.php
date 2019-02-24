@@ -23,7 +23,7 @@
 						<td><?php echo $F['FLOOR_ID']; ?></td>
 						<td>
                             <a href="<?php echo site_url('floor/edit/'.$F['FLOOR_RID']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
-                            <a href="<?php echo site_url('floor/remove/'.$F['FLOOR_RID']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>
+                            <a href="<?php echo site_url('floor/remove/'.$F['FLOOR_RID']); ?>" class="btn btn-danger btn-xs" onclick="return confirm('Confirm to delete record?')"><span class="fa fa-trash"></span> Delete</a>
                         </td>
                     </tr>
                     <?php } ?>

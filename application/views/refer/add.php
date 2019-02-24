@@ -7,6 +7,11 @@
             <?php echo form_open('refer/add'); ?>
           	<div class="box-body">
           		<div class="row clearfix">
+							<div class="col-md-6">
+						<label for="REFERID" class="control-label">REFERID</label>
+						<div class="form-group">
+							<input type="text" name="REFERID" value="<?php echo $this->input->post('REFERID'); ?>" class="form-control" id="REFERID" />
+						</div>
 					<div class="col-md-6">
 						<label for="DEPARTMENTID" class="control-label">Department</label>
 						<div class="form-group">

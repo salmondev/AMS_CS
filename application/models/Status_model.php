@@ -4,7 +4,7 @@
  * www.crudigniter.com
  */
  
-class Statu_model extends CI_Model
+class Status_model extends CI_Model
 {
     function __construct()
     {
@@ -12,9 +12,9 @@ class Statu_model extends CI_Model
     }
     
     /*
-     * Get statu by STATUS_ID
+     * Get status by STATUS_ID
      */
-    function get_statu($STATUS_ID)
+    function get_status($STATUS_ID)
     {
         return $this->db->get_where('STATUS',array('STATUS_ID'=>$STATUS_ID))->row_array();
     }
@@ -29,27 +29,27 @@ class Statu_model extends CI_Model
     }
         
     /*
-     * function to add new statu
+     * function to add new status
      */
-    function add_statu($params)
+    function add_status($params)
     {
         $this->db->insert('STATUS',$params);
         return $this->db->insert_id();
     }
     
     /*
-     * function to update statu
+     * function to update status
      */
-    function update_statu($STATUS_ID,$params)
+    function update_status($STATUS_ID,$params)
     {
         $this->db->where('STATUS_ID',$STATUS_ID);
         return $this->db->update('STATUS',$params);
     }
     
     /*
-     * function to delete statu
+     * function to delete status
      */
-    function delete_statu($STATUS_ID)
+    function delete_status($STATUS_ID)
     {
         return $this->db->delete('STATUS',array('STATUS_ID'=>$STATUS_ID));
     }

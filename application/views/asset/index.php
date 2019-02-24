@@ -42,7 +42,7 @@
 						<td>
 							<a href="<?php echo site_url('asset/edit/'.$A['ASSETID']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span>
 								Edit</a>
-							<a href="<?php echo site_url('asset/remove/'.$A['ASSETID']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span>
+							<a href="<?php echo site_url('asset/remove/'.$A['ASSETID']); ?>" class="btn btn-danger btn-xs" onclick="return confirm('Confirm to delete record?')"><span class="fa fa-trash"></span>
 								Delete</a>
 						</td>
 					</tr>

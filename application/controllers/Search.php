@@ -13,8 +13,8 @@ class Search extends CI_Controller{
 
     function index()
     {
-        $data['_view'] = 'search';
-        $this->load->view('usermode',$data);
+        $data['_view'] = 'search1';
+        $this->load->view('test',$data);
 	}
 	
 	function index2()

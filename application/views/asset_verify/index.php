@@ -46,7 +46,7 @@
 						<td><?php echo $A['ASSET_VERIFY_COMMITTEE_ID']; ?></td>
 						<td>
                             <a href="<?php echo site_url('asset_verify/edit/'.$A['ASSET_VERIFY_RID']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
-                            <a href="<?php echo site_url('asset_verify/remove/'.$A['ASSET_VERIFY_RID']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>
+                            <a href="<?php echo site_url('asset_verify/remove/'.$A['ASSET_VERIFY_RID']); ?>" class="btn btn-danger btn-xs" onclick="return confirm('Confirm to delete record?')"><span class="fa fa-trash"></span> Delete</a>
                         </td>
                     </tr>
                     <?php } ?>

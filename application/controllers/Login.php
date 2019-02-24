@@ -63,7 +63,10 @@ public function home()
 		
 		$data['name'] = "$emp_username";
 		if($lv=='ADMIN'){
-	        $this->load->view('test',$data);
+			$data['_view'] = 'dashboard';
+        $this->load->view('test',$data);
+					//$this->load->view('test',$data);
+					
 		}else{
 			$this->load->view('usermode',$data);
 		}

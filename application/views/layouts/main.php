@@ -206,10 +206,10 @@
                             </a>
                             <ul class="treeview-menu">
 								<li class="active">
-                                    <a href="<?php echo site_url('statu/add');?>"><i class="fa fa-plus"></i> Add</a>
+                                    <a href="<?php echo site_url('status/add');?>"><i class="fa fa-plus"></i> Add</a>
                                 </li>
 								<li>
-                                    <a href="<?php echo site_url('statu/index');?>"><i class="fa fa-list-ul"></i> Listing</a>
+                                    <a href="<?php echo site_url('status/index');?>"><i class="fa fa-list-ul"></i> Listing</a>
                                 </li>
 							</ul>
                         </li>

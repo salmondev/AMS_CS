@@ -43,14 +43,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body class="hold-transition login-page">
 	<div class="login-box">
 		<div class="login-logo">
-			<a href="home"><b>LOG IN</b></a>
+			<a href="home"><b>AMS</b></a>
 		</div>
 		<!-- /.login-logo -->
 		<div class="login-box-body">
-			<p class="login-box-msg">เข้าสู่ระบบจัดการพัสดุ/ครุภัณฑ์</p>
+			<!-- <p class="login-box-msg">เข้าสู่ระบบจัดการพัสดุ/ครุภัณฑ์</p> -->
+			<p class="login-box-msg">Asset Management System</p>
 
-			<form name="login" action="<?php echo site_url('login/check');?>" method="post">
 
+			<!--
 				<div class="form-group has-feedback">
 					<input type="text" name="emp_username" id="owner_fname" class="form-control" placeholder="Username" onkeyup="lettersOnly(this)">
 					<span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -61,31 +62,102 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="form-group has-feedback">
 					<input type="password" name="emp_password" id="owner_uid" class="form-control" required minlength="4" placeholder="Password">
 					<span class="glyphicon glyphicon-lock form-control-feedback"></span>
-				</div>
+				</div> -->
 
-				<!-- ///////////////////////////////////////////////////// 
+			<!-- ///////////////////////////////////////////////////// 
 			<div class="form__element">
             <input class="form__input" id="password" type="password" name="password" required minlength="8" aria-describedby="passwordHint" autocomplete="current-password">
             <p class="form__hint" id="passwordHint">The password must be at least 8 characters long.</p>
         </div>-->
-				<!-- ///////////////////////////////////////////////////// -->
-				<div class="row">
-
-					<!-- /.col -->
-					<div class="col-xs-4">
-						<button type="submit" class="btn btn-primary btn-block ">Log In</button>
-
-					</div>
-					<div class="col-xs-4">
-					</div>
-					<div class="col-xs-4">
-						<a href="<?php echo site_url('home') ?>">
-							<p class="btn btn-danger">HOME</p>
-						</a>
-					</div>
-
-					<!-- /.col -->
+			<!--<div class=" col-md-12">-->
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title"><i class="btn-label glyphicon glyphicon-user"></i>&nbsp;เข้าสู่ระบบจัดการพัสดุ/ครุภัณฑ์
+					</h3>
 				</div>
+				<div class="panel-body">
+					<div class="page-body">
+						<form name="login" action="<?php echo site_url('login/check');?>" method="post">
+							<div class="row">
+								<div class="col-md-8 col-xs-11 ">
+									<div class="form-group"><label class="control-label required" for="LoginForm_username">ชื่อผู้ใช้ <span class="required">*</span></label>
+										<div class="form-group has-feedback">
+											<input type="text" name="emp_username" id="owner_fname" class="form-control" placeholder="Username" onkeyup="lettersOnly(this)">
+											<span class="glyphicon glyphicon-user form-control-feedback"></span>
+										</div>
+										<p id="LoginForm_username_em_" style="display:none" class="help-block"></p>
+									</div>
+								</div>
+							</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-8 col-xs-11 ">
+							<div class="form-group"><label class="control-label required" for="LoginForm_password">รหัสผ่าน <span class="required">*</span></label>
+								<div class="form-group has-feedback">
+									<input type="password" name="emp_password" id="owner_uid" class="form-control" required minlength="4"
+									 placeholder="Password">
+									<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+								</div> 
+								<p id="LoginForm_password_em_" style="display:none" class="help-block"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+				
+				<div class="col-xs-8 col-xs-6 " align="center">
+						<button type="submit" class="btn btn-success btn-palegreen" title="Login">
+							<i class="btn-label glyphicon glyphicon-lock"></i>&nbsp;เข้าสู่ระบบ
+						</button>
+					</div>
+
+					<div class="col-xs-4 col-xs-6 ">
+						
+					</div>
+
+					<div class="col-xs-4 col-xs-6 ">
+						
+					</div>
+					<!--
+					<div class="col-xs-8 col-xs-6 ">
+					<a href="<?php echo site_url('home') ?>">
+						<p class="btn btn-danger">HOME</p>
+					</a>
+					</div>-->
+				</div>
+
+				<div class="row">
+					<br>
+<!--
+					<a style="padding-left: 20px;" href="/index.php/Home/RegisterMember" target="_blank" role="button" class="btn-small btn-link"><i
+						 class="btn-label glyphicon glyphicon-hand-right"></i>&nbsp;&nbsp;ลงทะเบียนผู้ใช้ทั่วไป</a><br>  -->
+					<!--
+										<a style="padding-left: 20px;" href="/index.php/Home/GetUserForgotPassword" target="_blank" role="button"
+										 class="btn-small btn-link"><i class="btn-label glyphicon glyphicon-hand-right"></i>&nbsp;&nbsp;ลืมรหัสผ่าน
+											(Forgot password?)</a> </div> -->
+					</form>
+				</div>
+			</div>
+			<!--</div>-->
+			<!-- ///////////////////////////////////////////////////// -->
+			<div class="row">
+
+				<!-- /.col --> <!--
+				<div class="col-xs-4">
+					<button type="submit" class="btn btn-primary btn-block ">Log In</button>
+
+				</div>
+				<div class="col-xs-4">
+				</div>
+				<div class="col-xs-4">
+					<a href="<?php echo site_url('home') ?>">
+						<p class="btn btn-danger">HOME</p>
+					</a>
+				</div> -->
+
+				<!-- /.col -->
+			</div>
 			</form>
 			<!--
     <div class="social-auth-links text-center">

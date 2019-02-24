@@ -30,6 +30,7 @@ class Refer extends CI_Controller{
         if(isset($_POST) && count($_POST) > 0)     
         {   
             $params = array(
+				'REFERID' => $this->input->post('REFERID'),
 				'DEPARTMENTID' => $this->input->post('DEPARTMENTID'),
 				'REFERNAME' => $this->input->post('REFERNAME'),
             );

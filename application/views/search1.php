@@ -1,6 +1,7 @@
 <html>
  <head>
   <title>Search System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
@@ -16,7 +17,7 @@
    }
    .box
    {
-    width:1270px;
+    width:100%;
     padding:20px;
     background-color:#fff;
     border:1px solid #ccc;

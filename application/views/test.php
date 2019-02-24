@@ -81,7 +81,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Main Header -->
         <header class="main-header">
           <!-- Logo -->
-          <a href="<?php echo site_url('test/index/test');?>" class="logo">
+          <a href="<?php echo site_url('dashboard/index/dashboard');?>" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b></b>CS</span>
             <!-- logo for regular state and mobile devices -->
@@ -115,7 +115,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <li class="user-header">
                 <img src="<?php echo base_url('dist/img/admin.png');?>" class="img-circle" alt="User Image">
                 <p>
-                  ADMIN</br>
+                  SESSION</br>
 						
 									User : <b><?php $username = $this->session->userdata('user'); 	print_r($username);?></b>
 									LV : <b><?php $lv = $this->session->userdata('lv'); 	print_r($lv);?></b>
@@ -152,7 +152,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <img src="<?php echo base_url('dist/img/admin.png');?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>ADMIN</p>
+          <p>SYSTEM</p>
           <!-- Status -->
           <i class="fa fa-circle text-success"></i> <?php $username = $this->session->userdata('user'); 	print_r($username);?>
         </div>
@@ -162,9 +162,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">SYSTEM</li>
         <!-- Optionally, you can add icons to the links -->
-				<li ><a href="<?php echo site_url('qr/index') ?>"><i class="fa fa-search"></i> <span>QR TEST</span></a></li>
-        <li ><a href="<?php echo site_url('asset/index3/sync') ?>"><i class="fa fa-search"></i> <span>TESTER PAGE</span></a></li>
+				<li ><a href="<?php echo site_url('qr/index') ?>"><i class="fa fa-gear"></i> <span>QR TEST</span></a></li>
+        <li ><a href="<?php echo site_url('asset/index3/sync') ?>"><i class="fa fa-gear"></i> <span>TESTER PAGE</span></a></li>
         <li ><a href="<?php echo site_url('asset/index2/demo') ?>"><i class="fa fa-database"></i> <span>ITEM LIST</span></a></li>
+				<li ><a href="<?php echo site_url('search/index/search1') ?>"><i class="fa fa-search"></i> <span>SEARCH</span></a></li>
         <!--<li class="treeview class="active menu-open"">
           <a href="#"><i class="fa fa-globe"></i> <span>Tracking System</span>
           <span class="pull-right-container">
@@ -213,6 +214,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 		<!--
       <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
       <li class="active">Home</li>-->
+			
+  <li><a href="<?php echo site_url('dashboard/index/dashboard');?>"><?php echo "dashboard";?></a></li>
+  <li class="active"><?php echo "tools";?></li>
+
     </ol>
   </section>
   <!-- Main content -->
@@ -221,7 +226,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!--------------------------
     | Your Page Content Here |
     -------------------------->
-    
+
     <?php
     if(isset($_view) && $_view)
     $this->load->view($_view);

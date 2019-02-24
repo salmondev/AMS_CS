@@ -39,6 +39,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 {
     display:inline;
 }
+.content {
+  /*max-width: 1000px;*/
+  margin: auto;
+}
 .footer {
    position: fixed;
    left: 0;
@@ -47,11 +51,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    background-color: white;
    color: white;
    text-align: center;
+
+	 
 }
 </style>
   </head>
 
-  <body> 
+  <body class="content"> 
     <div style="margin: 2%;">
     <div id="block_container">
     <!--<div id="bloc1"><i class="fas fa-code" style="font-size: 4em;"></i></div> -->
@@ -66,7 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   
 <!-- left Bordered -->
   <blockquote class="blockquote-v1 blockquote-v1--left">
-  <p>AMS Smartphone Application.</p>
+  <p>Android Application</p>
   <footer class="blockquote-footer">AMS</footer>
   </blockquote>
 <!-- End left Bordered -->
@@ -99,7 +105,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- ************************************************************************ -->
 <br>
 <div class="footer">
-<h4 class="bg-primary text-light" align="center">Copyright © 2018 CS KMUTNB</h4>
+<h4 class="bg-primary text-light" align="center">Copyright © 2019 CS KMUTNB</h4>
 </div>
     <!-- JAVASCRIPTS (Load javascripts at bottom, this will reduce page load time) -->
     <!-- Global Vendor -->

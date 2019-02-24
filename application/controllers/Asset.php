@@ -15,7 +15,7 @@ class Asset extends CI_Controller{
      * Listing of asset
      */
     function index()
-    {
+    {/*
         $params['limit'] = RECORDS_PER_PAGE; 
         $params['offset'] = ($this->input->get('per_page')) ? $this->input->get('per_page') : 0;
         
@@ -25,7 +25,8 @@ class Asset extends CI_Controller{
         $this->pagination->initialize($config);
 
         $data['asset'] = $this->Asset_model->get_all_asset($params);
-        
+		*/
+		$data['asset'] = $this->Asset_model->get_all_asset();
         $data['_view'] = 'asset/index';
         $this->load->view('test',$data);
 	}
@@ -51,7 +52,7 @@ class Asset extends CI_Controller{
     {   
         if(isset($_POST) && count($_POST) > 0)     
         {   
-			$odate=date("Y-m-d H:i:s");
+			$odate=date("y-m-d");
             $params = array(
 				'ASSETID' => $this->input->post('ASSETID'),
 				'REFERID' => $this->input->post('REFERID'),
@@ -86,7 +87,7 @@ class Asset extends CI_Controller{
         {
             if(isset($_POST) && count($_POST) > 0)     
             {   
-				$odate=date("Y-m-d H:i:s");
+				$odate=date("y-m-d");
                 $params = array(
 					'ASSETID' => $this->input->post('ASSETID'),
 					'REFERID' => $this->input->post('REFERID'),
