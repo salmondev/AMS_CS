@@ -30,20 +30,20 @@
  </head>
  <body>
   <div class="container box">
-   <h1 align="center">SEARCH SYSTEM</h1>
+   <h1 align="center">Search System</h1>
    <br />
    <div class="table-responsive">
     <br />
     <div class="row">
      <div class="input-daterange">
-      <div class="col-md-4">
+      <div class="col-md-3">
        <input type="text" name="start_date" id="start_date" class="form-control" placeholder="From Date" />
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
        <input type="text" name="end_date" id="end_date" class="form-control" placeholder="To Date" />
       </div>      
      </div>
-     <div class="col-md-4">
+     <div class="col-md-6">
       <input type="button" name="search" id="search" value="Search" class="btn btn-info" />
      </div>
     </div>
