@@ -1,1 +1,10 @@
 <16-jul-18__11:43> +add log-in system admin
+
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^amsapp\.net$ [NC]
+RewriteRule ^(.*)$ https://www.amsapp.net/$1 [R=301,L]
+
+# force ssl
+RewriteCond     %{SERVER_PORT} ^80$
+RewriteRule     ^(.*)$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
