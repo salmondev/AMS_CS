@@ -39,6 +39,24 @@
 						</div>
 					</div>
 				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-xs-3">
+									<i class="fa fa-cubes fa-5x"></i>
+								</div>
+								<div class="col-xs-9 text-right">
+									<div class="huge" style="font-size:200%; font-weight:bold">
+										<?php echo $this->db->from("ASSET")->count_all_results();?>
+									</div>
+									<div>พัสดุ/ครุภัณฑ์ทั้งหมด</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

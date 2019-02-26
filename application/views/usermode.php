@@ -117,7 +117,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								<li class="user-header">
 									<img src="<?php echo base_url('dist/img/admin.png');?>" class="img-circle" alt="User Image">
 									<p>
-										ADMIN</br>
+										SESSION</br>
 
 										User : <b>
 											<?php $username = $this->session->userdata('user'); 	print_r($username);?></b>
