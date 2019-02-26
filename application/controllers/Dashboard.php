@@ -15,5 +15,11 @@ class Dashboard extends CI_Controller{
     {
         $data['_view'] = 'dashboard';
         $this->load->view('test',$data);
+	}
+	
+	function index1()
+    {
+        $data['_view'] = 'dashboard_user';
+        $this->load->view('usermode',$data);
     }
 }

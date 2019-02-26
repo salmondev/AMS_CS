@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
 </head>
 
 <body>
@@ -42,7 +42,6 @@
 			</div>
 		</div>
 	</div>
-
 	<div class="panel panel-primary">
 		<div class="panel-heading">จัดการฐานข้อมูล</div>
 		<div class="panel-body">
@@ -64,12 +63,8 @@
 				ข้อมูลหน่วยงาน</a>
 			<a href="<?php echo site_url('history/index/index') ?>" class="btn btn-primary btn_main_wd"><i class="fa fa-history fa-fw fa-5x"></i><br /><br />
 				ข้อมูลประวัติ</a>
-
-
 		</div>
-
 	</div>
-
 	<div class="panel panel-primary">
 		<div class="panel-heading">
 			ตั้งค่าระบบ
@@ -78,7 +73,6 @@
 			<a href="<?php echo site_url('backupdb/index/backupdb') ?>" class="btn btn-danger btn_main_wd"><i class="fa fa-database fa-fw fa-5x"></i><br /><br />
 				สำรอง/กู้คืนฐานข้อมูล</a>
 		</div>
-
 	</div>
 </body>
 
