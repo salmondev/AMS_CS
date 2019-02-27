@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
   <head>
     <title>AMS</title>
-
+    <link rel="icon" href="<?=base_url()?>/favicon.png" type="image/png">
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
