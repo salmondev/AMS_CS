@@ -30,6 +30,7 @@ class Building extends CI_Controller{
         if(isset($_POST) && count($_POST) > 0)     
         {   
             $params = array(
+				'BUILDING_ID' => $this->input->post('BUILDING_ID'),
 				'BUILDING_NAME' => $this->input->post('BUILDING_NAME'),
             );
             
@@ -56,6 +57,7 @@ class Building extends CI_Controller{
             if(isset($_POST) && count($_POST) > 0)     
             {   
                 $params = array(
+					'BUILDING_ID' => $this->input->post('BUILDING_ID'),
 					'BUILDING_NAME' => $this->input->post('BUILDING_NAME'),
                 );
 

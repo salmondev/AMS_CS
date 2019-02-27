@@ -7,6 +7,12 @@
             <?php echo form_open('building/add'); ?>
           	<div class="box-body">
           		<div class="row clearfix">
+							<div class="col-md-6">
+						<label for="BUILDING_ID" class="control-label">BUILDING ID</label>
+						<div class="form-group">
+							<textarea name="BUILDING_ID" class="form-control" id="BUILDING_ID"><?php echo $this->input->post('BUILDING_ID'); ?></textarea>
+						</div>
+					</div>
 					<div class="col-md-6">
 						<label for="BUILDING_NAME" class="control-label">BUILDING NAME</label>
 						<div class="form-group">

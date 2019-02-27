@@ -7,6 +7,13 @@
 			<?php echo form_open('building/edit/'.$building['BUILDING_ID']); ?>
 			<div class="box-body">
 				<div class="row clearfix">
+				<div class="col-md-6">
+						<label for="BUILDING_ID" class="control-label">BUILDING ID</label>
+						<div class="form-group">
+							<input name="BUILDING_ID" value="<?php echo ($this->input->post('BUILDING_ID') ? $this->input->post('BUILDING_ID') : $building['BUILDING_ID']); ?>"
+							 class="form-control" id="BUILDING_ID" />
+						</div>
+					</div>
 					<div class="col-md-6">
 						<label for="BUILDING_NAME" class="control-label">BUILDING NAME</label>
 						<div class="form-group">
