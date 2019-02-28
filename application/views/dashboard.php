@@ -50,7 +50,7 @@
 									<div class="huge" style="font-size:200%; font-weight:bold">
 										<?php echo $this->db->from("ASSET")->count_all_results();?>
 									</div>
-									<div>พัสดุ/ครุภัณฑ์ทั้งหมด</div>
+									<div>พัสดุ/ครุภัณฑ์ในระบบ</div>
 								</div>
 							</div>
 						</div>

@@ -29,7 +29,7 @@
 			</div>
           	<div class="box-footer">
             	<button type="submit" class="btn btn-success">
-            		<i class="fa fa-check"></i> Save
+            		<i class="fa fa-save"></i> Save
             	</button>
 				<button  type="button" onclick="goBack();"class="btn btn-danger">
             		<i class="fa fa-times"></i> Back
