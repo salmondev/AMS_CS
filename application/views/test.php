@@ -3,6 +3,7 @@
 } ?>
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+$current_server_time = date("Y")."/".date("m")."/".date("d")." ".date("H:i:s");
 ?>
 <!DOCTYPE html>
 <!--
@@ -54,6 +55,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
     
     }
     </style>
+
+<script type="text/javascript">
+			
+			function server_date(now_time) {
+			    current_time1 = new Date(now_time);
+			    current_time2 = current_time1.getTime() + 1000;
+			    current_time = new Date(current_time2);
+			    var edHour,edMinute,edSecond;
+			    edHour = new String(current_time.getHours());  
+		        if(edHour.length==1){  
+		            edHour="0"+edHour;  
+		        }
+		        edMinute=new String(current_time.getMinutes());  
+		        if(edMinute.length==1){  
+		            edMinute="0"+edMinute;  
+		        }        
+		        edSecond=new String(current_time.getSeconds());  
+		        if(edSecond.length==1){  
+		            edSecond="0"+edSecond;  
+		        }   
+			    server_time.innerHTML = current_time.getDate() + "/" + (current_time.getMonth()+1) + "/" + (current_time.getYear()+2443) + " " + edHour + ":" + edMinute + ":" + edSecond;
+			    setTimeout("server_date(current_time.getTime())",1000);
+		}
+			setTimeout("server_date('<?=$current_server_time?>')",1000);
+		</script>
+
     <!-- Google Font -->
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -105,6 +132,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
+					
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
@@ -154,7 +182,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <img src="<?php echo base_url('dist/img/admin.png');?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>SYSTEM</p>
+          <p><i class="glyphicon glyphicon-time" style="margin-right:5px"></i><span id="server_time"></span></p>
           <!-- Status -->
           <i class="fa fa-circle text-success"></i> <?php $username = $this->session->userdata('user'); 	print_r($username);?>
         </div>
@@ -168,7 +196,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <li ><a href="<?php echo site_url('asset/index3/sync') ?>"><i class="fa fa-gear"></i> <span>TESTER PAGE</span></a></li>
         <li ><a href="<?php echo site_url('asset/index2/demo') ?>"><i class="fa fa-database"></i> <span>ASSET LIST</span></a></li>
 				<li ><a href="<?php echo site_url('search/index/search1') ?>"><i class="fa fa-search"></i> <span>SEARCH</span></a></li>
-        <!--<li class="treeview class="active menu-open"">
+				<li ><a href="<?php echo site_url('asset/index4/test_export') ?>"><i class="fa fa-download"></i> <span>TEST EXPORT</span></a></li>
+        <li ><a href="<?php echo site_url('asset/index5/test_export1') ?>"><i class="fa fa-download"></i> <span>TEST EXPORT 1</span></a></li>
+        
+				<!--<li class="treeview class="active menu-open"">
           <a href="#"><i class="fa fa-globe"></i> <span>Tracking System</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
