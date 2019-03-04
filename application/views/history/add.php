@@ -14,9 +14,9 @@
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="HISTORY_STATUS_ID" class="control-label">HISTORY STATUS ID</label>
+						<label for="HISTORY_STATUS_NAME" class="control-label">HISTORY STATUS NAME</label>
 						<div class="form-group">
-							<input type="text" name="HISTORY_STATUS_ID" value="<?php echo $this->input->post('HISTORY_STATUS_ID'); ?>" class="form-control" id="HISTORY_STATUS_ID" />
+							<input type="text" name="HISTORY_STATUS_NAME" value="<?php echo $this->input->post('HISTORY_STATUS_NAME'); ?>" class="form-control" id="HISTORY_STATUS_NAME" />
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -26,9 +26,21 @@
 						</div>
 					</div>
 					<div class="col-md-6">
+						<label for="HISTORY_REFERNAME" class="control-label">HISTORY REFERNAME</label>
+						<div class="form-group">
+							<input type="text" name="HISTORY_REFERNAME" value="<?php echo $this->input->post('HISTORY_REFERNAME'); ?>" class="form-control" id="HISTORY_REFERNAME" />
+						</div>
+					</div>
+					<div class="col-md-6">
 						<label for="HISTORY_BUILDING_ID" class="control-label">HISTORY BUILDING ID</label>
 						<div class="form-group">
 							<input type="text" name="HISTORY_BUILDING_ID" value="<?php echo $this->input->post('HISTORY_BUILDING_ID'); ?>" class="form-control" id="HISTORY_BUILDING_ID" />
+						</div>
+					</div>
+					<div class="col-md-6">
+						<label for="HISTORY_BUILDING_NAME" class="control-label">HISTORY BUILDING NAME</label>
+						<div class="form-group">
+							<input type="text" name="HISTORY_BUILDING_NAME" value="<?php echo $this->input->post('HISTORY_BUILDING_NAME'); ?>" class="form-control" id="HISTORY_BUILDING_NAME" />
 						</div>
 					</div>
 					<div class="col-md-6">

@@ -227,6 +227,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <li><a href="<?php echo site_url('room/index/index');?>"><i class="fa fa-wrench"></i>         <span>Room    </span></a></li>
           <li><a href="<?php echo site_url('status/index/index');?>"><i class="fa fa-toggle-on"></i>    <span>Status  </span></a></li>
           <li><a href="<?php echo site_url('history/index/index');?>"><i class="fa fa-history"></i>     <span>History </span></a></li>
+					<li><a href="<?php echo site_url('asset_verify/index/index');?>"><i class="fa fa-check"></i>     <span>Asset Verify </span></a></li>
 					<li><a href="<?php echo site_url('department/index/index');?>"><i class="fa fa-map"></i>         <span>Department     </span></a></li>
         
         </li>

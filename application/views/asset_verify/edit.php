@@ -14,9 +14,9 @@
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="ASSET_VERIFY_STATUS_ID" class="control-label">ASSET VERIFY STATUS ID</label>
+						<label for="ASSET_VERIFY_STATUS_NAME" class="control-label">ASSET VERIFY STATUS NAME</label>
 						<div class="form-group">
-							<input type="text" name="ASSET_VERIFY_STATUS_ID" value="<?php echo ($this->input->post('ASSET_VERIFY_STATUS_ID') ? $this->input->post('ASSET_VERIFY_STATUS_ID') : $asset_verify['ASSET_VERIFY_STATUS_ID']); ?>" class="form-control" id="ASSET_VERIFY_STATUS_ID" />
+							<input type="text" name="ASSET_VERIFY_STATUS_NAME" value="<?php echo ($this->input->post('ASSET_VERIFY_STATUS_NAME') ? $this->input->post('ASSET_VERIFY_STATUS_NAME') : $asset_verify['ASSET_VERIFY_STATUS_NAME']); ?>" class="form-control" id="ASSET_VERIFY_STATUS_NAME" />
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -26,9 +26,21 @@
 						</div>
 					</div>
 					<div class="col-md-6">
+						<label for="ASSET_VERIFY_REFERNAME" class="control-label">ASSET VERIFY REFERNAME</label>
+						<div class="form-group">
+							<input type="text" name="ASSET_VERIFY_REFERNAME" value="<?php echo ($this->input->post('ASSET_VERIFY_REFERNAME') ? $this->input->post('ASSET_VERIFY_REFERNAME') : $asset_verify['ASSET_VERIFY_REFERNAME']); ?>" class="form-control" id="ASSET_VERIFY_REFERNAME" />
+						</div>
+					</div>
+					<div class="col-md-6">
 						<label for="ASSET_VERIFY_BUILDING_ID" class="control-label">ASSET VERIFY BUILDING ID</label>
 						<div class="form-group">
 							<input type="text" name="ASSET_VERIFY_BUILDING_ID" value="<?php echo ($this->input->post('ASSET_VERIFY_BUILDING_ID') ? $this->input->post('ASSET_VERIFY_BUILDING_ID') : $asset_verify['ASSET_VERIFY_BUILDING_ID']); ?>" class="form-control" id="ASSET_VERIFY_BUILDING_ID" />
+						</div>
+					</div>
+					<div class="col-md-6">
+						<label for="ASSET_VERIFY_BUILDING_NAME" class="control-label">ASSET VERIFY BUILDING NAME</label>
+						<div class="form-group">
+							<input type="text" name="ASSET_VERIFY_BUILDING_NAME" value="<?php echo ($this->input->post('ASSET_VERIFY_BUILDING_NAME') ? $this->input->post('ASSET_VERIFY_BUILDING_NAME') : $asset_verify['ASSET_VERIFY_BUILDING_NAME']); ?>" class="form-control" id="ASSET_VERIFY_BUILDING_NAME" />
 						</div>
 					</div>
 					<div class="col-md-6">
