@@ -52,7 +52,7 @@
      <thead>
       <tr>
        <th>ASSETID</th>
-       <th>REFERID</th>
+       <th>REFERIDITEM</th>
        <th>ASSETNAME</th>
        <th>RECEIVEDATE</th>
        <th>SPEC</th>

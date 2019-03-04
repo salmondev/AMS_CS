@@ -21,7 +21,7 @@
                 <thead>
                     <tr>
 					<th>ASSETID</th>
-						<th>REFERID</th>
+						<th>REFERIDITEM</th>
 						<th>ASSETNAME</th>
 						<th>RECEIVEDATE</th>
 						<th>SPEC</th>
@@ -42,7 +42,7 @@
 						<?php echo $row['ASSETID']; ?>
 					</td>
 					<td>
-						<?php echo $row['REFERID']; ?>
+						<?php echo $row['REFERIDITEM']; ?>
 					</td>
 					<td>
 						<?php echo $row['ASSETNAME']; ?>

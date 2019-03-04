@@ -34,7 +34,7 @@ td:last-child {text-align:center;}
 	<thead>
 						<tr>
 							<th>ASSETID</th>
-							<th>REFERID</th>
+							<th>REFERIDITEM</th>
 							<th>ASSETNAME</th>
 							<th>RECEIVEDATE</th>
 							<th>SPEC</th>
@@ -47,7 +47,7 @@ td:last-child {text-align:center;}
 							<?php echo $A['ASSETID']; ?>
 						</td>
 						<td>
-							<?php echo $A['REFERID']; ?>
+							<?php echo $A['REFERIDITEM']; ?>
 						</td>
 						<td>
 							<?php echo $A['ASSETNAME']; ?>

@@ -15,7 +15,7 @@ if(isset($_POST["submit"]))
 	 //Finding the position of fieldnames from Row 1
 $fieldnames = fgetcsv($handle);
 $assetidindex = array_search("ASSETID", $fieldnames);
-$referidindex = array_search("REFERID", $fieldnames);
+$referiditemindex = array_search("REFERIDITEM", $fieldnames);
 $assetnameindex = array_search("ASSETNAME", $fieldnames);
 $receivedateindex = array_search("RECEIVEDATE", $fieldnames);
 $specindex = array_search("SPEC", $fieldnames);
@@ -25,7 +25,7 @@ $unitnameindex = array_search("UNITNAME", $fieldnames);
    {
 		    
 		$count = count($data);
-		$wantedColumns = array($assetidindex,$referidindex,$assetnameindex,$receivedateindex,$specindex,$unitnameindex);
+		$wantedColumns = array($assetidindex,$referiditemindex,$assetnameindex,$receivedateindex,$specindex,$unitnameindex);
 		for ($i=0; $i < $count ; $i++) { 
 			if (in_array($i,$wantedColumns))
 			{
@@ -40,7 +40,7 @@ $unitnameindex = array_search("UNITNAME", $fieldnames);
 				$item6 = mysqli_real_escape_string($connect, $data[5]);*/
 
 				$item1 = mysqli_real_escape_string($connect, $data[$assetidindex]);
-				$item2 = mysqli_real_escape_string($connect, $data[$referidindex]);
+				$item2 = mysqli_real_escape_string($connect, $data[$referiditemindex]);
 				$item3 = mysqli_real_escape_string($connect, $data[$assetnameindex]);
 				$item4 = mysqli_real_escape_string($connect, $data[$receivedateindex]);
 				$item5 = mysqli_real_escape_string($connect, $data[$specindex]);
@@ -48,9 +48,9 @@ $unitnameindex = array_search("UNITNAME", $fieldnames);
 
 				$myDate =  date("y/m/d",strtotime(str_replace('/','-',$item4)));
 				
-                $query = "INSERT into ASSET (ASSETID,REFERID,ASSETNAME,RECEIVEDATE,SPEC,UNITNAME) values('$item1','$item2','$item3','$myDate','$item5','$item6')";
+                $query = "INSERT into ASSET (ASSETID,REFERIDITEM,ASSETNAME,RECEIVEDATE,SPEC,UNITNAME) values('$item1','$item2','$item3','$myDate','$item5','$item6')";
 								
-								$query2 = "UPDATE into ASSET (ASSETID,REFERID,ASSETNAME,RECEIVEDATE,SPEC,UNITNAME) values('$item1','$item2','$item3','$item4','$item5','$item6')";
+								$query2 = "UPDATE into ASSET (ASSETID,REFERIDITEM,ASSETNAME,RECEIVEDATE,SPEC,UNITNAME) values('$item1','$item2','$item3','$item4','$item5','$item6')";
 				
 				
 				mysqli_query($connect, $query);
@@ -134,7 +134,7 @@ background: rgba(0, 0, 0, 0.5);
 					<thead>
 						<tr>
 							<th>ASSETID</th>
-							<th>REFERID</th>
+							<th>REFERIDITEM</th>
 							<th>ASSETNAME</th>
 							<th>RECEIVEDATE</th>
 							<th>SPEC</th>
@@ -148,7 +148,7 @@ background: rgba(0, 0, 0, 0.5);
 							<?php echo $A['ASSETID']; ?>
 						</td>
 						<td>
-							<?php echo $A['REFERID']; ?>
+							<?php echo $A['REFERIDITEM']; ?>
 						</td>
 						<td>
 							<?php echo $A['ASSETNAME']; ?>
