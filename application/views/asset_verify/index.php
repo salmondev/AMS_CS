@@ -4,7 +4,7 @@
             <div class="box-header">
                 
             	<div class="box-title">
-                    <a href="<?php echo site_url('asset_verify/add'); ?>" class="btn btn-success btn-lg">ADD</a> 
+                    <a href="<?php echo site_url('asset_verify/add'); ?>" class="btn btn-success btn-lg"><i class="fa fa-plus" style="margin:5px"></i>DD DATA</a> 
                 </div>
             </div>
             <div class="box-body">

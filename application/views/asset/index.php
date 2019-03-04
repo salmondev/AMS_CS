@@ -123,7 +123,7 @@ background: rgba(0, 0, 0, 0.5);
 		<div class="box">
 			<div class="box-header">
 				<div class="box-title">
-					<a href="<?php echo site_url('asset/add'); ?>" class="btn btn-success btn-lg">ADD ASSET</a>
+					<a href="<?php echo site_url('asset/add'); ?>" class="btn btn-success btn-lg" ><i class="fa fa-plus" style="margin:5px"></i>ADD ASSET</a>
 					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
 						IMPORT CSV
 					</button>

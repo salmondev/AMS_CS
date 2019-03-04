@@ -105,7 +105,7 @@ background: rgba(0, 0, 0, 0.5);
             <div class="box-header">
                 
             	<div class="box-title">
-                    <a href="<?php echo site_url('department/add'); ?>" class="btn btn-success btn-lg">ADD DEPARTMENT</a> 
+                    <a href="<?php echo site_url('department/add'); ?>" class="btn btn-success btn-lg"><i class="fa fa-plus" style="margin:5px"></i>ADD DEPARTMENT</a> 
 					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
 						IMPORT CSV
 					</button>

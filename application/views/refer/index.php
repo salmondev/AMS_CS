@@ -63,7 +63,7 @@ $departmentidindex = array_search("DEPARTMENTID", $fieldnames);
         <div class="box">
             <div class="box-header">
             	<div class="box-title">
-                    <a href="<?php echo site_url('refer/add'); ?>" class="btn btn-success btn-lg">ADD</a> 
+                    <a href="<?php echo site_url('refer/add'); ?>" class="btn btn-success btn-lg"><i class="fa fa-plus" style="margin:5px"></i>ADD REFER</a> 
 					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
 						IMPORT CSV
 					</button>

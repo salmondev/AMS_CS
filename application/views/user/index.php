@@ -3,7 +3,7 @@
         <div class="box">
             <div class="box-header">
             	<div class="box-title">
-                    <a href="<?php echo site_url('user/add'); ?>" class="btn btn-success btn-lg">ADD USER</a> 
+                    <a href="<?php echo site_url('user/add'); ?>" class="btn btn-success btn-lg"><i class="fa fa-plus" style="margin:5px"></i>ADD USER</a> 
                 </div>
             </div>
             <div class="box-body">
