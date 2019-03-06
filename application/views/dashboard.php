@@ -77,25 +77,25 @@
 	<div class="panel panel-primary">
 		<div class="panel-heading">จัดการฐานข้อมูล</div>
 		<div class="panel-body">
-			<a href="<?php echo site_url('building/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px"><i
+			<a href="<?php echo site_url('building/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px; margin-bottom:10px"><i
 				 class="fa fa-building fa-fw fa-5x"></i><br /><br />ข้อมูลอาคาร</a>
-			<a href="<?php echo site_url('floor/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px"><i
+			<a href="<?php echo site_url('floor/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px; margin-bottom:10px"><i
 				 class="fa fa-tasks fa-fw fa-5x"></i><br /><br />ข้อมูลชั้นอาคาร</a>
-			<a href="<?php echo site_url('asset/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px"><i
+			<a href="<?php echo site_url('asset/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px; margin-bottom:10px"><i
 				 class="fa fa-cubes fa-fw fa-5x"></i><br /><br />ข้อมูลพัสดุ/ครุภัณฑ์</a>
-			<a href="<?php echo site_url('refer/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px"><i
+			<a href="<?php echo site_url('refer/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px; margin-bottom:10px"><i
 				 class="fa fa-users fa-fw fa-5x"></i><br /><br />ข้อมูลผู้รับผิดชอบ</a>
-			<a href="<?php echo site_url('user/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px"><i
+			<a href="<?php echo site_url('user/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px; margin-bottom:10px"><i
 				 class="fa fa-user-circle-o fa-fw fa-5x"></i><br /><br />ข้อมูลผู้ใช้ระบบ</a>
-			<a href="<?php echo site_url('room/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px"><i
+			<a href="<?php echo site_url('room/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px; margin-bottom:10px"><i
 				 class="fa fa-building-o fa-fw fa-5x"></i><br /><br />ข้อมูลห้อง</a>
-			<a href="<?php echo site_url('status/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px"><i
+			<a href="<?php echo site_url('status/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px; margin-bottom:10px"><i
 				 class="fa fa-toggle-on fa-fw fa-5x"></i><br /><br />ข้อมูลสถานะ</a>
-			<a href="<?php echo site_url('department/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px"><i
+			<a href="<?php echo site_url('department/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px; margin-bottom:10px"><i
 				 class="fa fa-vcard fa-fw fa-5x"></i><br /><br />ข้อมูลหน่วยงาน</a>
-			<a href="<?php echo site_url('history/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px"><i
+			<a href="<?php echo site_url('history/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px; margin-bottom:10px"><i
 				 class="fa fa-history fa-fw fa-5x"></i><br /><br />ข้อมูลประวัติ</a>
-			<a href="<?php echo site_url('asset_verify/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px"><i
+			<a href="<?php echo site_url('asset_verify/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px; margin-bottom:10px"><i
 				 class="fa fa-check fa-fw fa-5x"></i><br /><br />ข้อมูลการตรวจสอบ</a>
 		</div>
 	</div>
