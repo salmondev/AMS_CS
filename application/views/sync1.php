@@ -6,7 +6,7 @@
 $connect = mysqli_connect("localhost", "amsappne_nfcdb", "AMSnfcapp1", "amsappne_nfc");
 mysqli_set_charset($connect,'utf8');
 
-/*
+
 if(isset($_POST["submit"]))
 {
  if($_FILES['file']['name'])
@@ -42,7 +42,7 @@ $unitnameindex = array_search("UNITNAME", $fieldnames);
 				$item4 = mysqli_real_escape_string($connect, $data[3]);
 				$item5 = mysqli_real_escape_string($connect, $data[4]);
 				$item6 = mysqli_real_escape_string($connect, $data[5]);*/
-/*
+
 				$item1 = mysqli_real_escape_string($connect, $data[$assetidindex]);
 				$item2 = mysqli_real_escape_string($connect, $data[$referiditemindex]);
 				$item3 = mysqli_real_escape_string($connect, $data[$assetnameindex]);
@@ -72,7 +72,7 @@ $unitnameindex = array_search("UNITNAME", $fieldnames);
    </script>";
   }
  }
-}*/
+}
 ?>
 
 <head>
@@ -132,26 +132,6 @@ background: rgba(0, 0, 0, 0.5);
 }
 
 </style>
-
-	<script language="JavaScript">
-		function ClickCheckAll(vol)
-	{
-	
-		var i=1;
-		for(i=1;i<=document.form1.hdnCount.value;i++)
-		{
-			if(vol.checked == true)
-			{
-				eval("document.form1.Chk"+i+".checked=true");
-			}
-			else
-			{
-				eval("document.form1.Chk"+i+".checked=false");
-			}
-		}
-	}
-</script>
-
 </head>
 
 
@@ -181,7 +161,6 @@ background: rgba(0, 0, 0, 0.5);
 						IMPORT CSV
 					</button>
 
-
 					<!--<p id="syncx" class="syncdata"><input type="submit" value="IMPORT" class="btn btn-primary btn-lg" </p>-->
 				</div>
 			</div>
@@ -189,7 +168,6 @@ background: rgba(0, 0, 0, 0.5);
 				<table id="example2" class="table table-striped">
 					<thead>
 						<tr>
-							<th>QR <input name="CheckAll" type="checkbox" id="CheckAll" value="Y" onClick="ClickCheckAll(this);"></th>
 							<th>ASSETID</th>
 							<th>REFERIDITEM</th>
 							<th>ASSETNAME</th>
@@ -198,12 +176,8 @@ background: rgba(0, 0, 0, 0.5);
 							<th>UNITNAME</th>
 						</tr>
 					</thead>
-
-					<?php foreach($asset as $A){  ?>
+					<?php foreach($asset as $A){ ?>
 					<tr>
-						<td>
-							<input type="checkbox" name="qr_text" value="<?php echo ($A['ASSETID'].'-'.$A['REFERIDITEM']); ?>">
-						</td>
 						<td>
 							<?php echo $A['ASSETID']; ?>
 						</td>
@@ -223,19 +197,15 @@ background: rgba(0, 0, 0, 0.5);
 							<?php echo $A['UNITNAME']; ?>
 						</td>
 						<td>
+							
 
+            
 
+						<input type="hidden" name="assetid" id="textQrcode" value="<?php echo ($A['ASSETID'].'-'.$A['REFERIDITEM']); ?>" >
 
-
-							<form action="<?php echo site_url('asset/index8/genQR') ?>" method="post" name="form1">
-						<td>
-							<input type="hidden" name="qr_text" value="<?php echo ($A['ASSETID'].'-'.$A['REFERIDITEM']); ?>">
-							<input type="submit" name="generate_text" value="GENERATE QR CODE" class="btn btn-primary" />
-						</td>
-
-						<input type="hidden" name="hdnCount" value="<?php echo $this->db->from(" ASSET")->count_all_results();?>">
-
-						</form>
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="createQRcode()">
+								Generate QR Code
+							</button>
 
 
 
@@ -313,10 +283,10 @@ background: rgba(0, 0, 0, 0.5);
 
 <script>
 	///////////////////////////////////////////////////////////////////
-	$(document).ready(function () {
-		var textQrcode = $('#textQrcode').val();
-
-	});
+	$(document).ready(function(){
+                var textQrcode = $('#textQrcode').val();
+                
+            });
 
 	function createQRcode() {
 		var textQrcode = document.getElementById('textQrcode');
@@ -354,3 +324,5 @@ background: rgba(0, 0, 0, 0.5);
 	}
 
 </script>
+
+

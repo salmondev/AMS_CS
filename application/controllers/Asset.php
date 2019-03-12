@@ -75,6 +75,14 @@ class Asset extends CI_Controller{
         $this->load->view('item_table/exporter',$data);
 	}
 
+	function index8()
+    {
+        $data['asset'] = $this->Asset_model->get_all_asset();
+        //$data['_view'] = 'genQR';
+		//$this->load->view('test',$data);
+		$this->load->view('genQR',$data);
+	}
+
     /*
      * Adding a new asset
      */

@@ -168,6 +168,7 @@ background: rgba(0, 0, 0, 0.5);
 							<a href="<?php echo site_url('asset/remove/'.$A['ASSETID']); ?>" class="btn btn-danger btn-xs" onclick="return confirm('Confirm to delete record?')"><span
 								 class="fa fa-trash"></span>
 								Delete</a>
+								
 						</td>
 					</tr>
 					<?php } ?>

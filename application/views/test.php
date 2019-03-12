@@ -112,7 +112,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Logo -->
           <a href="<?php echo site_url('dashboard/index/dashboard');?>" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b></b>CS</span>
+            <span class="logo-mini"><b></b>AMS</span>
             <!-- logo for regular state and mobile devices -->
             <span class="logo-lg"><b>ADMIN</b></span>
           </a>
@@ -166,7 +166,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
           <!-- Control Sidebar Toggle Button -->
           <li>
-					<a href="<?php echo site_url('login/logout') ?>" class="btn btn-danger">Log out</a>
+					<a href="<?php echo site_url('login/logout') ?>" class="btn btn-danger"><i class="fa fa-sign-out" style="margin-right:2px;"></i>Log out</a>
           </li>
         </ul>
       </div>
@@ -192,8 +192,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">SYSTEM</li>
         <!-- Optionally, you can add icons to the links -->
-				<li ><a href="<?php echo site_url('qr/index') ?>"><i class="fa fa-gear"></i> <span>QR TEST</span></a></li>
-        <li ><a href="<?php echo site_url('asset/index3/sync') ?>"><i class="fa fa-gear"></i> <span>TESTER PAGE</span></a></li>
+				<li ><a href="<?php echo site_url('qr/index') ?>"><i class="fa fa-gear"></i> <span>TESTER</span></a></li>
+        <li ><a href="<?php echo site_url('asset/index3/sync') ?>"><i class="fa fa-gear"></i> <span>Generate QR Code</span></a></li>
         <li ><a href="<?php echo site_url('asset/index2/demo') ?>"><i class="fa fa-database"></i> <span>ASSET LIST</span></a></li>
 				<li ><a href="<?php echo site_url('search/index/search1') ?>"><i class="fa fa-search"></i> <span>SEARCH</span></a></li>
 				<!--<li ><a href="<?php echo site_url('asset/index4/test_export') ?>"><i class="fa fa-download"></i> <span>TEST EXPORT</span></a></li>
@@ -285,7 +285,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Create the tabs -->
   <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
     <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-    <li><a href="<?php echo site_url('login/logout') ?>" class="btn btn-danger btn-flat">Log out</a></li>
+    <li><a href="<?php echo site_url('login/logout') ?>" class="btn btn-danger btn-flat"><i class="fa fa-sign-out"></i>Log out</a></li>
   </ul>
   <!-- Tab panes -->
   <div class="tab-content">
