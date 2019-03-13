@@ -205,7 +205,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				<ul class="sidebar-menu" data-widget="tree">
 					<li class="header">SYSTEM</li>
 					<!-- Optionally, you can add icons to the links -->
-					<li><a href="<?php echo site_url('qr/index') ?>"><i class="fa fa-gear"></i> <span>TESTER</span></a></li>
+					<!--<li><a href="<?php echo site_url('qr/index') ?>"><i class="fa fa-gear"></i> <span>TESTER</span></a></li> -->
 					<li><a href="<?php echo site_url('asset/index3/sync') ?>"><i class="fa fa-gear"></i> <span>Generate QR Code</span></a></li>
 					<li><a href="<?php echo site_url('asset/index2/demo') ?>"><i class="fa fa-database"></i> <span>ASSET LIST</span></a></li>
 					<li><a href="<?php echo site_url('search/index/search1') ?>"><i class="fa fa-search"></i> <span>SEARCH</span></a></li>

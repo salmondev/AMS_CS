@@ -1,4 +1,4 @@
-<?php 
+<?php
 if(isset($_POST['generate_text']))
 {
  include('phpqrcode/qrlib.php'); 
@@ -40,7 +40,22 @@ if(isset($_POST['generate_text']))
 	$size = 12,
 	$margin = 2 
 );*/
-//echo '<img src="'.$pngPath.'" />'; 
+//$newURL = "http://amsapp.net/index.php/asset/index3/sync";
+//echo site_url('asset/index3/sync');
+/*header('Location: '.$newURL);/*
+header("Content-type: image/png");
+echo '<img src="'.$pngPath.'" />'; */
 }
 ?>
+
+<form id="myForm" action="<?php echo site_url('qr/index') ?>" method="post">
+<?php
+    
+        echo '<input type="hidden" name="qrpic" value="'.$fileName.'">';
+	
+?>
+</form>
+<script type="text/javascript">
+    document.getElementById('myForm').submit();
+</script>
 

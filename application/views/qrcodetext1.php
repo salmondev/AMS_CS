@@ -52,32 +52,13 @@
     top:0;
   }
 }
-
-@media all{
-   printed-div{
-       display:none;
-   }
-}
-
-@media print{
-   printed-div{
-       display:block;
-   }
-   .logo-print{
-       width:291px;
-       height:109px;
-       display: list-item;
-       list-style-image: url(../images/logo_print.png);
-       list-style-position: inside;
-   }
-}
 </style>
 
 </head>
 
 <body style="margin:20px;">
-<!--
-	<input type="text" name="textQrcode" id="textQrcode"></br>-->
+
+	<input type="text" name="textQrcode" id="textQrcode"></br>
 	<!--
 	<button onclick="createQRcode()">QR Code Generate</button>
 
@@ -86,21 +67,10 @@
 
 	</br>
 
-	<!-- Button to Open the Modal --><!--
+	<!-- Button to Open the Modal -->
 	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="createQRcode()">
 		Generate QR Code 
 	</button>
--->
-	</br>
-	
-	<img src="<?php echo base_url('images/'.$_POST['qrpic']);?>" >
-					</br>
-	<button type="button" class="btn btn-primary" onclick="myFunction()">Print QR Code</button>
-
-	<!--<div id="print_button" class="printbutton btn btn-info" onClick="window.print()"><i class="glyphicon glyphicon-print"></i>PRINT</a></div> -->
-
-</br></br>
-<a href="<?php echo site_url('asset/index3/sync') ?>" class="btn btn-danger" >BACK</a>
 
 	<!-- The Modal -->
 	<div class="modal" id="myModal">
@@ -132,33 +102,8 @@
 			</div>
 		</div>
 	</div>
-	<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
 
 
-	<script>
-function myFunction() {
-  //window.print();
-	var newWindow = window.open('', '', 'width=100, height=100'),
-document = newWindow.document.open(),
-pageContent =
-    '<!DOCTYPE html>' +
-    '<html>' +
-    '<head>' +
-    '<meta charset="utf-8" />' +
-    '<title>QR Code</title>' +
-    '<style type="text/css">body {-webkit-print-color-adjust: exact; font-family: Arial; }</style>' +
-    '</head>' +
-    '<body><div><div style="width:33.33%; float:left;"><img src="<?php echo base_url('images/'.$_POST['qrpic']);?>" ></body></html>';
-document.write(pageContent);
-document.close();
-newWindow.moveTo(0, 0);
-newWindow.resizeTo(screen.width, screen.height);
-setTimeout(function() {
-    newWindow.print();
-    newWindow.close();
-}, 250);
-}
-</script>
 	<script>
 
 
@@ -198,3 +143,8 @@ setTimeout(function() {
 
 	</script>
 </body>
+
+
+foreach ($_POST as $a => $b) {
+        echo '<input type="hidden" name="'.htmlentities($a).'" value="'.htmlentities($b).'">';
+	}
