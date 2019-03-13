@@ -19,6 +19,7 @@ if(isset($_POST["submit"]))
 	 //Finding the position of fieldnames from Row 1
 $fieldnames = fgetcsv($handle);
 $assetidindex = array_search("ASSETID", $fieldnames);
+$barcodeindex = array_search("BARCODE", $fieldnames);
 $referiditemindex = array_search("REFERIDITEM", $fieldnames);
 $assetnameindex = array_search("ASSETNAME", $fieldnames);
 $receivedateindex = array_search("RECEIVEDATE", $fieldnames);
@@ -29,7 +30,7 @@ $unitnameindex = array_search("UNITNAME", $fieldnames);
    {
 		    
 		$count = count($data);
-		$wantedColumns = array($assetidindex,$referiditemindex,$assetnameindex,$receivedateindex,$specindex,$unitnameindex);
+		$wantedColumns = array($assetidindex,$barcodeindex,$referiditemindex,$assetnameindex,$receivedateindex,$specindex,$unitnameindex);
 		for ($i=0; $i < $count ; $i++) { 
 			if (in_array($i,$wantedColumns))
 			{
@@ -44,17 +45,18 @@ $unitnameindex = array_search("UNITNAME", $fieldnames);
 				$item6 = mysqli_real_escape_string($connect, $data[5]);*/
 
 				$item1 = mysqli_real_escape_string($connect, $data[$assetidindex]);
-				$item2 = mysqli_real_escape_string($connect, $data[$referiditemindex]);
-				$item3 = mysqli_real_escape_string($connect, $data[$assetnameindex]);
-				$item4 = mysqli_real_escape_string($connect, $data[$receivedateindex]);
-				$item5 = mysqli_real_escape_string($connect, $data[$specindex]);
-				$item6 = mysqli_real_escape_string($connect, $data[$unitnameindex]);
+				$item2 = mysqli_real_escape_string($connect, $data[$barcodeindex]);
+				$item3 = mysqli_real_escape_string($connect, $data[$referiditemindex]);
+				$item4 = mysqli_real_escape_string($connect, $data[$assetnameindex]);
+				$item5 = mysqli_real_escape_string($connect, $data[$receivedateindex]);
+				$item6 = mysqli_real_escape_string($connect, $data[$specindex]);
+				$item7 = mysqli_real_escape_string($connect, $data[$unitnameindex]);
 
-				$myDate =  date("y/m/d",strtotime(str_replace('/','-',$item4)));
+				$myDate =  date("y/m/d",strtotime(str_replace('/','-',$item5)));
 				
-                $query = "INSERT into ASSET (ASSETID,REFERIDITEM,ASSETNAME,RECEIVEDATE,SPEC,UNITNAME) values('$item1','$item2','$item3','$myDate','$item5','$item6')";
+                $query = "INSERT into ASSET (ASSETID,BARCODE,REFERIDITEM,ASSETNAME,RECEIVEDATE,SPEC,UNITNAME) values('$item1','$item2','$item3','$item4','$myDate','$item6','$item7')";
 								
-								$query2 = "UPDATE into ASSET (ASSETID,REFERIDITEM,ASSETNAME,RECEIVEDATE,SPEC,UNITNAME) values('$item1','$item2','$item3','$item4','$item5','$item6')";
+								$query2 = "UPDATE into ASSET (ASSETID,BARCODE,REFERIDITEM,ASSETNAME,RECEIVEDATE,SPEC,UNITNAME) values('$item1','$item2','$item3','$item4','$myDate','$item6','$item7')";
 				
 				
 				mysqli_query($connect, $query);
@@ -155,17 +157,22 @@ background: rgba(0, 0, 0, 0.5);
 					<thead>
 						<tr>
 							<th>ASSETID</th>
+							<th>BARCODE</th>
 							<th>REFERIDITEM</th>
 							<th>ASSETNAME</th>
 							<th>RECEIVEDATE</th>
 							<th>SPEC</th>
 							<th>UNITNAME</th>
+							<th>QR CODE</th>
 						</tr>
 					</thead>
 					<?php foreach($asset as $A){ ?>
 					<tr>
 						<td>
 							<?php echo $A['ASSETID']; ?>
+						</td>
+						<td>
+							<?php echo $A['BARCODE']; ?>
 						</td>
 						<td>
 							<?php echo $A['REFERIDITEM']; ?>
@@ -182,6 +189,15 @@ background: rgba(0, 0, 0, 0.5);
 						<td>
 							<?php echo $A['UNITNAME']; ?>
 						</td>
+						<td>
+						<form action="<?php echo site_url('asset/index8/genQR') ?>" method="post" name="form1">
+						
+							<input type="hidden" name="qr_text" value="<?php echo ($A['BARCODE']); ?>">
+							<input type="submit" name="generate_text" value="Generate QR Code" class="btn btn-primary" />
+
+						</form>
+						</td>
+						
 					</tr>
 					<?php } ?>
 				</table>

@@ -177,9 +177,7 @@ background: rgba(0, 0, 0, 0.5);
 
 					</form> -->
 
-					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
-						IMPORT CSV
-					</button>
+					
 
 
 					<!--<p id="syncx" class="syncdata"><input type="submit" value="IMPORT" class="btn btn-primary btn-lg" </p>-->
@@ -191,11 +189,13 @@ background: rgba(0, 0, 0, 0.5);
 						<tr>
 							<th>QR <input name="CheckAll" type="checkbox" id="CheckAll" value="Y" onClick="ClickCheckAll(this);"></th>
 							<th>ASSETID</th>
+							<th>BARCODE</th>
 							<th>REFERIDITEM</th>
 							<th>ASSETNAME</th>
 							<th>RECEIVEDATE</th>
 							<th>SPEC</th>
 							<th>UNITNAME</th>
+							<th>QR CODE</th>
 						</tr>
 					</thead>
 
@@ -206,6 +206,9 @@ background: rgba(0, 0, 0, 0.5);
 						</td>
 						<td>
 							<?php echo $A['ASSETID']; ?>
+						</td>
+						<td>
+							<?php echo $A['BARCODE']; ?>
 						</td>
 						<td>
 							<?php echo $A['REFERIDITEM']; ?>
@@ -228,10 +231,10 @@ background: rgba(0, 0, 0, 0.5);
 
 
 							<form action="<?php echo site_url('asset/index8/genQR') ?>" method="post" name="form1">
-						<td>
-							<input type="hidden" name="qr_text" value="<?php echo ($A['ASSETID'].'-'.$A['REFERIDITEM']); ?>">
+						
+							<input type="hidden" name="qr_text" value="<?php echo ($A['BARCODE']); ?>">
 							<input type="submit" name="generate_text" value="GENERATE QR CODE" class="btn btn-primary" />
-						</td>
+						
 
 						<input type="hidden" name="hdnCount" value="<?php echo $this->db->from(" ASSET")->count_all_results();?>">
 

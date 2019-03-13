@@ -93,6 +93,7 @@ class Asset extends CI_Controller{
 			$odate=date("y-m-d");
             $params = array(
 				'ASSETID' => $this->input->post('ASSETID'),
+				'BARCODE' => $this->input->post('BARCODE'),
 				'REFERIDITEM' => $this->input->post('REFERIDITEM'),
 				'ASSETNAME' => $this->input->post('ASSETNAME'),
 				'RECEIVEDATE' => $odate,
@@ -128,6 +129,7 @@ class Asset extends CI_Controller{
 				$odate=date("y-m-d");
                 $params = array(
 					'ASSETID' => $this->input->post('ASSETID'),
+					'BARCODE' => $this->input->post('BARCODE'),
 					'REFERIDITEM' => $this->input->post('REFERIDITEM'),
 					'ASSETNAME' => $this->input->post('ASSETNAME'),
 					'RECEIVEDATE' => $odate,

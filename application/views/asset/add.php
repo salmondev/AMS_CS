@@ -14,6 +14,12 @@
 						</div>
 					</div>
 					<div class="col-md-6">
+						<label for="BARCODE" class="control-label">BARCODE</label>
+						<div class="form-group">
+							<textarea name="BARCODE" class="form-control" id="BARCODE"><?php echo $this->input->post('BARCODE'); ?></textarea>
+						</div>
+					</div>
+					<div class="col-md-6">
 						<label for="REFERID" class="control-label">Refer</label>
 						<div class="form-group">
 							<select name="REFERID" class="form-control">

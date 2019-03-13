@@ -34,6 +34,7 @@ td:last-child {text-align:center;}
 	<thead>
 						<tr>
 							<th>ASSETID</th>
+							<th>BARCODE</th>
 							<th>REFERIDITEM</th>
 							<th>ASSETNAME</th>
 							<th>RECEIVEDATE</th>
@@ -45,6 +46,9 @@ td:last-child {text-align:center;}
 					<tr>
 						<td>
 							<?php echo $A['ASSETID']; ?>
+						</td>
+						<td>
+							<?php echo $A['BARCODE']; ?>
 						</td>
 						<td>
 							<?php echo $A['REFERIDITEM']; ?>
