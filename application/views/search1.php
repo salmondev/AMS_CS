@@ -36,14 +36,14 @@
     <br />
     <div class="row">
      <div class="input-daterange">
-      <div class="col-md-4">
+      <div class="col-md-3">
        <input type="text" name="start_date" id="start_date" class="form-control" placeholder="From Date" />
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
        <input type="text" name="end_date" id="end_date" class="form-control" placeholder="To Date" />
       </div>      
      </div>
-     <div class="col-md-4">
+     <div class="col-md-6">
       <input type="button" name="search" id="search" value="Search" class="btn btn-info" />
      </div>
     </div>
@@ -52,7 +52,7 @@
      <thead>
       <tr>
        <th>ASSETID</th>
-       <th>REFERID</th>
+       <th>REFERIDITEM</th>
        <th>ASSETNAME</th>
        <th>RECEIVEDATE</th>
        <th>SPEC</th>

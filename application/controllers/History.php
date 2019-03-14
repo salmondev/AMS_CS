@@ -31,9 +31,11 @@ class History extends CI_Controller{
         {   
             $params = array(
 				'HISTORY_ASSETID' => $this->input->post('HISTORY_ASSETID'),
-				'HISTORY_STATUS_ID' => $this->input->post('HISTORY_STATUS_ID'),
+				'HISTORY_STATUS_NAME' => $this->input->post('HISTORY_STATUS_NAME'),
 				'HISTORY_REFERID' => $this->input->post('HISTORY_REFERID'),
+				'HISTORY_REFERNAME' => $this->input->post('HISTORY_REFERNAME'),
 				'HISTORY_BUILDING_ID' => $this->input->post('HISTORY_BUILDING_ID'),
+				'HISTORY_BUILDING_NAME' => $this->input->post('HISTORY_BUILDING_NAME'),
 				'HISTORY_FLOOR_ID' => $this->input->post('HISTORY_FLOOR_ID'),
 				'HISTORY_ROOM_ID' => $this->input->post('HISTORY_ROOM_ID'),
 				'HISTORY_DAY' => $this->input->post('HISTORY_DAY'),
@@ -68,9 +70,11 @@ class History extends CI_Controller{
             {   
                 $params = array(
 					'HISTORY_ASSETID' => $this->input->post('HISTORY_ASSETID'),
-					'HISTORY_STATUS_ID' => $this->input->post('HISTORY_STATUS_ID'),
-					'HISTORY_REFERID' => $this->input->post('HISTORY_REFERID'),
-					'HISTORY_BUILDING_ID' => $this->input->post('HISTORY_BUILDING_ID'),
+					'HISTORY_STATUS_NAME' => $this->input->post('HISTORY_STATUS_NAME'),
+				    'HISTORY_REFERID' => $this->input->post('HISTORY_REFERID'),
+				    'HISTORY_REFERNAME' => $this->input->post('HISTORY_REFERNAME'),
+				    'HISTORY_BUILDING_ID' => $this->input->post('HISTORY_BUILDING_ID'),
+				    'HISTORY_BUILDING_NAME' => $this->input->post('HISTORY_BUILDING_NAME'),
 					'HISTORY_FLOOR_ID' => $this->input->post('HISTORY_FLOOR_ID'),
 					'HISTORY_ROOM_ID' => $this->input->post('HISTORY_ROOM_ID'),
 					'HISTORY_DAY' => $this->input->post('HISTORY_DAY'),

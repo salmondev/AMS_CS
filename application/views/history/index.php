@@ -3,7 +3,7 @@
         <div class="box">
             <div class="box-header">
             	<div class="box-title">
-                    <a href="<?php echo site_url('history/add'); ?>" class="btn btn-success btn-lg">ADD</a> 
+                    <a href="<?php echo site_url('history/add'); ?>" class="btn btn-success btn-lg" ><i class="fa fa-plus" style="margin:5px"></i>ADD DATA</a> 
                 </div>
             </div>
             <div class="box-body">
@@ -12,16 +12,18 @@
                     <tr>
 						<th>HISTORY RID</th>
 						<th>HISTORY ASSETID</th>
-						<th>HISTORY STATUS ID</th>
+						<th>HISTORY STATUS NAME</th>
 						<th>HISTORY REFERID</th>
+						<th>HISTORY REFERNAME</th>
 						<th>HISTORY BUILDING ID</th>
+						<th>HISTORY BUILDING NAME</th>
 						<th>HISTORY FLOOR ID</th>
 						<th>HISTORY ROOM ID</th>
 						<th>HISTORY DAY</th>
 						<th>HISTORY MONTH</th>
 						<th>HISTORY YEAR</th>
 						<th>HISTORY HOUR</th>
-						<th>HISTORYMINUTE</th>
+						<th>HISTORY MINUTE</th>
 						<th>HISTORY USERNAME</th>
 						<th>Actions</th>
                     </tr>
@@ -30,9 +32,11 @@
                     <tr>
 						<td><?php echo $H['HISTORY_RID']; ?></td>
 						<td><?php echo $H['HISTORY_ASSETID']; ?></td>
-						<td><?php echo $H['HISTORY_STATUS_ID']; ?></td>
+						<td><?php echo $H['HISTORY_STATUS_NAME']; ?></td>
 						<td><?php echo $H['HISTORY_REFERID']; ?></td>
+						<td><?php echo $H['HISTORY_REFERNAME']; ?></td>
 						<td><?php echo $H['HISTORY_BUILDING_ID']; ?></td>
+						<td><?php echo $H['HISTORY_BUILDING_NAME']; ?></td>
 						<td><?php echo $H['HISTORY_FLOOR_ID']; ?></td>
 						<td><?php echo $H['HISTORY_ROOM_ID']; ?></td>
 						<td><?php echo $H['HISTORY_DAY']; ?></td>

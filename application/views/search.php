@@ -35,7 +35,7 @@
 			<table class="table table-bordered">
 				<tr>
 					<th width="5%">ASSETID</th>
-					<th width="20%">REFERID</th>
+					<th width="20%">REFERIDITEM</th>
 					<th width="40%">ASSETNAME</th>
 					<th width="10%">RECEIVEDATE</th>
 					<th width="40%">SPEC</th>
@@ -50,7 +50,7 @@
 						<?php echo $row["ASSETID"]; ?>
 					</td>
 					<td>
-						<?php echo $row["REFERID"]; ?>
+						<?php echo $row["REFERIDITEM"]; ?>
 					</td>
 					<td>
 						<?php echo $row["ASSETNAME"]; ?>

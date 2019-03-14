@@ -14,7 +14,7 @@
            <table class="table table-bordered">  
                 <tr>  
                      <th width="5%">ASSETID</th>  
-                     <th width="20%">REFERID</th>  
+                     <th width="20%">REFERIDITEM</th>  
                      <th width="43%">ASSETNAME</th>  
                      <th width="10%">RECEIVEDATE</th>  
 					 <th width="12%">SPEC</th>  
@@ -28,7 +28,7 @@
                 $output .= '  
                      <tr>  
                           <td>'. $row["ASSETID"] .'</td>  
-                          <td>'. $row["REFERID"] .'</td>  
+                          <td>'. $row["REFERIDITEM"] .'</td>  
                           <td>'. $row["ASSETNAME"] .'</td>  
                           <td> '. $row["RECEIVEDATE"] .'</td>  
 						  <td>'. $row["SPEC"] .'</td> 

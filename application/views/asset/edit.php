@@ -15,6 +15,13 @@
 						</div>
 					</div>
 					<div class="col-md-6">
+						<label for="BARCODE" class="control-label">BARCODE</label>
+						<div class="form-group">
+							<input name="BARCODE" value="<?php echo ($this->input->post('BARCODE') ? $this->input->post('BARCODE') : $asset['BARCODE']); ?>"
+							 class="form-control" id="BARCODE" />
+						</div>
+					</div>
+					<div class="col-md-6">
 						<label for="REFERID" class="control-label">Refer</label>
 						<div class="form-group">
 							<select name="REFERID" class="form-control">
@@ -59,9 +66,12 @@
 				</div>
 			</div>
 			<div class="box-footer">
-				<button type="submit" class="btn btn-success">
-					<i class="fa fa-check"></i> Save
-				</button>
+			<button type="submit" class="btn btn-success">
+            		<i class="fa fa-save"></i> Save
+            	</button>
+				<button  type="button" onclick="goBack();"class="btn btn-danger">
+            		<i class="fa fa-times"></i> Back
+            	</button>
 			</div>
 			<?php echo form_close(); ?>
 		</div>

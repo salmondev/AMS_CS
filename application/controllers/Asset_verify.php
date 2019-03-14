@@ -31,9 +31,11 @@ class Asset_verify extends CI_Controller{
         {   
             $params = array(
 				'ASSET_VERIFY_ID' => $this->input->post('ASSET_VERIFY_ID'),
-				'ASSET_VERIFY_STATUS_ID' => $this->input->post('ASSET_VERIFY_STATUS_ID'),
+				'ASSET_VERIFY_STATUS_NAME' => $this->input->post('ASSET_VERIFY_STATUS_NAME'),
 				'ASSET_VERIFY_REFERID' => $this->input->post('ASSET_VERIFY_REFERID'),
+				'ASSET_VERIFY_REFERNAME' => $this->input->post('ASSET_VERIFY_REFERNAME'),
 				'ASSET_VERIFY_BUILDING_ID' => $this->input->post('ASSET_VERIFY_BUILDING_ID'),
+				'ASSET_VERIFY_BUILDING_NAME' => $this->input->post('ASSET_VERIFY_BUILDING_NAME'),
 				'ASSET_VERIFY_FLOOR_ID' => $this->input->post('ASSET_VERIFY_FLOOR_ID'),
 				'ASSET_VERIFY_ROOM_ID' => $this->input->post('ASSET_VERIFY_ROOM_ID'),
 				'ASSET_VERIFY_DAY' => $this->input->post('ASSET_VERIFY_DAY'),
@@ -69,9 +71,11 @@ class Asset_verify extends CI_Controller{
             {   
                 $params = array(
 					'ASSET_VERIFY_ID' => $this->input->post('ASSET_VERIFY_ID'),
-					'ASSET_VERIFY_STATUS_ID' => $this->input->post('ASSET_VERIFY_STATUS_ID'),
-					'ASSET_VERIFY_REFERID' => $this->input->post('ASSET_VERIFY_REFERID'),
-					'ASSET_VERIFY_BUILDING_ID' => $this->input->post('ASSET_VERIFY_BUILDING_ID'),
+					'ASSET_VERIFY_STATUS_NAME' => $this->input->post('ASSET_VERIFY_STATUS_NAME'),
+				    'ASSET_VERIFY_REFERID' => $this->input->post('ASSET_VERIFY_REFERID'),
+				    'ASSET_VERIFY_REFERNAME' => $this->input->post('ASSET_VERIFY_REFERNAME'),
+				    'ASSET_VERIFY_BUILDING_ID' => $this->input->post('ASSET_VERIFY_BUILDING_ID'),
+				    'ASSET_VERIFY_BUILDING_NAME' => $this->input->post('ASSET_VERIFY_BUILDING_NAME'),
 					'ASSET_VERIFY_FLOOR_ID' => $this->input->post('ASSET_VERIFY_FLOOR_ID'),
 					'ASSET_VERIFY_ROOM_ID' => $this->input->post('ASSET_VERIFY_ROOM_ID'),
 					'ASSET_VERIFY_DAY' => $this->input->post('ASSET_VERIFY_DAY'),

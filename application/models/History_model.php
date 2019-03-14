@@ -16,7 +16,7 @@ class History_model extends CI_Model
      */
     function get_history($HISTORY_RID)
     {
-        return $this->db->get_where('HISTORY',array('HISTORY_RID'=>$HISTORY_RID))->row_array();
+        return $this->db->get_where('HISTORY_ASSET',array('HISTORY_RID'=>$HISTORY_RID))->row_array();
     }
         
     /*
@@ -25,7 +25,7 @@ class History_model extends CI_Model
     function get_all_history()
     {
         $this->db->order_by('HISTORY_RID', 'desc');
-        return $this->db->get('HISTORY')->result_array();
+        return $this->db->get('HISTORY_ASSET')->result_array();
     }
         
     /*
@@ -33,7 +33,7 @@ class History_model extends CI_Model
      */
     function add_history($params)
     {
-        $this->db->insert('HISTORY',$params);
+        $this->db->insert('HISTORY_ASSET',$params);
         return $this->db->insert_id();
     }
     
@@ -43,7 +43,7 @@ class History_model extends CI_Model
     function update_history($HISTORY_RID,$params)
     {
         $this->db->where('HISTORY_RID',$HISTORY_RID);
-        return $this->db->update('HISTORY',$params);
+        return $this->db->update('HISTORY_ASSET',$params);
     }
     
     /*
@@ -51,6 +51,6 @@ class History_model extends CI_Model
      */
     function delete_history($HISTORY_RID)
     {
-        return $this->db->delete('HISTORY',array('HISTORY_RID'=>$HISTORY_RID));
+        return $this->db->delete('HISTORY_ASSET',array('HISTORY_RID'=>$HISTORY_RID));
     }
 }

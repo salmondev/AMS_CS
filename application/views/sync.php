@@ -6,7 +6,7 @@
 $connect = mysqli_connect("localhost", "amsappne_nfcdb", "AMSnfcapp1", "amsappne_nfc");
 mysqli_set_charset($connect,'utf8');
 
-
+/*
 if(isset($_POST["submit"]))
 {
  if($_FILES['file']['name'])
@@ -19,7 +19,7 @@ if(isset($_POST["submit"]))
 	 //Finding the position of fieldnames from Row 1
 $fieldnames = fgetcsv($handle);
 $assetidindex = array_search("ASSETID", $fieldnames);
-$referidindex = array_search("REFERID", $fieldnames);
+$referiditemindex = array_search("REFERIDITEM", $fieldnames);
 $assetnameindex = array_search("ASSETNAME", $fieldnames);
 $receivedateindex = array_search("RECEIVEDATE", $fieldnames);
 $specindex = array_search("SPEC", $fieldnames);
@@ -29,7 +29,7 @@ $unitnameindex = array_search("UNITNAME", $fieldnames);
    {
 		    
 		$count = count($data);
-		$wantedColumns = array($assetidindex,$referidindex,$assetnameindex,$receivedateindex,$specindex,$unitnameindex);
+		$wantedColumns = array($assetidindex,$referiditemindex,$assetnameindex,$receivedateindex,$specindex,$unitnameindex);
 		for ($i=0; $i < $count ; $i++) { 
 			if (in_array($i,$wantedColumns))
 			{
@@ -42,9 +42,9 @@ $unitnameindex = array_search("UNITNAME", $fieldnames);
 				$item4 = mysqli_real_escape_string($connect, $data[3]);
 				$item5 = mysqli_real_escape_string($connect, $data[4]);
 				$item6 = mysqli_real_escape_string($connect, $data[5]);*/
-
+/*
 				$item1 = mysqli_real_escape_string($connect, $data[$assetidindex]);
-				$item2 = mysqli_real_escape_string($connect, $data[$referidindex]);
+				$item2 = mysqli_real_escape_string($connect, $data[$referiditemindex]);
 				$item3 = mysqli_real_escape_string($connect, $data[$assetnameindex]);
 				$item4 = mysqli_real_escape_string($connect, $data[$receivedateindex]);
 				$item5 = mysqli_real_escape_string($connect, $data[$specindex]);
@@ -52,9 +52,9 @@ $unitnameindex = array_search("UNITNAME", $fieldnames);
 
 				$myDate =  date("y/m/d",strtotime(str_replace('/','-',$item4)));
 				
-                $query = "INSERT into ASSET (ASSETID,REFERID,ASSETNAME,RECEIVEDATE,SPEC,UNITNAME) values('$item1','$item2','$item3','$myDate','$item5','$item6')";
+                $query = "INSERT into ASSET (ASSETID,REFERIDITEM,ASSETNAME,RECEIVEDATE,SPEC,UNITNAME) values('$item1','$item2','$item3','$myDate','$item5','$item6')";
 								
-								$query2 = "UPDATE into ASSET (ASSETID,REFERID,ASSETNAME,RECEIVEDATE,SPEC,UNITNAME) values('$item1','$item2','$item3','$item4','$item5','$item6')";
+								$query2 = "UPDATE into ASSET (ASSETID,REFERIDITEM,ASSETNAME,RECEIVEDATE,SPEC,UNITNAME) values('$item1','$item2','$item3','$item4','$item5','$item6')";
 				
 				
 				mysqli_query($connect, $query);
@@ -72,7 +72,7 @@ $unitnameindex = array_search("UNITNAME", $fieldnames);
    </script>";
   }
  }
-}
+}*/
 ?>
 
 <head>
@@ -132,15 +132,53 @@ background: rgba(0, 0, 0, 0.5);
 }
 
 </style>
+
+	<script language="JavaScript">
+		function ClickCheckAll(vol)
+	{
+	
+		var i=1;
+		for(i=1;i<=document.form1.hdnCount.value;i++)
+		{
+			if(vol.checked == true)
+			{
+				eval("document.form1.Chk"+i+".checked=true");
+			}
+			else
+			{
+				eval("document.form1.Chk"+i+".checked=false");
+			}
+		}
+	}
+</script>
+	<style>
+		body
+   {
+    margin:0;
+    padding:0;
+    background-color:#f1f1f1;
+   }
+   .box
+   {
+    width:100%;
+    padding:20px;
+    background-color:#fff;
+    border:1px solid #ccc;
+    border-radius:5px;
+    margin-top:25px;
+   }
+  </style>
 </head>
 
+<div class="container box">
+	<h1 align="center"><i class="fa fa-qrcode" style="margin:15px"></i>GENERATE ASSET QR CODE SYSTEM</h1>
+	<br />
+	<div class="table-responsive">
+		<br />
+		<div class="row">
+			<div class="col-md-12">
 
-<div class="row">
-	<div class="col-md-12">
-		<div class="box">
-			<div class="box-header">
-				<div class="box-title">
-					<!--
+				<!--
 			<form  method="post" enctype="multipart/form-data" >
                     <input name="file" type="file" ></br>
                     <input name="btnSubmit" type="submit" id="btnSubmit" value="IMPORT" class="btn btn-primary btn-lg">
@@ -157,72 +195,83 @@ background: rgba(0, 0, 0, 0.5);
 
 					</form> -->
 
-					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
-						IMPORT CSV
-					</button>
-
-					<!--<p id="syncx" class="syncdata"><input type="submit" value="IMPORT" class="btn btn-primary btn-lg" </p>-->
-				</div>
-			</div>
-			<div class="box-body">
-				<table id="example2" class="table table-striped">
-					<thead>
-						<tr>
-							<th>ASSETID</th>
-							<th>REFERID</th>
-							<th>ASSETNAME</th>
-							<th>RECEIVEDATE</th>
-							<th>SPEC</th>
-							<th>UNITNAME</th>
-						</tr>
-					</thead>
-					<?php foreach($asset as $A){ ?>
-					<tr>
-						<td>
-							<?php echo $A['ASSETID']; ?>
-
-							<!--<input type="hidden" name="assetid" id="textQrcode" value="<?php echo $A['ASSETID']; ?>" />-->
-
-						</td>
-						<td>
-							<?php echo $A['REFERID']; ?>
-						</td>
-						<td>
-							<?php echo $A['ASSETNAME']; ?>
-						</td>
-						<td>
-							<?php echo $A['RECEIVEDATE']; ?>
-						</td>
-						<td>
-							<?php echo $A['SPEC']; ?>
-						</td>
-						<td>
-							<?php echo $A['UNITNAME']; ?>
-						</td>
-						<td>
-							<!--<a href="<?php echo site_url('ciqrcode/generate/'.$i['item_uid']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span>Generate
-								QR Code</a> 
-							<input type="hidden" name="assetid" id="textQrcode" value="<?php echo $A['ASSETID']; ?>" />-->
-
-
-							<!-- Button to Open the Modal -->
-
-							<input type="hidden" name="assetid" id="textQrcode" value="<?php echo $A['ASSETID']; ?>" />
-
-							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="createQRcode();">
-								Generate QR Code
-							</button>
 
 
 
-						</td>
-					</tr>
-					<?php } ?>
-				</table>
+				<!--<p id="syncx" class="syncdata"><input type="submit" value="IMPORT" class="btn btn-primary btn-lg" </p>-->
 			</div>
 		</div>
+
+		<table id="example2" class="table table-striped table-bordered">
+			<thead>
+				<tr>
+					<th>QR <input name="CheckAll" type="checkbox" id="CheckAll" value="Y" onClick="ClickCheckAll(this);"></th>
+					<th>ASSETID</th>
+					<th>BARCODE</th>
+					<th>REFERIDITEM</th>
+					<th>ASSETNAME</th>
+					<th>RECEIVEDATE</th>
+					<th>SPEC</th>
+					<th>UNITNAME</th>
+					<th>QR CODE</th>
+				</tr>
+			</thead>
+
+			<?php foreach($asset as $A){  ?>
+			<tr>
+				<td>
+					<input type="checkbox" name="qr_text" value="<?php echo ($A['ASSETID'].'-'.$A['REFERIDITEM']); ?>">
+				</td>
+				<td>
+					<?php echo $A['ASSETID']; ?>
+				</td>
+				<td>
+					<?php echo $A['BARCODE']; ?>
+				</td>
+				<td>
+					<?php echo $A['REFERIDITEM']; ?>
+				</td>
+				<td>
+					<?php echo $A['ASSETNAME']; ?>
+				</td>
+				<td>
+					<?php echo $A['RECEIVEDATE']; ?>
+				</td>
+				<td>
+					<?php echo $A['SPEC']; ?>
+				</td>
+				<td>
+					<?php echo $A['UNITNAME']; ?>
+				</td>
+				<td>
+
+
+
+
+					<form action="<?php echo site_url('asset/index8/genQR') ?>" method="post" name="form1">
+
+						<input type="hidden" name="qr_text" value="<?php echo ($A['BARCODE']); ?>">
+						<input type="hidden" name="qr_refer" value="<?php echo ($A['REFERIDITEM']); ?>">
+						<input type="hidden" name="qr_assetname" value="<?php echo ($A['ASSETNAME']); ?>">
+						<input type="hidden" name="qr_receive" value="<?php echo ($A['RECEIVEDATE']); ?>">
+						<input type="submit" name="generate_text" value="GENERATE QR CODE" class="btn btn-primary" />
+
+
+						<input type="hidden" name="hdnCount" value="<?php echo $this->db->from(" ASSET")->count_all_results();?>">
+
+					</form>
+
+
+
+				</td>
+			</tr>
+			<?php } ?>
+		</table>
+
 	</div>
 </div>
+
+
 
 <!-- The Modal -->
 <div class="modal" id="myModal">
@@ -288,10 +337,14 @@ background: rgba(0, 0, 0, 0.5);
 
 <script>
 	///////////////////////////////////////////////////////////////////
+	$(document).ready(function () {
+		var textQrcode = $('#textQrcode').val();
 
+	});
 
 	function createQRcode() {
 		var textQrcode = document.getElementById('textQrcode');
+		//var textQrcode = <?php echo ($A['ASSETID'].'-'.$A['REFERIDITEM']); ?>
 		var showQRcode = document.getElementById('showQRcode');
 
 		if (textQrcode.value.trim() !== '') {

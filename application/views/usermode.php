@@ -82,7 +82,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 		<!-- Main Header -->
 		<header class="main-header">
 			<!-- Logo -->
-			<a href="<?php echo site_url('test/index/test');?>" class="logo">
+			<a href="<?php echo site_url('dashboard/index1/dashboard_user');?>" class="logo">
 				<!-- mini logo for sidebar mini 50x50 pixels -->
 				<span class="logo-mini"><b></b>AMS</span>
 				<!-- logo for regular state and mobile devices -->
@@ -117,7 +117,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								<li class="user-header">
 									<img src="<?php echo base_url('dist/img/admin.png');?>" class="img-circle" alt="User Image">
 									<p>
-										ADMIN</br>
+										SESSION</br>
 
 										User : <b>
 											<?php $username = $this->session->userdata('user'); 	print_r($username);?></b>

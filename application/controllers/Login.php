@@ -68,7 +68,8 @@ public function home()
 					//$this->load->view('test',$data);
 					
 		}else{
-			$this->load->view('usermode',$data);
+			$data['_view'] = 'dashboard_user';
+        $this->load->view('usermode',$data);
 		}
 	}
 }

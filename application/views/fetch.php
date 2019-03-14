@@ -2,7 +2,7 @@
 //fetch.php
 $connect = mysqli_connect("localhost", "amsappne_nfcdb", "AMSnfcapp1", "amsappne_nfc");  
  mysqli_set_charset($connect,'utf8');
-$columns = array('ASSETID', 'REFERID', 'ASSETNAME', 'RECEIVEDATE', 'SPEC','UNITNAME');
+$columns = array('ASSETID', 'REFERIDITEM', 'ASSETNAME', 'RECEIVEDATE', 'SPEC','UNITNAME');
 
 $query = "SELECT * FROM ASSET WHERE ";
 
@@ -15,7 +15,7 @@ if(isset($_POST["search"]["value"]))
 {
  $query .= '
   (ASSETID LIKE "%'.$_POST["search"]["value"].'%" 
-  OR REFERID LIKE "%'.$_POST["search"]["value"].'%" 
+  OR REFERIDITEM LIKE "%'.$_POST["search"]["value"].'%" 
   OR ASSETNAME LIKE "%'.$_POST["search"]["value"].'%" 
   OR SPEC LIKE "%'.$_POST["search"]["value"].'%"
   OR UNITNAME LIKE "%'.$_POST["search"]["value"].'%")
@@ -49,7 +49,7 @@ while($row = mysqli_fetch_array($result))
 {
  $sub_array = array();
  $sub_array[] = $row["ASSETID"];
- $sub_array[] = $row["REFERID"];
+ $sub_array[] = $row["REFERIDITEM"];
  $sub_array[] = $row["ASSETNAME"];
  $sub_array[] = $row["RECEIVEDATE"];
  $sub_array[] = $row["SPEC"];

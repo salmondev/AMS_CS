@@ -43,7 +43,45 @@ class Asset extends CI_Controller{
         $data['asset'] = $this->Asset_model->get_all_asset();
         $data['_view'] = 'sync';
         $this->load->view('test',$data);
-    }
+	}
+	
+	function index4()
+    {
+        $data['asset'] = $this->Asset_model->get_all_asset();
+        //$data['_view'] = 'item_table/test_export';
+		$this->load->view('item_table/test_export',$data);
+		//$this->load->view('test',$data);
+		//$this->load->view('item_table/test_export');
+	}
+	
+	function index5()
+    {
+        $data['asset'] = $this->Asset_model->get_all_asset();
+        //$data['_view'] = 'item_table/test_export1';
+        $this->load->view('item_table/test_export1',$data);
+	}
+
+	function index6()
+    {
+        $data['asset'] = $this->Asset_model->get_all_asset();
+        //$data['_view'] = 'item_table/function_export';
+        $this->load->view('item_table/function_export',$data);
+	}
+
+	function index7()
+    {
+        $data['asset'] = $this->Asset_model->get_all_asset();
+        //$data['_view'] = 'item_table/exporter';
+        $this->load->view('item_table/exporter',$data);
+	}
+
+	function index8()
+    {
+        $data['asset'] = $this->Asset_model->get_all_asset();
+        //$data['_view'] = 'genQR';
+		//$this->load->view('test',$data);
+		$this->load->view('genQR',$data);
+	}
 
     /*
      * Adding a new asset
@@ -55,7 +93,8 @@ class Asset extends CI_Controller{
 			$odate=date("y-m-d");
             $params = array(
 				'ASSETID' => $this->input->post('ASSETID'),
-				'REFERID' => $this->input->post('REFERID'),
+				'BARCODE' => $this->input->post('BARCODE'),
+				'REFERIDITEM' => $this->input->post('REFERIDITEM'),
 				'ASSETNAME' => $this->input->post('ASSETNAME'),
 				'RECEIVEDATE' => $odate,
 				'SPEC' => $this->input->post('SPEC'),
@@ -90,7 +129,8 @@ class Asset extends CI_Controller{
 				$odate=date("y-m-d");
                 $params = array(
 					'ASSETID' => $this->input->post('ASSETID'),
-					'REFERID' => $this->input->post('REFERID'),
+					'BARCODE' => $this->input->post('BARCODE'),
+					'REFERIDITEM' => $this->input->post('REFERIDITEM'),
 					'ASSETNAME' => $this->input->post('ASSETNAME'),
 					'RECEIVEDATE' => $odate,
 					'SPEC' => $this->input->post('SPEC'),

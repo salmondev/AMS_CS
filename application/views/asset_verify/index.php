@@ -4,7 +4,7 @@
             <div class="box-header">
                 
             	<div class="box-title">
-                    <a href="<?php echo site_url('asset_verify/add'); ?>" class="btn btn-success btn-lg">ADD</a> 
+                    <a href="<?php echo site_url('asset_verify/add'); ?>" class="btn btn-success btn-lg"><i class="fa fa-plus" style="margin:5px"></i>ADD DATA</a> 
                 </div>
             </div>
             <div class="box-body">
@@ -13,9 +13,11 @@
                     <tr>
 						<th>ASSET VERIFY RID</th>
 						<th>ASSET VERIFY ID</th>
-						<th>ASSET VERIFY STATUS ID</th>
+						<th>ASSET VERIFY STATUS NAME</th>
 						<th>ASSET VERIFY REFERID</th>
+						<th>ASSET VERIFY REFERNAME</th>
 						<th>ASSET VERIFY BUILDING ID</th>
+						<th>ASSET VERIFY BUILDING NAME</th>
 						<th>ASSET VERIFY FLOOR ID</th>
 						<th>ASSET VERIFY ROOM ID</th>
 						<th>ASSET VERIFY DAY</th>
@@ -32,9 +34,11 @@
                     <tr>
 						<td><?php echo $A['ASSET_VERIFY_RID']; ?></td>
 						<td><?php echo $A['ASSET_VERIFY_ID']; ?></td>
-						<td><?php echo $A['ASSET_VERIFY_STATUS_ID']; ?></td>
+						<td><?php echo $A['ASSET_VERIFY_STATUS_NAME']; ?></td>
 						<td><?php echo $A['ASSET_VERIFY_REFERID']; ?></td>
+						<td><?php echo $A['ASSET_VERIFY_REFERNAME']; ?></td>
 						<td><?php echo $A['ASSET_VERIFY_BUILDING_ID']; ?></td>
+						<td><?php echo $A['ASSET_VERIFY_BUILDING_NAME']; ?></td>
 						<td><?php echo $A['ASSET_VERIFY_FLOOR_ID']; ?></td>
 						<td><?php echo $A['ASSET_VERIFY_ROOM_ID']; ?></td>
 						<td><?php echo $A['ASSET_VERIFY_DAY']; ?></td>
