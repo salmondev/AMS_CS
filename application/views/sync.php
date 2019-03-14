@@ -151,16 +151,34 @@ background: rgba(0, 0, 0, 0.5);
 		}
 	}
 </script>
-
+	<style>
+		body
+   {
+    margin:0;
+    padding:0;
+    background-color:#f1f1f1;
+   }
+   .box
+   {
+    width:100%;
+    padding:20px;
+    background-color:#fff;
+    border:1px solid #ccc;
+    border-radius:5px;
+    margin-top:25px;
+   }
+  </style>
 </head>
 
+<div class="container box">
+	<h1 align="center"><i class="fa fa-qrcode" style="margin:15px"></i>GENERATE ASSET QR CODE SYSTEM</h1>
+	<br />
+	<div class="table-responsive">
+		<br />
+		<div class="row">
+			<div class="col-md-12">
 
-<div class="row">
-	<div class="col-md-12">
-		<div class="box">
-			<div class="box-header">
-				<div class="box-title">
-					<!--
+				<!--
 			<form  method="post" enctype="multipart/form-data" >
                     <input name="file" type="file" ></br>
                     <input name="btnSubmit" type="submit" id="btnSubmit" value="IMPORT" class="btn btn-primary btn-lg">
@@ -177,79 +195,79 @@ background: rgba(0, 0, 0, 0.5);
 
 					</form> -->
 
-					
 
 
-					<!--<p id="syncx" class="syncdata"><input type="submit" value="IMPORT" class="btn btn-primary btn-lg" </p>-->
-				</div>
+
+				<!--<p id="syncx" class="syncdata"><input type="submit" value="IMPORT" class="btn btn-primary btn-lg" </p>-->
 			</div>
-			<div class="box-body">
-				<table id="example2" class="table table-striped">
-					<thead>
-						<tr>
-							<th>QR <input name="CheckAll" type="checkbox" id="CheckAll" value="Y" onClick="ClickCheckAll(this);"></th>
-							<th>ASSETID</th>
-							<th>BARCODE</th>
-							<th>REFERIDITEM</th>
-							<th>ASSETNAME</th>
-							<th>RECEIVEDATE</th>
-							<th>SPEC</th>
-							<th>UNITNAME</th>
-							<th>QR CODE</th>
-						</tr>
-					</thead>
+		</div>
 
-					<?php foreach($asset as $A){  ?>
-					<tr>
-						<td>
-							<input type="checkbox" name="qr_text" value="<?php echo ($A['ASSETID'].'-'.$A['REFERIDITEM']); ?>">
-						</td>
-						<td>
-							<?php echo $A['ASSETID']; ?>
-						</td>
-						<td>
-							<?php echo $A['BARCODE']; ?>
-						</td>
-						<td>
-							<?php echo $A['REFERIDITEM']; ?>
-						</td>
-						<td>
-							<?php echo $A['ASSETNAME']; ?>
-						</td>
-						<td>
-							<?php echo $A['RECEIVEDATE']; ?>
-						</td>
-						<td>
-							<?php echo $A['SPEC']; ?>
-						</td>
-						<td>
-							<?php echo $A['UNITNAME']; ?>
-						</td>
-						<td>
+		<table id="example2" class="table table-striped table-bordered">
+			<thead>
+				<tr>
+					<th>QR <input name="CheckAll" type="checkbox" id="CheckAll" value="Y" onClick="ClickCheckAll(this);"></th>
+					<th>ASSETID</th>
+					<th>BARCODE</th>
+					<th>REFERIDITEM</th>
+					<th>ASSETNAME</th>
+					<th>RECEIVEDATE</th>
+					<th>SPEC</th>
+					<th>UNITNAME</th>
+					<th>QR CODE</th>
+				</tr>
+			</thead>
+
+			<?php foreach($asset as $A){  ?>
+			<tr>
+				<td>
+					<input type="checkbox" name="qr_text" value="<?php echo ($A['ASSETID'].'-'.$A['REFERIDITEM']); ?>">
+				</td>
+				<td>
+					<?php echo $A['ASSETID']; ?>
+				</td>
+				<td>
+					<?php echo $A['BARCODE']; ?>
+				</td>
+				<td>
+					<?php echo $A['REFERIDITEM']; ?>
+				</td>
+				<td>
+					<?php echo $A['ASSETNAME']; ?>
+				</td>
+				<td>
+					<?php echo $A['RECEIVEDATE']; ?>
+				</td>
+				<td>
+					<?php echo $A['SPEC']; ?>
+				</td>
+				<td>
+					<?php echo $A['UNITNAME']; ?>
+				</td>
+				<td>
 
 
 
 
-							<form action="<?php echo site_url('asset/index8/genQR') ?>" method="post" name="form1">
-						
-							<input type="hidden" name="qr_text" value="<?php echo ($A['BARCODE']); ?>">
-							<input type="submit" name="generate_text" value="GENERATE QR CODE" class="btn btn-primary" />
-						
+					<form action="<?php echo site_url('asset/index8/genQR') ?>" method="post" name="form1">
+
+						<input type="hidden" name="qr_text" value="<?php echo ($A['BARCODE']); ?>">
+						<input type="submit" name="generate_text" value="GENERATE QR CODE" class="btn btn-primary" />
+
 
 						<input type="hidden" name="hdnCount" value="<?php echo $this->db->from(" ASSET")->count_all_results();?>">
 
-						</form>
+					</form>
 
 
 
-						</td>
-					</tr>
-					<?php } ?>
-				</table>
-			</div>
-		</div>
+				</td>
+			</tr>
+			<?php } ?>
+		</table>
+
 	</div>
 </div>
+
 
 
 <!-- The Modal -->

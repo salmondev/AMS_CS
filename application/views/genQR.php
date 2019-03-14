@@ -51,7 +51,8 @@ echo '<img src="'.$pngPath.'" />'; */
 <form id="myForm" action="<?php echo site_url('qr/index') ?>" method="post">
 <?php
     
-        echo '<input type="hidden" name="qrpic" value="'.$fileName.'">';
+		echo '<input type="hidden" name="qrpic" value="'.$fileName.'">';
+		echo '<input type="hidden" name="qrname" value="'.$text.'">';
 	
 ?>
 </form>

@@ -20,62 +20,27 @@
 <head>
 	<title>QR Code Gen Tester</title>
 	<meta charset=UTF-8">
-	<script src="<?php echo base_url('assets/js/qrcode.js');?>"></script>
-	<script src="<?php echo base_url('assets/js/qrcode.min.js');?>"></script>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-	 crossorigin="anonymous">
-
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-	 crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-	 crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-	 crossorigin="anonymous"></script>
-
+	
 	<style>
-		@media screen {
-  #printSection {
-      display: none;
-  }
-}
-
-@media print {
-  body * {
-    visibility:hidden;
-  }
-  #printSection, #printSection * {
-    visibility:visible;
-  }
-  #printSection {
-    position:absolute;
-    left:0;
-    top:0;
-  }
-}
-
-@media all{
-   printed-div{
-       display:none;
+   body
+   {
+    margin:0;
+    padding:0;
+    background-color:#f1f1f1;
    }
-}
-
-@media print{
-   printed-div{
-       display:block;
+   .box
+   {
+    width:100%;
+    padding:20px;
+    background-color:#fff;
+    border:1px solid #ccc;
+    border-radius:5px;
+    margin-top:25px;
    }
-   .logo-print{
-       width:291px;
-       height:109px;
-       display: list-item;
-       list-style-image: url(../images/logo_print.png);
-       list-style-position: inside;
-   }
-}
-</style>
-
+  </style>
 </head>
 
-<body style="margin:20px;">
+<body>
 <!--
 	<input type="text" name="textQrcode" id="textQrcode"></br>-->
 	<!--
@@ -84,7 +49,9 @@
 	<div id="showQRcode"></div>
 -->
 
-	</br>
+<div class="container box">
+   <h1 align="center">QR Code for <b><?php echo $_POST['qrname']; ?></b></h1>
+   <br />
 
 	<!-- Button to Open the Modal --><!--
 	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="createQRcode()">
@@ -95,12 +62,12 @@
 	
 	<img src="<?php echo base_url('images/'.$_POST['qrpic']);?>" >
 					</br>
-	<button type="button" class="btn btn-primary" onclick="myFunction()">Print QR Code</button>
+	<button type="button" class="btn btn-primary" style="margin:20px" onclick="myFunction()">Print QR Code</button>
 
 	<!--<div id="print_button" class="printbutton btn btn-info" onClick="window.print()"><i class="glyphicon glyphicon-print"></i>PRINT</a></div> -->
 
-</br></br>
-<a href="<?php echo site_url('asset/index3/sync') ?>" class="btn btn-danger" >BACK</a>
+</br>
+<a href="<?php echo site_url('asset/index3/sync') ?>" style="margin:20px" class="btn btn-danger" >BACK</a>
 
 	<!-- The Modal -->
 	<div class="modal" id="myModal">
@@ -109,7 +76,7 @@
 
 				<!-- Modal Header -->
 				<div class="modal-header">
-					<h4 class="modal-title">QR Code</h4>
+					<h4 class="modal-title">ASSET QR Code</h4>
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
 
@@ -132,10 +99,11 @@
 			</div>
 		</div>
 	</div>
-	<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+	</div>
+	
+</body>
 
-
-	<script>
+<script>
 function myFunction() {
   //window.print();
 	var newWindow = window.open('', '', 'width=100, height=100'),
@@ -159,42 +127,3 @@ setTimeout(function() {
 }, 250);
 }
 </script>
-	<script>
-
-
-		function createQRcode() {
-			var textQrcode = document.getElementById('textQrcode');
-			var showQRcode = document.getElementById('showQRcode');
-
-			if (textQrcode.value.trim() !== '') {
-				showQRcode.innerHTML = '';
-				new QRCode(showQRcode, textQrcode.value);
-				textQrcode.value = '';
-			}
-		}
-
-
-		/////////////////////////////////////////////////////////////////
-
-		document.getElementById("btnPrint").onclick = function () {
-			printElement(document.getElementById("showQRcode"));
-		}
-
-		function printElement(elem) {
-			var domClone = elem.cloneNode(true);
-
-			var $printSection = document.getElementById("printSection");
-
-			if (!$printSection) {
-				var $printSection = document.createElement("div");
-				$printSection.id = "printSection";
-				document.body.appendChild($printSection);
-			}
-
-			$printSection.innerHTML = "";
-			$printSection.appendChild(domClone);
-			window.print();
-		}
-
-	</script>
-</body>
