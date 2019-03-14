@@ -3,6 +3,9 @@ if(isset($_POST['generate_text']))
 {
  include('phpqrcode/qrlib.php'); 
  $text=$_POST['qr_text'];
+ $refer=$_POST['qr_refer'];
+ $assetname=$_POST['qr_assetname'];
+ $receive=$_POST['qr_receive'];
  //$folder="images/";
  $tempPath = "images/";
 
@@ -19,7 +22,7 @@ if(isset($_POST['generate_text']))
  $pngPath = $tempPath.$fileName;
  
  //To Display Code Without Storing
- QRcode::png($text,$pngPath,'L',12,2);
+ QRcode::png($text,$pngPath,'L',9,2);
 
 /*
  QRcode::png  (
@@ -53,6 +56,9 @@ echo '<img src="'.$pngPath.'" />'; */
     
 		echo '<input type="hidden" name="qrpic" value="'.$fileName.'">';
 		echo '<input type="hidden" name="qrname" value="'.$text.'">';
+	    echo '<input type="hidden" name="qrrefer" value="'.$refer.'">';
+	    echo '<input type="hidden" name="qrassetname" value="'.$assetname.'">';
+	    echo '<input type="hidden" name="qrreceive" value="'.$receive.'">';
 	
 ?>
 </form>

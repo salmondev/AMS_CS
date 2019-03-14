@@ -50,24 +50,51 @@
 -->
 
 <div class="container box">
-   <h1 align="center">QR Code for <b><?php echo $_POST['qrname']; ?></b></h1>
-   <br />
+   <h1 align="center"><i class="fa fa-qrcode" style="margin:10px"></i>QR Code for <b><?php echo $_POST['qrname']; ?></b></h1>
+   
 
 	<!-- Button to Open the Modal --><!--
 	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="createQRcode()">
 		Generate QR Code 
 	</button>
 -->
-	</br>
-	
+	<div style="width:40%">
 	<img src="<?php echo base_url('images/'.$_POST['qrpic']);?>" >
-					</br>
-	<button type="button" class="btn btn-primary" style="margin:20px" onclick="myFunction()">Print QR Code</button>
+	</div>
+	<div class="box">
+	<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ASSET</th>
+      <th scope="col">Info</th>
+    </tr>
+  </thead>
+  <tbody>
+	<tr>
+      <th scope="row">BARCODE</th>
+      <td colspan="1"><?php echo $_POST['qrname']; ?></td>
+    </tr>
+		<tr>
+      <th scope="row">REFERIDITEM</th>
+      <td colspan="1"><?php echo $_POST['qrrefer']; ?></td>
+    </tr>
+		<tr>
+      <th scope="row">ASSETNAME</th>
+      <td colspan="1"><?php echo $_POST['qrassetname']; ?></td>
+    </tr>
+		<tr>
+      <th scope="row">RECEIVEDATE</th>
+      <td colspan="1"><?php echo $_POST['qrreceive']; ?></td>
+    </tr>
+    </tr>
+  </tbody>
+</table>
+	</div>
+	<button type="button" class="btn btn-primary" style="margin:20px" onclick="myFunction()"><i class="fa fa-print" style="margin:5px"></i>Print QR Code</button>
 
 	<!--<div id="print_button" class="printbutton btn btn-info" onClick="window.print()"><i class="glyphicon glyphicon-print"></i>PRINT</a></div> -->
 
-</br>
-<a href="<?php echo site_url('asset/index3/sync') ?>" style="margin:20px" class="btn btn-danger" >BACK</a>
+<a href="<?php echo site_url('asset/index3/sync') ?>" style="margin:20px" class="btn btn-danger" ><i class="fa fa-arrow-left" style="margin:5px"></i>BACK</a>
 
 	<!-- The Modal -->
 	<div class="modal" id="myModal">

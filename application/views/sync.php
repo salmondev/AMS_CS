@@ -251,6 +251,9 @@ background: rgba(0, 0, 0, 0.5);
 					<form action="<?php echo site_url('asset/index8/genQR') ?>" method="post" name="form1">
 
 						<input type="hidden" name="qr_text" value="<?php echo ($A['BARCODE']); ?>">
+						<input type="hidden" name="qr_refer" value="<?php echo ($A['REFERIDITEM']); ?>">
+						<input type="hidden" name="qr_assetname" value="<?php echo ($A['ASSETNAME']); ?>">
+						<input type="hidden" name="qr_receive" value="<?php echo ($A['RECEIVEDATE']); ?>">
 						<input type="submit" name="generate_text" value="GENERATE QR CODE" class="btn btn-primary" />
 
 
