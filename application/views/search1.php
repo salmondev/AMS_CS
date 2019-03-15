@@ -51,7 +51,8 @@
     <table id="order_data" class="table table-bordered table-striped">
      <thead>
       <tr>
-       <th>ASSETID</th>
+	   <th>ASSETID</th>
+	   <th>BARCODE</th>
        <th>REFERIDITEM</th>
        <th>ASSETNAME</th>
        <th>RECEIVEDATE</th>
