@@ -207,7 +207,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					<!-- Optionally, you can add icons to the links -->
 					<!--<li><a href="<?php echo site_url('qr/index') ?>"><i class="fa fa-gear"></i> <span>TESTER</span></a></li> -->
 					<li><a href="<?php echo site_url('asset/index3/sync') ?>"><i class="fa fa-qrcode"></i> <span>Generate QR Code</span></a></li>
-					<li><a href="<?php echo site_url('asset/index2/demo') ?>"><i class="fa fa-database"></i> <span>ASSET LIST</span></a></li>
+					<li><a href="<?php echo site_url('asset/index2/demo') ?>"><i class="fa fa-list"></i> <span>ASSET LIST</span></a></li>
 					<li><a href="<?php echo site_url('search/index/search1') ?>"><i class="fa fa-search"></i> <span>SEARCH</span></a></li>
 					<!--<li ><a href="<?php echo site_url('asset/index4/test_export') ?>"><i class="fa fa-download"></i> <span>TEST EXPORT</span></a></li>
         <li ><a href="<?php echo site_url('asset/index5/test_export1') ?>"><i class="fa fa-download"></i> <span>TEST EXPORT 1</span></a></li>-->
@@ -234,13 +234,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 						<ul class="treeview-menu">
 							<li><a href="<?php echo site_url('location/index/index');?>"><i class="fa fa-map-marker"></i><span>Location</span></a></li>
 							<li><a href="<?php echo site_url('asset/index/index');?>"><i class="fa fa-cubes"></i> <span>Asset </span></a></li>
-							<li><a href="<?php echo site_url('refer/index/index');?>"><i class="fa fa-address-card"></i> <span>Refer </span></a></li>
-							<li><a href="<?php echo site_url('user/index/index');?>"><i class="fa fa-address-card"></i> <span>User </span></a></li>
+							<li><a href="<?php echo site_url('refer/index/index');?>"><i class="fa fa-users"></i> <span>Refer </span></a></li>
+							<li><a href="<?php echo site_url('user/index/index');?>"><i class="fa fa-user-circle-o"></i> <span>User </span></a></li>
 							<li><a href="<?php echo site_url('status/index/index');?>"><i class="fa fa-toggle-on"></i> <span>Status </span></a></li>
 							<li><a href="<?php echo site_url('history/index/index');?>"><i class="fa fa-history"></i> <span>History </span></a></li>
 							<li><a href="<?php echo site_url('asset_verify/index/index');?>"><i class="fa fa-check"></i> <span>Asset Verify
 									</span></a></li>
-							<li><a href="<?php echo site_url('department/index/index');?>"><i class="fa fa-map"></i> <span>Department </span></a></li>
+							<li><a href="<?php echo site_url('department/index/index');?>"><i class="fa fa-vcard"></i> <span>Department </span></a></li>
 
 					</li>
 				</ul>
