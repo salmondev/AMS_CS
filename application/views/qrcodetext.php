@@ -143,7 +143,7 @@ pageContent =
     '<title>ASSET QR Code</title>' +
     '<style type="text/css">body {-webkit-print-color-adjust: exact; font-family: Arial; }</style>' +
     '</head>' +
-    '<body><div><div style="width:33.33%; float:left;"><img src="<?php echo base_url('images/'.$_POST['qrpic']);?>" ></br><b>ID: </b><?php echo $_POST['qrname']; ?></br><b>DATE: </b><?php echo $_POST['qrreceive']; ?></body></html>';
+    '<body><div><div style="width:33.33%; float:left;"><img src="<?php echo base_url('images/'.$_POST['qrpic']);?>" ></br><b>รหัสครุภัณฑ์: </br></b><?php echo $_POST['qrname']; ?></br><b>วันที่นำเข้า: </b><?php echo $_POST['qrreceive']; ?></body></html>';
 document.write(pageContent);
 document.close();
 newWindow.moveTo(0, 0);
