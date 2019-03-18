@@ -133,17 +133,17 @@
 <script>
 function myFunction() {
   //window.print();
-	var newWindow = window.open('', '', 'width=100, height=100'),
+	var newWindow = window.open('', '', 'width=300, height=150'),
 document = newWindow.document.open(),
 pageContent =
     '<!DOCTYPE html>' +
     '<html>' +
     '<head>' +
     '<meta charset="utf-8" />' +
-    '<title>QR Code</title>' +
+    '<title>ASSET QR Code</title>' +
     '<style type="text/css">body {-webkit-print-color-adjust: exact; font-family: Arial; }</style>' +
     '</head>' +
-    '<body><div><div style="width:33.33%; float:left;"><img src="<?php echo base_url('images/'.$_POST['qrpic']);?>" ></body></html>';
+    '<body><div><div style="width:33.33%; float:left;"><img src="<?php echo base_url('images/'.$_POST['qrpic']);?>" ></br><b>ID: </b><?php echo $_POST['qrname']; ?></br><b>DATE: </b><?php echo $_POST['qrreceive']; ?></body></html>';
 document.write(pageContent);
 document.close();
 newWindow.moveTo(0, 0);
