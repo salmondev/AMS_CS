@@ -1,12 +1,12 @@
 # AMS
 QR Code tracker with Smartphone Application
-#First Alpha Version.
->Code name : EasyQR => placeholder with "ItemTracker".
+#Alpha Version.
+>Code name : Asset Management System
 
 # AMS tracker
 > Smartphone Application [ANDROID]
 
-EasyQR can track item you want. App can locate position geolocation with QR Code scan by Smartphone application.
+AMS tracker can track item you want. App can locate position Asset with QR Code scan by Smartphone application.
 
 
 ## Installation
@@ -31,13 +31,13 @@ application/config/config.php
 
 ## Release History
 
-* 0.5.0
+* 0.4
     * ready to Demo
-* 0.1.1
+* 0.3
     * Implement admin system & homepage
-* 0.1.0
+* 0.2
     * Create project name `AMS`
-* 0.0.1
+* 0.1
     * Start repo
 
 ## Developer
