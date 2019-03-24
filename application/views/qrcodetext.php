@@ -81,6 +81,10 @@
 		<tr>
       <th scope="row">ASSETNAME</th>
       <td colspan="1"><?php echo $_POST['qrassetname']; ?></td>
+		</tr>
+		<tr>
+      <th scope="row">SPEC</th>
+      <td colspan="1"><?php echo $_POST['qrspec']; ?></td>
     </tr>
 		<tr>
       <th scope="row">RECEIVEDATE</th>

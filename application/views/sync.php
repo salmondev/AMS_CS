@@ -254,6 +254,7 @@ background: rgba(0, 0, 0, 0.5);
 						<input type="hidden" name="qr_refer" value="<?php echo ($A['REFERIDITEM']); ?>">
 						<input type="hidden" name="qr_assetname" value="<?php echo ($A['ASSETNAME']); ?>">
 						<input type="hidden" name="qr_receive" value="<?php echo ($A['RECEIVEDATE']); ?>">
+						<input type="hidden" name="qr_spec" value="<?php echo ($A['SPEC']); ?>">
 						<input type="submit" name="generate_text" value="GENERATE QR CODE" class="btn btn-primary" />
 
 
