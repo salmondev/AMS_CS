@@ -13,7 +13,7 @@
 						<th>USER ID</th>
 						<th>REFERID</th>
 						<th>USER USERNAME</th>
-						<th>USER PASSWORD</th>
+						<!--<th>USER PASSWORD</th>-->
 						<th>AUTH</th>
 						<th>Actions</th>
                     </tr>

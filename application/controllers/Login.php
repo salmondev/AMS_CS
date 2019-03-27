@@ -34,6 +34,7 @@ public function check()
 	{
 		$newdata = array(
 			'user' => $emp_username,
+			'referiditem' => $row->REFERIDITEM,
 			'logged_in' => 'OK',
 			'lv' => $row->AUTH
 		);
