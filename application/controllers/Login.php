@@ -17,9 +17,10 @@ public function check()
 		$emp_password=$this->input->post('emp_password');
 		
 
-	  $emp_password1 = md5($emp_password);
+		$emp_password1 = md5($emp_password);
+		$emp_password2 = hash('sha512',$emp_password);
 
-	$sql="SELECT * FROM `USER` where USER_USERNAME='$emp_username' and md5(USER_PASSWORD)='$emp_password1'";
+	$sql="SELECT * FROM `USER` where USER_USERNAME='$emp_username' and USER_PASSWORD='$emp_password2'";
 	$query = $this->db->query($sql);
 	
 	$query1 = $this->db->query('SELECT * FROM USER WHERE AUTH="ADMIN"');

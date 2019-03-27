@@ -23,7 +23,7 @@
 						<td><?php echo $U['USER_ID']; ?></td>
 						<td><?php echo $U['REFERID']; ?></td>
 						<td><?php echo $U['USER_USERNAME']; ?></td>
-						<td><?php echo $U['USER_PASSWORD']; ?></td>
+						<!--<td><?php echo $U['USER_PASSWORD']; ?></td>-->
 						<td><?php echo $U['AUTH']; ?></td>
 						<td>
                             <a href="<?php echo site_url('user/edit/'.$U['USER_ID']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
