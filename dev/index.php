@@ -22,7 +22,7 @@
 		<hr>
 		<p class="mb-0">panurutDEV</p>
 	</div>
-	<a href="#" class="btn btn-primary">dev</a>
+	<a href="http://dev.amsapp.net/AMS_QRGEN_Setup_1.0.0.exe" class="btn btn-primary">AMS_QRGEN</a>
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

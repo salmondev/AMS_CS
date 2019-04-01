@@ -11,13 +11,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" type="image/png" href="favicon.png" />
 
+	<!-- Font Awesome -->
+	<link rel="stylesheet" type="text/css"
+		href="<?php echo base_url('bower_components/font-awesome/css/font-awesome.min.css');?>">
+
 	<!-- Web Fonts -->
-	<link href="//fonts.googleapis.com/css?family=Playfair+Display:400,700%7COpen+Sans:300,400,600,700" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Playfair+Display:400,700%7COpen+Sans:300,400,600,700"
+		rel="stylesheet">
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/vendors/bootstrap/css/bootstrap.css'); ?>">
@@ -28,6 +37,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<!-- Bootstrap Gallery -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
 	<link rel="stylesheet" href="fluid-gallery.css">
+
+
 
 	<style>
 		#block_container {
@@ -68,17 +79,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 		</div>
 		<br>
-		
+
 		<div style="margin-top: 2%;">
-<img class="img-fluid "src="<?php echo base_url('images/favicon/website.png');?>">
-</div>
+			<img class="img-fluid " src="<?php echo base_url('images/favicon/website.png');?>">
+		</div>
 
 		<br>
 
 		<!-- left Bordered -->
 		<blockquote class="blockquote-v1 blockquote-v1--left">
-			
-			<p>AMS System under maintenance.</p>
+
+
+			<p><i class="fas fa-wrench"></i> System under maintenance.</p>
 			<footer class="blockquote-footer">AMS</footer>
 		</blockquote>
 		<!-- End left Bordered -->
@@ -87,12 +99,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <a class="btn btn-outline-info btn-lg btn-block" target="_blank" href="https://en.wikipedia.org/wiki/Near-field_communication" role="button">NFC</a>
 </div>
 <br>-->
+
 		<!-- Block -->
 		<div class="demo-btn-space mb-7" style="margin: 2%;">
 			<h3 class="h6 mb-3"></h3>
 			<div class="row">
 				<div class="col-lg-6 mb-2 mb-lg-0">
-					<a href="<?php echo base_url('index.php/login');?>" class="btn btn-block btn-lg btn-outline-primary">LOG IN</a>
+					<a href="<?php echo base_url('index.php/login');?>"
+						class="btn btn-block btn-lg btn-outline-primary">
+						<i class="fa fa-home" style="margin-right:5px;"></i>LOG IN
+					</a>
+					<!--<button type="button" class="btn btn-block btn-lg btn-dark">SYSTEM</button>-->
+				</div>
+				<div class="col-lg-6 mb-2 mb-lg-0">
+					<a href="http://dev.amsapp.net/AMS_QRGEN_Setup_1.0.0.exe"
+						class="btn btn-block btn-lg btn-outline-success"><i class="fab fa-android"
+							style="margin-right:5px;"></i>Download APK</a>
 					<!--<button type="button" class="btn btn-block btn-lg btn-dark">SYSTEM</button>-->
 				</div>
 				<!--
@@ -102,6 +124,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 		</div>
 		<!-- End Block -->
+
+
 
 
 
@@ -125,8 +149,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<!-- END JAVASCRIPTS -->
 
 		<!-- Font Awesome's-->
-		<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a"
-		 crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js"
+			integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous">
+		</script>
 </body>
 
 </html>
