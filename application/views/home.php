@@ -95,7 +95,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<br>
 
 		<div style="margin-top: 2%;">
-			<img class="img-fluid " src="<?php echo base_url('images/favicon/website.png');?>">
+			<img class="img-responsive" style="width:576px;height:324px;" src="<?php echo base_url('amslogo.png');?>">
 		
 		</div>
 
