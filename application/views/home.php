@@ -67,7 +67,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		}
 
+		.vertical-align-middle {
+			vertical-align: middle;
+		}
+
+		.padding-bottom-3 {
+			padding-bottom: 3px;
+		}
+
 	</style>
+
+	<!--     Fonts and icons     -->
+	<link rel="stylesheet" type="text/css"
+		href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
 </head>
 
 <body class="content">
@@ -82,6 +96,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		<div style="margin-top: 2%;">
 			<img class="img-fluid " src="<?php echo base_url('images/favicon/website.png');?>">
+		
 		</div>
 
 		<br>
@@ -90,7 +105,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<blockquote class="blockquote-v1 blockquote-v1--left">
 
 
-			<p><i class="fas fa-wrench"></i> System under maintenance.</p>
+			<p><i class="fas fa-wrench"></i> System under maintenance.<i class="material-icons vertical-align-middle padding-bottom-3"
+					style="margin-right:5px;">favorite</i></p>
 			<footer class="blockquote-footer">AMS</footer>
 		</blockquote>
 		<!-- End left Bordered -->
@@ -107,7 +123,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="col-lg-6 mb-2 mb-lg-0">
 					<a href="<?php echo base_url('index.php/login');?>"
 						class="btn btn-block btn-lg btn-outline-primary">
-						<i class="fa fa-home" style="margin-right:5px;"></i>LOG IN
+						<div>
+							<i class="material-icons vertical-align-middle padding-bottom-3" style="margin-right:5px;">
+								exit_to_app
+							</i>LOG IN
+						</div>
 					</a>
 					<!--<button type="button" class="btn btn-block btn-lg btn-dark">SYSTEM</button>-->
 				</div>
