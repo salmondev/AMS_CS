@@ -75,6 +75,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			padding-bottom: 3px;
 		}
 
+		.responsive {
+			width: 100%;
+			max-width: 324px;
+			height: auto;
+		}
+
 	</style>
 
 	<!--     Fonts and icons     -->
@@ -95,8 +101,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<br>
 
 		<div style="margin-top: 2%;">
-			<img class="img-responsive" style="width:576px;height:324px;" src="<?php echo base_url('amslogo.png');?>">
-		
+			<img class="responsive"  src="<?php echo base_url('amslogo.png');?>">
+
 		</div>
 
 		<br>
@@ -105,8 +111,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<blockquote class="blockquote-v1 blockquote-v1--left">
 
 
-			<p><i class="fas fa-wrench"></i> System under maintenance.<i class="material-icons vertical-align-middle padding-bottom-3"
-					style="margin-right:5px;">favorite</i></p>
+			<p><i class="fas fa-wrench"></i> System under maintenance.<!--<i
+					class="material-icons vertical-align-middle padding-bottom-3" style="margin-right:5px;">favorite</i>-->
+			</p>
 			<footer class="blockquote-footer">AMS</footer>
 		</blockquote>
 		<!-- End left Bordered -->
@@ -120,21 +127,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="demo-btn-space mb-7" style="margin: 2%;">
 			<h3 class="h6 mb-3"></h3>
 			<div class="row">
-				<div class="col-lg-6 mb-2 mb-lg-0">
+				<div class="col-lg-4 mb-2 mb-lg-0">
 					<a href="<?php echo base_url('index.php/login');?>"
 						class="btn btn-block btn-lg btn-outline-primary">
 						<div>
 							<i class="material-icons vertical-align-middle padding-bottom-3" style="margin-right:5px;">
 								exit_to_app
-							</i>LOG IN
+							</i>LOG IN to AMS
 						</div>
 					</a>
 					<!--<button type="button" class="btn btn-block btn-lg btn-dark">SYSTEM</button>-->
 				</div>
-				<div class="col-lg-6 mb-2 mb-lg-0">
+				<div class="col-lg-4 mb-2 mb-lg-0">
 					<a href="http://dev.amsapp.net/AMS_QRGEN_Setup_1.0.0.exe"
 						class="btn btn-block btn-lg btn-outline-success"><i class="fab fa-android"
-							style="margin-right:5px;"></i>Download APK</a>
+							style="margin-right:5px;"></i>Download APK for Android</a>
+					<!--<button type="button" class="btn btn-block btn-lg btn-dark">SYSTEM</button>-->
+				</div>
+				<div class="col-lg-4 mb-2 mb-lg-0">
+					<a href="http://dev.amsapp.net/AMS-setup-win.exe"
+						class="btn btn-block btn-lg btn-outline-info"><i class="fab fa-windows"
+							style="margin-right:5px;"></i>Download EXE for Windows</a>
 					<!--<button type="button" class="btn btn-block btn-lg btn-dark">SYSTEM</button>-->
 				</div>
 				<!--
