@@ -14,6 +14,7 @@
 							<thead>
 								<tr>
 									<th>LOCATION ID</th>
+									<th>LOCATION BARCODE</th>
 									<th>DEPARTMENTID</th>
 									<th>LOCATION BUILDING ID</th>
 									<th>LOCATION BUILDING NAME</th>
@@ -25,6 +26,7 @@
 							<?php foreach($location as $L){ ?>
 							<tr>
 								<td><?php echo $L['LOCATION_ID']; ?></td>
+								<td><?php echo $L['LOCATION_BARCODE']; ?></td>
 								<td><?php echo $L['DEPARTMENTID']; ?></td>
 								<td><?php echo $L['LOCATION_BUILDING_ID']; ?></td>
 								<td><?php echo $L['LOCATION_BUILDING_NAME']; ?></td>

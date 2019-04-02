@@ -31,6 +31,7 @@ class Location extends CI_Controller{
         {   
             $params = array(
 				'DEPARTMENTID' => $this->input->post('DEPARTMENTID'),
+				'LOCATION_BARCODE' => $this->input->post('LOCATION_BARCODE'),
 				'LOCATION_BUILDING_ID' => $this->input->post('LOCATION_BUILDING_ID'),
 				'LOCATION_BUILDING_NAME' => $this->input->post('LOCATION_BUILDING_NAME'),
 				'LOCATION_FLOOR_ID' => $this->input->post('LOCATION_FLOOR_ID'),
@@ -64,6 +65,7 @@ class Location extends CI_Controller{
             {   
                 $params = array(
 					'DEPARTMENTID' => $this->input->post('DEPARTMENTID'),
+					'LOCATION_BARCODE' => $this->input->post('LOCATION_BARCODE'),
 					'LOCATION_BUILDING_ID' => $this->input->post('LOCATION_BUILDING_ID'),
 					'LOCATION_BUILDING_NAME' => $this->input->post('LOCATION_BUILDING_NAME'),
 					'LOCATION_FLOOR_ID' => $this->input->post('LOCATION_FLOOR_ID'),
