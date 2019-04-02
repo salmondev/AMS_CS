@@ -14,6 +14,30 @@
 						</div>
 					</div>
 					<div class="col-md-6">
+						<label for="HISTORY_ASSET_NAME" class="control-label">HISTORY ASSET NAME</label>
+						<div class="form-group">
+							<input type="text" name="HISTORY_ASSET_NAME" value="<?php echo ($this->input->post('HISTORY_ASSET_NAME') ? $this->input->post('HISTORY_ASSET_NAME') : $history['HISTORY_ASSET_NAME']); ?>" class="form-control" id="HISTORY_ASSET_NAME" />
+						</div>
+					</div>
+					<div class="col-md-6">
+						<label for="HISTORY_RECEIVEDATE" class="control-label">HISTORY RECEIVEDATE</label>
+						<div class="form-group">
+							<input type="text" name="HISTORY_RECEIVEDATE" value="<?php echo ($this->input->post('HISTORY_RECEIVEDATE') ? $this->input->post('HISTORY_RECEIVEDATE') : $history['HISTORY_RECEIVEDATE']); ?>" class="form-control" id="HISTORY_RECEIVEDATE" />
+						</div>
+					</div>
+					<div class="col-md-6">
+						<label for="HISTORY_SPEC" class="control-label">HISTORY SPEC</label>
+						<div class="form-group">
+							<input type="text" name="HISTORY_SPEC" value="<?php echo ($this->input->post('HISTORY_SPEC') ? $this->input->post('HISTORY_SPEC') : $history['HISTORY_SPEC']); ?>" class="form-control" id="HISTORY_SPEC" />
+						</div>
+					</div>
+					<div class="col-md-6">
+						<label for="HISTORY_UNITNAME" class="control-label">HISTORY UNITNAME</label>
+						<div class="form-group">
+							<input type="text" name="HISTORY_UNITNAME" value="<?php echo ($this->input->post('HISTORY_UNITNAME') ? $this->input->post('HISTORY_UNITNAME') : $history['HISTORY_UNITNAME']); ?>" class="form-control" id="HISTORY_UNITNAME" />
+						</div>
+					</div>
+					<div class="col-md-6">
 						<label for="HISTORY_STATUS_NAME" class="control-label">HISTORY STATUS NAME</label>
 						<div class="form-group">
 							<input type="text" name="HISTORY_STATUS_NAME" value="<?php echo ($this->input->post('HISTORY_STATUS_NAME') ? $this->input->post('HISTORY_STATUS_NAME') : $history['HISTORY_STATUS_NAME']); ?>" class="form-control" id="HISTORY_STATUS_NAME" />

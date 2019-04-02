@@ -205,7 +205,7 @@ background: rgba(0, 0, 0, 0.5);
 		<table id="example2" class="table table-striped table-bordered">
 			<thead>
 				<tr>
-					<th>QR <input name="CheckAll" type="checkbox" id="CheckAll" value="Y" onClick="ClickCheckAll(this);"></th>
+					<!--<th>QR <input name="CheckAll" type="checkbox" id="CheckAll" value="Y" onClick="ClickCheckAll(this);"></th>-->
 					<th>ASSETID</th>
 					<th>BARCODE</th>
 					<th>REFERIDITEM</th>
@@ -219,9 +219,7 @@ background: rgba(0, 0, 0, 0.5);
 
 			<?php foreach($asset as $A){  ?>
 			<tr>
-				<td>
-					<input type="checkbox" name="qr_text" value="<?php echo ($A['ASSETID'].'-'.$A['REFERIDITEM']); ?>">
-				</td>
+				
 				<td>
 					<?php echo $A['ASSETID']; ?>
 				</td>

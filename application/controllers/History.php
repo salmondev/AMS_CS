@@ -31,6 +31,10 @@ class History extends CI_Controller{
         {   
             $params = array(
 				'HISTORY_ASSETID' => $this->input->post('HISTORY_ASSETID'),
+				'HISTORY_ASSET_NAME' => $this->input->post('HISTORY_ASSET_NAME'),
+				'HISTORY_RECEIVEDATE' => $this->input->post('HISTORY_RECEIVEDATE'),
+				'HISTORY_SPEC' => $this->input->post('HISTORY_SPEC'),
+				'HISTORY_UNITNAME' => $this->input->post('HISTORY_UNITNAME'),
 				'HISTORY_STATUS_NAME' => $this->input->post('HISTORY_STATUS_NAME'),
 				'HISTORY_REFERID' => $this->input->post('HISTORY_REFERID'),
 				'HISTORY_REFERNAME' => $this->input->post('HISTORY_REFERNAME'),
@@ -70,6 +74,10 @@ class History extends CI_Controller{
             {   
                 $params = array(
 					'HISTORY_ASSETID' => $this->input->post('HISTORY_ASSETID'),
+					'HISTORY_ASSET_NAME' => $this->input->post('HISTORY_ASSET_NAME'),
+				    'HISTORY_RECEIVEDATE' => $this->input->post('HISTORY_RECEIVEDATE'),
+				    'HISTORY_SPEC' => $this->input->post('HISTORY_SPEC'),
+				    'HISTORY_UNITNAME' => $this->input->post('HISTORY_UNITNAME'),
 					'HISTORY_STATUS_NAME' => $this->input->post('HISTORY_STATUS_NAME'),
 				    'HISTORY_REFERID' => $this->input->post('HISTORY_REFERID'),
 				    'HISTORY_REFERNAME' => $this->input->post('HISTORY_REFERNAME'),
