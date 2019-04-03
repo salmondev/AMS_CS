@@ -2,6 +2,7 @@
 if(isset($_POST['generate_text']))
 {
  include('phpqrcode/qrlib.php');
+ $locateid=$_POST['qr_id'];
  $text=$_POST['qr_text'];
  $department=$_POST['qr_department'];
  $building=$_POST['qr_building'];
@@ -10,7 +11,7 @@ if(isset($_POST['generate_text']))
  //$folder="images/";
  $tempPath = "images/";
 
- $fileName='qrlocate_'.$text.'.png';
+ $fileName='qrlocate_'.$locateid.'.png';
  //$file_path=$folder.$file_name;
  //QRcode::png($text,$file_path);
  //echo"<img src='base_url('images/qr.png')'>";

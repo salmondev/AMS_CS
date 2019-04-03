@@ -129,7 +129,8 @@ mysqli_set_charset($connect,'utf8');
 
 					<form action="<?php echo site_url('location/index3/genqrlocate') ?>" method="post" name="form1">
 
-						<input type="hidden" name="qr_text" value="<?php echo ($L['LOCATION_BARCODE']); ?>">
+					    <input type="hidden" name="qr_id" value="<?php echo ($L['LOCATION_ID']); ?>">
+					    <input type="hidden" name="qr_text" value="<?php echo ($L['LOCATION_BARCODE']); ?>">
 						<input type="hidden" name="qr_department" value="<?php echo ($L['DEPARTMENTID']); ?>">
 						<input type="hidden" name="qr_building" value="<?php echo ($L['LOCATION_BUILDING_ID']); ?>">
 						<input type="hidden" name="qr_buildingname" value="<?php echo ($L['LOCATION_BUILDING_NAME']); ?>">
