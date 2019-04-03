@@ -20,7 +20,22 @@ class Location extends CI_Controller{
         
         $data['_view'] = 'location/index';
         $this->load->view('test',$data);
-    }
+	}
+	
+	function index2()
+    {
+        $data['location'] = $this->Location_model->get_all_location();
+        
+        $data['_view'] = 'location/genqrlocation';
+        $this->load->view('test',$data);
+	}
+	
+	function index3()
+    {
+        $data['location'] = $this->Location_model->get_all_location();
+        
+		$this->load->view('genqrlocate',$data);
+	}
 
     /*
      * Adding a new location

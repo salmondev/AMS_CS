@@ -215,7 +215,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					<li class="header">SYSTEM</li>
 					<!-- Optionally, you can add icons to the links -->
 					<!--<li><a href="<?php echo site_url('qr/index') ?>"><i class="fa fa-gear"></i> <span>TESTER</span></a></li> -->
-					<li><a href="<?php echo site_url('asset/index3/sync') ?>"><i class="fa fa-qrcode"></i> <span>Generate QR
+					<li><a href="<?php echo site_url('asset/index3/sync') ?>"><i class="fa fa-qrcode"></i> <span>Generate ASSET QR
+								Code</span></a></li>
+								<li><a href="<?php echo site_url('location/index2/genqrlocation') ?>"><i class="fa fa-qrcode"></i> <span>Generate LOCATION QR
 								Code</span></a></li>
 					<li><a href="<?php echo site_url('asset/index2/demo') ?>"><i class="fa fa-list"></i> <span>ASSET
 								LIST</span></a></li>
