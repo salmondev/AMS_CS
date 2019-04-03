@@ -54,7 +54,7 @@
 								<td><?php echo $H['HISTORY_MONTH']; ?></td>
 								<td><?php echo $H['HISTORY_YEAR']; ?></td>
 								<td><?php echo $H['HISTORY_HOUR']; ?></td>
-								<td><?php echo $H['HISTORYMINUTE']; ?></td>
+								<td><?php echo $H['HISTORY_MINUTE']; ?></td>
 								<td><?php echo $H['HISTORY_USERNAME']; ?></td>
 								<td>
 									<a href="<?php echo site_url('history/edit/'.$H['HISTORY_RID']); ?>"
