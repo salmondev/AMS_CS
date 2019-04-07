@@ -1,10 +1,10 @@
 # AMS
-QR Code tracker with Smartphone Application
-#Alpha Version.
->Code name : Asset Management System
+Asset Management System 
+
+>Web Application
 
 # AMS tracker
-> Smartphone Application [ANDROID]
+>Smartphone Application [ANDROID]
 
 AMS tracker can track item you want. App can locate position Asset with QR Code scan by Smartphone application.
 
@@ -31,6 +31,8 @@ application/config/config.php
 
 ## Release History
 
+* 0.5
+    * Released API
 * 0.4
     * ready to Demo
 * 0.3
@@ -42,7 +44,7 @@ application/config/config.php
 
 ## Developer
 
-Panurut Chinakul – [@pnrarmy](https://twitter.com/pnrarmy) – panurut.ch@gmail.com
+Panurut Chinakul – [@salmondev](https://salmondev.github.io/) – panurut.ch@gmail.com
 
 Distributed under the MIT license. See ``LICENSE`` for more information.
 
