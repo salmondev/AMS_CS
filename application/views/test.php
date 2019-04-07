@@ -20,19 +20,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url('bower_components/bootstrap/dist/css/bootstrap.min.css');?>">
+	<link rel="stylesheet" type="text/css"
+		href="<?php echo base_url('bower_components/bootstrap/dist/css/bootstrap.min.css');?>">
 	<!-- Font Awesome -->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url('bower_components/font-awesome/css/font-awesome.min.css');?>">
+	<link rel="stylesheet" type="text/css"
+		href="<?php echo base_url('bower_components/font-awesome/css/font-awesome.min.css');?>">
 	<!-- bootstrap datepicker -->
-	<link rel="stylesheet" href="<?php echo base_url('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css');?>">
+	<link rel="stylesheet"
+		href="<?php echo base_url('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css');?>">
 	<!-- DataTables -->
-	<link rel="stylesheet" href="<?php echo base_url('bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css');?>">
+	<link rel="stylesheet"
+		href="<?php echo base_url('bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css');?>">
 
 	<!-- SweetAlert2 -->
 	<link rel="stylesheet" href="<?php echo base_url('dist/sweetalert2.min.css');?>">
 
 	<!-- Ionicons -->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url('bower_components/Ionicons/css/ionicons.min.css');?>">
+	<link rel="stylesheet" type="text/css"
+		href="<?php echo base_url('bower_components/Ionicons/css/ionicons.min.css');?>">
 	<!-- Theme style -->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('dist/css/AdminLTE.min.css');?>">
 	<!-- AdminLTE Skins. We have chosen the skin-blue for this starter
@@ -58,10 +63,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	<script type="text/javascript" src="https://unpkg.com/file-saver@1.3.3/FileSaver.js"></script>
 
 	<style>
-		.swal2-modal {
-    
-    }
-    </style>
+		.swal2-modal {}
+
+	</style>
 
 	<script type="text/javascript">
 		function server_date(now_time) {
@@ -81,7 +85,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 			if (edSecond.length == 1) {
 				edSecond = "0" + edSecond;
 			}
-			server_time.innerHTML = current_time.getDate() + "/" + (current_time.getMonth() + 1) + "/" + (current_time.getYear() +
+			server_time.innerHTML = current_time.getDate() + "/" + (current_time.getMonth() + 1) + "/" + (current_time
+			.getYear() +
 				2443) + " " + edHour + ":" + edMinute + ":" + edSecond;
 			setTimeout("server_date(current_time.getTime())", 1000);
 		}
@@ -90,7 +95,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	</script>
 
 	<!-- Google Font -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <!--
     BODY TAG OPTIONS:
@@ -165,20 +171,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								</li>
 
 						</li>
-						<!-- Menu Footer-->
+						<!-- Menu Footer
 						<li class="user-footer">
 							<div class="col-sm-12">
 								<a href="#" class="btn btn-primary btn-block">Profile</a>
 							</div>
 
-						</li>
+						</li>-->
 					</ul>
 
 					</li>
 					<!-- Control Sidebar Toggle Button -->
 					<li>
-						<a href="<?php echo site_url('login/logout') ?>" class="btn btn-danger"><i class="fa fa-sign-out" style="margin-right:2px;"></i>Log
-							out</a>
+						<div class="container-fluid" style="margin:5px">
+							<a href="<?php echo site_url('login/logout') ?>" class="btn btn-danger"><i class="fa fa-sign-out"
+									style="margin-right:2px;"></i>Log
+								out</a>
+						</div>
 					</li>
 					</ul>
 				</div>
@@ -206,12 +215,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					<li class="header">SYSTEM</li>
 					<!-- Optionally, you can add icons to the links -->
 					<!--<li><a href="<?php echo site_url('qr/index') ?>"><i class="fa fa-gear"></i> <span>TESTER</span></a></li> -->
-					<li><a href="<?php echo site_url('asset/index3/sync') ?>"><i class="fa fa-qrcode"></i> <span>Generate QR Code</span></a></li>
-					<li><a href="<?php echo site_url('asset/index2/demo') ?>"><i class="fa fa-database"></i> <span>ASSET LIST</span></a></li>
-					<li><a href="<?php echo site_url('search/index/search1') ?>"><i class="fa fa-search"></i> <span>SEARCH</span></a></li>
+					<li><a href="<?php echo site_url('asset/index3/sync') ?>"><i class="fa fa-qrcode"></i> <span>Generate ASSET QR
+								Code</span></a></li>
+								<li><a href="<?php echo site_url('location/index2/genqrlocation') ?>"><i class="fa fa-qrcode"></i> <span>Generate LOCATION QR
+								Code</span></a></li>
+					<li><a href="<?php echo site_url('asset/index2/demo') ?>"><i class="fa fa-list"></i> <span>ASSET
+								LIST</span></a></li>
+					<li><a href="<?php echo site_url('search/index/search1') ?>"><i class="fa fa-search"></i>
+							<span>SEARCH</span></a></li>
 					<!--<li ><a href="<?php echo site_url('asset/index4/test_export') ?>"><i class="fa fa-download"></i> <span>TEST EXPORT</span></a></li>
         <li ><a href="<?php echo site_url('asset/index5/test_export1') ?>"><i class="fa fa-download"></i> <span>TEST EXPORT 1</span></a></li>-->
-					<li><a href="<?php echo site_url('asset/index7/exporter') ?>"><i class="fa fa-download"></i> <span>EXPORTER</span></a></li>
+					<li><a href="<?php echo site_url('asset/index7/exporter') ?>"><i class="fa fa-download"></i>
+							<span>EXPORT FILE</span></a></li>
 
 					<!--<li class="treeview class="active menu-open"">
           <a href="#"><i class="fa fa-globe"></i> <span>Tracking System</span>
@@ -232,15 +247,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
 							</span>
 						</a>
 						<ul class="treeview-menu">
-							<li><a href="<?php echo site_url('location/index/index');?>"><i class="fa fa-map-marker"></i><span>Location</span></a></li>
-							<li><a href="<?php echo site_url('asset/index/index');?>"><i class="fa fa-cubes"></i> <span>Asset </span></a></li>
-							<li><a href="<?php echo site_url('refer/index/index');?>"><i class="fa fa-address-card"></i> <span>Refer </span></a></li>
-							<li><a href="<?php echo site_url('user/index/index');?>"><i class="fa fa-address-card"></i> <span>User </span></a></li>
-							<li><a href="<?php echo site_url('status/index/index');?>"><i class="fa fa-toggle-on"></i> <span>Status </span></a></li>
-							<li><a href="<?php echo site_url('history/index/index');?>"><i class="fa fa-history"></i> <span>History </span></a></li>
-							<li><a href="<?php echo site_url('asset_verify/index/index');?>"><i class="fa fa-check"></i> <span>Asset Verify
+							<li><a href="<?php echo site_url('location/index/index');?>"><i
+										class="fa fa-map-marker"></i><span>Location</span></a></li>
+							<li><a href="<?php echo site_url('asset/index/index');?>"><i class="fa fa-cubes"></i> <span>Asset
 									</span></a></li>
-							<li><a href="<?php echo site_url('department/index/index');?>"><i class="fa fa-map"></i> <span>Department </span></a></li>
+							<li><a href="<?php echo site_url('refer/index/index');?>"><i class="fa fa-users"></i> <span>Refer
+									</span></a></li>
+							<li><a href="<?php echo site_url('user/index/index');?>"><i class="fa fa-user-circle-o"></i> <span>User
+									</span></a></li>
+							<li><a href="<?php echo site_url('status/index/index');?>"><i class="fa fa-toggle-on"></i> <span>Status
+									</span></a></li>
+							<li><a href="<?php echo site_url('history/index/index');?>"><i class="fa fa-history"></i> <span>History
+									</span></a></li>
+							<li><a href="<?php echo site_url('asset_verify/index/index');?>"><i class="fa fa-check"></i> <span>Asset
+										Verify
+									</span></a></li>
+							<li><a href="<?php echo site_url('department/index/index');?>"><i class="fa fa-vcard"></i>
+									<span>Department </span></a></li>
 
 					</li>
 				</ul>
@@ -300,7 +323,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 			<!-- Create the tabs -->
 			<ul class="nav nav-tabs nav-justified control-sidebar-tabs">
 				<li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-				<li><a href="<?php echo site_url('login/logout') ?>" class="btn btn-danger btn-flat"><i class="fa fa-sign-out"></i>Log
+				<li><a href="<?php echo site_url('login/logout') ?>" class="btn btn-danger btn-flat"><i
+							class="fa fa-sign-out"></i>Log
 						out</a></li>
 			</ul>
 			<!-- Tab panes -->
@@ -395,7 +419,8 @@ immediately after the control sidebar -->
 Both of these plugins are recommended to enhance the
 user experience. -->
 	<!-- bootstrap datepicker -->
-	<script src="<?php echo base_url('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js');?>"></script>
+	<script src="<?php echo base_url('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js');?>">
+	</script>
 	<!-- SweetAlert2 -->
 	<script src="<?php echo base_url('dist/sweetalert2.all.min.js');?>"></script>
 	<!-- Export  -->

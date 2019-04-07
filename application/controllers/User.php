@@ -32,7 +32,7 @@ class User extends CI_Controller{
             $params = array(
 				'REFERID' => $this->input->post('REFERID'),
 				'USER_USERNAME' => $this->input->post('USER_USERNAME'),
-				'USER_PASSWORD' => $this->input->post('USER_PASSWORD'),
+				'USER_PASSWORD' => hash('sha512',$this->input->post('USER_PASSWORD')),
 				'AUTH' => $this->input->post('AUTH'),
             );
             
@@ -64,7 +64,7 @@ class User extends CI_Controller{
                 $params = array(
 					'REFERID' => $this->input->post('REFERID'),
 					'USER_USERNAME' => $this->input->post('USER_USERNAME'),
-					'USER_PASSWORD' => $this->input->post('USER_PASSWORD'),
+					'USER_PASSWORD' => hash('sha512',$this->input->post('USER_PASSWORD')),
 					'AUTH' => $this->input->post('AUTH'),
                 );
 

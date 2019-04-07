@@ -32,7 +32,7 @@
 					<div class="col-md-6">
 						<label for="USER_PASSWORD" class="control-label">USER PASSWORD</label>
 						<div class="form-group">
-							<input type="text" name="USER_PASSWORD" value="<?php echo ($this->input->post('USER_PASSWORD') ? $this->input->post('USER_PASSWORD') : $user['USER_PASSWORD']); ?>" class="form-control" id="USER_PASSWORD" />
+							<input type="text" name="USER_PASSWORD" value="<?php echo $this->input->post('USER_PASSWORD'); ?>" class="form-control" id="USER_PASSWORD" />
 						</div>
 					</div>
 					<div class="col-md-6">

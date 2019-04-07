@@ -30,6 +30,11 @@ td:last-child {text-align:center;}
 	<!--<a class="btn btn-success" style="float:left;margin-right:20px;" href="https://codepen.io/collection/XKgNLN/" target="_blank">Other
 		examples on Codepen</a>-->
 		<a class="btn btn-success" style="float:left;margin-right:20px;" href="#" target="_blank">IMPORT CSV</a>
+		<button  type="button"  onclick="goBack();" class="btn btn-danger">
+            		Back
+            	</button>
+				</br>
+				</br>
 	<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
 	<thead>
 						<tr>

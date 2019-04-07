@@ -15,4 +15,12 @@ class Qr extends CI_Controller {
 		//$this->load->view('qrcodetext.php');
 		
 	}
+
+	public function index2()
+	{	
+		$data['_view'] = 'location/qrcodetext';
+        $this->load->view('test',$data);
+		//$this->load->view('qrcodetext.php');
+		
+	}
 }

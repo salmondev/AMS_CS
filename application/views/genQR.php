@@ -6,6 +6,7 @@ if(isset($_POST['generate_text']))
  $refer=$_POST['qr_refer'];
  $assetname=$_POST['qr_assetname'];
  $receive=$_POST['qr_receive'];
+ $spec=$_POST['qr_spec'];
  //$folder="images/";
  $tempPath = "images/";
 
@@ -59,7 +60,7 @@ echo '<img src="'.$pngPath.'" />'; */
 	    echo '<input type="hidden" name="qrrefer" value="'.$refer.'">';
 	    echo '<input type="hidden" name="qrassetname" value="'.$assetname.'">';
 	    echo '<input type="hidden" name="qrreceive" value="'.$receive.'">';
-	
+	    echo '<input type="hidden" name="qrspec" value="'.$spec.'">';
 ?>
 </form>
 <script type="text/javascript">

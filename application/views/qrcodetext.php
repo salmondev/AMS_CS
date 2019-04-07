@@ -81,6 +81,10 @@
 		<tr>
       <th scope="row">ASSETNAME</th>
       <td colspan="1"><?php echo $_POST['qrassetname']; ?></td>
+		</tr>
+		<tr>
+      <th scope="row">SPEC</th>
+      <td colspan="1"><?php echo $_POST['qrspec']; ?></td>
     </tr>
 		<tr>
       <th scope="row">RECEIVEDATE</th>
@@ -133,17 +137,17 @@
 <script>
 function myFunction() {
   //window.print();
-	var newWindow = window.open('', '', 'width=100, height=100'),
+	var newWindow = window.open('', '', 'width=300, height=150'),
 document = newWindow.document.open(),
 pageContent =
     '<!DOCTYPE html>' +
     '<html>' +
     '<head>' +
     '<meta charset="utf-8" />' +
-    '<title>QR Code</title>' +
+    '<title>ASSET QR Code</title>' +
     '<style type="text/css">body {-webkit-print-color-adjust: exact; font-family: Arial; }</style>' +
     '</head>' +
-    '<body><div><div style="width:33.33%; float:left;"><img src="<?php echo base_url('images/'.$_POST['qrpic']);?>" ></body></html>';
+    '<body><div><div style="width:33.33%; float:left;"><img src="<?php echo base_url('images/'.$_POST['qrpic']);?>" ></br><b>รหัสครุภัณฑ์: </br></b><?php echo $_POST['qrname']; ?></br><b>วันที่นำเข้า: </b><?php echo $_POST['qrreceive']; ?></body></html>';
 document.write(pageContent);
 document.close();
 newWindow.moveTo(0, 0);
