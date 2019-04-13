@@ -26,13 +26,13 @@ td:last-child {text-align:center;}
 
 <body>
 
-	<div class="alert alert-danger" role="alert"><strong>Info! </strong>  AMS export function still BETA version. </div>
+	<div class="alert alert-danger" role="alert"><strong>Warning! </strong>  AMS export function still BETA version. </div>
 	<!--<a class="btn btn-success" style="float:left;margin-right:20px;" href="https://codepen.io/collection/XKgNLN/" target="_blank">Other
 		examples on Codepen</a>-->
-		<a class="btn btn-success" style="float:left;margin-right:20px;" href="#" target="_blank">IMPORT CSV</a>
+		<!--<a class="btn btn-success" style="float:left;margin-right:20px;" href="#" target="_blank">IMPORT CSV</a>
 		<button  type="button"  onclick="goBack();" class="btn btn-danger">
             		Back
-            	</button>
+            	</button>-->
 				</br>
 				</br>
 	<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">

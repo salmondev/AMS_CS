@@ -86,7 +86,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				edSecond = "0" + edSecond;
 			}
 			server_time.innerHTML = current_time.getDate() + "/" + (current_time.getMonth() + 1) + "/" + (current_time
-			.getYear() +
+				.getYear() +
 				2443) + " " + edHour + ":" + edMinute + ":" + edSecond;
 			setTimeout("server_date(current_time.getTime())", 1000);
 		}
@@ -153,7 +153,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								<img src="<?php echo base_url('dist/img/admin.png');?>" class="user-image" alt="User Image">
 								<!-- hidden-xs hides the username on small devices so only the image appears. -->
 								<span class="hidden-xs">User : <b>
-										<?php $username = $this->session->userdata('user'); 	print_r($username);?></b></span>
+										<?php $username = $this->session->userdata('user'); 	print_r($username);?></b></span>&nbsp;
+								<span class="hidden-xs">LV : <b>
+										<?php $lv = $this->session->userdata('lv'); 	print_r($lv);?></b></span>
 							</a>
 							<ul class="dropdown-menu">
 								<!-- The user image in the menu -->
@@ -215,18 +217,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					<li class="header">SYSTEM</li>
 					<!-- Optionally, you can add icons to the links -->
 					<!--<li><a href="<?php echo site_url('qr/index') ?>"><i class="fa fa-gear"></i> <span>TESTER</span></a></li> -->
-					<li><a href="<?php echo site_url('asset/index3/sync') ?>"><i class="fa fa-qrcode"></i> <span>Generate ASSET QR
-								Code</span></a></li>
-								<li><a href="<?php echo site_url('location/index2/genqrlocation') ?>"><i class="fa fa-qrcode"></i> <span>Generate LOCATION QR
-								Code</span></a></li>
-					<li><a href="<?php echo site_url('asset/index2/demo') ?>"><i class="fa fa-list"></i> <span>ASSET
-								LIST</span></a></li>
+					<li><a href="<?php echo site_url('asset/index3/sync') ?>"><i class="fa fa-qrcode"></i> <span>สร้าง QR Code ครุภัณฑ์</span></a></li>
+					<li><a href="<?php echo site_url('location/index2/genqrlocation') ?>"><i class="fa fa-qrcode"></i>
+							<span>สร้าง QR Code สถานที่</span></a></li>
+					<li><a href="<?php echo site_url('asset/index2/demo') ?>"><i class="fa fa-list"></i> <span>รายการครุภัณฑ์</span></a></li>
 					<li><a href="<?php echo site_url('search/index/search1') ?>"><i class="fa fa-search"></i>
-							<span>SEARCH</span></a></li>
+							<span>ค้นหาครุภัณฑ์</span></a></li>
 					<!--<li ><a href="<?php echo site_url('asset/index4/test_export') ?>"><i class="fa fa-download"></i> <span>TEST EXPORT</span></a></li>
         <li ><a href="<?php echo site_url('asset/index5/test_export1') ?>"><i class="fa fa-download"></i> <span>TEST EXPORT 1</span></a></li>-->
-					<li><a href="<?php echo site_url('asset/index7/exporter') ?>"><i class="fa fa-download"></i>
-							<span>EXPORT FILE</span></a></li>
+					<li><a href="<?php echo site_url('asset/index7/exporter') ?>" target="_blank"><i class="fa fa-download"></i>
+							<span>ส่งออกไฟล์</span></a></li>
 
 					<!--<li class="treeview class="active menu-open"">
           <a href="#"><i class="fa fa-globe"></i> <span>Tracking System</span>
