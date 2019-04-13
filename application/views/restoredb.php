@@ -1,7 +1,7 @@
 
 
 <div class="tab-pane" id="restore"><br />
-	<form method="post" enctype="multipart/form-data" name="form3" id="form3">
+	<form method="post" enctype="multipart/form-data" action="DBuploader.php" name="form3" id="form3">
 		<table width="100%" border="0">
 			<tr>
 				<td width="91%">
