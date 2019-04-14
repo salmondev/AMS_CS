@@ -20,7 +20,14 @@ class History extends CI_Controller{
         
         $data['_view'] = 'history/index';
         $this->load->view('test',$data);
-    }
+	}
+	
+	function index1()
+    {
+        $data['history'] = $this->History_model->get_all_history();
+        //$data['_view'] = 'item_table/exporter';
+        $this->load->view('history/export_history',$data);
+	}
 
     /*
      * Adding a new history

@@ -62,6 +62,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	<script type="text/javascript" src="https://unpkg.com/blob.js@1.0.1/Blob.js"></script>
 	<script type="text/javascript" src="https://unpkg.com/file-saver@1.3.3/FileSaver.js"></script>
 
+	<script type="text/javascript" src="https://cdn.datatables.net/scroller/2.0.0/js/dataTables.scroller.min.js"></script>
+	
+
 	<style>
 		.swal2-modal {}
 
@@ -227,6 +230,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <li ><a href="<?php echo site_url('asset/index5/test_export1') ?>"><i class="fa fa-download"></i> <span>TEST EXPORT 1</span></a></li>-->
 					<li><a href="<?php echo site_url('asset/index7/exporter') ?>" target="_blank"><i class="fa fa-download"></i>
 							<span>ส่งออกไฟล์</span></a></li>
+							
 
 					<!--<li class="treeview class="active menu-open"">
           <a href="#"><i class="fa fa-globe"></i> <span>Tracking System</span>
@@ -430,6 +434,7 @@ user experience. -->
 	<!-- DataTables -->
 	<script src="<?php echo base_url('bower_components/datatables.net/js/jquery.dataTables.min.js');?>"></script>
 	<script src="<?php echo base_url('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js');?>"></script>
+	
 
 	<script>
 		//Date picker

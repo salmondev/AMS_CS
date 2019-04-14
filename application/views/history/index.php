@@ -7,6 +7,9 @@
 						<div class="box-title">
 							<a href="<?php echo site_url('history/add'); ?>" class="btn btn-success btn-lg"><i
 									class="fa fa-plus" style="margin:5px"></i>ADD DATA</a>
+
+									<a href="<?php echo site_url('history/index1/export_history'); ?>" target="_blank" class="btn btn-info btn-lg"><i
+									class="fa fa-download" style="margin:5px"></i>EXPORT FILE</a>
 						</div>
 					</div>
 					<div class="box-body">

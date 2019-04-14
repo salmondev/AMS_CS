@@ -44,7 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body class="hold-transition login-page">
 	<div class="login-box">
 		<div class="login-logo">
-			<a href="home"><b>AMS</b></a>
+			<a href="http://amsapp.net/"><b>AMS</b></a>
 		</div>
 		<!-- /.login-logo -->
 		<div class="login-box-body">
