@@ -30,7 +30,7 @@
  </head>
  <body>
   <div class="container box">
-   <h1 align="center">Search System</h1>
+   <h1 align="center">ค้นหาครุภัณฑ์ในระบบ</h1>
    <br />
    <div class="table-responsive">
     <br />

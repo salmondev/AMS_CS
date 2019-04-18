@@ -114,7 +114,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<p><i class="fas fa-wrench"></i> System under maintenance.<!--<i
 					class="material-icons vertical-align-middle padding-bottom-3" style="margin-right:5px;">favorite</i>-->
 			</p>
-			<footer class="blockquote-footer">AMS</footer>
+			<footer class="blockquote-footer"><a href="http://dev.amsapp.net/" >AMS DEV TEAM</a></footer>
 		</blockquote>
 		<!-- End left Bordered -->
 		<!--
@@ -128,7 +128,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<h3 class="h6 mb-3"></h3>
 			<div class="row">
 				<div class="col-lg-4 mb-2 mb-lg-0">
-					<a href="<?php echo base_url('index.php/login');?>"
+					<a href="<?php echo base_url('login');?>"
 						class="btn btn-block btn-lg btn-outline-primary">
 						<div>
 							<i class="material-icons vertical-align-middle padding-bottom-3" style="margin-right:5px;">

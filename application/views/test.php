@@ -63,7 +63,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	<script type="text/javascript" src="https://unpkg.com/file-saver@1.3.3/FileSaver.js"></script>
 
 	<script type="text/javascript" src="https://cdn.datatables.net/scroller/2.0.0/js/dataTables.scroller.min.js"></script>
-	
+
 
 	<style>
 		.swal2-modal {}
@@ -120,7 +120,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     |               | sidebar-collapse                        |
     |               | sidebar-mini                            |
     |---------------------------------------------------------|
-    -->
+-->
 
 <body class="hold-transition skin-purple sidebar-mini">
 	<div class="wrapper">
@@ -155,25 +155,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								<!-- The user image in the navbar-->
 								<img src="<?php echo base_url('dist/img/admin.png');?>" class="user-image" alt="User Image">
 								<!-- hidden-xs hides the username on small devices so only the image appears. -->
-								<span class="hidden-xs">User : <b>
+								<span class="hidden-xs">ผู้ใช้ : <b>
 										<?php $username = $this->session->userdata('user'); 	print_r($username);?></b></span>&nbsp;
-								<span class="hidden-xs">LV : <b>
-										<?php $lv = $this->session->userdata('lv'); 	print_r($lv);?></b></span>
+								<span class="hidden-xs">สถานะ : <b>
+										<?php $lv = $this->session->userdata('lv'); 	
+										if($lv == 'ADMIN'){
+											echo 'ผู้ดูแลระบบ';
+											//print_r($lv);
+											}else if($lv == 'USER')
+											{
+												echo 'ผู้ใช้ทั่วไป';
+											}?></b></span>
 							</a>
 							<ul class="dropdown-menu">
 								<!-- The user image in the menu -->
-								<li class="user-header">
-									<img src="<?php echo base_url('dist/img/admin.png');?>" class="img-circle" alt="User Image">
-									<p>
-										SESSION</br>
-
-										User : <b>
-											<?php $username = $this->session->userdata('user'); 	print_r($username);?></b>
-										LV : <b>
-											<?php $lv = $this->session->userdata('lv'); 	print_r($lv);?></b>
-
-									</p>
-								</li>
+								
 
 						</li>
 						<!-- Menu Footer
@@ -190,8 +186,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					<li>
 						<div class="container-fluid" style="margin:5px">
 							<a href="<?php echo site_url('login/logout') ?>" class="btn btn-danger"><i class="fa fa-sign-out"
-									style="margin-right:2px;"></i>Log
-								out</a>
+									style="margin-right:2px;"></i>ออกจากระบบ</a>
 						</div>
 					</li>
 					</ul>
@@ -220,17 +215,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					<li class="header">SYSTEM</li>
 					<!-- Optionally, you can add icons to the links -->
 					<!--<li><a href="<?php echo site_url('qr/index') ?>"><i class="fa fa-gear"></i> <span>TESTER</span></a></li> -->
-					<li><a href="<?php echo site_url('asset/index3/sync') ?>"><i class="fa fa-qrcode"></i> <span>สร้าง QR Code ครุภัณฑ์</span></a></li>
+					<li><a href="<?php echo site_url('asset/index3/sync') ?>"><i class="fa fa-qrcode"></i> <span>สร้าง QR Code
+								ครุภัณฑ์</span></a></li>
 					<li><a href="<?php echo site_url('location/index2/genqrlocation') ?>"><i class="fa fa-qrcode"></i>
 							<span>สร้าง QR Code สถานที่</span></a></li>
-					<li><a href="<?php echo site_url('asset/index2/demo') ?>"><i class="fa fa-list"></i> <span>รายการครุภัณฑ์</span></a></li>
+					<li><a href="<?php echo site_url('asset/index2/demo') ?>"><i class="fa fa-list"></i>
+							<span>รายการครุภัณฑ์</span></a></li>
 					<li><a href="<?php echo site_url('search/index/search1') ?>"><i class="fa fa-search"></i>
 							<span>ค้นหาครุภัณฑ์</span></a></li>
 					<!--<li ><a href="<?php echo site_url('asset/index4/test_export') ?>"><i class="fa fa-download"></i> <span>TEST EXPORT</span></a></li>
         <li ><a href="<?php echo site_url('asset/index5/test_export1') ?>"><i class="fa fa-download"></i> <span>TEST EXPORT 1</span></a></li>-->
 					<li><a href="<?php echo site_url('asset/index7/exporter') ?>" target="_blank"><i class="fa fa-download"></i>
 							<span>ส่งออกไฟล์</span></a></li>
-							
+
 
 					<!--<li class="treeview class="active menu-open"">
           <a href="#"><i class="fa fa-globe"></i> <span>Tracking System</span>
@@ -434,7 +431,7 @@ user experience. -->
 	<!-- DataTables -->
 	<script src="<?php echo base_url('bower_components/datatables.net/js/jquery.dataTables.min.js');?>"></script>
 	<script src="<?php echo base_url('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js');?>"></script>
-	
+
 
 	<script>
 		//Date picker
