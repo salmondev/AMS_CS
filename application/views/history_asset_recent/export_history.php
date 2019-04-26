@@ -10,6 +10,7 @@ mysqli_set_charset($connect,'utf8');
 	<meta charset="UTF-8">
 	<title>HISTORY Recent</title>
 
+	
 
 	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
 	<link rel='stylesheet' href='https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css'>
@@ -28,9 +29,12 @@ mysqli_set_charset($connect,'utf8');
 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
 
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
+
 </head>
 
-<body>
+<body style="font-family: 'Sarabun', sans-serif;">
 
 	<div class="alert alert-danger" role="alert"><strong>Warning! </strong> AMS export function still BETA version.
 	</div>
@@ -42,52 +46,52 @@ mysqli_set_charset($connect,'utf8');
             	</button>-->
 	</br>
 	</br>
-	
-		<div class="table-responsive">
-			<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-				<thead>
-					<tr>
-						<th>HISTORY ASSETID</th>
-						<th>HISTORY ASSET NAME</th>
-						<th>HISTORY RECEIVEDATE</th>
-						<th>HISTORY SPEC</th>
-						<th>HISTORY UNITNAME</th>
-						<th>HISTORY STATUS NAME</th>
-						<th>HISTORY REFERNAME</th>
-						<th>HISTORY BUILDING ID</th>
-						<th>HISTORY FLOOR ID</th>
-						<th>HISTORY ROOM ID</th>
-						<th>HISTORY DAY</th>
-						<th>HISTORY MONTH</th>
-						<th>HISTORY YEAR</th>
-						<th>HISTORY HOUR</th>
-						<th>HISTORY MINUTE</th>
-						<th>HISTORY USERNAME</th>
-					</tr>
-				</thead>
-				<?php foreach($history_asset_recent as $H){ ?>
+
+	<div class="table-responsive">
+		<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+			<thead>
 				<tr>
-					<td><?php echo $H['HISTORY_ASSETID']; ?></td>
-					<td><?php echo $H['HISTORY_ASSET_NAME']; ?></td>
-					<td><?php echo $H['HISTORY_RECEIVEDATE']; ?></td>
-					<td><?php echo $H['HISTORY_SPEC']; ?></td>
-					<td><?php echo $H['HISTORY_UNITNAME']; ?></td>
-					<td><?php echo $H['HISTORY_STATUS_NAME']; ?></td>
-					<td><?php echo $H['HISTORY_REFERNAME']; ?></td>
-					<td><?php echo $H['HISTORY_BUILDING_ID']; ?></td>
-					<td><?php echo $H['HISTORY_FLOOR_ID']; ?></td>
-					<td><?php echo $H['HISTORY_ROOM_ID']; ?></td>
-					<td><?php echo $H['HISTORY_DAY']; ?></td>
-					<td><?php echo $H['HISTORY_MONTH']; ?></td>
-					<td><?php echo $H['HISTORY_YEAR']; ?></td>
-					<td><?php echo $H['HISTORY_HOUR']; ?></td>
-					<td><?php echo $H['HISTORY_MINUTE']; ?></td>
-					<td><?php echo $H['HISTORY_USERNAME']; ?></td>
+					<th>รหัสครุภัณฑ์</th>
+					<th>ชื่อครุภัณฑ์</th>
+					<th>วันที่นำเข้า</th>
+					<th>รายละเอียด</th>
+					<th>หน่วย</th>
+					<th>สถานะการใช้งาน</th>
+					<th>ชื่อผู้รับผิดชอบ</th>
+					<th>รหัสอาคาร</th>
+					<th>รหัสชั้น</th>
+					<th>รหัสห้อง</th>
+					<th>วันที่ตรวจสอบ</th>
+					<th>เดือนที่ตรวจสอบ</th>
+					<th>ปีที่ตรวจสอบ</th>
+					<th>ชั่วโมงที่ตรวจสอบ</th>
+					<th>นาทีที่ตรวจสอบ</th>
+					<th>ชื่อผู้ตรวจสอบ</th>
 				</tr>
-				<?php } ?>
-			</table>
-		</div>
-	
+			</thead>
+			<?php foreach($history_asset_recent as $H){ ?>
+			<tr>
+				<td><?php echo $H['HISTORY_ASSETID']; ?></td>
+				<td><?php echo $H['HISTORY_ASSET_NAME']; ?></td>
+				<td><?php echo $H['HISTORY_RECEIVEDATE']; ?></td>
+				<td><?php echo $H['HISTORY_SPEC']; ?></td>
+				<td><?php echo $H['HISTORY_UNITNAME']; ?></td>
+				<td><?php echo $H['HISTORY_STATUS_NAME']; ?></td>
+				<td><?php echo $H['HISTORY_REFERNAME']; ?></td>
+				<td><?php echo $H['HISTORY_BUILDING_ID']; ?></td>
+				<td><?php echo $H['HISTORY_FLOOR_ID']; ?></td>
+				<td><?php echo $H['HISTORY_ROOM_ID']; ?></td>
+				<td><?php echo $H['HISTORY_DAY']; ?></td>
+				<td><?php echo $H['HISTORY_MONTH']; ?></td>
+				<td><?php echo $H['HISTORY_YEAR']; ?></td>
+				<td><?php echo $H['HISTORY_HOUR']; ?></td>
+				<td><?php echo $H['HISTORY_MINUTE']; ?></td>
+				<td><?php echo $H['HISTORY_USERNAME']; ?></td>
+			</tr>
+			<?php } ?>
+		</table>
+	</div>
+
 
 	<!-- Modal -->
 	<div id="myModal" class="modal fade" role="dialog">
@@ -146,8 +150,8 @@ mysqli_set_charset($connect,'utf8');
 					'excelHtml5',
 					{
 						extend: 'pdfHtml5',
-						orientation: 'landscape',//landscape give you more space
-                        pageSize: 'A1',//A0 is the largest A5 smallest(A0,A1,A2,A3,legal,A4,A5,letter))
+						orientation: 'landscape', //landscape give you more space
+						pageSize: 'A1', //A0 is the largest A5 smallest(A0,A1,A2,A3,legal,A4,A5,letter))
 						messageTop: 'HISTORY',
 						filename: 'HISTORY_PDF',
 						charset: 'utf-8',
@@ -155,15 +159,11 @@ mysqli_set_charset($connect,'utf8');
 					},
 					{
 						extend: 'print',
-                customize: function ( win ) {
-                    $(win.document.body)
-                        .css( 'font-size', '10pt' )
-                        
- 
-                    $(win.document.body).find( 'table' )
-                        .addClass( 'compact' )
-                        .css( 'font-size', 'inherit' );
-                }
+						customize: function (doc) {
+							$(doc.document.body).find('h1').css('font-size', '12pt');
+							$(doc.document.body).find('table').css('font-size', '10pt');
+							$(doc.document.body).css('font-size', '10px');
+						}
 					}
 					//'print'
 				]
