@@ -67,6 +67,8 @@
   </tbody>
 </table>
 	</div>
+	<a href="<?php echo base_url('images/'.$_POST['qrpic']); ?>" style="margin:20px" class="btn btn-success" target="_blank" download="<?php $_POST['qrpic']?>"><i class="fa fa-download" style="margin:5px"></i>Download QR Code</a>
+
 	<button type="button" class="btn btn-primary" style="margin:20px" onclick="myFunction()"><i class="fa fa-print" style="margin:5px"></i>Print QR Code</button>
 
 <a href="<?php echo site_url('location/index2/genqrlocation') ?>" style="margin:20px" class="btn btn-danger" ><i class="fa fa-arrow-left" style="margin:5px"></i>BACK</a>

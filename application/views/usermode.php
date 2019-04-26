@@ -58,6 +58,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 	</style>
 	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
+
 	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
@@ -82,7 +84,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     |---------------------------------------------------------|
     -->
 
-<body class="hold-transition skin-purple sidebar-mini">
+<body class="hold-transition skin-purple sidebar-mini" style="font-family: 'Sarabun', sans-serif;">
 	<div class="wrapper">
 		<!-- Main Header -->
 		<header class="main-header">
@@ -185,7 +187,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					<li class="header">SYSTEM</li>
 					<!-- Optionally, you can add icons to the links -->
 					<li><a href="<?php echo site_url('search/index3/search1') ?>"><i class="fa fa-search"></i>
-							<span>SEARCH</span></a></li>
+							<span>ค้นหาครุภัณฑ์</span></a></li>
+							<li><a href="<?php echo site_url('history_asset_recent/index1/export_history') ?>" target="_blank"><i class="fa fa-refresh"></i>
+							<span>ออกรายงานการตรวจสอบล่าสุด</span></a></li>
 
 					<!--<li class="treeview class="active menu-open"">
           <a href="#"><i class="fa fa-globe"></i> <span>Tracking System</span>
