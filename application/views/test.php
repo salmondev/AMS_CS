@@ -98,6 +98,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	</script>
 
 	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
+
 	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
@@ -122,7 +124,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     |---------------------------------------------------------|
 -->
 
-<body class="hold-transition skin-purple sidebar-mini">
+<body class="hold-transition skin-purple sidebar-mini" style="font-family: 'Sarabun', sans-serif;">
 	<div class="wrapper">
 		<!-- Main Header -->
 		<header class="main-header">
@@ -155,9 +157,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								<!-- The user image in the navbar-->
 								<img src="<?php echo base_url('dist/img/admin.png');?>" class="user-image" alt="User Image">
 								<!-- hidden-xs hides the username on small devices so only the image appears. -->
-								<span class="hidden-xs">ผู้ใช้ : <b>
+								<span class="hidden-xs">ผู้ใช้ : <b style="letter-spacing: 1px;">
 										<?php $username = $this->session->userdata('user'); 	print_r($username);?></b></span>&nbsp;
-								<span class="hidden-xs">สถานะ : <b>
+								<span class="hidden-xs">สถานะ : <b style="letter-spacing: 1px;">
 										<?php $lv = $this->session->userdata('lv'); 	
 										if($lv == 'ADMIN'){
 											echo 'ผู้ดูแลระบบ';
@@ -169,7 +171,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 							</a>
 							<ul class="dropdown-menu">
 								<!-- The user image in the menu -->
-								
+
 
 						</li>
 						<!-- Menu Footer

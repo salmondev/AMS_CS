@@ -32,16 +32,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<script>
 		function lettersOnly(input) {
-    var regex = /[^a-z]/gi;
-    input.value = input.value.replace(regex, "");
-}
-</script>
+			var regex = /[^a-z]/gi;
+			input.value = input.value.replace(regex, "");
+		}
+
+	</script>
 
 	<!-- Google Font -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
+
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="font-family: 'Sarabun', sans-serif;">
 	<div class="login-box">
 		<div class="login-logo">
 			<a href="http://amsapp.net/"><b>AMS</b></a>
@@ -73,7 +77,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<!--<div class=" col-md-12">-->
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h3 class="panel-title"><i class="btn-label glyphicon glyphicon-user"></i>&nbsp;เข้าสู่ระบบจัดการพัสดุ/ครุภัณฑ์
+					<h3 class="panel-title" style="font-family: 'Sarabun', sans-serif;"><i
+							class="btn-label glyphicon glyphicon-user"></i>&nbsp;เข้าสู่ระบบจัดการพัสดุ/ครุภัณฑ์
 					</h3>
 				</div>
 				<div class="panel-body">
@@ -81,9 +86,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<form name="login" action="<?php echo site_url('login/check');?>" method="post">
 							<div class="row">
 								<div class="col-md-8 col-xs-11 ">
-									<div class="form-group"><label class="control-label required" for="LoginForm_username">ชื่อผู้ใช้ <span class="required">*</span></label>
+									<div class="form-group"><label class="control-label required" for="LoginForm_username">ชื่อผู้ใช้
+											<span class="required">*</span></label>
 										<div class="form-group has-feedback">
-											<input type="text" name="emp_username" id="owner_fname" class="form-control" placeholder="Username" onkeyup="lettersOnly(this)">
+											<input type="text" name="emp_username" id="owner_fname" class="form-control"
+												placeholder="Username" onkeyup="lettersOnly(this)">
 											<span class="glyphicon glyphicon-user form-control-feedback"></span>
 										</div>
 										<p id="LoginForm_username_em_" style="display:none" class="help-block"></p>
@@ -94,31 +101,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 					<div class="row">
 						<div class="col-md-8 col-xs-11 ">
-							<div class="form-group"><label class="control-label required" for="LoginForm_password">รหัสผ่าน <span class="required">*</span></label>
+							<div class="form-group"><label class="control-label required" for="LoginForm_password">รหัสผ่าน <span
+										class="required">*</span></label>
 								<div class="form-group has-feedback">
 									<input type="password" name="emp_password" id="owner_uid" class="form-control" required minlength="4"
-									 placeholder="Password">
+										placeholder="Password">
 									<span class="glyphicon glyphicon-lock form-control-feedback"></span>
-								</div> 
+								</div>
 								<p id="LoginForm_password_em_" style="display:none" class="help-block"></p>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="row">
-				
-				<div class="col-xs-8 col-xs-6 " align="center">
+
+					<div class="col-xs-8 col-xs-6 " align="center">
 						<button type="submit" class="btn btn-success btn-palegreen" title="Login">
 							<i class="btn-label glyphicon glyphicon-lock"></i>&nbsp;เข้าสู่ระบบ
 						</button>
 					</div>
 
 					<div class="col-xs-4 col-xs-6 ">
-						
+
 					</div>
 
 					<div class="col-xs-4 col-xs-6 ">
-						
+
 					</div>
 					<!--
 					<div class="col-xs-8 col-xs-6 ">
@@ -130,7 +138,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 				<div class="row">
 					<br>
-<!--
+					<!--
 					<a style="padding-left: 20px;" href="/index.php/Home/RegisterMember" target="_blank" role="button" class="btn-small btn-link"><i
 						 class="btn-label glyphicon glyphicon-hand-right"></i>&nbsp;&nbsp;ลงทะเบียนผู้ใช้ทั่วไป</a><br>  -->
 					<!--
@@ -144,7 +152,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<!-- ///////////////////////////////////////////////////// -->
 			<div class="row">
 
-				<!-- /.col --> <!--
+				<!-- /.col -->
+				<!--
 				<div class="col-xs-4">
 					<button type="submit" class="btn btn-primary btn-block ">Log In</button>
 
