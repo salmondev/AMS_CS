@@ -94,6 +94,19 @@
   </tbody>
 </table>
 	</div>
+	<form action="<?php echo site_url('qr/index3/QRwithText') ?>" method="post" name="form1">
+
+						<input type="hidden" name="qr" value="<b>รหัสครุภัณฑ์: </br></b><?php echo $_POST['qrname']; ?>">
+            <input type="hidden" name="qrfile" value="<?php $_POST['qrpic'] ?>">
+<!--
+						<input type="submit" name="qrwithtext" value="Download QR Code" class="btn btn-primary-outline" />
+	-->
+
+	</form>
+
+	<a href="<?php echo base_url('images/'.$_POST['qrpic']); ?>" style="margin:20px" class="btn btn-success" target="_blank" download="<?php $_POST['qrpic']?>"><i class="fa fa-download" style="margin:5px"></i>Download QR Code</a>
+
+
 	<button type="button" class="btn btn-primary" style="margin:20px" onclick="myFunction()"><i class="fa fa-print" style="margin:5px"></i>Print QR Code</button>
 
 	<!--<div id="print_button" class="printbutton btn btn-info" onClick="window.print()"><i class="glyphicon glyphicon-print"></i>PRINT</a></div> -->
