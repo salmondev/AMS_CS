@@ -8,35 +8,39 @@
 						<div class="box-title">
 							<a href="<?php echo site_url('history_asset_recent/add'); ?>"
 								class="btn btn-success btn-lg"><i class="fa fa-plus" style="margin:5px"></i>ADD DATA</a>
-							<a href="<?php echo site_url('history_asset_recent/index1/export_history'); ?>" target="_blank"
-								class="btn btn-info btn-lg"><i class="fa fa-download" style="margin:5px"></i>EXPORT
+							<a href="<?php echo site_url('history_asset_recent/index1/export_history'); ?>"
+								target="_blank" class="btn btn-info btn-lg"><i class="fa fa-download"
+									style="margin:5px"></i>EXPORT
 								FILE</a>
-
 						</div>
 					</div>
 					<div class="box-body">
-						<table class="table table-striped table-bordered">
-							<tr>
-								<th>HISTORY ASSETID</th>
-								<th>HISTORY REFERID</th>
-								<th>HISTORY BUILDING ID</th>
-								<th>HISTORY FLOOR ID</th>
-								<th>HISTORY DAY</th>
-								<th>HISTORY MONTH</th>
-								<th>HISTORY YEAR</th>
-								<th>HISTORY HOUR</th>
-								<th>HISTORY MINUTE</th>
-								<th>HISTORY ASSET NAME</th>
-								<th>HISTORY RECEIVEDATE</th>
-								<th>HISTORY SPEC</th>
-								<th>HISTORY UNITNAME</th>
-								<th>HISTORY STATUS NAME</th>
-								<th>HISTORY REFERNAME</th>
-								<th>HISTORY BUILDING NAME</th>
-								<th>HISTORY ROOM ID</th>
-								<th>HISTORY USERNAME</th>
-								<th>Actions</th>
-							</tr>
+						<table id="example2" class="table table-striped table-bordered">
+							<thead>
+								<tr>
+									<th>HISTORY ASSETID</th>
+									<th>HISTORY REFERID</th>
+									<th>HISTORY BUILDING ID</th>
+									<th>HISTORY FLOOR ID</th>
+									<th>HISTORY DAY</th>
+									<th>HISTORY MONTH</th>
+									<th>HISTORY YEAR</th>
+									<th>HISTORY HOUR</th>
+									<th>HISTORY MINUTE</th>
+									<th>HISTORY ASSET NAME</th>
+									<th>HISTORY RECEIVEDATE</th>
+									<th>HISTORY SPEC</th>
+									<th>HISTORY UNITNAME</th>
+									<th>HISTORY STATUS NAME</th>
+									<th>HISTORY REFERNAME</th>
+									<th>HISTORY BUILDING NAME</th>
+									<th>HISTORY ROOM ID</th>
+									<th>HISTORY USERNAME</th>
+									<th>HISTORY NOTE</th>
+									<th>Actions</th>
+								</tr>
+							</thead>
+
 							<?php foreach($history_asset_recent as $H){ ?>
 							<tr>
 								<td><?php echo $H['HISTORY_ASSETID']; ?></td>
@@ -57,6 +61,7 @@
 								<td><?php echo $H['HISTORY_BUILDING_NAME']; ?></td>
 								<td><?php echo $H['HISTORY_ROOM_ID']; ?></td>
 								<td><?php echo $H['HISTORY_USERNAME']; ?></td>
+								<td><?php echo $H['HISTORY_NOTE']; ?></td>
 								<td>
 									<a href="<?php echo site_url('history_asset_recent/edit/'.$H['HISTORY_ASSETID']); ?>"
 										class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a>

@@ -54,6 +54,7 @@ class History_asset_recent extends CI_Controller{
 				'HISTORY_BUILDING_NAME' => $this->input->post('HISTORY_BUILDING_NAME'),
 				'HISTORY_ROOM_ID' => $this->input->post('HISTORY_ROOM_ID'),
 				'HISTORY_USERNAME' => $this->input->post('HISTORY_USERNAME'),
+				'HISTORY_NOTE' => $this->input->post('HISTORY_NOTE'),
             );
             
             $history_asset_recent_id = $this->History_asset_recent_model->add_history_asset_recent($params);
@@ -96,6 +97,7 @@ class History_asset_recent extends CI_Controller{
 					'HISTORY_BUILDING_NAME' => $this->input->post('HISTORY_BUILDING_NAME'),
 					'HISTORY_ROOM_ID' => $this->input->post('HISTORY_ROOM_ID'),
 					'HISTORY_USERNAME' => $this->input->post('HISTORY_USERNAME'),
+					'HISTORY_NOTE' => $this->input->post('HISTORY_NOTE'),
                 );
 
                 $this->History_asset_recent_model->update_history_asset_recent($HISTORY_ASSETID,$params);            

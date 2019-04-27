@@ -109,6 +109,12 @@
 							<textarea name="HISTORY_USERNAME" class="form-control" id="HISTORY_USERNAME"><?php echo ($this->input->post('HISTORY_USERNAME') ? $this->input->post('HISTORY_USERNAME') : $history_asset_recent['HISTORY_USERNAME']); ?></textarea>
 						</div>
 					</div>
+					<div class="col-md-6">
+						<label for="HISTORY_NOTE" class="control-label">HISTORY NOTE</label>
+						<div class="form-group">
+							<textarea name="HISTORY_NOTE" class="form-control" id="HISTORY_NOTE"><?php echo ($this->input->post('HISTORY_NOTE') ? $this->input->post('HISTORY_NOTE') : $history_asset_recent['HISTORY_NOTE']); ?></textarea>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="box-footer">
