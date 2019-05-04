@@ -66,7 +66,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 	<style>
-		
+
 
 	</style>
 
@@ -453,8 +453,12 @@ user experience. -->
 				'searching': true,
 				'ordering': true,
 				'info': true,
-				'autoWidth': true
-			})
+				'autoWidth': true,
+				"aoColumnDefs": [{
+					"bSortable": false,
+					"aTargets": [0]
+				}]
+			});
 		});
 
 		/** add active class and stay opened when selected */
