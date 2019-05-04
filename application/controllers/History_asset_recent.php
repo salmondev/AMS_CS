@@ -29,6 +29,13 @@ class History_asset_recent extends CI_Controller{
         $this->load->view('history_asset_recent/export_history',$data);
 	}
 
+	function index2()
+    {
+        $data['history_asset_recent'] = $this->History_asset_recent_model->get_all_history_asset_recent();
+        //$data['_view'] = 'item_table/exporter';
+        $this->load->view('history_asset_recent/imgAsset',$data);
+	}
+
     /*
      * Adding a new history_asset_recent
      */

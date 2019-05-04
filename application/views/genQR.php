@@ -1,4 +1,8 @@
 <?php
+
+$connect = mysqli_connect("localhost", "amsappne_nfcdb", "AMSnfcapp1", "amsappne_nfc");
+mysqli_set_charset($connect,'utf8');
+
 if(isset($_POST['generate_text']))
 {
  include('phpqrcode/qrlib.php'); 
@@ -50,6 +54,8 @@ if(isset($_POST['generate_text']))
 header("Content-type: image/png");
 echo '<img src="'.$pngPath.'" />'; */
 }
+$query = "UPDATE ASSET SET IMG_PATH='$pngPath' WHERE BARCODE='$text' ";
+mysqli_query($connect, $query); 
 ?>
 
 <form id="myForm" action="<?php echo site_url('qr/index') ?>" method="post">

@@ -91,7 +91,7 @@ mysqli_set_charset($connect,'utf8');
 </head>
 
 <div class="container box">
-	<h1 align="center"><i class="fa fa-qrcode" style="margin:15px"></i>GENERATE LOCATION QR CODE SYSTEM</h1>
+	<h1 align="center" style="font-family: 'Sarabun', sans-serif;"><i class="fa fa-qrcode" style="margin:15px"></i>ระบบสร้างรหัส QR Code สถานที่</h1>
 	<br />
 	<div class="table-responsive">
 		<br />
