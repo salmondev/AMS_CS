@@ -2,6 +2,20 @@
 
 <head>
 	<title>PrintQR</title>
+
+	<style>
+		.qrtext{
+			width: 400px;
+			height: 150px;
+			font-size: 10px;
+			/*text-align: center;*/
+			margin: 5px;
+		}
+		.qrpic{
+			width: 115px;
+			height: 115px;
+		}
+		</style>
 </head>
 
 <body>
@@ -21,7 +35,9 @@ mysqli_set_charset($objConnect,'utf8');
 			$objQuery = mysqli_query($objConnect,$strSQL);
 			while($row = mysqli_fetch_array($objQuery)){
 			//echo '<img src="http://amsapp.net/images/'.$row['BARCODE'].'.png"/>';
-			echo '<img src="'.base_url('images/qr_'.$row['BARCODE']).'.png" ></br><b>รหัสครุภัณฑ์: </br></b>"'.$row['BARCODE'].'"</br><b>วันที่นำเข้า: </b>"'.$row['RECEIVEDATE'].'';
+			echo '<div class="qrtext"><img src="'.base_url('images/qr_'.$row['BARCODE']).'.png" class="qrpic"><b>รหัสครุภัณฑ์: </br></b>'.$row['BARCODE'].'</br><b>วันที่นำเข้า: </b>'.$row['RECEIVEDATE'].'</br></div>';
+			//echo '<div class="qrtext"><img src="'.base_url('images/qr_'.$row['BARCODE']).'.png" class="qrpic"></br><b>รหัสครุภัณฑ์: </br></b>'.$row['BARCODE'].'</br><b>วันที่นำเข้า: </b>'.$row['RECEIVEDATE'].'</div>';
+			//echo '<div class="qrtext"><img src="'.base_url('images/qr_'.$row['BARCODE']).'.png" class="qrpic"></br><b>รหัสครุภัณฑ์: </br></b>'.$row['BARCODE'].'</br><b>วันที่นำเข้า: </b>'.$row['RECEIVEDATE'].'</br></div>';
 		   }
 	    }
 	}

@@ -125,7 +125,7 @@ mysqli_set_charset($connect,'utf8');
 				style="margin:15px"></i>ระบบสร้างรหัส QR Code ครุภัณฑ์</h1>
 		<form name="frmMain" action="<?php echo site_url('asset/index9/printQR') ?>" method="post"
 			OnSubmit="return onDelete();">
-			<input type="submit" name="btnDelete" value="PrintQR">
+			<input type="submit" name="btnDelete" value="PrintQR" class="btn btn-success">
 			<br />
 			<div class="table-responsive">
 				<br />
@@ -141,6 +141,7 @@ mysqli_set_charset($connect,'utf8');
 
 							<th>
 								<div align="center">
+									Print QR
 									<input name="CheckAll" type="checkbox" id="CheckAll" value="Y"
 										onClick="ClickCheckAll(this);">
 								</div>
