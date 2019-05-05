@@ -23,4 +23,12 @@ class Qr extends CI_Controller {
 		//$this->load->view('qrcodetext.php');
 		
 	}
+
+	public function index3()
+	{	
+		$data['_view'] = 'QRwithText';
+        $this->load->view('test',$data);
+		//$this->load->view('qrcodetext.php');
+		
+	}
 }

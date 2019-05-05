@@ -17,19 +17,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	<title>AMS</title>
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url('bower_components/bootstrap/dist/css/bootstrap.min.css');?>">
+	<link rel="stylesheet" type="text/css"
+		href="<?php echo base_url('bower_components/bootstrap/dist/css/bootstrap.min.css');?>">
 	<!-- Font Awesome -->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url('bower_components/font-awesome/css/font-awesome.min.css');?>">
+	<link rel="stylesheet" type="text/css"
+		href="<?php echo base_url('bower_components/font-awesome/css/font-awesome.min.css');?>">
 	<!-- bootstrap datepicker -->
-	<link rel="stylesheet" href="<?php echo base_url('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css');?>">
+	<link rel="stylesheet"
+		href="<?php echo base_url('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css');?>">
 	<!-- DataTables -->
-	<link rel="stylesheet" href="<?php echo base_url('bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css');?>">
+	<link rel="stylesheet"
+		href="<?php echo base_url('bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css');?>">
 
 	<!-- SweetAlert2 -->
 	<link rel="stylesheet" href="<?php echo base_url('dist/sweetalert2.min.css');?>">
 
 	<!-- Ionicons -->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url('bower_components/Ionicons/css/ionicons.min.css');?>">
+	<link rel="stylesheet" type="text/css"
+		href="<?php echo base_url('bower_components/Ionicons/css/ionicons.min.css');?>">
 	<!-- Theme style -->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('dist/css/AdminLTE.min.css');?>">
 	<!-- AdminLTE Skins. We have chosen the skin-blue for this starter
@@ -49,12 +54,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	<script type="text/javascript" src="https://unpkg.com/file-saver@1.3.3/FileSaver.js"></script>
 
 	<style>
-		.swal2-modal {
-    
-    }
-    </style>
+		.swal2-modal {}
+
+	</style>
 	<!-- Google Font -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
+
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <!--
     BODY TAG OPTIONS:
@@ -77,7 +84,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     |---------------------------------------------------------|
     -->
 
-<body class="hold-transition skin-purple sidebar-mini">
+<body class="hold-transition skin-purple sidebar-mini" style="font-family: 'Sarabun', sans-serif;">
 	<div class="wrapper">
 		<!-- Main Header -->
 		<header class="main-header">
@@ -109,8 +116,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								<!-- The user image in the navbar-->
 								<img src="<?php echo base_url('dist/img/admin.png');?>" class="user-image" alt="User Image">
 								<!-- hidden-xs hides the username on small devices so only the image appears. -->
-								<span class="hidden-xs">User : <b>
-										<?php $username = $this->session->userdata('user'); 	print_r($username);?></b></span>
+								<span class="hidden-xs">ผู้ใช้ : <b>
+										<?php $username = $this->session->userdata('user'); 	print_r($username);?></b></span>&nbsp;
+								<span class="hidden-xs">สถานะ : <b>
+										<?php $lv = $this->session->userdata('lv'); 	
+										if($lv == 'ADMIN'){
+											echo 'ผู้ดูแลระบบ';
+											//print_r($lv);
+											}else if($lv == 'USER')
+											{
+												echo 'ผู้ใช้ทั่วไป';
+											}?></b></span>
 							</a>
 							<ul class="dropdown-menu">
 								<!-- The user image in the menu -->
@@ -140,7 +156,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					</li>
 					<!-- Control Sidebar Toggle Button -->
 					<li>
-						<a href="<?php echo site_url('login/logout') ?>" class="btn btn-danger">Log out</a>
+						<div class="container-fluid" style="margin:5px">
+							<a href="<?php echo site_url('login/logout') ?>" class="btn btn-danger"><i class="fa fa-sign-out"
+									style="margin-right:2px;"></i>ออกจากระบบ</a>
+						</div>
 					</li>
 					</ul>
 				</div>
@@ -167,7 +186,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				<ul class="sidebar-menu" data-widget="tree">
 					<li class="header">SYSTEM</li>
 					<!-- Optionally, you can add icons to the links -->
-					<li><a href="<?php echo site_url('search/index3/search1') ?>"><i class="fa fa-search"></i> <span>SEARCH</span></a></li>
+					<li><a href="<?php echo site_url('search/index3/search1') ?>"><i class="fa fa-search"></i>
+							<span>ค้นหาครุภัณฑ์</span></a></li>
+							<li><a href="<?php echo site_url('history_asset_recent/index1/export_history') ?>" target="_blank"><i class="fa fa-refresh"></i>
+							<span>ออกรายงานการตรวจสอบล่าสุด</span></a></li>
 
 					<!--<li class="treeview class="active menu-open"">
           <a href="#"><i class="fa fa-globe"></i> <span>Tracking System</span>
@@ -324,7 +346,8 @@ immediately after the control sidebar -->
 Both of these plugins are recommended to enhance the
 user experience. -->
 	<!-- bootstrap datepicker -->
-	<script src="<?php echo base_url('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js');?>"></script>
+	<script src="<?php echo base_url('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js');?>">
+	</script>
 	<!-- SweetAlert2 -->
 	<script src="<?php echo base_url('dist/sweetalert2.all.min.js');?>"></script>
 	<!-- Export  -->

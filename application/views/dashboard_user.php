@@ -24,7 +24,22 @@
 							</div>
 						</div>
 					</div>
-				</div><!--
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<div class="row">
+								<a href="<?php echo site_url('history_asset_recent/index1/export_history') ?>" target="_blank">
+									<div class="col-xs-3"><i class="fa fa-refresh fa-5x"></i></div>
+									<div class="col-xs-9 text-right">
+										<div>ออกรายงานการตรวจสอบล่าสุด</div>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--
 				<div class="col-lg-3 col-md-6">
 					<div class="panel panel-default">
 						<div class="panel-heading">

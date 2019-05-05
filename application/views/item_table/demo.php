@@ -80,7 +80,7 @@ $unitnameindex = array_search("UNITNAME", $fieldnames);
 <head>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	
+
 	<!--//////////////////// EXPORT ////////////////////////////////////////////-->
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -103,104 +103,101 @@ $unitnameindex = array_search("UNITNAME", $fieldnames);
 
 	<style>
 		@media screen {
-  #printSection {
-      display: none;
-  }
-}
+			#printSection {
+				display: none;
+			}
+		}
 
-@media print {
-  body * {
-    visibility:hidden;
-  }
-  #printSection, #printSection * {
-    visibility:visible;
-  }
-  #printSection {
-    position:absolute;
-    left:0;
-    top:0;
-  }
-}
+		@media print {
+			body * {
+				visibility: hidden;
+			}
 
-.modal {
-background: rgba(0,0,0,0.5);
-}
+			#printSection,
+			#printSection * {
+				visibility: visible;
+			}
 
-.show {
-background: rgba(0, 0, 0, 0.22);
-}
+			#printSection {
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		}
 
-.modal-backdrop.in {
-background: rgba(0, 0, 0, 0.5);
-}
+		.modal {
+			background: rgba(0, 0, 0, 0.5);
+		}
 
-</style>
+		.show {
+			background: rgba(0, 0, 0, 0.22);
+		}
+
+		.modal-backdrop.in {
+			background: rgba(0, 0, 0, 0.5);
+		}
+
+	</style>
 
 </head>
+<div class="container box">
+	<div class="table-responsive">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="box">
+					<div class="box-header">
+						<div class="box-title">
+							<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
+								IMPORT CSV
+							</button>
 
-<div class="row">
-	<div class="col-md-12">
-		<div class="box">
-			<div class="box-header">
-				<div class="box-title">
-					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
-						IMPORT CSV
-					</button>
-
-					</br>
-					</br>
-					<p id="xportxlsx" class="xport"><input type="submit" value="EXPORT EXCEL" class="btn btn-info btn-lg" onclick="doit('xlsx');"></p>
+							</br>
+							</br>
+							<p id="xportxlsx" class="xport"><input type="submit" value="EXPORT EXCEL" class="btn btn-info btn-lg"
+									onclick="doit('xlsx');"></p>
+						</div>
+					</div>
+					<div class="box-body">
+						<table id="example2" class="table table-striped table-bordered">
+							<thead>
+								<tr>
+									<th>ASSETID</th>
+									<th>BARCODE</th>
+									<th>REFERIDITEM</th>
+									<th>ASSETNAME</th>
+									<th>RECEIVEDATE</th>
+									<th>SPEC</th>
+									<th>UNITNAME</th>
+								</tr>
+							</thead>
+							<?php foreach($asset as $A){ ?>
+							<tr>
+								<td>
+									<?php echo $A['ASSETID']; ?>
+								</td>
+								<td>
+									<?php echo $A['BARCODE']; ?>
+								</td>
+								<td>
+									<?php echo $A['REFERIDITEM']; ?>
+								</td>
+								<td>
+									<?php echo $A['ASSETNAME']; ?>
+								</td>
+								<td>
+									<?php echo $A['RECEIVEDATE']; ?>
+								</td>
+								<td>
+									<?php echo $A['SPEC']; ?>
+								</td>
+								<td>
+									<?php echo $A['UNITNAME']; ?>
+								</td>
+							</tr>
+							<?php } ?>
+						</table>
+					</div>
 				</div>
-			</div>
-			<div class="box-body">
-				<table id="example2" class="table table-striped">
-					<thead>
-						<tr>
-							<th>ASSETID</th>
-							<th>BARCODE</th>
-							<th>REFERIDITEM</th>
-							<th>ASSETNAME</th>
-							<th>RECEIVEDATE</th>
-							<th>SPEC</th>
-							<th>UNITNAME</th>
-							<th>QR CODE</th>
-						</tr>
-					</thead>
-					<?php foreach($asset as $A){ ?>
-					<tr>
-						<td>
-							<?php echo $A['ASSETID']; ?>
-						</td>
-						<td>
-							<?php echo $A['BARCODE']; ?>
-						</td>
-						<td>
-							<?php echo $A['REFERIDITEM']; ?>
-						</td>
-						<td>
-							<?php echo $A['ASSETNAME']; ?>
-						</td>
-						<td>
-							<?php echo $A['RECEIVEDATE']; ?>
-						</td>
-						<td>
-							<?php echo $A['SPEC']; ?>
-						</td>
-						<td>
-							<?php echo $A['UNITNAME']; ?>
-						</td>
-						<td>
-						<form action="<?php echo site_url('asset/index8/genQR') ?>" method="post" name="form1">
-						
-							<input type="hidden" name="qr_text" value="<?php echo ($A['BARCODE']); ?>">
-							<input type="submit" name="generate_text" value="Generate QR Code" class="btn btn-primary" />
-
-						</form>
-						</td>
-						
-					</tr>
-					<?php } ?>
-				</table>
 			</div>
 		</div>
 	</div>
@@ -225,7 +222,8 @@ background: rgba(0, 0, 0, 0.5);
 
 			<!-- Modal footer -->
 			<div class="modal-footer justify-content-between">
-				<div class="col-md-4 text-left"><button type="button" class="btn btn-primary move-left" id="btnPrint">Print</button></div>
+				<div class="col-md-4 text-left"><button type="button" class="btn btn-primary move-left"
+						id="btnPrint">Print</button></div>
 				<div class="col-md-4"></div>
 				<div class="col-md-4"><button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button></div>
 			</div>
@@ -281,7 +279,7 @@ background: rgba(0, 0, 0, 0.5);
 				bookSST: true,
 				type: 'base64'
 			}) :
-			XLSX.writeFile(wb, fn || ('Database_Item.' + (type || 'xlsx')));
+			XLSX.writeFile(wb, fn || ('ASSET_Data.' + (type || 'xlsx')));
 	}
 
 
@@ -344,14 +342,15 @@ background: rgba(0, 0, 0, 0.5);
 			});
 	});
 
-////////////////////////////////////////////////////
+	////////////////////////////////////////////////////
 
-$(document).ready(function() {
-    $('#example2').DataTable( {
-        dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
-    } );
-} );
+	$(document).ready(function () {
+		$('#example2').DataTable({
+			dom: 'Bfrtip',
+			buttons: [
+				'copy', 'csv', 'excel', 'pdf', 'print'
+			]
+		});
+	});
+
 </script>

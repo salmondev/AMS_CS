@@ -8,7 +8,7 @@ mysqli_set_charset($connect,'utf8');
 
 <head>
 	<meta charset="UTF-8">
-	<title>dataTables custom row buttons</title>
+	<title>HISTORY</title>
 
 
 	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
@@ -16,63 +16,84 @@ mysqli_set_charset($connect,'utf8');
 	<link rel='stylesheet' href='https://cdn.datatables.net/buttons/1.2.2/css/buttons.bootstrap.min.css'>
 
 	<style>
-		body {margin:2em;}
-td:last-child {text-align:center;}
-			</style>
+		body {
+			margin: 2em;
+		}
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+		td:last-child {
+			text-align: center;
+		}
+
+	</style>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
 
 </head>
 
 <body>
 
-	<div class="alert alert-danger" role="alert"><strong>Warning! </strong>  AMS export function still BETA version. </div>
+	<div class="alert alert-danger" role="alert"><strong>Warning! </strong> AMS export function still BETA version.
+	</div>
 	<!--<a class="btn btn-success" style="float:left;margin-right:20px;" href="https://codepen.io/collection/XKgNLN/" target="_blank">Other
 		examples on Codepen</a>-->
-		<!--<a class="btn btn-success" style="float:left;margin-right:20px;" href="#" target="_blank">IMPORT CSV</a>
+	<!--<a class="btn btn-success" style="float:left;margin-right:20px;" href="#" target="_blank">IMPORT CSV</a>
 		<button  type="button"  onclick="goBack();" class="btn btn-danger">
             		Back
             	</button>-->
-				</br>
-				</br>
-	<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-	<thead>
-						<tr>
-							<th>ASSETID</th>
-							<th>BARCODE</th>
-							<th>REFERIDITEM</th>
-							<th>ASSETNAME</th>
-							<th>RECEIVEDATE</th>
-							<th>SPEC</th>
-							<th>UNITNAME</th>
-						</tr>
-					</thead>
-					<?php foreach($asset as $A){ ?>
+	</br>
+	</br>
+	
+		<div class="table-responsive">
+			<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+				<thead>
 					<tr>
-						<td>
-							<?php echo $A['ASSETID']; ?>
-						</td>
-						<td>
-							<?php echo $A['BARCODE']; ?>
-						</td>
-						<td>
-							<?php echo $A['REFERIDITEM']; ?>
-						</td>
-						<td>
-							<?php echo $A['ASSETNAME']; ?>
-						</td>
-						<td>
-							<?php echo $A['RECEIVEDATE']; ?>
-						</td>
-						<td>
-							<?php echo $A['SPEC']; ?>
-						</td>
-						<td>
-							<?php echo $A['UNITNAME']; ?>
-						</td>
+						<th>HISTORY RID</th>
+						<th>HISTORY ASSETID</th>
+						<th>HISTORY ASSET NAME</th>
+						<th>HISTORY RECEIVEDATE</th>
+						<th>HISTORY SPEC</th>
+						<th>HISTORY UNITNAME</th>
+						<th>HISTORY STATUS NAME</th>
+						<th>HISTORY REFERID</th>
+						<th>HISTORY REFERNAME</th>
+						<th>HISTORY BUILDING ID</th>
+						<th>HISTORY BUILDING NAME</th>
+						<th>HISTORY FLOOR ID</th>
+						<th>HISTORY ROOM ID</th>
+						<th>HISTORY DAY</th>
+						<th>HISTORY MONTH</th>
+						<th>HISTORY YEAR</th>
+						<th>HISTORY HOUR</th>
+						<th>HISTORY MINUTE</th>
+						<th>HISTORY USERNAME</th>
 					</tr>
-					<?php } ?>
-	</table>
+				</thead>
+				<?php foreach($history as $H){ ?>
+				<tr>
+					<td><?php echo $H['HISTORY_RID']; ?></td>
+					<td><?php echo $H['HISTORY_ASSETID']; ?></td>
+					<td><?php echo $H['HISTORY_ASSET_NAME']; ?></td>
+					<td><?php echo $H['HISTORY_RECEIVEDATE']; ?></td>
+					<td><?php echo $H['HISTORY_SPEC']; ?></td>
+					<td><?php echo $H['HISTORY_UNITNAME']; ?></td>
+					<td><?php echo $H['HISTORY_STATUS_NAME']; ?></td>
+					<td><?php echo $H['HISTORY_REFERID']; ?></td>
+					<td><?php echo $H['HISTORY_REFERNAME']; ?></td>
+					<td><?php echo $H['HISTORY_BUILDING_ID']; ?></td>
+					<td><?php echo $H['HISTORY_BUILDING_NAME']; ?></td>
+					<td><?php echo $H['HISTORY_FLOOR_ID']; ?></td>
+					<td><?php echo $H['HISTORY_ROOM_ID']; ?></td>
+					<td><?php echo $H['HISTORY_DAY']; ?></td>
+					<td><?php echo $H['HISTORY_MONTH']; ?></td>
+					<td><?php echo $H['HISTORY_YEAR']; ?></td>
+					<td><?php echo $H['HISTORY_HOUR']; ?></td>
+					<td><?php echo $H['HISTORY_MINUTE']; ?></td>
+					<td><?php echo $H['HISTORY_USERNAME']; ?></td>
+				</tr>
+				<?php } ?>
+			</table>
+		</div>
+	
 
 	<!-- Modal -->
 	<div id="myModal" class="modal fade" role="dialog">
@@ -103,7 +124,7 @@ td:last-child {text-align:center;}
 	<script src='https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js'></script>
 	<script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.bootstrap.min.js'></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js'></script>
-	
+
 	<script src='https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js'></script>
 	<script src='https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js'></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
@@ -114,7 +135,7 @@ td:last-child {text-align:center;}
 		$(document).ready(function () {
 			//Only needed for the filename of export files.
 			//Normally set in the title tag of your page.
-			document.title = 'ASSET Data';
+			document.title = 'HISTORY Data';
 			// DataTable initialisation
 			$('#example').DataTable({
 				"dom": '<"dt-buttons"Bf><"clear">lirtp',
@@ -131,10 +152,10 @@ td:last-child {text-align:center;}
 					'excelHtml5',
 					{
 						extend: 'pdfHtml5',
-						messageTop: 'ASSET',
-						filename: 'ASSET_PDF',
+						messageTop: 'HISTORY',
+						filename: 'HISTORY_PDF',
 						charset: 'utf-8',
-                        bom: 'true'
+						bom: 'true'
 					},
 					'print'
 				]
@@ -153,8 +174,10 @@ td:last-child {text-align:center;}
 					//Random date
 					var date1 = new Date(2016, 01, 01);
 					var date2 = new Date(2018, 12, 31);
-					var rndDate = new Date(+date1 + Math.random() * (date2 - date1)); //.toLocaleDateString();
-					rowData.push(rndDate.getFullYear() + '/' + (rndDate.getMonth() + 1) + '/' + rndDate.getDate());
+					var rndDate = new Date(+date1 + Math.random() * (date2 -
+						date1)); //.toLocaleDateString();
+					rowData.push(rndDate.getFullYear() + '/' + (rndDate.getMonth() + 1) + '/' +
+						rndDate.getDate());
 					//Status column
 					rowData.push('NEW');
 					//Amount column
@@ -178,10 +201,13 @@ td:last-child {text-align:center;}
 					var dtRow = $this.parents('tr');
 					$('div.modal-body').innerHTML = '';
 					$('div.modal-body').append('Row index: ' + dtRow[0].rowIndex + '<br/>');
-					$('div.modal-body').append('Number of columns: ' + dtRow[0].cells.length + '<br/>');
+					$('div.modal-body').append('Number of columns: ' + dtRow[0].cells.length +
+						'<br/>');
 					for (var i = 0; i < dtRow[0].cells.length; i++) {
-						$('div.modal-body').append('Cell (column, row) ' + dtRow[0].cells[i]._DT_CellIndex.column + ', ' + dtRow[0]
-							.cells[i]._DT_CellIndex.row + ' => innerHTML : ' + dtRow[0].cells[i].innerHTML + '<br/>');
+						$('div.modal-body').append('Cell (column, row) ' + dtRow[0].cells[i]
+							._DT_CellIndex.column + ', ' + dtRow[0]
+							.cells[i]._DT_CellIndex.row + ' => innerHTML : ' + dtRow[0].cells[i]
+							.innerHTML + '<br/>');
 					}
 					$('#myModal').modal('show');
 				});

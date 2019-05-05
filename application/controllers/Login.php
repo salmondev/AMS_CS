@@ -45,7 +45,7 @@ public function check()
 	{
 		echo "<script>
 			  alert('Access Denied');
-			  window.location.href='http://amsapp.net/index.php/login';
+			  window.location.href='http://amsapp.net/login';
 			  </script>";
 	}
 
