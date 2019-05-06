@@ -113,6 +113,22 @@ mysqli_set_charset($connect,'utf8');
 			margin-top: 25px;
 		}
 
+		input[type=checkbox] {
+			/* Double-sized Checkboxes */
+			-ms-transform: scale(2);
+			/* IE */
+			-moz-transform: scale(2);
+			/* FF */
+			-webkit-transform: scale(2);
+			/* Safari and Chrome */
+			-o-transform: scale(2);
+			/* Opera */
+			/*padding: 10px;*/
+			margin-left: 25px;
+			margin-top: 15px;
+			
+		}
+
 	</style>
 
 </head>
@@ -125,7 +141,7 @@ mysqli_set_charset($connect,'utf8');
 				style="margin:15px"></i>ระบบสร้างรหัส QR Code ครุภัณฑ์</h1>
 		<form name="frmMain" action="<?php echo site_url('asset/index9/printQR') ?>" method="post"
 			OnSubmit="return onDelete();">
-			<input type="submit" name="btnDelete" value="PrintQR" class="btn btn-success">
+			<input type="submit" name="btnDelete" value="PRINT QR CODE" class="btn btn-success">
 			<br />
 			<div class="table-responsive">
 				<br />
@@ -134,7 +150,7 @@ mysqli_set_charset($connect,'utf8');
 					</div>
 				</div>
 
-				<table id="example2" class="table table-striped table-bordered">
+				<table id="example3" class="table table-striped table-bordered">
 					<thead>
 						<tr>
 
@@ -142,8 +158,8 @@ mysqli_set_charset($connect,'utf8');
 							<th>
 								<div align="center">
 									Print QR
-									<input name="CheckAll" type="checkbox" id="CheckAll" value="Y"
-										onClick="ClickCheckAll(this);">
+									<!--<input name="CheckAll" type="checkbox" id="CheckAll" value="Y" onClick="ClickCheckAll(this);">
+	-->
 								</div>
 
 								<input type="hidden" name="hdnCount"
@@ -164,8 +180,7 @@ mysqli_set_charset($connect,'utf8');
 					<?php foreach($asset as $A){  $i = 0;?>
 					<tr>
 						<td>
-							<input type="checkbox" name="chkDel[]" id="chkDel<?php echo $i;?>"
-								value="<?php echo $A["BARCODE"];?>">
+							<input type="checkbox" name="chkDel[]" id="chkDel<?php echo $i;?>" value="<?php echo $A["BARCODE"];?>">
 							<?php $i++ ?>
 
 						</td>
@@ -200,8 +215,7 @@ mysqli_set_charset($connect,'utf8');
 								<input type="hidden" name="qr_assetname" value="<?php echo ($A['ASSETNAME']); ?>">
 								<input type="hidden" name="qr_receive" value="<?php echo ($A['RECEIVEDATE']); ?>">
 								<input type="hidden" name="qr_spec" value="<?php echo ($A['SPEC']); ?>">
-								<input type="submit" name="generate_text" value="GENERATE QR CODE"
-									class="btn btn-primary" />
+								<input type="submit" name="generate_text" value="GENERATE QR CODE" class="btn btn-primary" />
 
 							</form>
 						</td>
@@ -236,6 +250,30 @@ mysqli_set_charset($connect,'utf8');
 </div>
 
 <script>
+	$(function () {
+		$('#example3').DataTable({
+			'paging': true,
+			'lengthChange': true,
+			'searching': true,
+			'ordering': true,
+			'info': true,
+			'autoWidth': true,
+			"aoColumns": [{
+					"bSortable": false
+				},
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null
+			]
+		});
+	});
+
+
 	// Using aoColumns
 	/*$(document).ready( function() {
 	  $('#example2').dataTable( {
