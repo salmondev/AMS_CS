@@ -35,6 +35,13 @@
    <div class="table-responsive">
     <br />
     <div class="row">
+	     <div class="row">
+		 <div class="col-md-1">
+		 </div>
+		 <div class="col-md-4">
+		       ค้นหาจาก RECEIVEDATE (วันที่นำเข้าครุภัณฑ์)
+		 </div>
+		</div>
      <div class="input-daterange">
       <div class="col-md-3">
        <input type="text" name="start_date" id="start_date" class="form-control" placeholder="From Date" />

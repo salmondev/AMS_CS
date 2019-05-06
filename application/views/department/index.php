@@ -120,8 +120,8 @@ $departmentnameindex = array_search("DEPARTMENTNAME", $fieldnames);
 						<table id="example2" class="table table-striped table-bordered">
 							<thead>
 								<tr>
-									<th>DEPARTMENTID</th>
-									<th>DEPARTMENTNAME</th>
+									<th><p>DEPARTMENTID</p> (รหัสหน่วยงาน)</th>
+									<th><p>DEPARTMENTNAME</p> (ชื่อหน่วยงาน)</th>
 									<th>Actions</th>
 								</tr>
 							</thead>

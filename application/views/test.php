@@ -133,7 +133,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				<!-- mini logo for sidebar mini 50x50 pixels -->
 				<span class="logo-mini"><b></b>AMS</span>
 				<!-- logo for regular state and mobile devices -->
-				<span class="logo-lg"><b>ADMIN</b></span>
+				<span class="logo-lg"><b>HOME</b></span>
 			</a>
 			<!-- Header Navbar -->
 			<nav class="navbar navbar-static-top" role="navigation">
@@ -267,6 +267,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 									</span></a></li>
 							<li><a href="<?php echo site_url('department/index/index');?>"><i class="fa fa-vcard"></i>
 									<span>Department </span></a></li>
+							<li><a href="<?php echo site_url('history_asset_recent/index/index');?>"><i class="fa fa-refresh"></i>
+									<span>History Recent </span></a></li>
 
 					</li>
 				</ul>

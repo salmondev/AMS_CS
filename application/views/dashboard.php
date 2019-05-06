@@ -78,7 +78,7 @@
 		<div class="panel-heading">จัดการฐานข้อมูล</div>
 		<div class="panel-body">
 			<a href="<?php echo site_url('location/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px; margin-bottom:10px"><i
-				 class="fa fa-map-marker fa-fw fa-5x"></i><br /><br />ข้อมูลตำแหน่ง</a>
+				 class="fa fa-map-marker fa-fw fa-5x"></i><br /><br />ข้อมูลสถานที่</a>
 			
 			<a href="<?php echo site_url('asset/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px; margin-bottom:10px"><i
 				 class="fa fa-cubes fa-fw fa-5x"></i><br /><br />ข้อมูลพัสดุ/ครุภัณฑ์</a>

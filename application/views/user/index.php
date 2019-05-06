@@ -13,11 +13,10 @@
 						<table id="example2" class="table table-striped table-bordered">
 							<thead>
 								<tr>
-									<th>USER ID</th>
-									<th>REFERID</th>
-									<th>USER USERNAME</th>
-									<!--<th>USER PASSWORD</th>-->
-									<th>AUTH</th>
+									<th><p>USER ID</p> (รหัสผู้ใช้)</th>
+									<th><p>REFERID</p> (รหัสบุคลากร)</th>
+									<th><p>USER USERNAME</p> (ชื่อผู้ใช้)</th><!--<th>USER PASSWORD</th>-->
+									<th><p>AUTH</p> (สิทธิ์)</th>
 									<th>Actions</th>
 								</tr>
 							</thead>

@@ -13,8 +13,8 @@
 						<table id="example2" class="table table-striped table-bordered">
 							<thead>
 								<tr>
-									<th>STATUS ID</th>
-									<th>STATUS NAME</th>
+									<th><p>STATUS ID</p> (รหัสสถานะ)</th>
+									<th><p>STATUS NAME</p> (ชื่อสถานะ)</th>
 									<th>Actions</th>
 								</tr>
 							</thead>

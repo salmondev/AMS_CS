@@ -140,14 +140,14 @@ $unitnameindex = array_search("UNITNAME", $fieldnames);
 						<table id="example2" class="table table-striped table-bordered">
 							<thead>
 								<tr>
-									<th>ASSETID</th>
-									<th>BARCODE</th>
-									<th>REFERIDITEM</th>
-									<th>ASSETNAME</th>
-									<th>RECEIVEDATE</th>
-									<th>SPEC</th>
-									<th>UNITNAME</th>
-									<th>Options</th>
+									<th><p>ASSETID</p> (รหัส)</th>
+									<th><p>BARCODE</p> (รหัสครุภัณฑ์)</th>
+									<th><p>REFERIDITEM</p> (รหัสผู้รับผิดชอบ)</th>
+									<th><p>ASSETNAME</p> (ชื่อครุภัณฑ์)</th>
+									<th><p>RECEIVEDATE</p> (วันที่นำเข้า)</th>
+									<th><p>SPEC</p> (รายละเอียด)</th>
+									<th><p>UNITNAME</p> (หน่วย)</th>
+									<th>Action</th>
 								</tr>
 							</thead>
 							<?php foreach($asset as $A){ ?>
