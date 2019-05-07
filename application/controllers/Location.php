@@ -44,9 +44,14 @@ class Location extends CI_Controller{
     {   
         if(isset($_POST) && count($_POST) > 0)     
         {   
+			$BID = $this->input->post('LOCATION_BUILDING_ID');
+			$FID = $this->input->post('LOCATION_FLOOR_ID');
+			$RID = $this->input->post('LOCATION_ROOM_ID');
+			$DID = $this->input->post('DEPARTMENTID');
             $params = array(
 				'DEPARTMENTID' => $this->input->post('DEPARTMENTID'),
-				'LOCATION_BARCODE' => $this->input->post('LOCATION_BARCODE'),
+				//'LOCATION_BARCODE' => $this->input->post('LOCATION_BARCODE'),
+				'LOCATION_BARCODE' => $BID.'-'.$FID.'-'.$RID.'-'.$DID,
 				'LOCATION_BUILDING_ID' => $this->input->post('LOCATION_BUILDING_ID'),
 				'LOCATION_BUILDING_NAME' => $this->input->post('LOCATION_BUILDING_NAME'),
 				'LOCATION_FLOOR_ID' => $this->input->post('LOCATION_FLOOR_ID'),
@@ -78,9 +83,14 @@ class Location extends CI_Controller{
         {
             if(isset($_POST) && count($_POST) > 0)     
             {   
+				$BID = $this->input->post('LOCATION_BUILDING_ID');
+			    $FID = $this->input->post('LOCATION_FLOOR_ID');
+			    $RID = $this->input->post('LOCATION_ROOM_ID');
+			    $DID = $this->input->post('DEPARTMENTID');
                 $params = array(
 					'DEPARTMENTID' => $this->input->post('DEPARTMENTID'),
-					'LOCATION_BARCODE' => $this->input->post('LOCATION_BARCODE'),
+					//'LOCATION_BARCODE' => $this->input->post('LOCATION_BARCODE'),
+					'LOCATION_BARCODE' => $BID.'-'.$FID.'-'.$RID.'-'.$DID,
 					'LOCATION_BUILDING_ID' => $this->input->post('LOCATION_BUILDING_ID'),
 					'LOCATION_BUILDING_NAME' => $this->input->post('LOCATION_BUILDING_NAME'),
 					'LOCATION_FLOOR_ID' => $this->input->post('LOCATION_FLOOR_ID'),

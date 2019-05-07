@@ -111,7 +111,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<blockquote class="blockquote-v1 blockquote-v1--left">
 
 
-			<p><i class="fas fa-wrench"></i> System under maintenance.<!--<i
+			<p><i class="fas fa-cubes"></i> ระบบจัดการพัสดุครุภัณฑ์ด้วย QR Code และ NFC <!--<i
 					class="material-icons vertical-align-middle padding-bottom-3" style="margin-right:5px;">favorite</i>-->
 			</p>
 			<footer class="blockquote-footer"><a href="http://dev.amsapp.net/" >AMS DEV TEAM</a></footer>
@@ -127,7 +127,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="demo-btn-space mb-7" style="margin: 2%;">
 			<h3 class="h6 mb-3"></h3>
 			<div class="row">
-				<div class="col-lg-4 mb-2 mb-lg-0">
+				<div class="col-lg-6 mb-2 mb-lg-0">
 					<a href="<?php echo base_url('login');?>"
 						class="btn btn-block btn-lg btn-outline-primary">
 						<div>
@@ -138,18 +138,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</a>
 					<!--<button type="button" class="btn btn-block btn-lg btn-dark">SYSTEM</button>-->
 				</div>
-				<div class="col-lg-4 mb-2 mb-lg-0">
+				<div class="col-lg-6 mb-2 mb-lg-0">
 					<a href="http://dev.amsapp.net/AMS_QRGEN_Setup_1.0.0.exe"
 						class="btn btn-block btn-lg btn-outline-success"><i class="fab fa-android"
 							style="margin-right:5px;"></i>Download APK for Android</a>
 					<!--<button type="button" class="btn btn-block btn-lg btn-dark">SYSTEM</button>-->
 				</div>
+				<!--
 				<div class="col-lg-4 mb-2 mb-lg-0">
 					<a href="http://dev.amsapp.net/AMS-setup-win.exe"
 						class="btn btn-block btn-lg btn-outline-info"><i class="fab fa-windows"
 							style="margin-right:5px;"></i>Download EXE for Windows</a>
-					<!--<button type="button" class="btn btn-block btn-lg btn-dark">SYSTEM</button>-->
-				</div>
+					<button type="button" class="btn btn-block btn-lg btn-dark">SYSTEM</button>
+				</div>-->
 				<!--
               <div class="col-lg-6">
                 <a href="<?php echo base_url('index.php/login');?>"class="btn btn-block btn-lg btn-outline-primary">LOG IN</a>

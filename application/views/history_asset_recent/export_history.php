@@ -2,19 +2,6 @@
 $connect = mysqli_connect("localhost", "amsappne_nfcdb", "AMSnfcapp1", "amsappne_nfc");
 mysqli_set_charset($connect,'utf8');
 
-$HISTORY_YEAR = '';
-$HISTORY_MONTH = '';
-$query = "SELECT DISTINCT HISTORY_YEAR AND HISTORY_MONTH FROM HISTORY_ASSET_RECENT ORDER BY HISTORY_YEAR ASC";
-$statement = $connect->prepare($query);
-$statement->execute();
-$resultSet = $statement->get_result();
-$result = $resultSet->fetch_all();
-foreach($result as $row)
-{
- $HISTORY_YEAR = '<option value="'.$row['HISTORY_YEAR'].'">'.$row['HISTORY_YEAR'].'</option>';
- $HISTORY_MONTH = '<option value="'.$row['HISTORY_YEAR'].'">'.$row['HISTORY_YEAR'].'</option>';
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -23,8 +10,6 @@ foreach($result as $row)
 <head>
 	<meta charset="UTF-8">
 	<title>HISTORY Recent</title>
-
-	
 
 	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
 	<link rel='stylesheet' href='https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css'>
@@ -46,82 +31,12 @@ foreach($result as $row)
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
 
-	<script type="text/javascript" language="javascript" >
- $(document).ready(function(){
-  
-  fill_datatable();
-  
-  function fill_datatable(filter_month = '', filter_year = '')
-  {
-   var dataTable = $('#example').DataTable({
-   // "dom": '<"dt-buttons"Bf><"clear">lirtp',
-    "processing" : true,
-    "serverSide" : true,
-    "order" : [],
-    "ajax" : {
-     url:"<?php echo site_url('history_asset_recent/index4/fetch') ?>",
-     type:"POST",
-     data:{
-		filter_month:filter_month, filter_year:filter_year
-     }
-    }
-   });
-  }
-  
-  $('#filter').click(function(){
-   var filter_month = $('#filter_month').val();
-   var filter_year = $('#filter_year').val();
-   if(filter_month != '' && filter_year != '')
-   {
-    $('#example').DataTable().destroy();
-    fill_datatable(filter_month, filter_year);
-   }
-   else
-   {
-    alert('Select Both filter option');
-    $('#example').DataTable().destroy();
-    fill_datatable();
-   }
-  });
-  
-  
- });
- 
-</script>
-
 </head>
 
 <body style="font-family: 'Sarabun', sans-serif;">
 
 	<div class="alert alert-danger" role="alert"><strong>Warning! </strong> AMS export function still BETA version.
 	</div>
-	<div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-     <div class="form-group">
-      <select name="filter_year" id="filter_year" class="form-control" required>
-       <option value="">Select Year</option>
-       <?php echo $HISTORY_YEAR; ?>
-      </select>
-	 </div>
-	 <div class="form-group">
-      <select name="filter_month" id="filter_month" class="form-control" required>
-       <option value="">Select Month</option>
-       <?php echo $HISTORY_MONTH; ?>
-      </select>
-     </div>
-     <div class="form-group" align="center">
-      <button type="button" name="filter" id="filter" class="btn btn-info">Filter</button>
-     </div>
-    </div>
-    <div class="col-md-4"></div>
-   </div>
-	<!--<a class="btn btn-success" style="float:left;margin-right:20px;" href="https://codepen.io/collection/XKgNLN/" target="_blank">Other
-		examples on Codepen</a>-->
-	<!--<a class="btn btn-success" style="float:left;margin-right:20px;" href="#" target="_blank">IMPORT CSV</a>
-		<button  type="button"  onclick="goBack();" class="btn btn-danger">
-            		Back
-            	</button>-->
 	</br>
 	</br>
 
@@ -170,27 +85,6 @@ foreach($result as $row)
 		</table>
 	</div>
 
-
-	<!-- Modal -->
-	<div id="myModal" class="modal fade" role="dialog">
-		<div class="modal-dialog">
-
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Row information</h4>
-				</div>
-				<div class="modal-body">
-
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-
-		</div>
-	</div>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 	<script src='https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js'></script>
 	<script src='https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js'></script>
@@ -204,8 +98,6 @@ foreach($result as $row)
 	<script src='https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js'></script>
 	<script src='https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js'></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
-
-
 
 	<script>
 		$(document).ready(function () {
@@ -243,82 +135,11 @@ foreach($result as $row)
 							$(doc.document.body).css('font-size', '10px');
 						}
 					}
-					//'print'
 				]
-			});
-			//Add row button
-			$('.dt-add').each(function () {
-				$(this).on('click', function (evt) {
-					//Create some data and insert it
-					var rowData = [];
-					var table = $('#example').DataTable();
-					//Store next row number in array
-					var info = table.page.info();
-					rowData.push(info.recordsTotal + 1);
-					//Some description
-					rowData.push('New Order');
-					//Random date
-					var date1 = new Date(2016, 01, 01);
-					var date2 = new Date(2018, 12, 31);
-					var rndDate = new Date(+date1 + Math.random() * (date2 -
-						date1)); //.toLocaleDateString();
-					rowData.push(rndDate.getFullYear() + '/' + (rndDate.getMonth() + 1) + '/' +
-						rndDate.getDate());
-					//Status column
-					rowData.push('NEW');
-					//Amount column
-					rowData.push(Math.floor(Math.random() * 2000) + 1);
-					//Inserting the buttons ???
-					rowData.push(
-						'<button type="button" class="btn btn-primary btn-xs dt-edit" style="margin-right:16px;"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button><button type="button" class="btn btn-danger btn-xs dt-delete"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>'
-					);
-					//Looping over columns is possible
-					//var colCount = table.columns()[0].length;
-					//for(var i=0; i < colCount; i++){			}
-
-					//INSERT THE ROW
-					table.row.add(rowData).draw(false);
-				});
-			});
-			//Edit row buttons
-			$('.dt-edit').each(function () {
-				$(this).on('click', function (evt) {
-					$this = $(this);
-					var dtRow = $this.parents('tr');
-					$('div.modal-body').innerHTML = '';
-					$('div.modal-body').append('Row index: ' + dtRow[0].rowIndex + '<br/>');
-					$('div.modal-body').append('Number of columns: ' + dtRow[0].cells.length +
-						'<br/>');
-					for (var i = 0; i < dtRow[0].cells.length; i++) {
-						$('div.modal-body').append('Cell (column, row) ' + dtRow[0].cells[i]
-							._DT_CellIndex.column + ', ' + dtRow[0]
-							.cells[i]._DT_CellIndex.row + ' => innerHTML : ' + dtRow[0].cells[i]
-							.innerHTML + '<br/>');
-					}
-					$('#myModal').modal('show');
-				});
-			});
-			//Delete buttons
-			$('.dt-delete').each(function () {
-				$(this).on('click', function (evt) {
-					$this = $(this);
-					var dtRow = $this.parents('tr');
-					if (confirm("Are you sure to delete this row?")) {
-						var table = $('#example').DataTable();
-						table.row(dtRow[0].rowIndex - 1).remove().draw(false);
-					}
-				});
-			});
-			$('#myModal').on('hidden.bs.modal', function (evt) {
-				$('.modal .modal-body').empty();
 			});
 		});
 
 	</script>
-
-
-
-
 </body>
 
 </html>

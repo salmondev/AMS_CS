@@ -23,13 +23,13 @@
 							</select>
 						</div>
 					</div>
-					
+					<!--
 					<div class="col-md-6">
 						<label for="LOCATION_BARCODE" class="control-label">LOCATION BARCODE</label>
 						<div class="form-group">
 							<input type="text" name="LOCATION_BARCODE" value="<?php echo ($this->input->post('LOCATION_BARCODE') ? $this->input->post('LOCATION_BARCODE') : $location['LOCATION_BARCODE']); ?>" class="form-control" id="LOCATION_BARCODE" />
 						</div>
-					</div>
+					</div>-->
 					<div class="col-md-6">
 						<label for="LOCATION_BUILDING_ID" class="control-label">LOCATION BUILDING ID</label>
 						<div class="form-group">
