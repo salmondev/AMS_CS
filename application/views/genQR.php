@@ -11,48 +11,15 @@ if(isset($_POST['generate_text']))
  $assetname=$_POST['qr_assetname'];
  $receive=$_POST['qr_receive'];
  $spec=$_POST['qr_spec'];
- //$folder="images/";
+
  $tempPath = "images/";
 
  $fileName='qr_'.$text.'.png';
- //$file_path=$folder.$file_name;
- //QRcode::png($text,$file_path);
- //echo"<img src='base_url('images/qr.png')'>";
- //<?php echo base_url('dist/img/admin.png');
- //echo "<img src='images/qr.png' >";
- //$urlRelativeFilePath = $file_path.$file_name;
- // displaying 
- //echo '<img src="'.$file_path.'" />';
- 
+
  $pngPath = $tempPath.$fileName;
  
- //To Display Code Without Storing
  QRcode::png($text,$pngPath,'L',9,2);
 
-/*
- QRcode::png  (
-	$text,
-	$fileName,
-    $outfile = true,
-    $level = QR_ECLEVEL_L,
-    $size = 12,
-    $margin = 2,
-    $saveandprint = false 
- );*/
-/*
- QRcode::text 
-(
-	$text,
-	$outfile = false,
-	$level = QR_ECLEVEL_L,
-	$size = 12,
-	$margin = 2 
-);*/
-//$newURL = "http://amsapp.net/index.php/asset/index3/sync";
-//echo site_url('asset/index3/sync');
-/*header('Location: '.$newURL);/*
-header("Content-type: image/png");
-echo '<img src="'.$pngPath.'" />'; */
 }
 $query = "UPDATE ASSET SET IMG_PATH='$pngPath' WHERE BARCODE='$text' ";
 mysqli_query($connect, $query); 

@@ -17,7 +17,7 @@ public function check()
 		$emp_password=$this->input->post('emp_password');
 		
 
-		$emp_password1 = md5($emp_password);
+		
 		$emp_password2 = hash('sha512',$emp_password);
 
 	$sql="SELECT * FROM `USER` where USER_USERNAME='$emp_username' and USER_PASSWORD='$emp_password2'";

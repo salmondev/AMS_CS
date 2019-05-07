@@ -182,7 +182,7 @@ mysqli_set_charset($connect,'utf8');
 						<td>
 							<input type="checkbox" name="chkDel[]" id="chkDel<?php echo $i;?>" value="<?php echo $A["BARCODE"];?>">
 							<?php $i++ ?>
-
+							</form>
 						</td>
 						<td>
 							<?php echo $A['ASSETID']; ?>
@@ -221,7 +221,7 @@ mysqli_set_charset($connect,'utf8');
 						</td>
 					</tr>
 					<?php } ?>
-		</form>
+		
 		</table>
 	</div>
 </div>

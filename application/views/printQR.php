@@ -90,8 +90,8 @@ mysqli_set_charset($objConnect,'utf8');
 			echo '<div class="grid-container"><div class="qrpic"><img src="'.base_url('images/qr_'.$row['BARCODE']).'.png" style="width: 115px;height: 115px;"></div><div class="qrtext"></br><b>รหัสครุภัณฑ์: </b>'.$row['BARCODE'].'</br><b>วันที่นำเข้า: </b>'.$row['RECEIVEDATE'].'</br><b>ชื่อครุภัณฑ์: </b>'.$row['ASSETNAME'].'</div></div></br>';
 			echo '</td>';
 			}
-			
-	    }
+		}
+		
 	}
 
 	

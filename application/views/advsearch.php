@@ -1,20 +1,6 @@
 <?php  
 $connect = mysqli_connect("localhost", "amsappne_nfcdb", "AMSnfcapp1", "amsappne_nfc");
 mysqli_set_charset($connect,'utf8');
-
-$HISTORY_YEAR = '';
-$HISTORY_MONTH = '';
-$query = "SELECT DISTINCT HISTORY_YEAR AND HISTORY_MONTH FROM HISTORY_ASSET_RECENT ORDER BY HISTORY_YEAR ASC";
-$statement = $connect->prepare($query);
-$statement->execute();
-$resultSet = $statement->get_result();
-$result = $resultSet->fetch_all();
-foreach($result as $row)
-{
- $HISTORY_YEAR = '<option value="'.$row['HISTORY_YEAR'].'">'.$row['HISTORY_YEAR'].'</option>';
- $HISTORY_MONTH = '<option value="'.$row['HISTORY_YEAR'].'">'.$row['HISTORY_YEAR'].'</option>';
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -46,76 +32,12 @@ foreach($result as $row)
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
 
-	<script type="text/javascript" language="javascript" >
- $(document).ready(function(){
-  
-  fill_datatable();
-  
-  function fill_datatable(filter_month = '', filter_year = '')
-  {
-   var dataTable = $('#example').DataTable({
-   // "dom": '<"dt-buttons"Bf><"clear">lirtp',
-    "processing" : true,
-    "serverSide" : true,
-    "order" : [],
-    "ajax" : {
-     url:"<?php echo site_url('history_asset_recent/index4/fetch') ?>",
-     type:"POST",
-     data:{
-		filter_month:filter_month, filter_year:filter_year
-     }
-    }
-   });
-  }
-  
-  $('#filter').click(function(){
-   var filter_month = $('#filter_month').val();
-   var filter_year = $('#filter_year').val();
-   if(filter_month != '' && filter_year != '')
-   {
-    $('#example').DataTable().destroy();
-    fill_datatable(filter_month, filter_year);
-   }
-   else
-   {
-    alert('Select Both filter option');
-    $('#example').DataTable().destroy();
-    fill_datatable();
-   }
-  });
-  
-  
- });
- 
-</script>
-
 </head>
 
 <body style="font-family: 'Sarabun', sans-serif;">
 
 	<div class="alert alert-danger" role="alert"><strong>Warning! </strong> AMS export function still BETA version.
 	</div>
-	<div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-     <div class="form-group">
-      <select name="filter_year" id="filter_year" class="form-control" required>
-       <option value="">Select Year</option>
-       <?php echo $HISTORY_YEAR; ?>
-      </select>
-	 </div>
-	 <div class="form-group">
-      <select name="filter_month" id="filter_month" class="form-control" required>
-       <option value="">Select Month</option>
-       <?php echo $HISTORY_MONTH; ?>
-      </select>
-     </div>
-     <div class="form-group" align="center">
-      <button type="button" name="filter" id="filter" class="btn btn-info">Filter</button>
-     </div>
-    </div>
-    <div class="col-md-4"></div>
-   </div>
 	<!--<a class="btn btn-success" style="float:left;margin-right:20px;" href="https://codepen.io/collection/XKgNLN/" target="_blank">Other
 		examples on Codepen</a>-->
 	<!--<a class="btn btn-success" style="float:left;margin-right:20px;" href="#" target="_blank">IMPORT CSV</a>
