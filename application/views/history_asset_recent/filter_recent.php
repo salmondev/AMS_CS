@@ -2,20 +2,7 @@
 $connect = mysqli_connect("localhost", "amsappne_nfcdb", "AMSnfcapp1", "amsappne_nfc");
 mysqli_set_charset($connect,'utf8');
 
-$HISTORY_YEAR = '';
-$HISTORY_MONTH = '';
-$query = "SELECT DISTINCT HISTORY_YEAR AND HISTORY_MONTH FROM HISTORY_ASSET_RECENT ORDER BY HISTORY_YEAR ASC";
-$statement = $connect->prepare($query);
-$statement->execute();
-$resultSet = $statement->get_result();
-$result = $resultSet->fetch_all();
-if(isset($HISTORY_YEAR)){
-foreach($result as $row)
-{
- $HISTORY_YEAR .= '<option value="'.$row['HISTORY_YEAR'].'">'.$row['HISTORY_YEAR'].'</option>';
- $HISTORY_MONTH .= '<option value="'.$row['HISTORY_YEAR'].'">'.$row['HISTORY_YEAR'].'</option>';
-}
-}
+$query = "SELECT * FROM HISTORY_ASSET_RECENT ORDER BY HISTORY_YEAR ASC";
 
 ?>
 
@@ -36,29 +23,9 @@ foreach($result as $row)
 	<div class="container box">
 		<h3 align="center">History Recent</h3>
 		<br />
-		<div class="row">
-			<div class="col-md-4"></div>
-			<div class="col-md-4">
-				<div class="form-group">
-					<select name="filter_year" id="filter_year" class="form-control" required>
-						<option value="">Select Year</option>
-						<?php echo $HISTORY_YEAR; ?>
-					</select>
-				</div>
-				<div class="form-group">
-					<select name="filter_month" id="filter_month" class="form-control" required>
-						<option value="">Select Month</option>
-						<?php echo $HISTORY_MONTH; ?>
-					</select>
-				</div>
-				<div class="form-group" align="center">
-					<button type="button" name="filter" id="filter" class="btn btn-info">Filter</button>
-				</div>
-			</div>
-			<div class="col-md-4"></div>
-		</div>
+		
 		<div class="table-responsive">
-			<table id="example" class="table table-bordered table-striped">
+			<table id="example4" class="table table-bordered table-striped">
 				<thead>
 					<tr>
 						<th>
@@ -80,7 +47,17 @@ foreach($result as $row)
 							<p>HISTORY MONTH</p> (เดือน)
 						</th>
 						<th>
-							<p>HISTORY YEAR</p> (ปี)
+							<!--<p>HISTORY YEAR</p> (ปี) -->
+							<select name="HISTORY_YEAR" id="HISTORY_YEAR" class="form-control">
+                                <option value="">HISTORY YEAR Search</option>
+                                <?php 
+         while($row = mysqli_fetch_array($result))
+         {
+          echo '<option value="'.$row["HISTORY_YEAR"].'">'.$row["HISTORY_YEAR"].'</option>';
+         }
+         ?>
+                            </select>
+
 						</th>
 						<th>
 							<p>HISTORY HOUR</p> (ชั่วโมง)
@@ -126,46 +103,69 @@ foreach($result as $row)
 			<br />
 		</div>
 	</div>
+
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script src='https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js'></script>
+    <script src='https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js'></script>
+    <script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.colVis.min.js'></script>
+    <script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js'></script>
+    <script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js'></script>
+    <script src='https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js'></script>
+    <script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js'></script>
+
+    <script src='https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js'></script>
+    <script src='https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+
+
 </body>
 
 </html>
 
 <script type="text/javascript" language="javascript">
-	$(document).ready(function () {
+    $(document).ready(function () {
 
-		fill_datatable();
+        load_data();
 
-		function fill_datatable(filter_month = '', filter_year = '') {
-			var dataTable = $('#example').DataTable({
-				// "dom": '<"dt-buttons"Bf><"clear">lirtp',
-				"processing": true,
-				"serverSide": true,
-				"order": [],
-				"ajax": {
-					url: "<?php echo site_url('history_asset_recent/index4/fetch') ?>",
-					type: "POST",
-					data: {
-						filter_month: filter_month,
-						filter_year: filter_year
-					}
-				}
-			});
-		}
+        function load_data(is_category) {
+            var dataTable = $('#example4').DataTable({
+                "dom": '<"dt-buttons"Bf><"clear">lirtp',
+                "processing": true,
+                "serverSide": true,
+                "paging": true,
+                "autoWidth": true,
+                "order": [],
+                "ajax": {
+                    url: "<?php echo base_url('history_asset_recent/index4/fetch'); ?>",
+                    type: "POST",
+                    data: {
+                        is_category: is_category
+                    }
+                },
+                "columnDefs": [{
+                    "targets": [2],
+                    "orderable": false,
+                }, ],
+                "buttons": [
+                    'colvis',
+                    'copyHtml5',
+                    'csvHtml5',
+                    'excelHtml5',
+                    'pdfHtml5',
+                    'print'
+                ]
+            });
+        }
 
-		$('#filter').click(function () {
-			var filter_month = $('#filter_month').val();
-			var filter_year = $('#filter_year').val();
-			if (filter_month != '' && filter_year != '') {
-				$('#example').DataTable().destroy();
-				fill_datatable(filter_month, filter_year);
-			} else {
-				alert('Select Both filter option');
-				$('#example').DataTable().destroy();
-				fill_datatable();
-			}
-		});
-
-
-	});
-
+        $(document).on('change', '#category', function () {
+            var category = $(this).val();
+            $('#example4').DataTable().destroy();
+            if (category != '') {
+                load_data(category);
+            } else {
+                load_data();
+            }
+        });
+    });
 </script>

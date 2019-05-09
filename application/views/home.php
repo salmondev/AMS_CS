@@ -81,6 +81,42 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			height: auto;
 		}
 
+		a {
+  z-index: 1;
+  position: relative;
+  font-size: inherit;
+  font-family: inherit;
+  color: white;
+  padding: 0.5em 1em;
+  outline: none;
+  border: none;
+  background-color: hsl(246, 41%, 21%);
+}
+
+a::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fc2f70;
+  transform-origin: center right;
+  transform: scaleX(0);
+  transition: transform 0.25s ease-in-out;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+a:hover::before {
+  transform-origin: center left;
+  transform: scaleX(1);
+}
+
+
 	</style>
 
 	<!--     Fonts and icons     -->
@@ -101,7 +137,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<br>
 
 		<div style="margin-top: 2%;">
-			<img class="responsive"  src="<?php echo base_url('amslogo.png');?>">
+			<img class="responsive" src="<?php echo base_url('amslogo.png');?>">
 
 		</div>
 
@@ -111,10 +147,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<blockquote class="blockquote-v1 blockquote-v1--left">
 
 
-			<p><i class="fas fa-cubes"></i> ระบบจัดการพัสดุครุภัณฑ์ด้วย QR Code และ NFC <!--<i
+			<p><i class="fas fa-cubes"></i> ระบบจัดการพัสดุครุภัณฑ์ด้วย QR Code และ NFC
+				<!--<i
 					class="material-icons vertical-align-middle padding-bottom-3" style="margin-right:5px;">favorite</i>-->
 			</p>
-			<footer class="blockquote-footer"><a href="http://dev.amsapp.net/" >AMS DEV TEAM</a></footer>
+			<footer class="blockquote-footer"><!--<a href="http://dev.amsapp.net/">AMS DEV TEAM</a>-->AMS DEV TEAM</footer>
 		</blockquote>
 		<!-- End left Bordered -->
 		<!--
@@ -128,8 +165,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<h3 class="h6 mb-3"></h3>
 			<div class="row">
 				<div class="col-lg-6 mb-2 mb-lg-0">
-					<a href="<?php echo base_url('login');?>"
-						class="btn btn-block btn-lg btn-outline-primary">
+					<a href="<?php echo base_url('login');?>" class="btn btn-block btn-lg btn-outline-primary">
 						<div>
 							<i class="material-icons vertical-align-middle padding-bottom-3" style="margin-right:5px;">
 								exit_to_app
@@ -139,7 +175,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<!--<button type="button" class="btn btn-block btn-lg btn-dark">SYSTEM</button>-->
 				</div>
 				<div class="col-lg-6 mb-2 mb-lg-0">
-					<a href="http://dev.amsapp.net/AMS_QRGEN_Setup_1.0.0.exe"
+					<a href="http://dev.amsapp.net/EasyQR_Build-8-5-2562.apk"
 						class="btn btn-block btn-lg btn-outline-success"><i class="fab fa-android"
 							style="margin-right:5px;"></i>Download APK for Android</a>
 					<!--<button type="button" class="btn btn-block btn-lg btn-dark">SYSTEM</button>-->

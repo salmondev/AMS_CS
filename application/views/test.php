@@ -436,6 +436,7 @@ user experience. -->
 	<script src="<?php echo base_url('bower_components/datatables.net/js/jquery.dataTables.min.js');?>"></script>
 	<script src="<?php echo base_url('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js');?>"></script>
 
+  
 
 	<script>
 		//Date picker
@@ -456,10 +457,14 @@ user experience. -->
 				'ordering': true,
 				'info': true,
 				'autoWidth': true,
-				"aoColumnDefs": [{
-					"bSortable": false,
-					"aTargets": [0]
-				}]
+				"buttons": [
+                    'colvis',
+                    'copyHtml5',
+                    'csvHtml5',
+                    'excelHtml5',
+                    'pdfHtml5',
+                    'print'
+                ]
 			});
 		});
 
