@@ -130,6 +130,55 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			transform: scaleX(1);
 		}
 
+		h1 {
+			position: relative;
+		}
+
+		h1::before,
+		h1::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			height: 2px;
+			background-color: #59287a;
+			transform: scaleX(0);
+			transition: transform 0.5s ease;
+		}
+
+		h1::before {
+			top: 0;
+			transform-origin: center right;
+		}
+
+		h1:hover::before {
+			transform-origin: center left;
+			transform: scaleX(1);
+		}
+
+		h1::after {
+			bottom: 0;
+			transform-origin: center left;
+		}
+
+		h1:hover::after {
+			transform-origin: center right;
+			transform: scaleX(1);
+		}
+
+		p {
+			position: relative;
+			z-index: 1;
+		}
+
+		textarea:focus,
+		input:focus {
+			outline: none;
+		}
+		
+		
+		
+
 	</style>
 
 	<!--     Fonts and icons     -->

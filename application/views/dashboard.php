@@ -64,7 +64,47 @@
 									<div class="huge" style="font-size:200%; font-weight:bold">
 										<?php echo $this->db->from("ASSET")->count_all_results();?>
 									</div>
-									<div>พัสดุ/ครุภัณฑ์ในระบบ</div>
+									<div>พัสดุครุภัณฑ์ในระบบ</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-info">
+		<div class="panel-heading">เครื่องมือระบบ</div>
+		<div class="panel-body">
+			<!--<a href="?p=setting_card_status" class="btn btn-primary btn_main_wd"><i class="fa flaticon-tag20 fa-fw fa-6x"></i><br/><br/>สถานะการซ่อม/เคลม</a>-->
+			<div class="row">
+			<div class="col-lg-3 col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<div class="row">
+								<a href="<?php echo site_url('user/index1/register') ?>">
+									<div class="col-xs-3"><i class="fa fa-user-plus fa-5x"></i></div>
+									<div class="col-xs-9 text-right">
+										<div>ลงทะเบียนผู้ใช้</div>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-xs-3">
+									<i class="fa fa-user-circle-o fa-5x"></i>
+								</div>
+								<div class="col-xs-9 text-right">
+									<div class="huge" style="font-size:200%; font-weight:bold">
+										<?php echo $this->db->from("USER")->count_all_results();?>
+									</div>
+									<div>ผู้ใช้ที่ลงทะเบียนในระบบ</div>
 								</div>
 							</div>
 						</div>

@@ -126,7 +126,29 @@ mysqli_set_charset($connect,'utf8');
 			/*padding: 10px;*/
 			margin-left: 25px;
 			margin-top: 15px;
-			
+
+		}
+
+		body,
+		h1,
+		h2,
+		h3,
+		ol,
+		ul,
+		div {
+			width: auto;
+			border: 0;
+			margin: 0 5%;
+			padding: 0;
+			float: none;
+			position: static;
+			overflow: visible;
+		}
+
+		@media print {
+			div {
+				page-break-inside: avoid;
+			}
 		}
 
 	</style>
@@ -139,6 +161,7 @@ mysqli_set_charset($connect,'utf8');
 
 		<h1 align="center" style="font-family: 'Sarabun', sans-serif;"><i class="fa fa-qrcode"
 				style="margin:15px"></i>ระบบสร้างรหัส QR Code ครุภัณฑ์</h1>
+
 		<form name="frmMain" action="<?php echo site_url('asset/index9/printQR') ?>" method="post"
 			OnSubmit="return onDelete();">
 			<input type="submit" name="btnDelete" value="PRINT QR CODE" class="btn btn-success">
@@ -180,48 +203,49 @@ mysqli_set_charset($connect,'utf8');
 					<?php foreach($asset as $A){  $i = 0;?>
 					<tr>
 						<td>
-							<input type="checkbox" name="chkDel[]" id="chkDel<?php echo $i;?>" value="<?php echo $A["BARCODE"];?>">
+							<input type="checkbox" name="chkDel[]" id="chkDel<?php echo $i;?>"
+								value="<?php echo $A["BARCODE"];?>">
 							<?php $i++ ?>
-							</form>
-						</td>
-						<td>
-							<?php echo $A['ASSETID']; ?>
-						</td>
-						<td>
-							<?php echo $A['BARCODE']; ?>
-						</td>
-						<td>
-							<?php echo $A['REFERIDITEM']; ?>
-						</td>
-						<td>
-							<?php echo $A['ASSETNAME']; ?>
-						</td>
-						<td>
-							<?php echo $A['RECEIVEDATE']; ?>
-						</td>
-						<td>
-							<?php echo $A['SPEC']; ?>
-						</td>
-						<td>
-							<?php echo $A['UNITNAME']; ?>
-						</td>
+		</form>
+		</td>
+		<td>
+			<?php echo $A['ASSETID']; ?>
+		</td>
+		<td>
+			<?php echo $A['BARCODE']; ?>
+		</td>
+		<td>
+			<?php echo $A['REFERIDITEM']; ?>
+		</td>
+		<td>
+			<?php echo $A['ASSETNAME']; ?>
+		</td>
+		<td>
+			<?php echo $A['RECEIVEDATE']; ?>
+		</td>
+		<td>
+			<?php echo $A['SPEC']; ?>
+		</td>
+		<td>
+			<?php echo $A['UNITNAME']; ?>
+		</td>
 
-						<td>
+		<td>
 
-							<form action="<?php echo site_url('asset/index8/genQR') ?>" method="post" name="form1">
+			<form action="<?php echo site_url('asset/index8/genQR') ?>" method="post" name="form1">
 
-								<input type="hidden" name="qr_text" value="<?php echo ($A['BARCODE']); ?>">
-								<input type="hidden" name="qr_refer" value="<?php echo ($A['REFERIDITEM']); ?>">
-								<input type="hidden" name="qr_assetname" value="<?php echo ($A['ASSETNAME']); ?>">
-								<input type="hidden" name="qr_receive" value="<?php echo ($A['RECEIVEDATE']); ?>">
-								<input type="hidden" name="qr_spec" value="<?php echo ($A['SPEC']); ?>">
-								<input type="submit" name="generate_text" value="GENERATE QR CODE" class="btn btn-primary" />
+				<input type="hidden" name="qr_text" value="<?php echo ($A['BARCODE']); ?>">
+				<input type="hidden" name="qr_refer" value="<?php echo ($A['REFERIDITEM']); ?>">
+				<input type="hidden" name="qr_assetname" value="<?php echo ($A['ASSETNAME']); ?>">
+				<input type="hidden" name="qr_receive" value="<?php echo ($A['RECEIVEDATE']); ?>">
+				<input type="hidden" name="qr_spec" value="<?php echo ($A['SPEC']); ?>">
+				<input type="submit" name="generate_text" value="GENERATE QR CODE" class="btn btn-primary" />
 
-							</form>
-						</td>
-					</tr>
-					<?php } ?>
-		
+			</form>
+		</td>
+		</tr>
+		<?php } ?>
+
 		</table>
 	</div>
 </div>
@@ -252,6 +276,11 @@ mysqli_set_charset($connect,'utf8');
 <script>
 	$(function () {
 		$('#example3').DataTable({
+			'aLengthMenu': [
+				[25, 50, 100, 200, -1],
+				[25, 50, 100, 200, "All"]
+			],
+			'iDisplayLength': -1,
 			'paging': true,
 			'lengthChange': true,
 			'searching': true,

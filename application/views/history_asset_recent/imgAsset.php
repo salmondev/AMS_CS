@@ -106,6 +106,7 @@ mysqli_set_charset($connect,'utf8');
 
 <body style="font-family: 'Sarabun', sans-serif;">
 	</br>
+	<h1>การตรวจสอบล่าสุด</h1>
 	</br>
 	<div class="table-responsive">
 		<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -176,6 +177,47 @@ mysqli_set_charset($connect,'utf8');
 	<script src='https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js'></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
 
+	<script>
+		$(document).ready(function () {
+			//Only needed for the filename of export files.
+			//Normally set in the title tag of your page.
+			document.title = 'ข้อมูลการตรวจสอบครุภัณฑ์ล่าสุด';
+			// DataTable initialisation
+			$('#example').DataTable({
+				"dom": '<"dt-buttons"Bf><"clear">lirtp',
+				"paging": true,
+				"autoWidth": true,
+				"columnDefs": [{
+					"orderable": false,
+					"targets": 0
+				}],
+				"buttons": [
+					'colvis',
+					'copyHtml5',
+					'csvHtml5',
+					'excelHtml5',
+					{
+						extend: 'pdfHtml5',
+						orientation: 'landscape', //landscape give you more space
+						pageSize: 'A1', //A0 is the largest A5 smallest(A0,A1,A2,A3,legal,A4,A5,letter))
+						messageTop: 'HISTORY',
+						filename: 'HISTORY_PDF',
+						charset: 'utf-8',
+						bom: 'true'
+					},
+					{
+						extend: 'print',
+						customize: function (doc) {
+							$(doc.document.body).find('h1').css('font-size', '12pt');
+							$(doc.document.body).find('table').css('font-size', '10pt');
+							$(doc.document.body).css('font-size', '10px');
+						}
+					}
+				]
+			});
+		});
+
+	</script>
 </body>
 
 </html>

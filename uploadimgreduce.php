@@ -1,4 +1,6 @@
 <?php
+$connect = mysqli_connect("localhost", "amsappne_nfcdb", "AMSnfcapp1", "amsappne_nfc");
+mysqli_set_charset($connect,'utf8');
 
      // File name
      $filename = $_FILES['imagefiles']['name'];
@@ -21,7 +23,10 @@
        if(move_uploaded_file($_FILES['imagefiles']['tmp_name'],$location)){
 
          // Compress Image
-         compressImage($_FILES['imagefiles']['type'],$location,$reduced_location,10);
+				 compressImage($_FILES['imagefiles']['type'],$location,$reduced_location,10);
+				 
+				 $sql = "INSERT INTO HISTORY_IMAGE (HISTORY_IMAGE_PATH) VALUES ('$reduced_location')"; 
+				 mysqli_query($sql,$connect);
 
          echo "Successfully Uploaded";
        }
@@ -63,3 +68,43 @@ $target_path1 = "uploads/";
         echo "target_path: " . $target_path1;
     }*/
     ?>
+<html>
+    	<head>
+        		<title> image</title>
+    	</head>
+    	<body>
+
+	
+		
+            	    	               
+			<form action="" name="myform" id="myform" method="post" enctype="multipart/form-data">
+				<ul>
+			            	<li>
+						<label>Upload:</label>
+			        <input type="file" name="file[]" id="file" multiple/>
+					</li>
+					<li>
+						<input type="submit" name="submit" id="submit" class="submit btn-success"/>
+					</li>
+				</ul>
+			</form>
+	</body>
+</html>
+
+<?php
+if(isset($_POST['submit']))
+{
+	for($i=0;i<count($_FILES["file"]["tmp_name"]);$i++)
+	{
+		$filetmp = $_FILES["file"]["tmp_name"][$i];
+		$filename = $_FILES["file"]["name"][$i];
+		$filetype= $_FILES["file"]["type"][$i];
+		$filepath = "photo/".$filename;
+		
+		move_uploaded_file($filetmp,$filepath);
+
+		$sql = "INSERT INTO HISTORY_IMAGE (HISTORY_IMAGE_PATH) VALUES ('$reduced_location')"; 
+		 mysqli_query($sql,$connect);
+	}
+}
+?>

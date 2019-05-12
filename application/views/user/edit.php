@@ -37,9 +37,27 @@
 					</div>
 					<div class="col-md-6">
 						<label for="AUTH" class="control-label">AUTH</label>
-						<div class="form-group">
+						<!--<div class="form-group">
 							<input type="text" name="AUTH" value="<?php echo ($this->input->post('AUTH') ? $this->input->post('AUTH') : $user['AUTH']); ?>" class="form-control" id="AUTH" />
-						</div>
+						</div>-->
+						<select name="AUTH" class="form-control">
+							<option value="">select AUTH</option>
+							<option value="ADMIN">ADMIN</option>
+							<option value="USER">USER</option>
+							<?php 
+/*
+              $selected_val = ($auth['AUTH'] == $this->input->post('AUTH')) ? ' selected="selected"' : "";  // Storing Selected Value In Variable
+              echo "You have selected :" .$selected_val;  // Displaying Selected Value
+*/
+								///////////////////////////////////////////////////
+								foreach($all_auth as $auth)
+								{
+									$selected = ($auth['AUTH'] == $this->input->post('AUTH')) ? ' selected="selected"' : "";
+
+									echo '<option value="'.$auth['AUTH'].'" '.$selected.'>'.$auth['AUTH'].'</option>';
+								} 
+								?>
+						</select>
 					</div>
 				</div>
 			</div>

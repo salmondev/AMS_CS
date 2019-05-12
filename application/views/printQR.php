@@ -41,9 +41,37 @@
 		}
 
 		.a4 {
-			width: 1984;
-			height: 2806;
+			width: 1900;
+			height: 2700;
 		}
+
+		.pagebreak {
+			page-break-before: always;
+		}
+
+		body,
+		h1,
+		h2,
+		h3,
+		ol,
+		ul,
+		div {
+			width: auto;
+			border: 0;
+			margin: 0 5%;
+			padding: 0;
+			float: none;
+			position: static;
+			overflow: visible;
+		}
+
+		@media print {
+			div {
+				page-break-inside: avoid;
+			}
+		}
+
+		/* page-break-after works, as well */
 
 	</style>
 
@@ -66,8 +94,9 @@
 </head>
 
 <body style="font-family: 'Sarabun', sans-serif;">
-	
-			<?php
+
+
+	<?php
 $objConnect = mysqli_connect("localhost", "amsappne_nfcdb", "AMSnfcapp1", "amsappne_nfc");
 //$objDB = mysqli_select_db($objConnect,"mydatabase");
 //$connect = mysqli_connect("localhost", "amsappne_nfcdb", "AMSnfcapp1", "amsappne_nfc");
@@ -86,19 +115,21 @@ mysqli_set_charset($objConnect,'utf8');
 			//while($row = mysqli_fetch_array($objQuery)){
 				foreach($objQuery as $row){
 			//echo '<img src="http://amsapp.net/images/'.$row['BARCODE'].'.png"/>';
-            echo '<td>';
-			echo '<div class="grid-container"><div class="qrpic"><img src="'.base_url('images/qr_'.$row['BARCODE']).'.png" style="width: 115px;height: 115px;"></div><div class="qrtext"></br><b>รหัสครุภัณฑ์: </b>'.$row['BARCODE'].'</br><b>วันที่นำเข้า: </b>'.$row['RECEIVEDATE'].'</br><b>ชื่อครุภัณฑ์: </b>'.$row['ASSETNAME'].'</div></div></br>';
-			echo '</td>';
+            
+			echo '<div class="grid-container"><div class="qrpic"><img src="'.base_url('images/qr_'.$row['BARCODE']).'.png" style="width: 115px;height: 115px;"></div><div class="qrtext"></br></br><b>รหัสครุภัณฑ์: </b>'.$row['BARCODE'].'</br><b>วันที่นำเข้า: </b>'.$row['RECEIVEDATE'].'</div></div></br>';
+			
 			}
 		}
 		
 	}
+	
 
 	
 
 mysqli_close($objConnect);
 ?>
-		
+	<div class="pagebreak"> </div>
+
 	<script>
 		window.onload = function () {
 			window.print();
