@@ -129,27 +129,6 @@ mysqli_set_charset($connect,'utf8');
 
 		}
 
-		body,
-		h1,
-		h2,
-		h3,
-		ol,
-		ul,
-		div {
-			width: auto;
-			border: 0;
-			margin: 0 5%;
-			padding: 0;
-			float: none;
-			position: static;
-			overflow: visible;
-		}
-
-		@media print {
-			div {
-				page-break-inside: avoid;
-			}
-		}
 
 	</style>
 

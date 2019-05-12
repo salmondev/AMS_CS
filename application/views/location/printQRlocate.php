@@ -7,27 +7,27 @@
 		/*
 		.qrtext {
 			width: 400px;
-			height: 150px;
+			height: 225px;
 			font-size: 10px;
 			margin: 5px;
 		}
 
 		.qrpic {
-			width: 150px;
-			height: 150px;
+			width: 225px;
+			height: 225px;
 		}*/
 
 		.grid-container {
 			display: grid;
-			grid-template-columns: 150px 400px;
-			grid-template-rows: 150px;
+			grid-template-columns: 225px 400px;
+			grid-template-rows: 225px;
 			grid-template-areas: "qrpic qrtext";
 		}
 
 		.qrpic {
 			grid-area: qrpic;
-			width: 150px;
-			height: 150px;
+			width: 225px;
+			height: 225px;
 			/*border-style: solid;
 			border-width: medium;*/
 		}
@@ -107,8 +107,8 @@ mysqli_set_charset($objConnect,'utf8');
 	{
 		if($_POST["chkDel"][$i] != "")
 		{
-			$strSQL = "SELECT * FROM ASSET ";
-			$strSQL .="WHERE BARCODE = '".$_POST["chkDel"][$i]."' ";
+			$strSQL = "SELECT * FROM LOCATION ";
+			$strSQL .="WHERE LOCATION_BARCODE = '".$_POST["chkDel"][$i]."' ";
 			$objQuery = mysqli_query($objConnect,$strSQL);
 			
             
@@ -116,7 +116,7 @@ mysqli_set_charset($objConnect,'utf8');
 				foreach($objQuery as $row){
 			//echo '<img src="http://amsapp.net/images/'.$row['BARCODE'].'.png"/>';
             
-			echo '<div class="grid-container"><div class="qrpic"><img src="'.base_url('images/qr_'.$row['BARCODE']).'.png" style="width: 150px;height: 150px;"></div><div class="qrtext"></br></br><b>รหัสครุภัณฑ์: </b>'.$row['BARCODE'].'</br><b>วันที่นำเข้า: </b>'.$row['RECEIVEDATE'].'</div></div></br>';
+			echo '<img src="'.base_url('images/qrlocate_'.$row['LOCATION_ID']).'.png" style="width: 200px;height: 200px;"></br><b>รหัสห้อง: </br></b>'.$row['LOCATION_BARCODE'].'</br><b>ห้อง: </b>'.$row['LOCATION_ROOM_ID'].'</br></br>';
 			
 			}
 		}

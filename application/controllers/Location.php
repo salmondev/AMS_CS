@@ -37,6 +37,13 @@ class Location extends CI_Controller{
 		$this->load->view('genqrlocate',$data);
 	}
 
+	function index4()
+    {
+        $data['location'] = $this->Location_model->get_all_location();
+        
+		$this->load->view('location/printQRlocate',$data);
+	}
+
     /*
      * Adding a new location
      */
