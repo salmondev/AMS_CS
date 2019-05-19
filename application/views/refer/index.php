@@ -77,9 +77,9 @@ $departmentidindex = array_search("DEPARTMENTID", $fieldnames);
 						<table id="example2" class="table table-striped table-bordered">
 							<thead>
 								<tr>
-									<th>REFERID</th>
-									<th>DEPARTMENTID</th>
-									<th>REFERNAME</th>
+									<th><p>REFERID</p> (รหัสบุคลากร)</th>
+									<th><p>DEPARTMENTID</p> (รหัสหน่วยงาน)</th>
+									<th><p>REFERNAME</p> (ชื่อบุคลากร)</th>
 									<th>Actions</th>
 								</tr>
 							</thead>

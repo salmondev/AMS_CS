@@ -30,6 +30,86 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
+	<style>
+		button {
+			z-index: 1;
+			position: relative;
+			font-size: inherit;
+			font-family: inherit;
+			color: white;
+			padding: 0.5em 1em;
+			outline: none;
+			border: none;
+			background-color: hsl(246, 41%, 21%);
+			overflow: hidden;
+			transition: color 0.4s ease-in-out;
+		}
+
+		button::before {
+			content: '';
+			z-index: -1;
+			position: absolute;
+			bottom: 100%;
+			right: 100%;
+			width: 1em;
+			height: 1em;
+			border-radius: 50%;
+			background-color: #008d4c;
+			transform-origin: center;
+			transform: translate(50%, 50%) scale(0);
+			transition: transform 0.45s ease-in-out;
+		}
+
+		button:hover {
+			cursor: pointer;
+			color: #161616;
+		}
+
+		button:hover::before {
+			transform: translate(50%, 50%) scale(15);
+		}
+
+		div {
+			position: relative;
+		}
+
+		input {
+			width: 6.5em;
+			color: white;
+			font-size: inherit;
+			font-family: inherit;
+			background-color: transparent;
+			border: 1px solid transparent;
+			border-bottom-color: hsla(185, 100%, 62%, 0.2);
+		}
+
+		input:focus {
+			outline: none;
+		}
+
+		input::placeholder {
+			color: hsla(0, 0%, 100%, 0.6);
+		}
+
+		span.a {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 1px;
+			background-color: #3cefff;
+			transform-origin: bottom right;
+			transform: scaleX(0);
+			transition: transform 0.5s ease;
+		}
+
+		input:focus~span.a {
+			transform-origin: bottom left;
+			transform: scaleX(1);
+		}
+
+	</style>
+
 	<script>
 		function lettersOnly(input) {
 			var regex = /[^a-z]/gi;
@@ -38,11 +118,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	</script>
 
+
+
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
 
 	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+	<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+	<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
 </head>
 
 <body class="hold-transition login-page" style="font-family: 'Sarabun', sans-serif;">
@@ -91,6 +177,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										<div class="form-group has-feedback">
 											<input type="text" name="emp_username" id="owner_fname" class="form-control"
 												placeholder="Username" onkeyup="lettersOnly(this)">
+											<span class="a"></span>
 											<span class="glyphicon glyphicon-user form-control-feedback"></span>
 										</div>
 										<p id="LoginForm_username_em_" style="display:none" class="help-block"></p>
@@ -106,6 +193,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<div class="form-group has-feedback">
 									<input type="password" name="emp_password" id="owner_uid" class="form-control" required minlength="4"
 										placeholder="Password">
+									<span class="a"></span>
 									<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 								</div>
 								<p id="LoginForm_password_em_" style="display:none" class="help-block"></p>
@@ -124,9 +212,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="col-xs-4 col-xs-6 ">
 
 					</div>
-
 					<div class="col-xs-4 col-xs-6 ">
 
+					</div>
+
+					<div class="col-xs-4 col-xs-6 ">
+					<a class="btn btn-danger " title="back">
+							<i class="btn-label glyphicon glyphicon-home"></i>&nbsp;หน้าหลัก
+	</a>
 					</div>
 					<!--
 					<div class="col-xs-8 col-xs-6 ">

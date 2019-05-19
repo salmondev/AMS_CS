@@ -66,7 +66,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 	<style>
-		
+
 
 	</style>
 
@@ -133,7 +133,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				<!-- mini logo for sidebar mini 50x50 pixels -->
 				<span class="logo-mini"><b></b>AMS</span>
 				<!-- logo for regular state and mobile devices -->
-				<span class="logo-lg"><b>ADMIN</b></span>
+				<span class="logo-lg"><b>HOME</b></span>
 			</a>
 			<!-- Header Navbar -->
 			<nav class="navbar navbar-static-top" role="navigation">
@@ -227,7 +227,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 							<span>ค้นหาครุภัณฑ์</span></a></li>
 					<!--<li ><a href="<?php echo site_url('asset/index4/test_export') ?>"><i class="fa fa-download"></i> <span>TEST EXPORT</span></a></li>
         <li ><a href="<?php echo site_url('asset/index5/test_export1') ?>"><i class="fa fa-download"></i> <span>TEST EXPORT 1</span></a></li>-->
-					<li><a href="<?php echo site_url('asset/index7/exporter') ?>" target="_blank"><i class="fa fa-download"></i>
+					<li><a href="<?php echo site_url('dashboard/index4/exportmode') ?>" target="_blank"><i class="fa fa-download"></i>
 							<span>ส่งออกไฟล์</span></a></li>
 
 
@@ -267,6 +267,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 									</span></a></li>
 							<li><a href="<?php echo site_url('department/index/index');?>"><i class="fa fa-vcard"></i>
 									<span>Department </span></a></li>
+							<li><a href="<?php echo site_url('history_asset_recent/index/index');?>"><i class="fa fa-refresh"></i>
+									<span>History Recent </span></a></li>
 
 					</li>
 				</ul>
@@ -434,6 +436,7 @@ user experience. -->
 	<script src="<?php echo base_url('bower_components/datatables.net/js/jquery.dataTables.min.js');?>"></script>
 	<script src="<?php echo base_url('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js');?>"></script>
 
+  
 
 	<script>
 		//Date picker
@@ -453,8 +456,16 @@ user experience. -->
 				'searching': true,
 				'ordering': true,
 				'info': true,
-				'autoWidth': true
-			})
+				'autoWidth': true,
+				"buttons": [
+                    'colvis',
+                    'copyHtml5',
+                    'csvHtml5',
+                    'excelHtml5',
+                    'pdfHtml5',
+                    'print'
+                ]
+			});
 		});
 
 		/** add active class and stay opened when selected */

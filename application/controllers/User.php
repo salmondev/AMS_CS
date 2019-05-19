@@ -20,6 +20,14 @@ class User extends CI_Controller{
         
         $data['_view'] = 'user/index';
         $this->load->view('test',$data);
+	}
+	
+	function index1()
+    {
+        $data['user'] = $this->User_model->get_all_user();
+        
+        $data['_view'] = 'user/register';
+        $this->load->view('test',$data);
     }
 
     /*
@@ -29,8 +37,20 @@ class User extends CI_Controller{
     {   
         if(isset($_POST) && count($_POST) > 0)     
         {   
+			$refer = $this->input->post('REFERID');
+			$sql = "SELECT REFERID FROM REFER WHERE REFERID='$refer'";
+			$query = $this->db->query($sql);
+			if($query->num_rows() > 0)
+			{
+				$referok = $refer;
+			}else{
+				echo "<script>
+			  alert('ไม่มีรหัสบุคลากรนี้ในระบบ');
+			  window.location.href='http://amsapp.net/user/index1/register';
+			  </script>";
+			}
             $params = array(
-				'REFERID' => $this->input->post('REFERID'),
+				'REFERID' => $referok,
 				'USER_USERNAME' => $this->input->post('USER_USERNAME'),
 				'USER_PASSWORD' => hash('sha512',$this->input->post('USER_PASSWORD')),
 				'AUTH' => $this->input->post('AUTH'),

@@ -30,15 +30,7 @@ $unitnameindex = array_search("UNITNAME", $fieldnames);
 		for ($i=0; $i < $count ; $i++) { 
 			if (in_array($i,$wantedColumns))
 			{
-				//echo $content[$i]."\t";
-			
-			   /*
-				$item1 = mysqli_real_escape_string($connect, $data[0]);
-				$item2 = mysqli_real_escape_string($connect, $data[1]);
-				$item3 = mysqli_real_escape_string($connect, $data[2]);
-				$item4 = mysqli_real_escape_string($connect, $data[3]);
-				$item5 = mysqli_real_escape_string($connect, $data[4]);
-				$item6 = mysqli_real_escape_string($connect, $data[5]);*/
+				
 
 				$item1 = mysqli_real_escape_string($connect, $data[$assetidindex]);
 				$item2 = mysqli_real_escape_string($connect, $data[$barcodeindex]);
@@ -51,16 +43,9 @@ $unitnameindex = array_search("UNITNAME", $fieldnames);
 				$myDate =  date("y/m/d",strtotime(str_replace('/','-',$item5)));
 				
                 $query = "INSERT into ASSET (ASSETID,BARCODE,REFERIDITEM,ASSETNAME,RECEIVEDATE,SPEC,UNITNAME) values('$item1','$item2','$item3','$item4','$myDate','$item6','$item7')";
-								
-								$query2 = "UPDATE into ASSET (ASSETID,BARCODE,REFERIDITEM,ASSETNAME,RECEIVEDATE,SPEC,UNITNAME) values('$item1','$item2','$item3','$item4','$myDate','$item6','$item7')";
-				
-				
 				mysqli_query($connect, $query);
-
-				mysqli_query($connect, $query2);
 			}
 		}
-				
    }
    fclose($handle);
    echo "<script>
@@ -140,14 +125,14 @@ $unitnameindex = array_search("UNITNAME", $fieldnames);
 						<table id="example2" class="table table-striped table-bordered">
 							<thead>
 								<tr>
-									<th>ASSETID</th>
-									<th>BARCODE</th>
-									<th>REFERIDITEM</th>
-									<th>ASSETNAME</th>
-									<th>RECEIVEDATE</th>
-									<th>SPEC</th>
-									<th>UNITNAME</th>
-									<th>Options</th>
+									<th><p>ASSETID</p> (รหัส)</th>
+									<th><p>BARCODE</p> (รหัสครุภัณฑ์)</th>
+									<th><p>REFERIDITEM</p> (รหัสผู้รับผิดชอบ)</th>
+									<th><p>ASSETNAME</p> (ชื่อครุภัณฑ์)</th>
+									<th><p>RECEIVEDATE</p> (วันที่นำเข้า)</th>
+									<th><p>SPEC</p> (รายละเอียด)</th>
+									<th><p>UNITNAME</p> (หน่วย)</th>
+									<th>Action</th>
 								</tr>
 							</thead>
 							<?php foreach($asset as $A){ ?>

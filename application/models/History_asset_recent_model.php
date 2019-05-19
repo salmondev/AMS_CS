@@ -16,7 +16,7 @@ class History_asset_recent_model extends CI_Model
      */
     function get_history_asset_recent($HISTORY_ASSETID)
     {
-        return $this->db->get_where('HISTORY_ASSET_RECENT',array('HISTORY_ASSETID'=>$HISTORY_ASSETID))->row_array();
+        return $this->db->get_where('HISTORY_ASSET_RECENT1',array('HISTORY_ASSETID'=>$HISTORY_ASSETID))->row_array();
     }
         
     /*
@@ -25,7 +25,7 @@ class History_asset_recent_model extends CI_Model
     function get_all_history_asset_recent()
     {
         $this->db->order_by('HISTORY_ASSETID', 'desc');
-        return $this->db->get('HISTORY_ASSET_RECENT')->result_array();
+        return $this->db->get('HISTORY_ASSET_RECENT1')->result_array();
     }
         
     /*
@@ -33,7 +33,7 @@ class History_asset_recent_model extends CI_Model
      */
     function add_history_asset_recent($params)
     {
-        $this->db->insert('HISTORY_ASSET_RECENT',$params);
+        $this->db->insert('HISTORY_ASSET_RECENT1',$params);
         return $this->db->insert_id();
     }
     
@@ -43,7 +43,7 @@ class History_asset_recent_model extends CI_Model
     function update_history_asset_recent($HISTORY_ASSETID,$params)
     {
         $this->db->where('HISTORY_ASSETID',$HISTORY_ASSETID);
-        return $this->db->update('HISTORY_ASSET_RECENT',$params);
+        return $this->db->update('HISTORY_ASSET_RECENT1',$params);
     }
     
     /*
@@ -51,6 +51,6 @@ class History_asset_recent_model extends CI_Model
      */
     function delete_history_asset_recent($HISTORY_ASSETID)
     {
-        return $this->db->delete('HISTORY_ASSET_RECENT',array('HISTORY_ASSETID'=>$HISTORY_ASSETID));
+        return $this->db->delete('HISTORY_ASSET_RECENT1',array('HISTORY_ASSETID'=>$HISTORY_ASSETID));
     }
 }

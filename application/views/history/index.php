@@ -16,25 +16,25 @@
 						<table id="example2" class="table table-striped table-bordered">
 							<thead>
 								<tr>
-									<th>HISTORY RID</th>
-									<th>HISTORY ASSETID</th>
-									<th>HISTORY ASSET NAME</th>
-									<th>HISTORY RECEIVEDATE</th>
-									<th>HISTORY SPEC</th>
-									<th>HISTORY UNITNAME</th>
-									<th>HISTORY STATUS NAME</th>
-									<th>HISTORY REFERID</th>
-									<th>HISTORY REFERNAME</th>
-									<th>HISTORY BUILDING ID</th>
-									<th>HISTORY BUILDING NAME</th>
-									<th>HISTORY FLOOR ID</th>
-									<th>HISTORY ROOM ID</th>
-									<th>HISTORY DAY</th>
-									<th>HISTORY MONTH</th>
-									<th>HISTORY YEAR</th>
-									<th>HISTORY HOUR</th>
-									<th>HISTORY MINUTE</th>
-									<th>HISTORY USERNAME</th>
+									<th><p>HISTORY RID</p> (รหัสประวัติ)</th>
+									<th><p>HISTORY ASSETID</p> (รหัสครุภัณฑ์)</th>
+									<th><p>HISTORY ASSET NAME</p> (ชื่อครุภัณฑ์)</th>
+									<th><p>HISTORY RECEIVEDATE</p> (วันที่นำเข้า)</th>
+									<th><p>HISTORY SPEC</p> (รายละเอียด)</th>
+									<th><p>HISTORY UNITNAME</p> (หน่วย)</th>
+									<th><p>HISTORY STATUS NAME</p> (สถานะ)</th>
+									<th><p>HISTORY REFERID</p> (ผู้รับผิดชอบ)</th>
+									<th><p>HISTORY REFERNAME</p> (ชื่อผู้รับผิดชอบ)</th>
+									<th><p>HISTORY BUILDING ID</p> (รหัสอาคาร)</th>
+									<th><p>HISTORY BUILDING NAME</p> (ชื่ออาคาร)</th>
+									<th><p>HISTORY FLOOR ID</p> (รหัสชั้น)</th>
+									<th><p>HISTORY ROOM ID</p> (รหัสห้อง)</th>
+									<th><p>HISTORY DAY</p> (วัน)</th>
+									<th><p>HISTORY MONTH</p> (เดือน)</th>
+									<th><p>HISTORY YEAR</p> (ปี)</th>
+									<th><p>HISTORY HOUR</p> (ชั่วโมง)</th>
+									<th><p>HISTORY MINUTE</p> (นาที)</th>
+									<th><p>HISTORY USERNAME</p> (ชื่อผู้ตรวจสอบ)</th>
 									<th>Actions</th>
 								</tr>
 							</thead>

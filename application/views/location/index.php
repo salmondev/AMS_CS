@@ -13,13 +13,13 @@
 						<table id="example2" class="table table-striped table-bordered">
 							<thead>
 								<tr>
-									<th>LOCATION ID</th>
-									<th>LOCATION BARCODE</th>
-									<th>DEPARTMENTID</th>
-									<th>LOCATION BUILDING ID</th>
-									<th>LOCATION BUILDING NAME</th>
-									<th>LOCATION FLOOR ID</th>
-									<th>LOCATION ROOM ID</th>
+									<th><p>LOCATION ID</p>(รหัสสถานที่)</th>
+									<th><p>LOCATION BARCODE</p>  (รหัสบาร์โค้ดสถานที่)</th>
+									<th><p>DEPARTMENTID</p> (รหัสหน่วยงาน)</th>
+									<th><p>LOCATION BUILDING ID</p> (รหัสอาคาร)</th>
+									<th><p>LOCATION BUILDING NAME</p> (ชื่ออาคาร)</th>
+									<th><p>LOCATION FLOOR ID</p> (รหัสชั้น)</th>
+									<th><p>LOCATION ROOM ID</p> (รหัสห้อง)</th>
 									<th>Actions</th>
 								</tr>
 							</thead>

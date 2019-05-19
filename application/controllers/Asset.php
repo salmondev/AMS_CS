@@ -83,6 +83,14 @@ class Asset extends CI_Controller{
 		$this->load->view('genQR',$data);
 	}
 
+	function index9()
+    {
+        $data['asset'] = $this->Asset_model->get_all_asset();
+        //$data['_view'] = 'genQR';
+		//$this->load->view('test',$data);
+		$this->load->view('printQR',$data);
+	}
+
     /*
      * Adding a new asset
      */
