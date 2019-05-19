@@ -25,8 +25,9 @@ td:last-child {text-align:center;}
 </head>
 
 <body>
-
-	<div class="alert alert-danger" role="alert"><strong>Warning! </strong>  AMS export function still BETA version. </div>
+	<h1>ส่งออกข้อมูลครุภัณฑ์ในระบบ</h1>
+<!--
+	<div class="alert alert-danger" role="alert"><strong>Warning! </strong>  AMS export function still BETA version. </div>-->
 	<!--<a class="btn btn-success" style="float:left;margin-right:20px;" href="https://codepen.io/collection/XKgNLN/" target="_blank">Other
 		examples on Codepen</a>-->
 		<!--<a class="btn btn-success" style="float:left;margin-right:20px;" href="#" target="_blank">IMPORT CSV</a>

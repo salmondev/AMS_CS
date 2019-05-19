@@ -14,6 +14,7 @@ mysqli_set_charset($connect,'utf8');
 	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
 	<link rel='stylesheet' href='https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css'>
 	<link rel='stylesheet' href='https://cdn.datatables.net/buttons/1.2.2/css/buttons.bootstrap.min.css'>
+	<link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
 
 	<style>
 		body {
@@ -35,8 +36,10 @@ mysqli_set_charset($connect,'utf8');
 
 <body style="font-family: 'Sarabun', sans-serif;">
 
-	<div class="alert alert-danger" role="alert"><strong>Warning! </strong> AMS export function still BETA version.
-	</div>
+	<h1>ข้อมูลการตรวจสอบครุภัณฑ์ล่าสุด</h1>
+	</br>
+	</br>
+	<a href="<?php echo site_url('history_asset_recent/index2/imgAsset') ?>" target="_blank" class="btn btn-info"><i class="fa fa-picture-o"></i>รูปภาพการตรวจสอบล่าสุด</a>
 	</br>
 	</br>
 

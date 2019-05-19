@@ -21,5 +21,23 @@ class Dashboard extends CI_Controller{
     {
         $data['_view'] = 'dashboard_user';
         $this->load->view('usermode',$data);
+	}
+	
+	function index2()
+    {
+        $data['_view'] = 'nfcpass';
+        $this->load->view('test',$data);
+	}
+	
+	function index3()
+    {
+        $data['_view'] = 'qrgenmode';
+        $this->load->view('test',$data);
+	}
+	
+	function index4()
+    {
+        $data['_view'] = 'exportmode';
+        $this->load->view('test',$data);
     }
 }

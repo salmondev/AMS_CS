@@ -20,7 +20,7 @@
     $connect = mysqli_connect("localhost", "amsappne_nfcdb", "AMSnfcapp1", "amsappne_nfc");
     mysqli_set_charset($connect,'utf8');
 	
-	$sql = "SELECT * FROM HISTORY_ASSET_RECENT";
+	$sql = "SELECT * FROM HISTORY_ASSET_RECENT1";
 	
 	$res = mysqli_query($connect,$sql);
 	
@@ -29,13 +29,13 @@
 	
 	//$url = 'http://amsapp.net/images/reduceimg/'.$row['HISTORY_ASSETID'];
 	while($row = mysqli_fetch_array($res)){
-		//array_push($result,array('url'=>$url.$row['HISTORY_PHOTO']));
+		//array_push($result,array('url'=>$url.$row['HISTORY_IMAGE_PATH']));
 		$url = 'http://amsapp.net/images/reduceimg/'.$row['HISTORY_ASSETID'].'.jpg';
-		echo "path: ".$row['HISTORY_PHOTO'];
+		echo "path: ".$row['HISTORY_IMAGE_PATH'];
 		echo "</br>";
-		echo '<img src="'.$row['HISTORY_PHOTO'].'" style="width:20%;height:20%"/>';
-		$image1 = '<img src="'.$row['HISTORY_PHOTO'].'" style="width:20%;height:20%"/>';
-		$filename = compress_image($row['HISTORY_PHOTO'], $url, 10);
+		echo '<img src="'.$row['HISTORY_IMAGE_PATH'].'" style="width:20%;height:20%"/>';
+		$image1 = '<img src="'.$row['HISTORY_IMAGE_PATH'].'" style="width:20%;height:20%"/>';
+		$filename = compress_image($row['HISTORY_IMAGE_PATH'], $url, 10);
 		$imgfile = imagejpeg($image1, $url, 10);
 		echo '<img src="'.$filename.'" style="width:20%;height:20%"/>';
 		echo "</br>";

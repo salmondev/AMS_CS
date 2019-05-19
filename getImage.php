@@ -25,13 +25,13 @@ function getImage($image){
     imagedestroy($im);
 }
 
-$sql = "SELECT HISTORY_PHOTO FROM HISTORY_ASSET_RECENT";
+$sql = "SELECT HISTORY_IMAGE_PATH FROM HISTORY_IMAGE";
 
 $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect...');
 	
 		$res = mysqli_query($con,$sql);
 	/*while($row = mysqli_fetch_array($res)){
-		$url = $row['HISTORY_PHOTO'];
+		$url = $row['HISTORY_IMAGE_PATH'];
 		getImage($url);
 	}*/
 	
@@ -39,7 +39,7 @@ $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect...');
 
 	if(mysql_num_rows($res)){
 	while($row=mysql_fetch_assoc($res)){
-	$json['HISTORY_ASSET_RECENT'][]=$row;
+	$json['HISTORY_ASSET_RECENT1'][]=$row;
 	}
 	}
 	

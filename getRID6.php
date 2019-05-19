@@ -36,7 +36,7 @@
 
 	$HISTORY_NOTE = rawurldecode( $_POST['HISTORY_NOTE'] );
 
-	$FILES = json_decode($_POST['HISTORY_PHOTO']);
+	$FILES = json_decode($_POST['HISTORY_IMAGE_PATH']);
 	
 	//$sql = "INSERT INTO HISTORY_ASSET (HISTORY_ASSETID) VALUES ('{$HISTORY_ASSET_ID}')"; 
 	//mysqli_query($connect,$sql);
@@ -73,11 +73,11 @@ VALUES ('{$HISTORY_ASSET_ID}','{$HISTORY_ASSET_NAME}',{$HISTORY_REFERID},
 	    $txt = $IMG_DATA;
 	    fwrite($myfile, $txt);
 	    fclose($myfile);
-	    $HISTORY_PHOTO = $path.$filename;
+	    $HISTORY_IMAGE_PATH = $path.$filename;
         //move_uploaded_file($filename,$path);
 		rename($filename,"images/".$filename);
 		
-		$sql = "INSERT INTO HISTORY_IMAGE (HISTORY_IMAGE_HISTORY_RID,HISTORY_IMAGE_PATH) VALUES ($HISTORY_RID,'{$HISTORY_PHOTO}')"; 
+		$sql = "INSERT INTO HISTORY_IMAGE (HISTORY_IMAGE_HISTORY_RID,HISTORY_IMAGE_PATH) VALUES ($HISTORY_RID,'{$HISTORY_IMAGE_PATH}')"; 
 		mysqli_query($connect,$sql);
 		}
 	}

@@ -212,9 +212,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="col-xs-4 col-xs-6 ">
 
 					</div>
-
 					<div class="col-xs-4 col-xs-6 ">
 
+					</div>
+
+					<div class="col-xs-4 col-xs-6 ">
+					<a class="btn btn-danger " title="back">
+							<i class="btn-label glyphicon glyphicon-home"></i>&nbsp;หน้าหลัก
+	</a>
 					</div>
 					<!--
 					<div class="col-xs-8 col-xs-6 ">

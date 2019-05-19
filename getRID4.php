@@ -40,7 +40,7 @@ mysqli_set_charset($connect,'utf8');
 	//$_POST['HISTORY_ASSET_ID'];
 	//$FILES = array();
 	$HISTORY_ASSET_ID = rawurldecode($_POST['HISTORY_ASSET_ID']);
-	$FILES = json_decode($_POST['HISTORY_PHOTO']);
+	$FILES = json_decode($_POST['HISTORY_IMAGE_PATH']);
 	
 
 	while($row = mysqli_fetch_array($result)){
@@ -64,11 +64,11 @@ mysqli_set_charset($connect,'utf8');
 	    $txt = $IMG_DATA;
 	    fwrite($myfile, $txt);
 	    fclose($myfile);
-	    $HISTORY_PHOTO = $path.$filename;
+	    $HISTORY_IMAGE_PATH = $path.$filename;
         //move_uploaded_file($filename,$path);
 		rename($filename,"images/".$filename);
 		
-		$sql = "INSERT INTO HISTORY_IMAGE (HISTORY_IMAGE_HISTORY_RID,HISTORY_IMAGE_PATH) VALUES ($HISTORY_RID,'{$HISTORY_PHOTO}')"; 
+		$sql = "INSERT INTO HISTORY_IMAGE (HISTORY_IMAGE_HISTORY_RID,HISTORY_IMAGE_PATH) VALUES ($HISTORY_RID,'{$HISTORY_IMAGE_PATH}')"; 
 		mysqli_query($connect,$sql);
 		}
 	}

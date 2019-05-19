@@ -19,15 +19,15 @@
 
 		.grid-container {
 			display: grid;
-			grid-template-columns: 150px 400px;
-			grid-template-rows: 150px;
+			grid-template-columns: 200px 600px;
+			grid-template-rows: 200px;
 			grid-template-areas: "qrpic qrtext";
 		}
 
 		.qrpic {
 			grid-area: qrpic;
-			width: 150px;
-			height: 150px;
+			width: 200px;
+			height: 200px;
 			/*border-style: solid;
 			border-width: medium;*/
 		}
@@ -116,7 +116,7 @@ mysqli_set_charset($objConnect,'utf8');
 				foreach($objQuery as $row){
 			//echo '<img src="http://amsapp.net/images/'.$row['BARCODE'].'.png"/>';
             
-			echo '<div class="grid-container"><div class="qrpic"><img src="'.base_url('images/qr_'.$row['BARCODE']).'.png" style="width: 150px;height: 150px;"></div><div class="qrtext"></br></br><b>รหัสครุภัณฑ์: </b>'.$row['BARCODE'].'</br><b>วันที่นำเข้า: </b>'.$row['RECEIVEDATE'].'</div></div></br>';
+			echo '<div class="grid-container"><div class="qrpic"><img src="'.base_url('images/qr_'.$row['BARCODE']).'.png" style="width: 200px;height: 200px;"></div><div class="qrtext" style="font-size:24px"></br><b>รหัสครุภัณฑ์: </b>'.$row['BARCODE'].'</br><b>วันที่นำเข้า: </b>'.$row['RECEIVEDATE'].'</div></div></br>';
 			
 			}
 		}

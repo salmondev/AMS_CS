@@ -62,7 +62,7 @@ mysqli_set_charset($connect,'utf8');
 			</thead>
 			<?php foreach($history_asset_recent as $H){ ?>
 			<tr>
-			    <td><img src="<?php echo $H['HISTORY_PHOTO']; ?>" style="width:20%;height:20%;"></td>
+			    <td><img src="<?php echo $H['HISTORY_IMAGE_PATH']; ?>" style="width:20%;height:20%;"></td>
 				<td><?php echo $H['HISTORY_ASSETID']; ?></td>
 				<td><?php echo $H['HISTORY_ASSET_NAME']; ?></td>
 				<td><?php echo $H['HISTORY_RECEIVEDATE']; ?></td>

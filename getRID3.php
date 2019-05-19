@@ -40,7 +40,7 @@ mysqli_set_charset($connect,'utf8');
 	//$_POST['HISTORY_ASSET_ID'];
 	//$FILES = array();
 	$HISTORY_ASSET_ID = rawurldecode($_POST['HISTORY_ASSET_ID']);
-	$FILES = json_decode($_POST['HISTORY_PHOTO']);
+	$FILES = json_decode($_POST['HISTORY_IMAGE_PATH']);
 	
 
 	while($row = mysqli_fetch_array($result)){

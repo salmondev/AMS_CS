@@ -186,9 +186,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
+
 </head>
 
-<body class="content">
+<body class="content" >
 	<div style="margin: 2%;">
 		<div id="block_container">
 			<!--<div id="bloc1"><i class="fas fa-code" style="font-size: 4em;"></i></div> -->
@@ -209,11 +212,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<blockquote class="blockquote-v1 blockquote-v1--left">
 
 
-			<p><i class="fas fa-cubes"></i> ระบบจัดการพัสดุครุภัณฑ์ด้วย QR Code และ NFC
+			<p style="font-family: 'Sarabun', sans-serif;"><i class="fas fa-cubes"></i> ระบบจัดการพัสดุครุภัณฑ์ด้วย QR Code และ NFC
 				<!--<i
 					class="material-icons vertical-align-middle padding-bottom-3" style="margin-right:5px;">favorite</i>-->
 			</p>
-			<footer class="blockquote-footer">
+			<footer class="blockquote-footer" style="font-family: 'Sarabun', sans-serif;">
 				<!--<a href="http://dev.amsapp.net/">AMS DEV TEAM</a>-->AMS DEV TEAM</footer>
 		</blockquote>
 		<!-- End left Bordered -->
@@ -226,7 +229,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<!-- Block -->
 		<div class="demo-btn-space mb-7" style="margin: 2%;">
 			<h3 class="h6 mb-3"></h3>
-			<div class="row">
+			<div class="row" style="font-family: 'Sarabun', sans-serif;">
 				<div class="col-lg-6 mb-2 mb-lg-0">
 					<a href="<?php echo base_url('login');?>" class="btn btn-block btn-lg btn-outline-primary login">
 						<div>
@@ -238,7 +241,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<!--<button type="button" class="btn btn-block btn-lg btn-dark">SYSTEM</button>-->
 				</div>
 				<div class="col-lg-6 mb-2 mb-lg-0">
-					<a href="http://dev.amsapp.net/EasyQR_Build-8-5-2562.apk"
+					<a href="http://dev.amsapp.net/EasyQR.apk"
 						class="btn btn-block btn-lg btn-outline-success apk"><i class="fab fa-android"
 							style="margin-right:5px;"></i>Download APK for Android</a>
 					<!--<button type="button" class="btn btn-block btn-lg btn-dark">SYSTEM</button>-->
@@ -268,7 +271,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<!-- ************************************************************************ -->
 		<br>
 		<div class="footer">
-			<h5 class="bg-primary text-light" align="center">Copyright © 2019 CS KMUTNB</h5>
+			<h5 class="bg-primary text-light" align="center" style="font-family: 'Sarabun', sans-serif;">Copyright © 2019 CS KMUTNB</h5>
 		</div>
 		<!-- JAVASCRIPTS (Load javascripts at bottom, this will reduce page load time) -->
 		<!-- Global Vendor -->

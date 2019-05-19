@@ -2,7 +2,7 @@
 $connect = mysqli_connect("localhost", "amsappne_nfcdb", "AMSnfcapp1", "amsappne_nfc");
 mysqli_set_charset($connect,'utf8');
 
-$query = "SELECT * FROM HISTORY_ASSET_RECENT ORDER BY HISTORY_YEAR ASC";
+$query = "SELECT * FROM HISTORY_ASSET_RECENT1 ORDER BY HISTORY_YEAR ASC";
 
 ?>
 

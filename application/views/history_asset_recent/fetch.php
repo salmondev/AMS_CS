@@ -23,7 +23,7 @@ $column = array('HISTORY_ASSETID',
 'HISTORY_NOTE');
 
 $query = "
-SELECT * FROM HISTORY_ASSET_RECENT 
+SELECT * FROM HISTORY_ASSET_RECENT1 
 ";
 
 //////////
@@ -91,7 +91,7 @@ foreach($result as $row)
 
 function count_all_data($connect)
 {
- $query = "SELECT * FROM HISTORY_ASSET_RECENT";
+ $query = "SELECT * FROM HISTORY_ASSET_RECENT1";
  $result = mysqli_query($connect, $query);
  return mysqli_num_rows($result);
 }

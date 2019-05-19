@@ -3,45 +3,7 @@ $connect = mysqli_connect("localhost", "amsappne_nfcdb", "AMSnfcapp1", "amsappne
 mysqli_set_charset($connect,'utf8');
 ?>
 
-<?php
-	$name = ''; $type = ''; $size = ''; $error = '';
-	function compress_image($source_url, $destination_url, $quality) {
 
-		$info = getimagesize($source_url);
-
-    		if ($info['mime'] == 'image/jpeg')
-        			$image = imagecreatefromjpeg($source_url);
-
-    		elseif ($info['mime'] == 'image/gif')
-        			$image = imagecreatefromgif($source_url);
-
-   		elseif ($info['mime'] == 'image/png')
-        			$image = imagecreatefrompng($source_url);
-
-    		imagejpeg($image, $destination_url, $quality);
-		return $destination_url;
-	}
-
-	if ($_POST) {
-
-    		if ($_FILES["file"]["error"] > 0) {
-        			$error = $_FILES["file"]["error"];
-    		} 
-    		else if (($_FILES["file"]["type"] == "image/gif") || 
-			($_FILES["file"]["type"] == "image/jpeg") || 
-			($_FILES["file"]["type"] == "image/png") || 
-			($_FILES["file"]["type"] == "image/pjpeg")) {
-
-        			$url = 'images/';
-
-        			$filename = compress_image($_FILES["file"]["tmp_name"], $url, 10);
-        			$buffer = file_get_contents($url);
-
-        			/* Send our file... */
-        			echo $buffer;
-    		}
-	}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -106,7 +68,7 @@ mysqli_set_charset($connect,'utf8');
 
 <body style="font-family: 'Sarabun', sans-serif;">
 	</br>
-	<h1>การตรวจสอบล่าสุด</h1>
+	<h1>รูปภาพการตรวจสอบล่าสุด</h1>
 	</br>
 	<div class="table-responsive">
 		<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -131,15 +93,21 @@ mysqli_set_charset($connect,'utf8');
 					<th>ชื่อผู้ตรวจสอบ</th>
 				</tr>
 			</thead>
-			<?php foreach($history_asset_recent as $H){ ?>
+			<?php foreach($history_asset_recent as $H){ 
+				$IMG = $H['HISTORY_RID'];
+                //$IMG = "47";
+				$sql = "SELECT HISTORY_IMAGE_PATH FROM HISTORY_IMAGE WHERE HISTORY_IMAGE_HISTORY_RID='$IMG'";
+				$result = mysqli_query($connect,$sql);
+				while($row = mysqli_fetch_array($result)){
+
+				?>
 			<tr>
 				<td>
-					<form action="" name="myform" id="myform" method="post" enctype="multipart/form-data">
-						<!--<img src="<?php echo $H['HISTORY_PHOTO']; ?>">-->
-						<a class="thumbnail" href="<?php echo $H['HISTORY_PHOTO']; ?>">
-							<img name="file" id="file" src="<?php echo $H['HISTORY_PHOTO']; ?>" width="50%" height="50%"
-								border="0"><span><img src="<?php echo $H['HISTORY_PHOTO']; ?>"></a>
-					</form>
+					<a class="thumbnail" href="<?php echo $row['HISTORY_IMAGE_PATH']; ?>">
+					<img name="file" id="file" src="<?php echo $row['HISTORY_IMAGE_PATH']; ?>" width="50%" height="50%"
+					border="0"><span><img src="<?php echo $row['HISTORY_IMAGE_PATH']; ?>"></a>
+					
+				
 				</td>
 				<td><?php echo $H['HISTORY_ASSETID']; ?></td>
 				<td><?php echo $H['HISTORY_ASSET_NAME']; ?></td>
@@ -158,7 +126,7 @@ mysqli_set_charset($connect,'utf8');
 				<td><?php echo $H['HISTORY_MINUTE']; ?></td>
 				<td><?php echo $H['HISTORY_USERNAME']; ?></td>
 			</tr>
-			<?php } ?>
+			<?php } }?>
 		</table>
 	</div>
 

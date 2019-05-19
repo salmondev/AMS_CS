@@ -66,15 +66,15 @@
  try{
  //saving the file 
  move_uploaded_file($_FILES['image']['tmp_name'],$file_path);
- $sql = "INSERT INTO `amsappne_nfc`.`HISTORY_ASSET_RECENT` (`HISTORY_PHOTO`) VALUES ('$file_url');";
- //$sql = "UPDATE HISTORY_ASSET_RECENT SET HISTORY_PHOTO='$file_path' WHERE HISTORY_ASSETID='$filename'";
+ $sql = "INSERT INTO `amsappne_nfc`.`HISTORY_ASSET_RECENT1` (`HISTORY_IMAGE_PATH`) VALUES ('$file_url');";
+ //$sql = "UPDATE HISTORY_ASSET_RECENT1 SET HISTORY_IMAGE_PATH='$file_path' WHERE HISTORY_ASSETID='$filename'";
  
  //adding the path and name to database 
  if(mysqli_query($con,$sql)){
  
  //filling response array with values 
  $response['error'] = false; 
- $response['HISTORY_PHOTO'] = $file_url; 
+ $response['HISTORY_IMAGE_PATH'] = $file_url; 
  }
  //if some error occurred 
  }catch(Exception $e){
@@ -98,7 +98,7 @@
  */
  function getFileName(){
  $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect...');
- $sql = "SELECT max(HISTORY_ASSETID) as HISTORY_ASSETID FROM HISTORY_ASSET_RECENT";
+ $sql = "SELECT max(HISTORY_ASSETID) as HISTORY_ASSETID FROM HISTORY_ASSET_RECENT1";
  $result = mysqli_fetch_array(mysqli_query($con,$sql));
  
  mysqli_close($con);

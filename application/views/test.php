@@ -227,7 +227,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 							<span>ค้นหาครุภัณฑ์</span></a></li>
 					<!--<li ><a href="<?php echo site_url('asset/index4/test_export') ?>"><i class="fa fa-download"></i> <span>TEST EXPORT</span></a></li>
         <li ><a href="<?php echo site_url('asset/index5/test_export1') ?>"><i class="fa fa-download"></i> <span>TEST EXPORT 1</span></a></li>-->
-					<li><a href="<?php echo site_url('asset/index7/exporter') ?>" target="_blank"><i class="fa fa-download"></i>
+					<li><a href="<?php echo site_url('dashboard/index4/exportmode') ?>" target="_blank"><i class="fa fa-download"></i>
 							<span>ส่งออกไฟล์</span></a></li>
 
 
