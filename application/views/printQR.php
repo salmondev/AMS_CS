@@ -20,14 +20,15 @@
 		.grid-container {
 			display: grid;
 			grid-template-columns: 200px 600px;
-			grid-template-rows: 200px;
+			/*grid-template-rows: 200px;*/
 			grid-template-areas: "qrpic qrtext";
 		}
 
 		.qrpic {
-			grid-area: qrpic;
-			width: 200px;
-			height: 200px;
+			/*grid-area: qrpic;
+			/*width: 200px;
+			height: 200px;*/
+			text-align: right;
 			/*border-style: solid;
 			border-width: medium;*/
 		}
@@ -58,7 +59,7 @@
 		div {
 			width: auto;
 			border: 0;
-			margin: 0 5%;
+			margin: 0 2%;
 			padding: 0;
 			float: none;
 			position: static;
@@ -99,9 +100,9 @@
 	<?php
 $objConnect = mysqli_connect("localhost", "amsappne_nfcdb", "AMSnfcapp1", "amsappne_nfc");
 //$objDB = mysqli_select_db($objConnect,"mydatabase");
-//$connect = mysqli_connect("localhost", "amsappne_nfcdb", "AMSnfcapp1", "amsappne_nfc");
+//$connect = mysqli_connect("localhost", "root", "", "amsappne_nfc");
 mysqli_set_charset($objConnect,'utf8');
-
+include('phpqrcode/qrlib.php'); 
 
 	for($i=0;$i<count($_POST["chkDel"]);$i++)
 	{
@@ -110,13 +111,22 @@ mysqli_set_charset($objConnect,'utf8');
 			$strSQL = "SELECT * FROM ASSET ";
 			$strSQL .="WHERE BARCODE = '".$_POST["chkDel"][$i]."' ";
 			$objQuery = mysqli_query($objConnect,$strSQL);
-			
+
+			$tempPath = "images/";
+			$fileName='qr_'.$_POST["chkDel"][$i].'.png';
+ 			$pngPath = $tempPath.$fileName;
+			QRcode::png($_POST["chkDel"][$i],$pngPath,'L',9,2);
+			$cm = $_POST["qrsize"][$i];
+			$px = ($cm/(2.54/96));
+			$font = $cm+12;
             
 			//while($row = mysqli_fetch_array($objQuery)){
 				foreach($objQuery as $row){
 			//echo '<img src="http://amsapp.net/images/'.$row['BARCODE'].'.png"/>';
             
-			echo '<div class="grid-container"><div class="qrpic"><img src="'.base_url('images/qr_'.$row['BARCODE']).'.png" style="width: 200px;height: 200px;"></div><div class="qrtext" style="font-size:24px"></br><b>รหัสครุภัณฑ์: </b>'.$row['BARCODE'].'</br><b>วันที่นำเข้า: </b>'.$row['RECEIVEDATE'].'</div></div></br>';
+			//echo '<div class="grid-container"><div class="qrpic"><img src="'.base_url('images/qr_'.$row['BARCODE']).'.png" style="width: '.$px.'px;height: '.$px.'px;"></div><div class="qrtext" style="font-size:'.$font.'"></br><b>รหัสครุภัณฑ์: </b>'.$row['BARCODE'].'</br><b>วันที่นำเข้า: </b>'.$row['RECEIVEDATE'].'</div></div></br>';
+			
+			echo '<div class="grid-container"><div class="qrpic"><img src="'.base_url('images/qr_'.$row['BARCODE']).'.png" style="width: '.$px.'px;height: '.$px.'px;"></div><div class="qrtext" style="font-size:'.$font.'"></br>&nbsp;&nbsp;&nbsp;'.$row['BARCODE'].'</div></div></br>';
 			
 			}
 		}
@@ -134,6 +144,8 @@ mysqli_close($objConnect);
 		window.onload = function () {
 			window.print();
 		}
+
+		
 
 	</script>
 </body>

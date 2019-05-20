@@ -3,8 +3,6 @@ $connect = mysqli_connect("localhost", "amsappne_nfcdb", "AMSnfcapp1", "amsappne
 mysqli_set_charset($connect,'utf8');
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,7 +72,7 @@ mysqli_set_charset($connect,'utf8');
 		<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
 			<thead>
 				<tr>
-					<th>image</th>
+					<th>รูปภาพครุภัณฑ์</th>
 					<th>รหัสครุภัณฑ์</th>
 					<th>ชื่อครุภัณฑ์</th>
 					<th>วันที่นำเข้า</th>
@@ -103,10 +101,12 @@ mysqli_set_charset($connect,'utf8');
 				?>
 			<tr>
 				<td>
-					<a class="thumbnail" href="<?php echo $row['HISTORY_IMAGE_PATH']; ?>">
+					<!--
+				<a class="thumbnail" href="<?php echo $row['HISTORY_IMAGE_PATH']; ?>" target="_blank">
 					<img name="file" id="file" src="<?php echo $row['HISTORY_IMAGE_PATH']; ?>" width="50%" height="50%"
-					border="0"><span><img src="<?php echo $row['HISTORY_IMAGE_PATH']; ?>"></a>
+					border="0"><span><img src="<?php echo $row['HISTORY_IMAGE_PATH']; ?>"></a>-->
 					
+					<img src="<?php echo $row['HISTORY_IMAGE_PATH']; ?>" style="width:150px">
 				
 				</td>
 				<td><?php echo $H['HISTORY_ASSETID']; ?></td>
@@ -175,7 +175,11 @@ mysqli_set_charset($connect,'utf8');
 					},
 					{
 						extend: 'print',
+						exportOptions: {
+                stripHtml: false
+            },
 						customize: function (doc) {
+							
 							$(doc.document.body).find('h1').css('font-size', '12pt');
 							$(doc.document.body).find('table').css('font-size', '10pt');
 							$(doc.document.body).css('font-size', '10px');

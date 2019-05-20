@@ -141,7 +141,8 @@ mysqli_set_charset($connect,'utf8');
 						<th>LOCATION BUILDING NAME</th>
 						<th>LOCATION FLOOR ID</th>
 						<th>LOCATION ROOM ID</th>
-						<th>QR CODE</th>
+						<th>QR Code size (cm)</th>
+						<th>QR CODE DETAIL</th>
 					</tr>
 				</thead>
 
@@ -150,8 +151,12 @@ mysqli_set_charset($connect,'utf8');
 					<td>
 						<input type="checkbox" name="chkDel[]" id="chkDel<?php echo $i;?>"
 							value="<?php echo $L["LOCATION_BARCODE"];?>">
+
+							<input type="hidden" name="chk[]" id="chk<?php echo $i;?>"
+							value="<?php echo $L["LOCATION_ID"];?>">
+
 						<?php $i++ ?>
-	</form>
+	
 	</td>
 	<td><?php echo $L['LOCATION_ID']; ?></td>
 	<td><?php echo $L['LOCATION_BARCODE']; ?></td>
@@ -160,6 +165,10 @@ mysqli_set_charset($connect,'utf8');
 	<td><?php echo $L['LOCATION_BUILDING_NAME']; ?></td>
 	<td><?php echo $L['LOCATION_FLOOR_ID']; ?></td>
 	<td><?php echo $L['LOCATION_ROOM_ID']; ?></td>
+	<td>
+			<input type="number" name="qrsize[]" id="qrsize<?php echo $i;?>" value="3" placeholder="เซนติเมตร" max="6" >
+			</form>
+		</td>
 	<td>
 
 		<form action="<?php echo site_url('location/index3/genqrlocate') ?>" method="post" name="form1">
