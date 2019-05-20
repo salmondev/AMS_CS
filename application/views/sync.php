@@ -95,7 +95,9 @@ mysqli_set_charset($connect,'utf8');
 			}
 		}
 
+		
 	</script>
+	
 
 	<style>
 		body {
@@ -129,6 +131,8 @@ mysqli_set_charset($connect,'utf8');
 
 		}
 
+		
+
 
 	</style>
 
@@ -140,7 +144,7 @@ mysqli_set_charset($connect,'utf8');
 
 		<h1 align="center" style="font-family: 'Sarabun', sans-serif;"><i class="fa fa-qrcode"
 				style="margin:15px"></i>ระบบสร้างรหัส QR Code ครุภัณฑ์</h1>
-
+				
 		<form name="frmMain" action="<?php echo site_url('asset/index9/printQR') ?>" method="post"
 			OnSubmit="return onDelete();">
 			<input type="submit" name="btnDelete" value="PRINT QR CODE" class="btn btn-success">
@@ -176,16 +180,17 @@ mysqli_set_charset($connect,'utf8');
 							<th>RECEIVEDATE</th>
 							<th>SPEC</th>
 							<th>UNITNAME</th>
+							
+							<th>QR Code Size (cm)</th>
 							<th>QR CODE</th>
 						</tr>
 					</thead>
 					<?php foreach($asset as $A){  $i = 0;?>
 					<tr>
 						<td>
-							<input type="checkbox" name="chkDel[]" id="chkDel<?php echo $i;?>"
-								value="<?php echo $A["BARCODE"];?>">
+							<input type="checkbox" name="chkDel[]" id="chkDel<?php echo $i;?>" value="<?php echo $A["BARCODE"];?>">
 							<?php $i++ ?>
-		</form>
+		
 		</td>
 		<td>
 			<?php echo $A['ASSETID']; ?>
@@ -208,7 +213,10 @@ mysqli_set_charset($connect,'utf8');
 		<td>
 			<?php echo $A['UNITNAME']; ?>
 		</td>
-
+		<td>
+			<input type="number" name="qrsize[]" id="qrsize<?php echo $i;?>" value="3" placeholder="เซนติเมตร" max="6" >
+			</form>
+		</td>
 		<td>
 
 			<form action="<?php echo site_url('asset/index8/genQR') ?>" method="post" name="form1">
@@ -218,10 +226,11 @@ mysqli_set_charset($connect,'utf8');
 				<input type="hidden" name="qr_assetname" value="<?php echo ($A['ASSETNAME']); ?>">
 				<input type="hidden" name="qr_receive" value="<?php echo ($A['RECEIVEDATE']); ?>">
 				<input type="hidden" name="qr_spec" value="<?php echo ($A['SPEC']); ?>">
-				<input type="submit" name="generate_text" value="GENERATE QR CODE" class="btn btn-primary" />
+				<input type="submit" name="generate_text" value="QR CODE DETAIL" class="btn btn-primary" />
 
 			</form>
 		</td>
+		
 		</tr>
 		<?php } ?>
 

@@ -1,6 +1,22 @@
 <?php  
 $connect = mysqli_connect("localhost", "amsappne_nfcdb", "AMSnfcapp1", "amsappne_nfc");
 mysqli_set_charset($connect,'utf8');
+/*
+if(isset($_POST['SubmitButton']))
+{
+	$input = $_POST['inputText']; //get input text
+	$message = "Success! You entered: ".$input;
+	
+	$sql = "SELECT * from history_asset_recent1 WHERE CONCAT(HISTORY_DAY,'/',HISTORY_MONTH,'/',HISTORY_YEAR) >= '$input'";
+	$result = mysqli_query($connect,$sql);
+	
+	while($row = mysqli_fetch_array($result)){
+		echo $row['HISTORY_ASSET_NAME'];
+		echo "&nbsp;";
+		echo $row['HISTORY_ASSETID'];
+		echo "</br>";
+	}
+}*/
 
 ?>
 
@@ -11,10 +27,18 @@ mysqli_set_charset($connect,'utf8');
 	<meta charset="UTF-8">
 	<title>HISTORY Recent</title>
 
-	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
-	<link rel='stylesheet' href='https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css'>
-	<link rel='stylesheet' href='https://cdn.datatables.net/buttons/1.2.2/css/buttons.bootstrap.min.css'>
-	<link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdn.datatables.net/buttons/1.2.2/css/buttons.bootstrap.min.css'>
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"></script>
+
 
 	<style>
 		body {
@@ -25,12 +49,33 @@ mysqli_set_charset($connect,'utf8');
 			text-align: center;
 		}
 
+		
 	</style>
 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
 
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
+
+
+	<script>
+        $(function () {
+            $("#datepicker").datepicker({
+                format: "dd/mm/yyyy",
+                clearBtn: true,
+                autoclose: true,
+                orientation: "right"
+            });
+        });
+    </script>
+
+    <style>
+        .dater{
+            margin: 20px;
+            /*text-align: center;
+            margin-top: 500px;*/
+        }
+ </style>
 
 </head>
 
@@ -42,7 +87,14 @@ mysqli_set_charset($connect,'utf8');
 	<a href="<?php echo site_url('history_asset_recent/index2/imgAsset') ?>" target="_blank" class="btn btn-info"><i class="fa fa-picture-o"></i>รูปภาพการตรวจสอบล่าสุด</a>
 	</br>
 	</br>
-
+	<div class="dater">
+		
+    <form action="<?php echo base_url('history_asset_recent/index4/fetch'); ?>" method="post">
+        <p><b>วันที่ตรวจสอบ</b> : <input type="text" id="datepicker" name="inputText"></p>
+        <button type="submit" class="btn btn-primary" name="SubmitButton"><i class="fa fa-search"></i>&nbsp;Search</button>
+    </form>
+    </div>
+	</br>
 	<div class="table-responsive">
 		<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
 			<thead>
@@ -87,23 +139,28 @@ mysqli_set_charset($connect,'utf8');
 			<?php } ?>
 		</table>
 	</div>
-
+<!--
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-	<script src='https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js'></script>
+			--><script src='https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js'></script>
+<!--
 	<script src='https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js'></script>
 	<script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.colVis.min.js'></script>
 	<script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js'></script>
 	<script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js'></script>
+			-->
 	<script src='https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js'></script>
+<!--
 	<script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.bootstrap.min.js'></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js'></script>
 
 	<script src='https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js'></script>
 	<script src='https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js'></script>
+	
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
-
+			-->
 	<script>
 		$(document).ready(function () {
+
 			//Only needed for the filename of export files.
 			//Normally set in the title tag of your page.
 			document.title = 'ข้อมูลการตรวจสอบครุภัณฑ์ล่าสุด';
@@ -141,7 +198,6 @@ mysqli_set_charset($connect,'utf8');
 				]
 			});
 		});
-
 	</script>
 </body>
 

@@ -54,7 +54,7 @@ class History_asset_recent extends CI_Controller{
     {
         $data['history_asset_recent'] = $this->History_asset_recent_model->get_all_history_asset_recent();
         //$data['_view'] = 'item_table/exporter';
-        $this->load->view('history_asset_recent/filter_recent',$data);
+        $this->load->view('history_asset_recent/total_result',$data);
 	}
 
     /*

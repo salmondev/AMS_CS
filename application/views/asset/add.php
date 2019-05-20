@@ -20,14 +20,14 @@
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="REFERID" class="control-label">Refer</label>
+						<label for="REFERIDITEM" class="control-label">Refer</label>
 						<div class="form-group">
-							<select name="REFERID" class="form-control">
+							<select name="REFERIDITEM" class="form-control">
 								<option value="">select refer</option>
 								<?php 
 								foreach($all_refer as $refer)
 								{
-									$selected = ($refer['REFERID'] == $this->input->post('REFERID')) ? ' selected="selected"' : "";
+									$selected = ($refer['REFERID'] == $this->input->post('REFERIDITEM')) ? ' selected="selected"' : "";
 
 									echo '<option value="'.$refer['REFERID'].'" '.$selected.'>'.$refer['REFERID'].'</option>';
 								} 

@@ -20,7 +20,7 @@
 		.grid-container {
 			display: grid;
 			grid-template-columns: 225px 400px;
-			grid-template-rows: 225px;
+			/*grid-template-rows: 225px;*/
 			grid-template-areas: "qrpic qrtext";
 		}
 
@@ -101,6 +101,7 @@ $objConnect = mysqli_connect("localhost", "amsappne_nfcdb", "AMSnfcapp1", "amsap
 //$objDB = mysqli_select_db($objConnect,"mydatabase");
 //$connect = mysqli_connect("localhost", "amsappne_nfcdb", "AMSnfcapp1", "amsappne_nfc");
 mysqli_set_charset($objConnect,'utf8');
+include('phpqrcode/qrlib.php'); 
 
 
 	for($i=0;$i<count($_POST["chkDel"]);$i++)
@@ -110,13 +111,21 @@ mysqli_set_charset($objConnect,'utf8');
 			$strSQL = "SELECT * FROM LOCATION ";
 			$strSQL .="WHERE LOCATION_BARCODE = '".$_POST["chkDel"][$i]."' ";
 			$objQuery = mysqli_query($objConnect,$strSQL);
+
+			$tempPath = "images/";
+			$fileName='qrlocate_'.$_POST["chk"][$i].'.png';
+ 			$pngPath = $tempPath.$fileName;
+			QRcode::png($_POST["chk"][$i],$pngPath,'L',9,2);
+			$cm = $_POST["qrsize"][$i];
+			$px = ($cm/(2.54/96));
+			$font = $cm+12;
 			
             
 			//while($row = mysqli_fetch_array($objQuery)){
 				foreach($objQuery as $row){
 			//echo '<img src="http://amsapp.net/images/'.$row['BARCODE'].'.png"/>';
             
-			echo '<img src="'.base_url('images/qrlocate_'.$row['LOCATION_ID']).'.png" style="width: 200px;height: 200px;"></br><b>รหัสห้อง: </br></b>'.$row['LOCATION_BARCODE'].'</br><b>ห้อง: </b>'.$row['LOCATION_ROOM_ID'].'</br></br>';
+			echo '<div><div><img src="'.base_url('images/qrlocate_'.$row['LOCATION_ID']).'.png" style="width: '.$px.'px;height: '.$px.'px;"></div><div style="font-size:'.$font.'"><b>รหัสห้อง: </br></b>'.$row['LOCATION_BARCODE'].'</br><b>ห้อง: </b>'.$row['LOCATION_ROOM_ID'].'</div></br></br></div>';
 			
 			}
 		}
