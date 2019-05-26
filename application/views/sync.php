@@ -6,6 +6,24 @@
 $connect = mysqli_connect("localhost", "amsappne_nfcdb", "AMSnfcapp1", "amsappne_nfc");
 mysqli_set_charset($connect,'utf8');
 
+if(isset($_POST['SetQRsize']))
+        {
+			$path = 'http://www.amsapp.net/docs/';
+	        $DATA = $_POST['defQRsize'];
+			//$name = "NFC_".time();
+			$name = "SETqrSize_";
+	        $filename = $name.".txt";
+	        $myfile = fopen($filename, "w") or die("Unable to open file!");
+	        $txt = $DATA;
+	        fwrite($myfile, $txt);
+	        fclose($myfile);
+	        $NFC_PATH = $path.$filename;
+            //move_uploaded_file($filename,$path);
+			rename("SETqrSize_.txt","docs/SETqrSize_.txt");
+			
+			
+		}
+
 ?>
 
 <head>
@@ -95,9 +113,8 @@ mysqli_set_charset($connect,'utf8');
 			}
 		}
 
-		
 	</script>
-	
+
 
 	<style>
 		body {
@@ -131,9 +148,6 @@ mysqli_set_charset($connect,'utf8');
 
 		}
 
-		
-
-
 	</style>
 
 </head>
@@ -144,10 +158,24 @@ mysqli_set_charset($connect,'utf8');
 
 		<h1 align="center" style="font-family: 'Sarabun', sans-serif;"><i class="fa fa-qrcode"
 				style="margin:15px"></i>ระบบสร้างรหัส QR Code ครุภัณฑ์</h1>
-				
-		<form name="frmMain" action="<?php echo site_url('asset/index9/printQR') ?>" method="post"
+
+		<div>
+
+			<form action="" method="post">
+
+				<label>ตั้งค่าขนาด QR Code เริ่มต้น <div style="color: red;">* เซนติเมตร</div></label></p>
+				<input type="number" name="defQRsize" value="" required maxlength="1" />
+
+				<button type="submit" class="btn btn-success" name="SetQRsize">
+					<i class="fa fa-save"></i> Save
+				</button>
+			</form>
+		</div>
+		</br>
+
+		<form name="frmMain" target="_blank" action="<?php echo site_url('asset/index9/printQR') ?>" method="post"
 			OnSubmit="return onDelete();">
-			<input type="submit" name="btnDelete" value="PRINT QR CODE" class="btn btn-success">
+			<input type="submit" name="btnDelete" value="PRINT QR CODE" class="btn btn-info">
 			<br />
 			<div class="table-responsive">
 				<br />
@@ -180,7 +208,7 @@ mysqli_set_charset($connect,'utf8');
 							<th>RECEIVEDATE</th>
 							<th>SPEC</th>
 							<th>UNITNAME</th>
-							
+
 							<th>QR Code Size (cm)</th>
 							<th>QR CODE</th>
 						</tr>
@@ -190,32 +218,33 @@ mysqli_set_charset($connect,'utf8');
 						<td>
 							<input type="checkbox" name="chkDel[]" id="chkDel<?php echo $i;?>" value="<?php echo $A["BARCODE"];?>">
 							<?php $i++ ?>
-		
-		</td>
-		<td>
-			<?php echo $A['ASSETID']; ?>
-		</td>
-		<td>
-			<?php echo $A['BARCODE']; ?>
-		</td>
-		<td>
-			<?php echo $A['REFERIDITEM']; ?>
-		</td>
-		<td>
-			<?php echo $A['ASSETNAME']; ?>
-		</td>
-		<td>
-			<?php echo $A['RECEIVEDATE']; ?>
-		</td>
-		<td>
-			<?php echo $A['SPEC']; ?>
-		</td>
-		<td>
-			<?php echo $A['UNITNAME']; ?>
-		</td>
-		<td>
-			<input type="number" name="qrsize[]" id="qrsize<?php echo $i;?>" value="3" placeholder="เซนติเมตร" max="6" >
-			</form>
+
+						</td>
+						<td>
+							<?php echo $A['ASSETID']; ?>
+						</td>
+						<td>
+							<?php echo $A['BARCODE']; ?>
+						</td>
+						<td>
+							<?php echo $A['REFERIDITEM']; ?>
+						</td>
+						<td>
+							<?php echo $A['ASSETNAME']; ?>
+						</td>
+						<td>
+							<?php echo $A['RECEIVEDATE']; ?>
+						</td>
+						<td>
+							<?php echo $A['SPEC']; ?>
+						</td>
+						<td>
+							<?php echo $A['UNITNAME']; ?>
+						</td>
+						<td>
+							<input type="number" name="qrsize[]" id="qrsize<?php echo $i;?>" value="<?php readfile('http://www.amsapp.net/docs/SETqrSize_.txt'); ?>" placeholder="เซนติเมตร"
+								max="6">
+		</form>
 		</td>
 		<td>
 
@@ -230,7 +259,7 @@ mysqli_set_charset($connect,'utf8');
 
 			</form>
 		</td>
-		
+
 		</tr>
 		<?php } ?>
 
