@@ -1,11 +1,16 @@
 <?php
+        require_once('connect.php');
 		header ('Content-type: text/html; charset=utf-8');
-		require_once('connect.php');
+		/*$servername = "localhost";
+		$username = "root";
+		$password = "cs@kmutnb!";
+		$dbname = "amsappne_nfc";
+		$connect = new mysqli($servername, $username, $password, $dbname);*/
 		if ($connect->connect_error) {
     		die("Connection failed: " . $connect->connect_error);
 		}
 		mysqli_query($connect,"SET CHARACTER SET UTF8");
-		$query = "SELECT * FROM REFER";
+		$query = "SELECT * FROM HISTORY_ASSET";
 		$result = mysqli_query($connect,$query);
 		$json_array = array();
 		while( $row = mysqli_fetch_assoc($result) ){

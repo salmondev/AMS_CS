@@ -65,7 +65,7 @@ VALUES ('{$HISTORY_ASSET_ID}','{$HISTORY_ASSET_NAME}',{$HISTORY_REFERID},
 		if($FILES[$i] != null){
 		
 
-		$path = 'http://amsapp.net/images/';
+		$path = 'images/';
 	    $IMG_DATA = base64_decode($FILES[$i]);
 	    $name = $HISTORY_ASSET_ID."-".time();
 	    $filename = $name."-".$i.".jpg";

@@ -1,10 +1,6 @@
 <?php
 		header ('Content-type: text/html; charset=utf-8');
-		$servername = "localhost";
-		$username = "amsappne_nfcdb";
-		$password = "AMSnfcapp1";
-		$dbname = "amsappne_nfc";
-		$connect = new mysqli($servername, $username, $password, $dbname);
+		require_once('connect.php');
 		if ($connect->connect_error) {
     		die("Connection failed: " . $connect->connect_error);
 		}
