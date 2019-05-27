@@ -48,7 +48,7 @@ Panurut Chinakul – [@salmondev](https://salmondev.github.io/) – panurut.ch@g
 
 Distributed under the MIT license. See ``LICENSE`` for more information.
 
-[https://github.com/salmondev/ci_qr](https://github.com/salmondev/ci_qr/)
+[//_PROJECT_AMS](https://github.com/salmondev/AMS_CS/)
 
 ## Contributing
 
