@@ -5,7 +5,7 @@
     		die("Connection failed: " . $connect->connect_error);
 		}
 		mysqli_query($connect,"SET CHARACTER SET UTF8");
-		$query = "SELECT * FROM REFER";
+		$query = "SELECT * FROM HISTORY_ASSET_RECENT1";
 		$result = mysqli_query($connect,$query);
 		$json_array = array();
 		while( $row = mysqli_fetch_assoc($result) ){
