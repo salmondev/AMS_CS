@@ -262,9 +262,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 									</span></a></li>
 							<li><a href="<?php echo site_url('history/index/index');?>"><i class="fa fa-history"></i> <span>History
 									</span></a></li>
-							<li><a href="<?php echo site_url('asset_verify/index/index');?>"><i class="fa fa-check"></i> <span>Asset
-										Verify
-									</span></a></li>
+							
 							<li><a href="<?php echo site_url('department/index/index');?>"><i class="fa fa-vcard"></i>
 									<span>Department </span></a></li>
 							<li><a href="<?php echo site_url('history_asset_recent/index/index');?>"><i class="fa fa-refresh"></i>

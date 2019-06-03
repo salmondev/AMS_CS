@@ -159,8 +159,7 @@
 				 class="fa fa-vcard fa-fw fa-5x"></i><br /><br />ข้อมูลหน่วยงาน</a>
 			<a href="<?php echo site_url('history/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px; margin-bottom:10px"><i
 				 class="fa fa-history fa-fw fa-5x"></i><br /><br />ข้อมูลประวัติ</a>
-			<a href="<?php echo site_url('asset_verify/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px; margin-bottom:10px"><i
-				 class="fa fa-check fa-fw fa-5x"></i><br /><br />ข้อมูลการตรวจสอบ</a>
+			
 				 <a href="<?php echo site_url('history_asset_recent/index/index') ?>" class="btn btn-primary btn_main_wd" style="margin-right:10px; margin-bottom:10px"><i
 				 class="fa fa-refresh fa-fw fa-5x"></i><br /><br />ข้อมูลการตรวจสอบล่าสุด</a>
 		</div>

@@ -1,7 +1,5 @@
 <?php
 
-//if(isset($_POST["upFile"])) {
-
   if(!empty($_FILES['uploaded_file']))
   {
     $path = "drive/";
@@ -14,10 +12,6 @@
 	}
 	header('Location: index.php');
   }
-
-  
-
-//}
 
 ?>
 
@@ -34,7 +28,10 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-	<title>dev.ams</title>
+	<!-- SweetAlert -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+	<title>drive.ams</title>
 	<style>
 		body,
 		.post {
@@ -123,49 +120,51 @@
 <body>
 	<section>
 
-		<h1>Asset Management System DEV section</h1>
+		<h1>Asset Management System Drive</h1>
 		<div class="alert alert-success" role="alert">
 			<h4 class="alert-heading">developer session</h4>
-			<p>dev.amsapp.net</p>
+			<p>drive.amsapp.net</p>
 			<hr>
 			<p class="mb-0">panurutDEV</p>
 		</div>
-		<h2>Dev Content</h2>
-		<h1>AMS QR Code Generater</h1>
-		<p>AMS QR Code Generater is desktop applictaion build with <a href="https://electronjs.org/"
-				target="_blank">Electron</a> framework technology</p>
-		<p>Convert web technology to be app write in javascript with <a href="https://nodejs.org/en/"
-				target="_blank">NodeJS</a> backend.</p>
-		<p>The app can be easy to generate QR Code from text input and print on PDF file via standard platfrom on your
-			PC.</p>
-
-
-		<a href="http://dev.amsapp.net/AMS_QRGEN_Setup_1.0.0.exe" class="btn btn-primary"><span
-				class="glyphicon glyphicon-download"></span>Download AMS_QRGen</a>
-
-
-		<a href="http://www.amsapp.net/" class="btn btn-outline-info">Switch Mode</a>
+		<div class="alert alert-primary" role="alert">
+			<h4 class="alert-heading">Drive</h4>
+			<p><?php 
+			$dir    = '/drive';
+			$files1 = scandir($dir);
+			echo $files1;
+			print_r($files1);
+			?></p>
+			<hr>
+		</div>
 
 		</br></br></br>
-<!--
-		<div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+
+		<div class="card text-white bg-dark mb-6" style="max-width: 30rem;">
 			<div class="card-header">AMS DRIVE</div>
 			<div class="card-body">
 				<h5 class="card-title">Upload your file</h5>
 				<p class="card-text">
-					<form action="" enctype="multipart/form-data" method="POST">
+					<form action="index.php" enctype="multipart/form-data" method="POST">
 						<p>_developer file</p>
-						<input type="file" name="uploaded_file"></input><br /></br>
-						<input type="submit" name="upFile" value="Upload" class="btn btn-success"></input>
+						<!--<input type="file" name="uploaded_file" ></input>-->
+						<!--<label class="btn btn-primary">
+							Browse&hellip; <input type="file" name="uploaded_file" style="display: none;">
+						</label>-->
+						<div class="input-group">
+							<label class="input-group-btn">
+								<span class="btn btn-primary">
+									Browse&hellip; <input type="file" name="uploaded_file" style="display: none;" multiple>
+								</span>
+							</label>
+							<input type="text" class="form-control" readonly>
+						</div>
+						</br>
+						<input type="submit" value="Upload" class="btn btn-success" onclick="sc()"></input>
 					</form>
 				</p>
 			</div>
 		</div>
-	-->
-
-
-
-
 
 
 	</section>
@@ -176,6 +175,17 @@
 			<span>Light</span>
 		</li>
 	</ul>
+
+	<script>
+		function sc() {
+			Swal.fire(
+				'Upload Success',
+				'Your file has been saved.',
+				'success'
+			)
+		}
+
+	</script>
 
 
 
@@ -213,6 +223,36 @@
 				toggleViewMode();
 			});
 		})
+
+		///////////////////////////////
+		//uploader
+		$(function () {
+
+			// We can attach the `fileselect` event to all file inputs on the page
+			$(document).on('change', ':file', function () {
+				var input = $(this),
+					numFiles = input.get(0).files ? input.get(0).files.length : 1,
+					label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+				input.trigger('fileselect', [numFiles, label]);
+			});
+
+			// We can watch for our custom `fileselect` event like this
+			$(document).ready(function () {
+				$(':file').on('fileselect', function (event, numFiles, label) {
+
+					var input = $(this).parents('.input-group').find(':text'),
+						log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+					if (input.length) {
+						input.val(log);
+					} else {
+						if (log) alert(log);
+					}
+
+				});
+			});
+
+		});
 
 	</script>
 
