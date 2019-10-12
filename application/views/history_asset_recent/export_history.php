@@ -61,7 +61,7 @@ if(isset($_POST['SubmitButton']))
 	<script>
         $(function () {
             $("#datepicker").datepicker({
-                format: "dd/mm/yyyy",
+                format: "yyyy-m-d",
                 clearBtn: true,
                 autoclose: true,
                 orientation: "right"

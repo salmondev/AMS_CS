@@ -4,9 +4,13 @@ mysqli_set_charset($connect,'utf8');
 /*
 if(isset($_POST['SubmitButton']))
 {*/
-    $input = $_POST['inputText']; //get input text
+	$input = $_POST['inputText']; //get input text
+	
+	//$input = date("Y,n,j");
 
-    $sql = "SELECT * from HISTORY_ASSET_RECENT1 WHERE CONCAT(HISTORY_DAY,'/',HISTORY_MONTH,'/',HISTORY_YEAR) >= '$input'";
+	//echo $input;
+
+    $sql = "SELECT * from HISTORY_ASSET_RECENT1 WHERE CONCAT(HISTORY_YEAR,'-',HISTORY_MONTH,'-',HISTORY_DAY) >= '$input'";
 	$result = mysqli_query($connect,$sql);
 
 
@@ -15,13 +19,13 @@ if(isset($_POST['SubmitButton']))
     $notfound = $totalAsset - $found;
 
 
-    $active = "SELECT * FROM HISTORY_ASSET_RECENT1 WHERE CONCAT(HISTORY_DAY,'/',HISTORY_MONTH,'/',HISTORY_YEAR) >= '$input' AND HISTORY_STATUS_NAME='ใช้งาน'";
+    $active = "SELECT * FROM HISTORY_ASSET_RECENT1 WHERE CONCAT(HISTORY_YEAR,'-',HISTORY_MONTH,'-',HISTORY_DAY) >= '$input' AND HISTORY_STATUS_NAME='ใช้งาน'";
 
-    $deteriorate = "SELECT * FROM HISTORY_ASSET_RECENT1 WHERE CONCAT(HISTORY_DAY,'/',HISTORY_MONTH,'/',HISTORY_YEAR) >= '$input' AND HISTORY_STATUS_NAME='เสื่อมสภาพ'";
+    $deteriorate = "SELECT * FROM HISTORY_ASSET_RECENT1 WHERE CONCAT(HISTORY_YEAR,'-',HISTORY_MONTH,'-',HISTORY_DAY) >= '$input' AND HISTORY_STATUS_NAME='เสื่อมสภาพ'";
 
-    $broken = "SELECT * FROM HISTORY_ASSET_RECENT1 WHERE CONCAT(HISTORY_DAY,'/',HISTORY_MONTH,'/',HISTORY_YEAR) >= '$input' AND HISTORY_STATUS_NAME='ชำรุด'";
+    $broken = "SELECT * FROM HISTORY_ASSET_RECENT1 WHERE CONCAT(HISTORY_YEAR,'-',HISTORY_MONTH,'-',HISTORY_DAY) >= '$input' AND HISTORY_STATUS_NAME='ชำรุด'";
 
-    $lost = "SELECT * FROM HISTORY_ASSET_RECENT1 WHERE CONCAT(HISTORY_DAY,'/',HISTORY_MONTH,'/',HISTORY_YEAR) >= '$input' AND HISTORY_STATUS_NAME='สูญหาย'";
+    $lost = "SELECT * FROM HISTORY_ASSET_RECENT1 WHERE CONCAT(HISTORY_YEAR,'-',HISTORY_MONTH,'-',HISTORY_DAY) >= '$input' AND HISTORY_STATUS_NAME='สูญหาย'";
 
     $active_res = mysqli_query($connect,$active);
     $deteriorate_res = mysqli_query($connect,$deteriorate);
